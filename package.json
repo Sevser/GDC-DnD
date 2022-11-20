@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^6.0.0"
+  },
+  "scripts": {
+    "dev:cms": "cd ./packages/cms && yarn dev"
+  }
+}
