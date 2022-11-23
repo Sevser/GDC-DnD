@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "inventory_types",
+  "info": {
+    "singularName": "inventory-type",
+    "pluralName": "inventory-types",
+    "displayName": "InventoryType"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "InventoryType": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Artefact",
+        "Armor",
+        "Weapon"
+      ]
+    }
+  }
+}

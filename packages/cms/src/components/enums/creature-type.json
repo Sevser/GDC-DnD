@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "creature_types",
+  "info": {
+    "singularName": "creature-type",
+    "pluralName": "creature-types",
+    "displayName": "Creature type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "creatureType": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Plants",
+        "Beasts",
+        "Humanoids",
+        "Giants",
+        "Fey",
+        "Oozes",
+        "Constructs",
+        "Aberrations",
+        "Undead",
+        "Dragons",
+        "Celestials",
+        "Fiends",
+        "Elementals",
+        "Monstrosities"
+      ]
+    }
+  }
+}

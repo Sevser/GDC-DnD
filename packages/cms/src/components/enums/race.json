@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "races",
+  "info": {
+    "singularName": "race",
+    "pluralName": "races",
+    "displayName": "race",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Race": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Gnome",
+        "Dwarf",
+        "Dragonborn",
+        "Half-orc",
+        "Halfing",
+        "Half-elf",
+        "Tiefling",
+        "Human",
+        "Elf"
+      ]
+    }
+  }
+}

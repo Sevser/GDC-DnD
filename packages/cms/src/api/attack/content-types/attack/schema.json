@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attacks",
+  "info": {
+    "singularName": "attack",
+    "pluralName": "attacks",
+    "displayName": "Attack",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Cube": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.cube",
+      "required": true
+    },
+    "IsMagic": {
+      "type": "boolean",
+      "required": true
+    },
+    "ActionType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.action-type",
+      "required": true
+    },
+    "DamageType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.damage-type",
+      "required": true
+    }
+  }
+}

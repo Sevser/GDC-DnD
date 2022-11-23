@@ -1,0 +1,231 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skills",
+  "info": {
+    "singularName": "skill",
+    "pluralName": "skills",
+    "displayName": "Skill"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Athletics": {
+      "default": 0,
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 30
+    },
+    "AthleticsMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Acrobatics": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "max": 30,
+      "min": 0
+    },
+    "AcrobaticsMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Sleight_of_Hand": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "Sleight_of_Hand_Master": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Stealth": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "StealthMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Arcana": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "ArcanaMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "History": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "HistoryMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Investigation": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "InvestigationMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Nature": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "NatureMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Religion": {
+      "type": "integer",
+      "max": 30,
+      "min": 0,
+      "required": true,
+      "default": 0
+    },
+    "ReligionMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Animal_Handling": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "Animal_Handling_Master": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Insight": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "InsightMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Medicine": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "max": 30,
+      "min": 0
+    },
+    "MedicineMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Perception": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "PerceptionMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Survival": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "SurvivalMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Deception": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "max": 30,
+      "min": 0
+    },
+    "DeceptionMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Intimidation": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "IntimidationMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Performance": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "PerformanceMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Persuasion": {
+      "type": "integer",
+      "required": true,
+      "max": 30,
+      "min": 0,
+      "default": 0
+    },
+    "PersuasionMaster": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

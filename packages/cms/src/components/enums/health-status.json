@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "health_statuses",
+  "info": {
+    "singularName": "health-status",
+    "pluralName": "health-statuses",
+    "displayName": "HealthStatus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "HealthStatus": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Alive",
+        "Dead",
+        "Unknown"
+      ]
+    }
+  }
+}
