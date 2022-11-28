@@ -49,6 +49,22 @@
       "relation": "manyToOne",
       "target": "api::ability.ability",
       "inversedBy": "archetypes"
+    },
+    "spells": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::spell.spell",
+      "inversedBy": "archetypes"
+    },
+    "source": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "enums.source"
     }
   }
 }

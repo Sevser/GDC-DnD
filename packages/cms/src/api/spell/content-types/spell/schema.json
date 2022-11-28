@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "spells",
+  "info": {
+    "singularName": "spell",
+    "pluralName": "spells",
+    "displayName": "Spell"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "HighterLevelDescription": {
+      "type": "text"
+    },
+    "Level": {
+      "type": "integer",
+      "default": 1,
+      "required": true,
+      "max": 9,
+      "min": 0
+    },
+    "source": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.source",
+      "required": true
+    },
+    "SpellComponent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "enums.spell-component"
+    },
+    "Concentration": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "SchoolOfMagic": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.school-of-magic"
+    },
+    "class": {
+      "type": "component",
+      "repeatable": true,
+      "component": "enums.class"
+    },
+    "archetypes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::archetype.archetype",
+      "mappedBy": "spells"
+    },
+    "activeTime": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "cast_times": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cast-time.cast-time",
+      "inversedBy": "spells"
+    },
+    "attacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::attack.attack",
+      "inversedBy": "spells"
+    },
+    "ActionType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.action-type"
+    }
+  }
+}

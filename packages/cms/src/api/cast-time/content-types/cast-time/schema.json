@@ -25,6 +25,12 @@
       "pluginOptions": {},
       "component": "enums.action-type",
       "required": true
+    },
+    "spells": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::spell.spell",
+      "inversedBy": "cast_times"
     }
   }
 }

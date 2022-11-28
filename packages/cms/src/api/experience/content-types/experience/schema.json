@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "experience": {
+    "Experience": {
       "type": "integer",
       "min": 0,
       "default": 0,

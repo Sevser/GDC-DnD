@@ -33,6 +33,12 @@
       "repeatable": false,
       "component": "enums.damage-type",
       "required": true
+    },
+    "spells": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::spell.spell",
+      "inversedBy": "attacks"
     }
   }
 }

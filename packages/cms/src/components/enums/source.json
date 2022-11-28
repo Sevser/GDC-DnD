@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_enums_sources",
+  "info": {
+    "displayName": "source"
+  },
+  "options": {},
+  "attributes": {
+    "source": {
+      "type": "enumeration",
+      "enum": [
+        "SRD_5E",
+        "Homebrew"
+      ]
+    }
+  }
+}
