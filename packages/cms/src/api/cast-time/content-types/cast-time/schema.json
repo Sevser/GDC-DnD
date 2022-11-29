@@ -30,7 +30,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::spell.spell",
-      "inversedBy": "cast_times"
+      "mappedBy": "cast_times"
     }
   }
 }

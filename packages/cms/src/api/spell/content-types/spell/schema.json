@@ -4,7 +4,8 @@
   "info": {
     "singularName": "spell",
     "pluralName": "spells",
-    "displayName": "Spell"
+    "displayName": "Spell",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -61,11 +62,6 @@
       "target": "api::archetype.archetype",
       "mappedBy": "spells"
     },
-    "activeTime": {
-      "type": "integer",
-      "min": 0,
-      "default": 0
-    },
     "cast_times": {
       "type": "relation",
       "relation": "manyToMany",
@@ -82,6 +78,9 @@
       "type": "component",
       "repeatable": false,
       "component": "enums.action-type"
+    },
+    "activeTime": {
+      "type": "string"
     }
   }
 }

@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const { experience, archetypes } = require("../data/data");
+const { experience, archetypes, spells } = require("../data/data");
 
 async function setPublicPermissions(newPermissions) {
   // Find the ID of the public role
@@ -126,6 +126,17 @@ async function createArchetypes(archetypes) {
     );
 }
 
+async function createSpells(spells) {
+    return Promise.all(
+      spells.map((arc) => {
+            return createEntry({
+                model: 'spell',
+                entry: arc,
+            });
+        })
+    );
+}
+
 async function importSeedData() {
   // Allow read of application content types
   await setPublicPermissions({
@@ -136,6 +147,7 @@ async function importSeedData() {
   // Create all entries
   await createExperience(experience);
   await createArchetypes(archetypes);
+  await createSpells(spells);
 }
 
 module.exports = async () => {
