@@ -1,17 +1,9 @@
-/**
- * plugins/index.ts
- *
- * Automatically included in `./src/main.ts`
- */
+import { loadFonts } from './webfontloader';
+import vuetify from './vuetify';
 
-// Plugins
-import { loadFonts } from './webfontloader'
-import vuetify from './vuetify'
+import type { App } from 'vue';
 
-// Types
-import type { App } from 'vue'
-
-export function registerPlugins (app: App) {
-  loadFonts()
-  app.use(vuetify)
+export function registerPlugins(app: App) {
+  loadFonts();
+  app.use(vuetify);
 }

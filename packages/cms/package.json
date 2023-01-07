@@ -7,7 +7,8 @@
     "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "clear": "if exist .tmp rmdir .tmp /s /q"
   },
   "devDependencies": {},
   "dependencies": {

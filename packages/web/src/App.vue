@@ -1,11 +1,15 @@
 <template>
   <v-app>
-    <v-main>
-      asd
-    </v-main>
+    <DefaultLayout>123</DefaultLayout>
   </v-app>
 </template>
 
-<script setup lang="ts">
-import {  } from 'vue';
+<script lang="ts">
+import DefaultLayout from './layout/DefaultLayout.vue';
+
+export default {
+  components: {
+    DefaultLayout,
+  },
+};
 </script>

@@ -8,7 +8,7 @@
     "lerna": "^6.0.0"
   },
   "scripts": {
-    "dev:cms": "cd ./packages/cms && yarn dev",
+    "dev:cms": "cd ./packages/cms && yarn clear && yarn dev",
     "dev:web": "cd ./packages/web && yarn dev"
   }
 }

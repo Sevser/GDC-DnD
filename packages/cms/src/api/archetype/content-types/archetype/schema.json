@@ -65,6 +65,12 @@
         }
       },
       "component": "enums.source"
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::character.character",
+      "mappedBy": "archetype"
     }
   }
 }

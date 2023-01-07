@@ -4,7 +4,8 @@
   "info": {
     "singularName": "skill",
     "pluralName": "skills",
-    "displayName": "Skill"
+    "displayName": "ExtendedCharacteristic",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -226,6 +227,12 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "character": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::character.character",
+      "inversedBy": "extended_characteristic"
     }
   }
 }

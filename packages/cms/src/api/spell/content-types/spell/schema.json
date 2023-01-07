@@ -41,6 +41,9 @@
       "repeatable": true,
       "component": "enums.spell-component"
     },
+    "spellComponentDescription": {
+      "type": "string"
+    },
     "Concentration": {
       "type": "boolean",
       "default": false,
@@ -79,8 +82,17 @@
       "repeatable": false,
       "component": "enums.action-type"
     },
+    "actionTypeDescription": {
+      "type": "string"
+    },
     "activeTime": {
       "type": "string"
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::character.character",
+      "inversedBy": "spells"
     }
   }
 }

@@ -7,6 +7,23 @@ Object.defineProperty(String.prototype, 'capitalize', {
     enumerable: false
   });
 
+const calcActionType = (spell) => {
+  if (spell.c[3] === '1 action') {
+    return {
+      actionType: 'Primary',
+    };
+  } else if (spell.c[3].startsWith('1 reaction')) {
+    return {
+      actionType: 'Reaction',
+    };
+  } else if (spell.c[3] === '1 bonus action') {
+    return {
+      actionType: 'Secondary',
+    };
+  }
+  return undefined;
+}
+
 const transformData = (listResults) => 
     listResults.map((sp, index) => ({
         id: index + 1,
@@ -17,8 +34,11 @@ const transformData = (listResults) =>
         Concentration: sp.c[7] === 'Yes',
         activeTime: sp.c[8],
         source: { source: 'SRD_5E' },
+        ActionType: calcActionType(sp),
+        actionTypeDescription: sp.c[3],
         SchoolOfMagic: { SchoolOfMagic: sp.c[1] },
         SpellComponent: sp.c[6].split(' ').map(c => { if(c === 'V') return 'Verbal'; if(c === 'S') return 'Somatic'; return 'Material Components'}).map(s => ({SpellComponent: s})),
+        spellComponentDescription: sp.c[9],
         class: sp.f[3].split(' ').map(p => ({ class: p.capitalize().replaceAll(/\s/g, '').replaceAll(',','') })).filter(p => p.class.length > 0),
       }));
 

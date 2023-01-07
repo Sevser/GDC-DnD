@@ -81,6 +81,12 @@
       "relation": "oneToMany",
       "target": "api::archetype.archetype",
       "mappedBy": "ability"
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::character.character",
+      "inversedBy": "abilities"
     }
   }
 }

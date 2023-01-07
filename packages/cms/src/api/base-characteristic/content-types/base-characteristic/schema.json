@@ -77,6 +77,12 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "character": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::character.character",
+      "mappedBy": "base_characteristic"
     }
   }
 }
