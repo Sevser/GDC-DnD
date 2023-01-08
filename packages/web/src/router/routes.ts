@@ -3,6 +3,9 @@ const routes = [
     path: '/',
     name: 'home',
     component: () => import('@/pages/HomePage.vue'),
+    meta: {
+      title: 'Домашняя страница',
+    },
   },
   {
     path: '/pc',
@@ -35,6 +38,13 @@ const routes = [
   {
     path: '/spells',
     name: 'spells',
+    children: [
+      {
+        path: 'list',
+        name: 'Spell list',
+        component: () => import('@/pages/SpellList.vue'),
+      },
+    ],
   },
   {
     path: '/*',

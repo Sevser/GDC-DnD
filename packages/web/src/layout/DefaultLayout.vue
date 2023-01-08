@@ -1,9 +1,8 @@
 <template>
-  <v-navigation-drawer v-model="drawer" app> </v-navigation-drawer>
+  <v-navigation-drawer v-model="drawer" app> <NavigationMenu /></v-navigation-drawer>
 
   <v-app-bar app>
-    <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
+    <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
     <v-toolbar-title>Application</v-toolbar-title>
   </v-app-bar>
 
@@ -13,8 +12,13 @@
 </template>
 
 <script lang="ts">
+import NavigationMenu from '@/components/menu/NavigationMenu.vue';
+
 export default {
   name: 'DefaultLayout',
+  components: {
+    NavigationMenu,
+  },
   data: () => ({
     drawer: false,
   }),
