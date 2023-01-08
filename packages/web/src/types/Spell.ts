@@ -1,3 +1,6 @@
+import { ISchoolOfMagic } from './SchoolOfMagic';
+import { ISpellComponent } from './SpellComponent';
+
 export interface ISpell {
   title: string;
   description: string;
@@ -7,6 +10,9 @@ export interface ISpell {
   actionTypeDescription: string;
   activeTime: string;
   id: number;
+  SchoolOfMagic: ISchoolOfMagic;
+  class: ISchoolOfMagic;
+  SpellComponent: ISpellComponent[];
 }
 
 export class Spell implements ISpell {
@@ -20,7 +26,13 @@ export class Spell implements ISpell {
     this.activeTime = prop.activeTime;
     this.description = prop.description;
     this.id = prop.id;
+    this.SchoolOfMagic = prop.SchoolOfMagic;
+    this.class = prop.class;
+    this.SpellComponent = prop.SpellComponent;
   }
+  SpellComponent: ISpellComponent[];
+  class: ISchoolOfMagic;
+  SchoolOfMagic: ISchoolOfMagic;
   id: number;
   title: string;
   description: string;
