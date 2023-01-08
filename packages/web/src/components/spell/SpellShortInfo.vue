@@ -27,6 +27,7 @@ import { Spell } from '@/types/Spell';
 import { ISpellComponent } from '@/types/SpellComponent';
 import { defineComponent } from 'vue';
 
+// Todo: add i18n
 export default defineComponent({
   props: {
     spell: {
