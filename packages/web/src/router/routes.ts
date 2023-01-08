@@ -1,7 +1,7 @@
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Home',
     component: () => import('@/pages/HomePage.vue'),
     meta: {
       title: 'Домашняя страница',
@@ -9,39 +9,40 @@ const routes = [
   },
   {
     path: '/pc',
-    name: 'pc',
+    name: 'PC',
   },
   {
     path: '/npc',
-    name: 'npc',
+    name: 'NPC',
   },
   {
     path: '/location',
-    name: 'location',
+    name: 'Location',
   },
   {
     path: '/organisaion',
-    name: 'organisaion',
+    name: 'Organisaion',
   },
   {
     path: '/bestiary',
-    name: 'bestiary',
+    name: 'Bestiary',
   },
   {
     path: '/events',
-    name: 'events',
+    name: 'Events',
   },
   {
     path: '/quest',
-    name: 'quest',
+    name: 'Quest',
   },
   {
     path: '/spells',
-    name: 'spells',
+    name: 'Spells',
+    component: () => import('@/pages/SpellDefault.vue'),
     children: [
       {
         path: 'list',
-        name: 'Spell list',
+        name: 'SpellList',
         component: () => import('@/pages/SpellList.vue'),
       },
     ],

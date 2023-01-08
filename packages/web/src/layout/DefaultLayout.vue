@@ -3,7 +3,7 @@
 
   <v-app-bar app>
     <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
-    <v-toolbar-title>Application</v-toolbar-title>
+    <v-toolbar-title>{{ title }}</v-toolbar-title>
   </v-app-bar>
 
   <v-main>
@@ -18,6 +18,12 @@ export default {
   name: 'DefaultLayout',
   components: {
     NavigationMenu,
+  },
+  computed: {
+    title() {
+      // todo: read name from package.json
+      return this.$route.name || import.meta.env.VITE_APP_TITLE;
+    },
   },
   data: () => ({
     drawer: false,

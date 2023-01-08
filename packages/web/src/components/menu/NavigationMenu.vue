@@ -2,7 +2,7 @@
   <v-list density="compact">
     <v-list-subheader>Menu</v-list-subheader>
 
-    <v-list-item v-for="(item, i) in items" :key="i" :value="item" active-color="primary">
+    <v-list-item v-for="(item, i) in items" :key="i" :value="item" active-color="primary" :to="{ name: item.navigation }" :active="item.navigation === activeRoute">
       <template #prepend>
         <v-icon :icon="item.icon"></v-icon>
       </template>
@@ -15,15 +15,22 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+  computed: {
+    activeRoute() {
+      return this.$route.name;
+    },
+  },
   data: () => ({
     items: [
       {
         icon: 'mdi-inbox',
         text: 'Home',
+        navigation: 'Home',
       },
       {
         icon: 'mdi-star',
         text: 'Spells',
+        navigation: 'SpellList',
       },
     ],
     model: 1,
