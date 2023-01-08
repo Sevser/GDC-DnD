@@ -5,9 +5,9 @@ import { createApp } from 'vue';
 
 import { registerPlugins } from '@/plugins';
 
-const app = createApp(App, {
-  router,
-});
+const app = createApp(App);
+
+app.use(router);
 
 registerPlugins(app);
 

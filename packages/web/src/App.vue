@@ -1,6 +1,8 @@
 <template>
   <v-app>
-    <DefaultLayout>123</DefaultLayout>
+    <DefaultLayout>
+      <router-view />
+    </DefaultLayout>
   </v-app>
 </template>
 
