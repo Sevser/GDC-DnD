@@ -1,3 +1,4 @@
+import { ICharacterClass } from './CharacterClass';
 import { ISchoolOfMagic } from './SchoolOfMagic';
 import { ISpellComponent } from './SpellComponent';
 
@@ -11,7 +12,7 @@ export interface ISpell {
   activeTime: string;
   id: number;
   SchoolOfMagic: ISchoolOfMagic;
-  class: ISchoolOfMagic;
+  class: ICharacterClass[];
   SpellComponent: ISpellComponent[];
 }
 
@@ -31,7 +32,7 @@ export class Spell implements ISpell {
     this.SpellComponent = prop.SpellComponent;
   }
   SpellComponent: ISpellComponent[];
-  class: ISchoolOfMagic;
+  class: ICharacterClass[];
   SchoolOfMagic: ISchoolOfMagic;
   id: number;
   title: string;

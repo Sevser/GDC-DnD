@@ -26,7 +26,7 @@
 </template>
 <script lang="ts">
 import { Spell } from '@/types/Spell';
-import { CharacterClass } from '@/types/CharacterClass';
+import { ICharacterClass } from '@/types/CharacterClass';
 import { defineComponent } from 'vue';
 import CollapseToggle from '../base/collapse/CollapseToggle.vue';
 import SpellShortInfo from './SpellShortInfo.vue';
@@ -55,7 +55,7 @@ export default defineComponent({
       return this.spell?.SchoolOfMagic?.SchoolOfMagic || '';
     },
     classes() {
-      return this.spell?.class?.map((item: CharacterClass) => item.class).join(', ') || '';
+      return this.spell?.class?.map((item: ICharacterClass) => item.class).join(', ') || '';
     },
     lines() {
       return this.collapsed ? undefined : 'two';
