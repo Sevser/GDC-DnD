@@ -16,7 +16,11 @@ export default defineConfig({
     }),
     eslint(),
   ],
-  define: { 'process.env': {} },
+  define: {
+    'process.env': {
+      ASSET_URL: ASSET_URL,
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
