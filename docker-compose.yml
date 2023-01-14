@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  cms:
+    build: ./packages/cms
+    ports:
+      - "8090:8090"
+  web:
+    build:
+      context: ./packages/web
+      target: development-stage
+    ports:
+      - "8080:8080"

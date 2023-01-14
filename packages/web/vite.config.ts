@@ -6,6 +6,8 @@ import eslint from 'vite-plugin-eslint';
 import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
 
+const ASSET_URL = process.env.ASSET_URL || '';
+
 export default defineConfig({
   plugins: [
     vue(),
@@ -28,4 +30,5 @@ export default defineConfig({
     port: 8080,
     host: '0.0.0.0',
   },
+  base: ASSET_URL,
 });
