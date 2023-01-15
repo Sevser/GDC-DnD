@@ -10,43 +10,28 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Spell } from '@/types/Spell';
-import { IPagination } from '@/types/GenericStrapiData';
 import SpellItem from '@/components/spell/SpellItem.vue';
 
 export default defineComponent({
   components: {
     SpellItem,
   },
-  data: () => ({
-    spells: new Array<Spell>(),
-    pagination: {} as IPagination,
-    pending: false,
-  }),
+  data: () => ({}),
   created() {
     this.$watch(
       () => this.$route.params,
       () => {
-        this.fetchSpells();
+        this.$store.dispatch('spells/fetchSpellList');
       },
       { immediate: true }
     );
   },
-  methods: {
-    async fetchSpells() {
-      this.pending = true;
-      this.spells = [];
-      this.pagination = {} as IPagination;
-      try {
-        const result = await this.$cmsClient.fetchSpells();
-        this.spells = result.data;
-        this.pagination = result.meta.pagination;
-        // Todo: add toast to handle error;
-        // eslint-disable-next-line
-      } catch {
-      } finally {
-        this.pending = false;
-      }
+  computed: {
+    spells() {
+      return this.$store.state.spells.spellList;
+    },
+    pending() {
+      return this.$store.state.spells.spellListPending;
     },
   },
 });

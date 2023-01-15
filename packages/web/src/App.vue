@@ -15,3 +15,11 @@ export default {
   },
 };
 </script>
+<style>
+html,
+body,
+#app {
+  height: 100% !important;
+  width: 100% !important;
+}
+</style>
