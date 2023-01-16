@@ -16,7 +16,7 @@ import { defineComponent } from 'vue';
 import SpellItem from '@/components/spell/SpellItem.vue';
 import InfiniteLoading from 'v3-infinite-loading';
 import 'v3-infinite-loading/lib/style.css';
-import { Pagination } from '@/types/Paginstion';
+import { Pagination } from '@/types/Pagination';
 
 export default defineComponent({
   components: {
@@ -28,7 +28,9 @@ export default defineComponent({
     this.$watch(
       () => this.$route.params,
       () => {
-        this.$store.dispatch('spells/fetchSpellList');
+        this.$store.dispatch('spells/fetchSpellList', {
+          pagination: this.$store.state.spells.pagination,
+        });
       },
       { immediate: true }
     );

@@ -25,4 +25,10 @@ export class Pagination implements IPagination {
       pageSize: this.pageSize,
     };
   }
+  static default() {
+    return {
+      page: 1,
+      pageSize: 25,
+    };
+  }
 }

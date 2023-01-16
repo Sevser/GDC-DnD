@@ -1,4 +1,4 @@
-import { IPagination } from './Paginstion';
+import { IPagination } from './Pagination';
 
 export interface IGenericStrapiData<Type> {
   attributes: Type;

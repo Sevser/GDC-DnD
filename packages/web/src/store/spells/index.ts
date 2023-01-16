@@ -1,6 +1,6 @@
 import { cmsClient } from '@/plugins/http';
 import { IGenericQueryParams } from '@/types/GenericStrapiData';
-import { IPagination, Pagination } from '@/types/Paginstion';
+import { IPagination, Pagination } from '@/types/Pagination';
 import { Spell } from '@/types/Spell';
 import { ActionContext } from 'vuex';
 import { State } from '..';
@@ -8,7 +8,7 @@ import { State } from '..';
 export interface SpellState {
   spellListPending: boolean;
   spellList: Spell[];
-  pagination: IPagination;
+  pagination: Partial<IPagination>;
 }
 
 const spells = {
@@ -16,7 +16,7 @@ const spells = {
   state: () => ({
     spellListPending: false,
     spellList: [],
-    pagination: {} as IPagination,
+    pagination: Pagination.default(),
   }),
   actions: {
     async fetchSpellList(context: ActionContext<SpellState, State>, params: IGenericQueryParams<Spell>) {
