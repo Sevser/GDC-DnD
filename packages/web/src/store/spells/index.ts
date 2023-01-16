@@ -1,5 +1,6 @@
 import { cmsClient } from '@/plugins/http';
-import { IPagination } from '@/types/GenericStrapiData';
+import { IGenericQueryParams } from '@/types/GenericStrapiData';
+import { IPagination, Pagination } from '@/types/Paginstion';
 import { Spell } from '@/types/Spell';
 import { ActionContext } from 'vuex';
 import { State } from '..';
@@ -18,12 +19,25 @@ const spells = {
     pagination: {} as IPagination,
   }),
   actions: {
-    async fetchSpellList(context: ActionContext<SpellState, State>) {
+    async fetchSpellList(context: ActionContext<SpellState, State>, params: IGenericQueryParams<Spell>) {
       context.commit('updatePending', true);
       context.commit('updateSpellList', new Array<Spell>());
       try {
-        const result = await cmsClient.fetchSpells();
+        const result = await cmsClient.fetchSpells(params);
         context.commit('updateSpellList', result.data);
+        context.commit('updatePagination', result.meta.pagination);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch {
+      } finally {
+        context.commit('updatePending', false);
+      }
+    },
+    async fetchMoreSpellList(context: ActionContext<SpellState, State>, params: IGenericQueryParams<Spell>) {
+      context.commit('updatePending', true);
+      try {
+        const result = await cmsClient.fetchSpells(params);
+        context.commit('updateSpellList', context.state.spellList.concat(result.data));
         context.commit('updatePagination', result.meta.pagination);
         // Todo: add toast to handle error;
         // eslint-disable-next-line
@@ -41,7 +55,7 @@ const spells = {
       state.spellList = payload;
     },
     updatePagination(state: SpellState, payload: IPagination) {
-      state.pagination = payload;
+      state.pagination = new Pagination(payload);
     },
   },
 };
