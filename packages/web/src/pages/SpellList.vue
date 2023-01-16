@@ -45,7 +45,7 @@ export default defineComponent({
   },
   methods: {
     loadNextPage() {
-      if ((this.$store.state.spells.pagination as Pagination).hasNextPage) {
+      if ((this.$store.state.spells.pagination as Pagination).hasNextPage && !this.pending) {
         this.$store.dispatch('spells/fetchMoreSpellList', {
           pagination: (this.$store.state.spells.pagination as Pagination).nextPage,
         });

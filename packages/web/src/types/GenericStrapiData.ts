@@ -7,6 +7,7 @@ export interface IGenericStrapiData<Type> {
 
 export interface IMeta {
   pagination: IPagination;
+  allowedFieldSort: string[];
 }
 
 export interface IGenericStrapiMappedData<Type> {
@@ -14,8 +15,7 @@ export interface IGenericStrapiMappedData<Type> {
   meta: IMeta;
 }
 
-export type IQuerySortParams<Type extends string> = Type | `${Type}:asc` | `${Type}:desc`;
-
 export interface IGenericQueryParams<Type> {
   pagination: IPagination;
+  sort?: string;
 }

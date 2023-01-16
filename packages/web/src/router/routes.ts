@@ -40,7 +40,7 @@ const routes = [
     name: 'Spells',
     components: {
       default: () => import('@/pages/SpellDefault.vue'),
-      mobileAdditionalMenu: () => import('@/components/spell/SpellMobileAdditionalMenu.vue'),
+      mobileAdditionalMenu: () => import('@/components/spell/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
     },
     children: [
       {
