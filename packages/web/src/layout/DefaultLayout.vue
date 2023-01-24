@@ -4,6 +4,7 @@
     <v-app-bar absolute hide-on-scroll prominent ref="appBar">
       <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
       <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <login-dialog />
       <template #extension v-if="showMobileAdditionalMenu">
         <router-view name="mobileAdditionalMenu"></router-view>
       </template>
@@ -18,12 +19,14 @@
 
 <script lang="ts">
 import NavigationMenu from '@/components/menu/NavigationMenu.vue';
+import LoginDialog from '@/components/login/LoginDialog.vue';
 import { ComponentPublicInstance } from '@vue/runtime-dom';
 
 export default {
   name: 'DefaultLayout',
   components: {
     NavigationMenu,
+    LoginDialog,
   },
   computed: {
     title() {

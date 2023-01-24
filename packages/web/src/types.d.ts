@@ -6,7 +6,7 @@ import { State } from './store';
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $cmsClient: typeof cmsClient;
+    $cmsClient: cmsClient.ICMSClient;
     $client: typeof baseClient;
     $store: Store<State>;
   }

@@ -2,24 +2,11 @@
   <div @click.stop.prevent>
     <v-chip class="ma-0" label>
       {{ level }}
-      <v-tooltip activator="parent" location="bottom">{{ levelTooltipText }}</v-tooltip>
     </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="concentration">
-      K
-      <v-tooltip activator="parent" location="bottom">{{ concentrationTooltipText }}</v-tooltip>
-    </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="verbalComponent">
-      В
-      <v-tooltip activator="parent" location="bottom">{{ verbalComponentTooltipText }}</v-tooltip>
-    </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="somaticComponent">
-      С
-      <v-tooltip activator="parent" location="bottom">{{ somaticComponentTooltipText }}</v-tooltip>
-    </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="materialComponent">
-      М
-      <v-tooltip activator="parent" location="bottom">{{ materialComponentTooltipText }}</v-tooltip>
-    </v-chip>
+    <v-chip class="ma-0 ml-2" label v-if="concentration"> K </v-chip>
+    <v-chip class="ma-0 ml-2" label v-if="verbalComponent"> В </v-chip>
+    <v-chip class="ma-0 ml-2" label v-if="somaticComponent"> С </v-chip>
+    <v-chip class="ma-0 ml-2" label v-if="materialComponent"> М </v-chip>
   </div>
 </template>
 <script lang="ts">

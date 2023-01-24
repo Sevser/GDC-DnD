@@ -54,7 +54,9 @@ export default defineComponent({
     handleUpdateValue(val: boolean) {
       if (!val) {
         this.$emit('close');
-        this.$store.dispatch('spells/fetchSpellList', { ...this.$store.state.spells.sort.current.forParams });
+        if (this.$store.state.spells.sort.current) {
+          this.$store.dispatch('spells/fetchSpellList', { ...this.$store.state.spells.sort.current.forParams });
+        }
       }
     },
     updateCurrent(newValue: string) {

@@ -6,7 +6,7 @@
     <template v-else>
       <SpellItem v-for="spell in spells" :spell="spell" :key="spell.id" />
     </template>
-    <div class="d-flex justify-center align-center">
+    <div class="d-flex justify-center align-center" v-if="showLoader">
       <InfiniteLoading @infinite="loadNextPage" />
     </div>
   </div>
@@ -36,6 +36,12 @@ export default defineComponent({
     );
   },
   computed: {
+    showLoader() {
+      if (this.$store.state.spells.pagination.total) {
+        return this.spells.length > 0 && this.$store.state.spells.pagination.total > this.spells.length;
+      }
+      return this.spells.length > 0;
+    },
     spells() {
       return this.$store.state.spells.spellList;
     },

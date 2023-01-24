@@ -1,3 +1,4 @@
+import { IFilter } from './Filters';
 import { IPagination } from './Pagination';
 
 export interface IGenericStrapiData<Type> {
@@ -18,4 +19,10 @@ export interface IGenericStrapiMappedData<Type> {
 export interface IGenericQueryParams<Type> {
   pagination: IPagination;
   sort?: string;
+  filters: IFilter;
+}
+
+export interface IAuthParams {
+  identifier: string;
+  password: string;
 }
