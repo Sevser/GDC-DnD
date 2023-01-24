@@ -19,7 +19,7 @@
         <div class="text-caption">
           <v-banner :lines="lines" :text="spell.description" class="px-0 pt-0 pb-0" :border="0" />
         </div>
-        <CollapseToggle :value="collapsed" @toggle="toggle" class="collapse-toggle" />
+        <CollapseToggle v-if="showCollapse" :value="collapsed" @toggle="toggle" class="collapse-toggle" />
       </div>
     </v-card-item>
   </v-card>
@@ -44,6 +44,7 @@ export default defineComponent({
   },
   data: () => ({
     collapsed: false,
+    showCollapse: false,
   }),
   methods: {
     toggle(e: boolean) {

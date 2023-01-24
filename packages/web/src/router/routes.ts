@@ -38,7 +38,10 @@ const routes = [
   {
     path: '/spells',
     name: 'Spells',
-    component: () => import('@/pages/SpellDefault.vue'),
+    components: {
+      default: () => import('@/pages/SpellDefault.vue'),
+      mobileAdditionalMenu: () => import('@/components/spell/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
+    },
     children: [
       {
         path: 'list',

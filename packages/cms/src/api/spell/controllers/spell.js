@@ -1,9 +1,5 @@
 "use strict";
 
-/**
- * spell controller
- */
-
 const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::spell.spell", ({ strapi }) => ({
@@ -12,7 +8,7 @@ module.exports = createCoreController("api::spell.spell", ({ strapi }) => ({
 
     const { data, meta } = await super.find(ctx);
 
-    meta.date = Date.now();
+    meta.allowedFieldSort = ["title", "Level"];
 
     return { data, meta };
   },

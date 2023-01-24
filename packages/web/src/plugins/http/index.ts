@@ -9,4 +9,4 @@ const axiosClient = {
   },
 };
 
-export { baseClient as client, axiosClient };
+export { baseClient as client, axiosClient, cmsClient };

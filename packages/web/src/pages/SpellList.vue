@@ -6,46 +6,55 @@
     <template v-else>
       <SpellItem v-for="spell in spells" :spell="spell" :key="spell.id" />
     </template>
+    <div class="d-flex justify-center align-center" v-if="showLoader">
+      <InfiniteLoading @infinite="loadNextPage" />
+    </div>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Spell } from '@/types/Spell';
-import { IPagination } from '@/types/GenericStrapiData';
 import SpellItem from '@/components/spell/SpellItem.vue';
+import InfiniteLoading from 'v3-infinite-loading';
+import 'v3-infinite-loading/lib/style.css';
+import { Pagination } from '@/types/Pagination';
 
 export default defineComponent({
   components: {
     SpellItem,
+    InfiniteLoading,
   },
-  data: () => ({
-    spells: new Array<Spell>(),
-    pagination: {} as IPagination,
-    pending: false,
-  }),
+  data: () => ({}),
   created() {
     this.$watch(
       () => this.$route.params,
       () => {
-        this.fetchSpells();
+        this.$store.dispatch('spells/fetchSpellList', {
+          pagination: this.$store.state.spells.pagination,
+        });
       },
       { immediate: true }
     );
   },
+  computed: {
+    showLoader() {
+      if (this.$store.state.spells.pagination.total) {
+        return this.spells.length > 0 && this.$store.state.spells.pagination.total > this.spells.length;
+      }
+      return this.spells.length > 0;
+    },
+    spells() {
+      return this.$store.state.spells.spellList;
+    },
+    pending() {
+      return this.$store.state.spells.spellListPending && this.spells.length === 0;
+    },
+  },
   methods: {
-    async fetchSpells() {
-      this.pending = true;
-      this.spells = [];
-      this.pagination = {} as IPagination;
-      try {
-        const result = await this.$cmsClient.fetchSpells();
-        this.spells = result.data;
-        this.pagination = result.meta.pagination;
-        // Todo: add toast to handle error;
-        // eslint-disable-next-line
-      } catch {
-      } finally {
-        this.pending = false;
+    loadNextPage() {
+      if ((this.$store.state.spells.pagination as Pagination).hasNextPage && !this.pending) {
+        this.$store.dispatch('spells/fetchMoreSpellList', {
+          pagination: (this.$store.state.spells.pagination as Pagination).nextPage,
+        });
       }
     },
   },

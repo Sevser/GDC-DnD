@@ -105,43 +105,42 @@ async function createEntry({ model, entry, files }) {
 }
 
 async function createExperience(experience) {
-    return Promise.all(
-        experience.map((exp) => {
-            return createEntry({
-                model: 'experience',
-                entry: exp,
-            });
-        })
-    );
+  return Promise.all(
+    experience.map((exp) => {
+      return createEntry({
+        model: "experience",
+        entry: exp,
+      });
+    })
+  );
 }
 
 async function createArchetypes(archetypes) {
-    return Promise.all(
-      archetypes.map((arc) => {
-            return createEntry({
-                model: 'archetype',
-                entry: arc,
-            });
-        })
-    );
+  return Promise.all(
+    archetypes.map((arc) => {
+      return createEntry({
+        model: "archetype",
+        entry: arc,
+      });
+    })
+  );
 }
 
 async function createSpells(spells) {
-    return Promise.all(
-      spells.map((arc) => {
-            return createEntry({
-                model: 'spell',
-                entry: arc,
-            });
-        })
-    );
+  return Promise.all(
+    spells.map((arc) => {
+      return createEntry({
+        model: "spell",
+        entry: arc,
+      });
+    })
+  );
 }
 
 async function importSeedData() {
   // Allow read of application content types
   await setPublicPermissions({
-    category: ["find", "findOne"],
-    product: ["find", "findOne"],
+    spell: ["find", "findOne"],
   });
 
   // Create all entries
