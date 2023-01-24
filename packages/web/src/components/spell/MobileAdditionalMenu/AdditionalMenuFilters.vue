@@ -28,7 +28,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { ISpellFilters } from '@/types/Spell';
-import { ChacacterClass } from '@/types/ChacacterClass';
+import { ChacacterClass } from '@/types/CharacterClass';
 import { SchoolOfMagicType } from '@/types/SchoolOfMagic';
 import { ActionType } from '@/types/Action';
 
