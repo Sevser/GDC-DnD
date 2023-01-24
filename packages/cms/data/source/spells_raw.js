@@ -1,6 +1,6 @@
 module.exports = [
     {
-        "n": "Acid Arrow",
+        "n": "AcidArrow",
         "c": [
             "2",
             "Evocation",
