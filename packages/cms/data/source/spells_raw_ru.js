@@ -19,7 +19,7 @@ id: 1, <-- запятая в конце очень важная штука.
 module.exports = [
   {
     id: 1,
-    title: "AcidArrow",
+    title: "Aci dArrow",
     description:
       "A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.",
     HighterLevelDescription:
@@ -54,12 +54,12 @@ module.exports = [
         class: "Wizard",
       },
     ],
-    titleRus: "",
-    HighterLevelDescriptionRus: "",
-    damage: "",
-    damageRus: "",
-    damageType: "",
-    descriptionRus: "",
+    titleRus: "Кислотная стрела",
+    HighterLevelDescriptionRus: "Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, урон (и единовременный и последующий) увеличивается на 1к4 за каждый уровень ячейки выше второго.",
+    damage: "4d4 immediately and 2d4 at the end of targets next turn",
+    damageRus: "4d4 сразу и 2d4 в конце следующего хода цели",
+    damageType: "Acid",
+    descriptionRus: "К цели, находящейся в пределах дистанции, устремляется мерцающая зелёная стрела, разлетающаяся брызгами кислоты.\n\nСовершите по цели дальнобойную атаку заклинанием. При попадании цель получает единовременно урон кислотой 4к4 и урон кислотой 2к4 в конце своего следующего хода. При промахе стрела немного задевает цель, причиняет половину единовременного урона и в конце следующего хода цель урона не получает.",
   },
   {
     id: 2,
