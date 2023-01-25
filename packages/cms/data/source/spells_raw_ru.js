@@ -59,6 +59,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 2,
@@ -101,6 +102,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 3,
@@ -147,6 +149,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 4,
@@ -189,6 +192,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 5,
@@ -231,6 +235,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 6,
@@ -280,6 +285,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 7,
@@ -329,6 +335,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 8,
@@ -368,6 +375,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 9,
@@ -412,6 +420,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 10,
@@ -458,6 +467,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 11,
@@ -497,6 +507,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 12,
@@ -542,6 +553,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 13,
@@ -585,6 +597,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 14,
@@ -628,6 +641,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 15,
@@ -670,6 +684,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 16,
@@ -712,6 +727,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 17,
@@ -755,6 +771,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 18,
@@ -801,6 +818,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 19,
@@ -843,6 +861,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 20,
@@ -889,6 +908,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 21,
@@ -929,6 +949,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 22,
@@ -972,6 +993,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 23,
@@ -1018,6 +1040,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 24,
@@ -1073,6 +1096,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 25,
@@ -1118,6 +1142,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 26,
@@ -1157,6 +1182,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 27,
@@ -1203,6 +1229,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 28,
@@ -1246,6 +1273,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 29,
@@ -1285,6 +1313,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 30,
@@ -1331,6 +1360,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 31,
@@ -1380,6 +1410,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 32,
@@ -1426,6 +1457,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 33,
@@ -1474,6 +1506,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 34,
@@ -1516,6 +1549,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 35,
@@ -1555,6 +1589,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 36,
@@ -1592,6 +1627,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 37,
@@ -1635,6 +1671,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 38,
@@ -1675,6 +1712,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 39,
@@ -1717,6 +1755,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 40,
@@ -1764,6 +1803,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 41,
@@ -1816,6 +1856,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 42,
@@ -1861,6 +1902,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 43,
@@ -1911,6 +1953,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 44,
@@ -1960,6 +2003,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 45,
@@ -2000,6 +2044,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 46,
@@ -2043,6 +2088,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 47,
@@ -2090,6 +2136,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 48,
@@ -2130,6 +2177,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 49,
@@ -2169,6 +2217,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 50,
@@ -2208,6 +2257,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 51,
@@ -2259,6 +2309,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 52,
@@ -2298,6 +2349,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 53,
@@ -2344,6 +2396,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 54,
@@ -2396,6 +2449,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 55,
@@ -2439,6 +2493,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 56,
@@ -2476,6 +2531,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 57,
@@ -2520,6 +2576,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 58,
@@ -2560,6 +2617,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 59,
@@ -2600,6 +2658,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 60,
@@ -2646,6 +2705,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 61,
@@ -2682,6 +2742,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 62,
@@ -2724,6 +2785,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 63,
@@ -2764,6 +2826,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 64,
@@ -2810,6 +2873,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 65,
@@ -2858,6 +2922,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 66,
@@ -2904,6 +2969,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 67,
@@ -2947,6 +3013,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 68,
@@ -2989,6 +3056,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 69,
@@ -3036,6 +3104,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 70,
@@ -3083,6 +3152,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 71,
@@ -3127,6 +3197,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 72,
@@ -3179,6 +3250,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 73,
@@ -3227,6 +3299,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 74,
@@ -3272,6 +3345,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 75,
@@ -3323,6 +3397,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 76,
@@ -3374,6 +3449,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 77,
@@ -3416,6 +3492,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 78,
@@ -3462,6 +3539,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 79,
@@ -3501,6 +3579,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 80,
@@ -3543,6 +3622,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 81,
@@ -3600,6 +3680,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 82,
@@ -3651,6 +3732,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 83,
@@ -3699,6 +3781,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 84,
@@ -3744,6 +3827,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 85,
@@ -3789,6 +3873,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 86,
@@ -3835,6 +3920,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 87,
@@ -3880,6 +3966,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 88,
@@ -3938,6 +4025,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 89,
@@ -3981,6 +4069,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 90,
@@ -4020,6 +4109,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 91,
@@ -4056,6 +4146,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 92,
@@ -4099,6 +4190,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 93,
@@ -4147,6 +4239,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 94,
@@ -4192,6 +4285,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 95,
@@ -4241,6 +4335,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 96,
@@ -4280,6 +4375,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 97,
@@ -4329,6 +4425,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 98,
@@ -4368,6 +4465,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 99,
@@ -4420,6 +4518,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 100,
@@ -4465,6 +4564,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 101,
@@ -4510,6 +4610,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 102,
@@ -4549,6 +4650,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 103,
@@ -4591,6 +4693,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 104,
@@ -4643,6 +4746,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 105,
@@ -4688,6 +4792,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 106,
@@ -4736,6 +4841,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 107,
@@ -4772,6 +4878,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 108,
@@ -4811,6 +4918,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 109,
@@ -4854,6 +4962,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 110,
@@ -4900,6 +5009,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 111,
@@ -4951,6 +5061,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 112,
@@ -4997,6 +5108,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 113,
@@ -5049,6 +5161,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 114,
@@ -5089,6 +5202,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 115,
@@ -5125,6 +5239,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 116,
@@ -5170,6 +5285,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 117,
@@ -5216,6 +5332,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 118,
@@ -5261,6 +5378,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 119,
@@ -5303,6 +5421,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 120,
@@ -5345,6 +5464,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 121,
@@ -5390,6 +5510,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 122,
@@ -5436,6 +5557,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 123,
@@ -5479,6 +5601,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 124,
@@ -5522,6 +5645,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 125,
@@ -5569,6 +5693,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 126,
@@ -5614,6 +5739,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 127,
@@ -5656,6 +5782,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 128,
@@ -5705,6 +5832,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 129,
@@ -5754,6 +5882,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 130,
@@ -5794,6 +5923,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 131,
@@ -5842,6 +5972,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 132,
@@ -5890,6 +6021,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 133,
@@ -5942,6 +6074,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 134,
@@ -5984,6 +6117,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 135,
@@ -6032,6 +6166,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 136,
@@ -6080,6 +6215,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 137,
@@ -6126,6 +6262,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 138,
@@ -6172,6 +6309,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 139,
@@ -6211,6 +6349,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 140,
@@ -6250,6 +6389,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 141,
@@ -6297,6 +6437,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 142,
@@ -6344,6 +6485,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 143,
@@ -6389,6 +6531,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 144,
@@ -6431,6 +6574,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 145,
@@ -6476,6 +6620,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 146,
@@ -6525,6 +6670,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 147,
@@ -6561,6 +6707,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 148,
@@ -6604,6 +6751,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 149,
@@ -6646,6 +6794,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 150,
@@ -6686,6 +6835,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 151,
@@ -6734,6 +6884,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 152,
@@ -6774,6 +6925,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 153,
@@ -6822,6 +6974,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 154,
@@ -6861,6 +7014,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 155,
@@ -6906,6 +7060,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 156,
@@ -6949,6 +7104,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 157,
@@ -6992,6 +7148,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 158,
@@ -7038,6 +7195,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 159,
@@ -7079,6 +7237,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 160,
@@ -7122,6 +7281,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 161,
@@ -7165,6 +7325,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 162,
@@ -7211,6 +7372,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 163,
@@ -7263,6 +7425,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 164,
@@ -7321,6 +7484,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 165,
@@ -7364,6 +7528,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 166,
@@ -7401,6 +7566,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 167,
@@ -7450,6 +7616,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 168,
@@ -7499,6 +7666,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 169,
@@ -7542,6 +7710,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 170,
@@ -7585,6 +7754,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 171,
@@ -7628,6 +7798,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 172,
@@ -7670,6 +7841,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 173,
@@ -7710,6 +7882,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 174,
@@ -7760,6 +7933,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 175,
@@ -7799,6 +7973,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 176,
@@ -7851,6 +8026,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 177,
@@ -7890,6 +8066,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 178,
@@ -7941,6 +8118,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 179,
@@ -7983,6 +8161,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 180,
@@ -8029,6 +8208,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 181,
@@ -8080,6 +8260,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 182,
@@ -8126,6 +8307,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 183,
@@ -8174,6 +8356,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 184,
@@ -8221,6 +8404,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 185,
@@ -8269,6 +8453,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 186,
@@ -8326,6 +8511,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 187,
@@ -8383,6 +8569,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 188,
@@ -8435,6 +8622,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 189,
@@ -8480,6 +8668,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 190,
@@ -8528,6 +8717,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 191,
@@ -8578,6 +8768,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 192,
@@ -8618,6 +8809,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 193,
@@ -8661,6 +8853,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 194,
@@ -8704,6 +8897,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 195,
@@ -8747,6 +8941,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 196,
@@ -8790,6 +8985,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 197,
@@ -8842,6 +9038,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 198,
@@ -8888,6 +9085,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 199,
@@ -8927,6 +9125,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 200,
@@ -8964,6 +9163,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 201,
@@ -9014,6 +9214,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 202,
@@ -9053,6 +9254,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 203,
@@ -9095,6 +9297,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 204,
@@ -9146,6 +9349,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 205,
@@ -9194,6 +9398,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 206,
@@ -9236,6 +9441,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 207,
@@ -9278,6 +9484,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 208,
@@ -9326,6 +9533,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 209,
@@ -9368,6 +9576,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 210,
@@ -9413,6 +9622,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 211,
@@ -9452,6 +9662,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 212,
@@ -9494,6 +9705,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 213,
@@ -9537,6 +9749,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 214,
@@ -9580,6 +9793,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 215,
@@ -9629,6 +9843,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 216,
@@ -9678,6 +9893,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 217,
@@ -9724,6 +9940,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 218,
@@ -9766,6 +9983,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 219,
@@ -9806,6 +10024,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 220,
@@ -9842,6 +10061,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 221,
@@ -9878,6 +10098,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 222,
@@ -9928,6 +10149,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 223,
@@ -9983,6 +10205,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 224,
@@ -10025,6 +10248,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 225,
@@ -10073,6 +10297,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 226,
@@ -10124,6 +10349,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 227,
@@ -10169,6 +10395,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 228,
@@ -10214,6 +10441,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 229,
@@ -10248,6 +10476,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 230,
@@ -10296,6 +10525,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 231,
@@ -10338,6 +10568,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 232,
@@ -10377,6 +10608,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 233,
@@ -10417,6 +10649,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 234,
@@ -10456,6 +10689,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 235,
@@ -10502,6 +10736,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 236,
@@ -10548,6 +10783,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 237,
@@ -10599,6 +10835,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 238,
@@ -10651,6 +10888,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 239,
@@ -10699,6 +10937,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 240,
@@ -10744,6 +10983,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 241,
@@ -10790,6 +11030,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 242,
@@ -10832,6 +11073,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 243,
@@ -10874,6 +11116,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 244,
@@ -10919,6 +11162,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 245,
@@ -10959,6 +11203,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 246,
@@ -11007,6 +11252,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 247,
@@ -11050,6 +11296,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 248,
@@ -11095,6 +11342,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 249,
@@ -11138,6 +11386,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 250,
@@ -11186,6 +11435,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 251,
@@ -11232,6 +11482,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 252,
@@ -11275,6 +11526,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 253,
@@ -11314,6 +11566,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 254,
@@ -11356,6 +11609,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 255,
@@ -11399,6 +11653,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 256,
@@ -11451,6 +11706,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 257,
@@ -11494,6 +11750,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 258,
@@ -11543,6 +11800,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 259,
@@ -11588,6 +11846,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 260,
@@ -11636,6 +11895,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 261,
@@ -11679,6 +11939,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 262,
@@ -11725,6 +11986,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 263,
@@ -11777,6 +12039,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 264,
@@ -11820,6 +12083,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 265,
@@ -11866,6 +12130,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 266,
@@ -11909,6 +12174,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 267,
@@ -11951,6 +12217,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 268,
@@ -11996,6 +12263,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 269,
@@ -12044,6 +12312,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 270,
@@ -12084,6 +12353,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 271,
@@ -12134,6 +12404,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 272,
@@ -12182,6 +12453,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 273,
@@ -12227,6 +12499,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 274,
@@ -12266,6 +12539,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 275,
@@ -12311,6 +12585,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 276,
@@ -12356,6 +12631,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 277,
@@ -12401,6 +12677,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 278,
@@ -12449,6 +12726,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 279,
@@ -12495,6 +12773,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 280,
@@ -12538,6 +12817,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 281,
@@ -12578,6 +12858,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 282,
@@ -12626,6 +12907,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 283,
@@ -12675,6 +12957,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 284,
@@ -12727,6 +13010,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 285,
@@ -12766,6 +13050,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 286,
@@ -12815,6 +13100,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 287,
@@ -12863,6 +13149,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 288,
@@ -12911,6 +13198,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 289,
@@ -12957,6 +13245,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 290,
@@ -12999,6 +13288,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 291,
@@ -13042,6 +13332,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 292,
@@ -13084,6 +13375,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 293,
@@ -13127,6 +13419,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 294,
@@ -13163,6 +13456,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 295,
@@ -13212,6 +13506,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 296,
@@ -13251,6 +13546,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 297,
@@ -13293,6 +13589,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 298,
@@ -13344,6 +13641,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 299,
@@ -13383,6 +13681,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 300,
@@ -13425,6 +13724,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 301,
@@ -13474,6 +13774,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 302,
@@ -13517,6 +13818,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 303,
@@ -13572,6 +13874,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 304,
@@ -13617,6 +13920,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 305,
@@ -13665,6 +13969,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 306,
@@ -13707,6 +14012,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 307,
@@ -13743,6 +14049,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 308,
@@ -13792,6 +14099,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 309,
@@ -13835,6 +14143,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 310,
@@ -13878,6 +14187,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 311,
@@ -13926,6 +14236,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 312,
@@ -13969,6 +14280,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 313,
@@ -14012,6 +14324,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 314,
@@ -14063,6 +14376,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 315,
@@ -14114,6 +14428,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 316,
@@ -14159,6 +14474,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 317,
@@ -14198,6 +14514,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 318,
@@ -14237,6 +14554,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 319,
@@ -14282,6 +14600,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 320,
@@ -14321,6 +14640,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 321,
@@ -14357,6 +14677,7 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
   {
     id: 322,
@@ -14402,5 +14723,6 @@ module.exports = [
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   },
 ];
