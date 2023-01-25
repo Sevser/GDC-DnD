@@ -17,6 +17,7 @@ spells = spells.map((spell) => {
     damage: "",
     damageRus: "",
     damageType: "",
+    descriptionRus: "",
   };
 });
 
