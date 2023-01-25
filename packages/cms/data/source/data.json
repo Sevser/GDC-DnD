@@ -33,7 +33,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 2,
@@ -69,7 +74,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Брызги кислоты",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 3,
@@ -108,7 +118,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Подмога",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 4,
@@ -144,7 +159,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Сигнал тревоги",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 5,
@@ -180,7 +200,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Смена обличья",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 6,
@@ -222,7 +247,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Дружба с животными",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 7,
@@ -264,7 +294,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Почтовое животное",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 8,
@@ -297,7 +332,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Превращение в животных",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 9,
@@ -333,7 +373,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Восставший труп",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 10,
@@ -372,7 +417,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Оживление вещей",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 11,
@@ -405,7 +455,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Преграда жизни",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 12,
@@ -444,7 +499,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Преграда магии",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 13,
@@ -480,7 +540,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 14,
@@ -516,7 +581,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 15,
@@ -552,7 +622,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Магический глаз",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 16,
@@ -588,7 +663,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 17,
@@ -624,7 +704,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Волшебный замок",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 18,
@@ -663,7 +748,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 19,
@@ -699,7 +789,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 20,
@@ -738,7 +833,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Проекция в астрал",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 21,
@@ -771,7 +871,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Гадание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 22,
@@ -807,7 +912,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Пробуждение разума",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 23,
@@ -846,7 +956,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Порча",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 24,
@@ -894,7 +1009,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Изгнание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 25,
@@ -933,7 +1053,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Дубовая кора",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 26,
@@ -966,7 +1091,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Маяк надежды",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 27,
@@ -1005,7 +1135,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Проклятие",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 28,
@@ -1041,7 +1176,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 29,
@@ -1074,7 +1214,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Стена клинков",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 30,
@@ -1113,7 +1258,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Благословение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 31,
@@ -1155,7 +1305,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Усыхание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 32,
@@ -1194,7 +1349,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 33,
@@ -1236,7 +1396,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 34,
@@ -1272,7 +1437,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Мерцание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 35,
@@ -1305,7 +1475,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Размытый образ",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 36,
@@ -1335,7 +1510,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Клеймящая кара",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 37,
@@ -1371,7 +1551,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Огненные ладони",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 38,
@@ -1404,7 +1589,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Призыв молнии",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 39,
@@ -1440,7 +1630,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Умиротворение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 40,
@@ -1479,7 +1674,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Пляшущая молния",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 41,
@@ -1524,7 +1724,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Очарование личности",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 42,
@@ -1563,7 +1768,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Леденящее прикосновение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 43,
@@ -1605,7 +1815,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Круг смерти",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 44,
@@ -1647,7 +1862,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Подсматривание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 45,
@@ -1680,7 +1900,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Двойник",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 46,
@@ -1716,7 +1941,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Облако смерти",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 47,
@@ -1755,7 +1985,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Сверкающие брызги",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 48,
@@ -1788,7 +2023,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Приказ",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 49,
@@ -1821,7 +2061,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Общение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 50,
@@ -1854,7 +2099,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Общение с природой",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 51,
@@ -1899,7 +2149,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Понимание языков",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 52,
@@ -1932,7 +2187,12 @@
       {
         "class": "Bard"
       }
-    ]
+    ],
+    "titleRus": "Принуждение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 53,
@@ -1971,7 +2231,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Конус холода",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 54,
@@ -2016,7 +2281,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Смятение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 55,
@@ -2052,7 +2322,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Вызов животных",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 56,
@@ -2082,7 +2357,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Вызов небожителя",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 57,
@@ -2118,7 +2398,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Вызов элементаля",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 58,
@@ -2151,7 +2436,12 @@
       {
         "class": "Warlock"
       }
-    ]
+    ],
+    "titleRus": "Вызов феи",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 59,
@@ -2184,7 +2474,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Вызов малых элементалей",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 60,
@@ -2223,7 +2518,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Вызов лесных обитателей",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 61,
@@ -2253,7 +2553,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Связь с иным миром",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 62,
@@ -2289,7 +2594,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Заражение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 63,
@@ -2322,7 +2632,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Предосторожность",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 64,
@@ -2361,7 +2676,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Вечный огонь",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 65,
@@ -2403,7 +2723,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Власть над водами",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 66,
@@ -2442,7 +2767,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Власть над погодой",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 67,
@@ -2478,7 +2808,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Контрзаклинание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 68,
@@ -2514,7 +2849,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Сотворение пищи и воды",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 69,
@@ -2553,7 +2893,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Сотворение нежити",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 70,
@@ -2592,7 +2937,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Сотворение или уничтожение воды",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 71,
@@ -2628,7 +2978,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Сотворение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 72,
@@ -2673,7 +3028,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Лечение ран",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 73,
@@ -2715,7 +3075,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Пляшущие огоньки",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 74,
@@ -2754,7 +3119,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Тьма",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 75,
@@ -2799,7 +3169,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Тёмное зрение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 76,
@@ -2844,7 +3219,12 @@
       {
         "class": "Sorcerer"
       }
-    ]
+    ],
+    "titleRus": "Дневной свет",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 77,
@@ -2880,7 +3260,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Защита от смерти",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 78,
@@ -2919,7 +3304,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Замедленный огненный шар",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 79,
@@ -2952,7 +3342,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Демиплан",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 80,
@@ -2988,7 +3383,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Обнаружение добра и зла",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 81,
@@ -3039,7 +3439,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Обнаружение магии",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 82,
@@ -3084,7 +3489,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Обнаружение болезней и яда",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 83,
@@ -3126,7 +3536,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Обнаружение мыслей",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 84,
@@ -3165,7 +3580,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Переносящая дверь",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 85,
@@ -3204,7 +3624,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Маскировка",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 86,
@@ -3243,7 +3668,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Распад",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 87,
@@ -3282,7 +3712,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Рассеивание добра и зла",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 88,
@@ -3333,7 +3768,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Рассеивание магии",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 89,
@@ -3369,7 +3809,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Предсказание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 90,
@@ -3402,7 +3847,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Божественное благоволение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 91,
@@ -3432,7 +3882,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Божественное слово",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 92,
@@ -3468,7 +3923,12 @@
       {
         "class": "Sorcerer"
       }
-    ]
+    ],
+    "titleRus": "Подчинение зверя",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 93,
@@ -3510,7 +3970,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Подчинение чудовища",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 94,
@@ -3549,7 +4014,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Подчинение личности",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 95,
@@ -3591,7 +4061,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Вещий сон",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 96,
@@ -3624,7 +4099,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Искусство друидов",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 97,
@@ -3666,7 +4146,12 @@
       {
         "class": "Sorcerer"
       }
-    ]
+    ],
+    "titleRus": "Землетрясение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 98,
@@ -3699,7 +4184,12 @@
       {
         "class": "Warlock"
       }
-    ]
+    ],
+    "titleRus": "Мистический заряд",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 99,
@@ -3744,7 +4234,12 @@
       {
         "class": "Sorcerer"
       }
-    ]
+    ],
+    "titleRus": "Улучшение характеристики",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 100,
@@ -3783,7 +4278,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 101,
@@ -3822,7 +4322,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 102,
@@ -3855,7 +4360,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Опутывание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 103,
@@ -3891,7 +4401,12 @@
       {
         "class": "Warlock"
       }
-    ]
+    ],
+    "titleRus": "Речь златоуста",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 104,
@@ -3936,7 +4451,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Эфирность",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 105,
@@ -3975,7 +4495,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Поспешное отступление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 106,
@@ -4017,7 +4542,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Разящее око",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 107,
@@ -4047,7 +4577,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Изготовление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 108,
@@ -4080,7 +4615,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Огонь фей",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 109,
@@ -4116,7 +4656,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 110,
@@ -4155,7 +4700,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Псевдожизнь",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 111,
@@ -4200,7 +4750,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Ужас",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 112,
@@ -4239,7 +4794,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Падение пёрышком",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 113,
@@ -4284,7 +4844,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Слабоумие",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 114,
@@ -4317,7 +4882,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Поиск фамильяра",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 115,
@@ -4347,7 +4917,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Поиск скакуна",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 116,
@@ -4386,7 +4961,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Поиск ловушек",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 117,
@@ -4425,7 +5005,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Поиск пути",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 118,
@@ -4464,7 +5049,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Перст смерти",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 119,
@@ -4500,7 +5090,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Огненный снаряд",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 120,
@@ -4536,7 +5131,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Огненный щит",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 121,
@@ -4575,7 +5175,12 @@
       {
         "class": "Sorcerer"
       }
-    ]
+    ],
+    "titleRus": "Огненная буря",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 122,
@@ -4614,7 +5219,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Огненный шар",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 123,
@@ -4650,7 +5260,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Горящий клинок",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 124,
@@ -4686,7 +5301,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Небесный огонь",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 125,
@@ -4725,7 +5345,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Пылающий шар",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 126,
@@ -4764,7 +5389,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Окаменение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 127,
@@ -4800,7 +5430,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 128,
@@ -4842,7 +5477,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Полёт",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 129,
@@ -4884,7 +5524,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Туманное облако",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 130,
@@ -4917,7 +5562,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Запрет",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 131,
@@ -4959,7 +5609,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Узилище",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 132,
@@ -5001,7 +5656,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Предвидение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 133,
@@ -5046,7 +5706,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Свобода перемещения",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 134,
@@ -5082,7 +5747,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 135,
@@ -5124,7 +5794,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Газообразная форма",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 136,
@@ -5166,7 +5841,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Врата",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 137,
@@ -5205,7 +5885,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Обет",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 138,
@@ -5244,7 +5929,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Нетленные останки",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 139,
@@ -5277,7 +5967,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Гигантское насекомое",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 140,
@@ -5310,7 +6005,12 @@
       {
         "class": "Warlock"
       }
-    ]
+    ],
+    "titleRus": "Находчивость",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 141,
@@ -5349,7 +6049,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Сфера неуязвимости",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 142,
@@ -5388,7 +6093,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Охранные руны",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 143,
@@ -5427,7 +6137,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Чудо-ягоды",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 144,
@@ -5463,7 +6178,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Скольжение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 145,
@@ -5502,7 +6222,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Высшая невидимость",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 146,
@@ -5544,7 +6269,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Высшее восстановление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 147,
@@ -5574,7 +6304,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Страж веры",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 148,
@@ -5610,7 +6345,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Стражи",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 149,
@@ -5646,7 +6386,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Указание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 150,
@@ -5679,7 +6424,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Направленный снаряд",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 151,
@@ -5721,7 +6471,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Порыв ветра",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 152,
@@ -5754,7 +6509,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Святилище",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 153,
@@ -5796,7 +6556,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Мираж",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 154,
@@ -5829,7 +6594,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Поражение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 155,
@@ -5868,7 +6638,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Ускорение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 156,
@@ -5904,7 +6679,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Полное исцеление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 157,
@@ -5940,7 +6720,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Лечащее слово",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 158,
@@ -5979,7 +6764,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Раскалённый металл",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 159,
@@ -6012,7 +6802,12 @@
       {
         "class": "Warlock"
       }
-    ]
+    ],
+    "titleRus": "Адское возмездие",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 160,
@@ -6048,7 +6843,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Пир героев",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 161,
@@ -6084,7 +6884,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Героизм",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 162,
@@ -6123,7 +6928,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 163,
@@ -6168,7 +6978,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Удержание чудовища",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 164,
@@ -6219,7 +7034,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Удержание личности",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 165,
@@ -6255,7 +7075,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Аура святости",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 166,
@@ -6285,7 +7110,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Метка охотника",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 167,
@@ -6327,7 +7157,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Гипнотический узор",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 168,
@@ -6369,7 +7204,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Град",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 169,
@@ -6405,7 +7245,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Опознание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 170,
@@ -6441,7 +7286,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Невидимое письмо",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 171,
@@ -6477,7 +7327,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Заточение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 172,
@@ -6513,7 +7368,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Воспламеняющаяся туча",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 173,
@@ -6546,7 +7406,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Нанесение ран",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 174,
@@ -6588,7 +7453,12 @@
       {
         "class": "Sorcerer"
       }
-    ]
+    ],
+    "titleRus": "Нашествие насекомых",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 175,
@@ -6621,7 +7491,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 176,
@@ -6666,7 +7541,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Невидимость",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 177,
@@ -6699,7 +7579,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 178,
@@ -6744,7 +7629,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Прыжок",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 179,
@@ -6780,7 +7670,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Открывание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 180,
@@ -6819,7 +7714,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Знание легенд",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 181,
@@ -6864,7 +7764,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Малое восстановление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 182,
@@ -6903,7 +7808,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Левитация",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 183,
@@ -6945,7 +7855,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Свет",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 184,
@@ -6984,7 +7899,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Молния",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 185,
@@ -7026,7 +7946,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Поиск животных или растений",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 186,
@@ -7077,7 +8002,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Поиск существа",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 187,
@@ -7128,7 +8058,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Поиск предмета",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 188,
@@ -7173,7 +8108,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Скороход",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 189,
@@ -7212,7 +8152,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Доспехи мага",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 190,
@@ -7254,7 +8199,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Волшебная рука",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 191,
@@ -7296,7 +8246,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Магический круг",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 192,
@@ -7329,7 +8284,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Волшебный сосуд",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 193,
@@ -7365,7 +8325,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Волшебная стрела",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 194,
@@ -7401,7 +8366,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Волшебные уста",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 195,
@@ -7437,7 +8407,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Магическое оружие",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 196,
@@ -7473,7 +8448,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 197,
@@ -7518,7 +8498,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Образ",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 198,
@@ -7557,7 +8542,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Множественное лечение ран",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 199,
@@ -7590,7 +8580,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Множественное полное исцеление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 200,
@@ -7620,7 +8615,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Множественное лечащее слово",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 201,
@@ -7662,7 +8662,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Множественное внушение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 202,
@@ -7695,7 +8700,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Лабиринт",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 203,
@@ -7731,7 +8741,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Слияние с камнем",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 204,
@@ -7776,7 +8791,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Починка",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 205,
@@ -7818,7 +8838,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Сообщение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 206,
@@ -7854,7 +8879,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Метеоритный дождь",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 207,
@@ -7890,7 +8920,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Сокрытие разума",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 208,
@@ -7932,7 +8967,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Малая иллюзия",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 209,
@@ -7968,7 +9008,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Таинственный мираж",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 210,
@@ -8007,7 +9052,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Отражения",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 211,
@@ -8040,7 +9090,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Фальшивый двойник",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 212,
@@ -8076,7 +9131,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Туманный шаг",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 213,
@@ -8112,7 +9172,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Изменение памяти",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 214,
@@ -8148,7 +9213,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Лунный луч",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 215,
@@ -8190,7 +9260,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Движение почвы",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 216,
@@ -8232,7 +9307,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Необнаружимость",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 217,
@@ -8271,7 +9351,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Бесследное передвижение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 218,
@@ -8307,7 +9392,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Создание прохода",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 219,
@@ -8340,7 +9430,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Воображаемый убийца",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 220,
@@ -8370,7 +9465,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Призрачный скакун",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 221,
@@ -8400,7 +9500,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Планарный союзник",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 222,
@@ -8442,7 +9547,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Планарные узы",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 223,
@@ -8490,7 +9600,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Уход в иной мир",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 224,
@@ -8526,7 +9641,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Рост растений",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 225,
@@ -8568,7 +9688,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Ядовитые брызги",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 226,
@@ -8613,7 +9738,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Превращение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 227,
@@ -8652,7 +9782,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Слово силы: Смерть",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 228,
@@ -8691,7 +9826,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Слово силы: Оглушение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 229,
@@ -8718,7 +9858,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Молебен лечения",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 230,
@@ -8760,7 +9905,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Фокусы",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 231,
@@ -8796,7 +9946,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Радужные брызги",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 232,
@@ -8829,7 +9984,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Радужная стена",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 233,
@@ -8862,7 +10022,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 234,
@@ -8895,7 +10060,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Сотворение пламени",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 235,
@@ -8934,7 +10104,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Заданная иллюзия",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 236,
@@ -8973,7 +10148,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Проекция",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 237,
@@ -9018,7 +10198,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Защита от энергии",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 238,
@@ -9063,7 +10248,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Защита от добра и зла",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 239,
@@ -9105,7 +10295,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Защита от яда",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 240,
@@ -9144,7 +10339,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Очищение пищи и питья",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 241,
@@ -9183,7 +10383,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Оживление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 242,
@@ -9219,7 +10424,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Луч слабости",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 243,
@@ -9255,7 +10465,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Луч холода",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 244,
@@ -9294,7 +10509,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Регенерация",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 245,
@@ -9327,7 +10547,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Реинкарнация",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 246,
@@ -9369,7 +10594,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Снятие проклятья",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 247,
@@ -9405,7 +10635,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 248,
@@ -9444,7 +10679,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Сопротивление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 249,
@@ -9480,7 +10720,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Воскрешение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 250,
@@ -9522,7 +10767,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Изменение тяготения",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 251,
@@ -9561,7 +10811,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Возрождение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 252,
@@ -9597,7 +10852,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Трюк с верёвкой",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 253,
@@ -9630,7 +10890,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Священное пламя",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 254,
@@ -9666,7 +10931,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Убежище",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 255,
@@ -9702,7 +10972,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Палящий луч",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 256,
@@ -9747,7 +11022,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Наблюдение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 257,
@@ -9783,7 +11063,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 258,
@@ -9825,7 +11110,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Видение невидимого",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 259,
@@ -9864,7 +11154,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Притворство",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 260,
@@ -9906,7 +11201,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Послание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 261,
@@ -9942,7 +11242,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Изоляция",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 262,
@@ -9981,7 +11286,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Полное превращение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 263,
@@ -10026,7 +11336,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Дребезги",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 264,
@@ -10062,7 +11377,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Щит",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 265,
@@ -10101,7 +11421,12 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Щит веры",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 266,
@@ -10137,7 +11462,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Дубинка",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 267,
@@ -10173,7 +11503,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Электрошок",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 268,
@@ -10212,7 +11547,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Тишина",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 269,
@@ -10254,7 +11594,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Безмолвный образ",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 270,
@@ -10287,7 +11632,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Подобие",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 271,
@@ -10329,7 +11679,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Усыпление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 272,
@@ -10371,7 +11726,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Метель",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 273,
@@ -10410,7 +11770,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Замедление",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 274,
@@ -10443,7 +11808,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Уход за умирающим",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 275,
@@ -10482,7 +11852,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Разговор с животными",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 276,
@@ -10521,7 +11896,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Разговор с мёртвыми",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 277,
@@ -10560,7 +11940,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Разговор с растениями",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 278,
@@ -10602,7 +11987,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Паук",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 279,
@@ -10641,7 +12031,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Шипы",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 280,
@@ -10677,7 +12072,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Духовные стражи",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 281,
@@ -10710,7 +12110,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Божественное оружие",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 282,
@@ -10752,7 +12157,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Зловонное облако",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 283,
@@ -10794,7 +12204,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Изменение формы камня",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 284,
@@ -10839,7 +12254,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Каменная кожа",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 285,
@@ -10872,7 +12292,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Гроза гнева",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 286,
@@ -10914,7 +12339,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Внушение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 287,
@@ -10956,7 +12386,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Солнечный луч",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 288,
@@ -10998,7 +12433,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Солнечный ожог",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 289,
@@ -11037,7 +12477,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Знак",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 290,
@@ -11073,7 +12518,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Телекинез",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 291,
@@ -11109,7 +12559,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 292,
@@ -11145,7 +12600,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Телепортация",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 293,
@@ -11181,7 +12641,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Круг телепортации",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 294,
@@ -11211,7 +12676,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Чудотворство",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 295,
@@ -11253,7 +12723,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Волна грома",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 296,
@@ -11286,7 +12761,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Остановка времени",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 297,
@@ -11322,7 +12802,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 298,
@@ -11367,7 +12852,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Языки",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 299,
@@ -11400,7 +12890,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Путешествие через растения",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 300,
@@ -11436,7 +12931,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Древесный путь",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 301,
@@ -11478,7 +12978,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Истинное превращение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 302,
@@ -11514,7 +13019,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Истинное воскрешение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 303,
@@ -11562,7 +13072,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Истинное зрение",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 304,
@@ -11601,7 +13116,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Меткий удар",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 305,
@@ -11643,7 +13163,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Невидимый слуга",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 306,
@@ -11679,7 +13204,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Прикосновение вампира",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 307,
@@ -11709,7 +13239,12 @@
       {
         "class": "Bard"
       }
-    ]
+    ],
+    "titleRus": "Злая насмешка",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 308,
@@ -11751,7 +13286,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Огненная стена",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 309,
@@ -11787,7 +13327,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Силовая стена",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 310,
@@ -11823,7 +13368,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Ледяная стена",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 311,
@@ -11865,7 +13415,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Каменная стена",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 312,
@@ -11901,7 +13456,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Терновая стена",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 313,
@@ -11937,7 +13497,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Охраняющая связь",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 314,
@@ -11982,7 +13547,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Подводное дыхание",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 315,
@@ -12027,7 +13597,12 @@
       {
         "class": "Sorcerer"
       }
-    ]
+    ],
+    "titleRus": "Хождение по воде",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 316,
@@ -12066,7 +13641,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Паутина",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 317,
@@ -12099,7 +13679,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Смертный ужас",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 318,
@@ -12132,7 +13717,12 @@
       {
         "class": "Druid"
       }
-    ]
+    ],
+    "titleRus": "Хождение по ветру",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 319,
@@ -12171,7 +13761,12 @@
       {
         "class": "Ranger"
       }
-    ]
+    ],
+    "titleRus": "Стена ветров",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 320,
@@ -12204,7 +13799,12 @@
       {
         "class": "Wizard"
       }
-    ]
+    ],
+    "titleRus": "Исполнение желаний",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 321,
@@ -12234,7 +13834,12 @@
       {
         "class": "Cleric"
       }
-    ]
+    ],
+    "titleRus": "Слово возврата",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   },
   {
     "id": 322,
@@ -12273,6 +13878,11 @@
       {
         "class": "Paladin"
       }
-    ]
+    ],
+    "titleRus": "Область истины",
+    "HighterLevelDescriptionRus": "",
+    "damage": "",
+    "damageRus": "",
+    "damageType": ""
   }
 ]
