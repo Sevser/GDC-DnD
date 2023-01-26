@@ -60,6 +60,13 @@ export default {
     this.handleResize();
   },
   render() {
+    const childrenForMain: IListPreviewLayoutMain = {
+      default: () => this.$slots.default && this.$slots.default(),
+    };
+    if (this.hasListContentView[0]) {
+      childrenForMain.listContentView = () => h(this.hasListContentView[1]);
+    }
+
     const childrenForAppBar: IVAppBarChildren = {
       default: () => [
         h(VAppBarNavIcon, {
@@ -76,19 +83,15 @@ export default {
       ],
     };
     if (this.showMobileAdditionalMenu) {
-      const matched = this.$router.currentRoute.value.matched;
-      const route = matched && matched.find((route) => Reflect.has(route.components, 'mobileAdditionalMenu'));
-      if (route) {
-        childrenForAppBar.extension = () => h(route.components.mobileAdditionalMenu);
+      if (!this.$vuetify.display.xs || !this.hasListContentView[0]) {
+        const matched = this.$router.currentRoute.value.matched;
+        const route = matched && matched.find((route) => Reflect.has(route.components, 'mobileAdditionalMenu'));
+        if (route) {
+          childrenForAppBar.extension = () => h(route.components.mobileAdditionalMenu);
+        }
       }
     }
 
-    const childrenForMain: IListPreviewLayoutMain = {
-      default: () => this.$slots.default && this.$slots.default(),
-    };
-    if (this.hasListContentView[0]) {
-      childrenForMain.listContentView = () => h(this.hasListContentView[1]);
-    }
     return [
       h(
         VNavigationDrawer,

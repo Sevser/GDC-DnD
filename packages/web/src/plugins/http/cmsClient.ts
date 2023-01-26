@@ -25,9 +25,15 @@ const fetchSpells = async (params: IGenericQueryParams<Spell>): Promise<IGeneric
   };
 };
 
+const fetchSpell = async (spellId: string | number): Promise<Spell> => {
+  const result = await baseClient.get(`${cmsUrl}/api/spells/${spellId}`);
+  return new Spell({ ...result.data.data.attributes, id: result.data.data.id });
+};
+
 export interface ICMSClient {
   login: typeof login;
   fetchSpells: typeof fetchSpells;
+  fetchSpell: typeof fetchSpell;
 }
 
-export { fetchSpells, login };
+export { fetchSpells, login, fetchSpell };

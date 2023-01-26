@@ -30,12 +30,13 @@ export default defineComponent({
   },
   data: () => ({}),
   created() {
-    this.$watch(
+    const unwatch = this.$watch(
       () => this.$route.params,
       () => {
         this.$store.dispatch('spells/fetchSpellList', {
           pagination: (this.$store.state.spells.pagination as Pagination).currentPage,
         });
+        this.$nextTick(() => unwatch());
       },
       { immediate: true }
     );

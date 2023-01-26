@@ -14,6 +14,16 @@ const { createCoreController } = require("@strapi/strapi").factories;
 */
 
 module.exports = createCoreController("api::spell.spell", ({ strapi }) => ({
+  async findOne(ctx) {
+    ctx.query = {
+      ...ctx.query,
+      local: "en",
+      populate: "*",
+    };
+    const { data, meta } = await super.findOne(ctx);
+
+    return { data, meta };
+  },
   async find(ctx) {
     ctx.query = {
       ...ctx.query,

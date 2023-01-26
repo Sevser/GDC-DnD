@@ -15,6 +15,8 @@ export interface SpellState {
     available: Sorting[];
   };
   filters: ISpellFilters;
+  spell?: Spell;
+  spellPending: boolean;
 }
 
 const spells = {
@@ -28,10 +30,25 @@ const spells = {
       available: new Array<Sorting>(),
     },
     filters: {},
+    spell: undefined,
+    spellPending: false,
   }),
   actions: {
+    async fetchSpell(context: ActionContext<SpellState, State>, spellId: number | string) {
+      context.commit('updateSpellPending', true);
+      context.commit('updateSpell');
+      try {
+        const spell = await cmsClient.fetchSpell(spellId);
+        context.commit('updateSpell', spell);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch (e) {
+      } finally {
+        context.commit('updateSpellPending', false);
+      }
+    },
     async fetchSpellList(context: ActionContext<SpellState, State>, params: IGenericQueryParams<Spell>) {
-      context.commit('updatePending', true);
+      context.commit('updateSpellListPending', true);
       context.commit('updateSpellList', new Array<Spell>());
       if (!params.sort) {
         context.commit('setCurrentSorting');
@@ -52,11 +69,11 @@ const spells = {
         // eslint-disable-next-line
       } catch {
       } finally {
-        context.commit('updatePending', false);
+        context.commit('updateSpellListPending', false);
       }
     },
     async fetchMoreSpellList(context: ActionContext<SpellState, State>, params: IGenericQueryParams<Spell>) {
-      context.commit('updatePending', true);
+      context.commit('updateSpellListPending', true);
       try {
         const calcParams = Object.assign({}, params, context.state.sort.current?.forParams, new SpellFilters(context.state.filters).forParams);
         const result = await cmsClient.fetchSpells(calcParams);
@@ -67,16 +84,22 @@ const spells = {
         // eslint-disable-next-line
       } catch {
       } finally {
-        context.commit('updatePending', false);
+        context.commit('updateSpellListPending', false);
       }
     },
   },
   mutations: {
-    updatePending(state: SpellState, payload = false) {
+    updateSpellListPending(state: SpellState, payload = false) {
       state.spellListPending = payload;
+    },
+    updateSpellPending(state: SpellState, payload = false) {
+      state.spellPending = payload;
     },
     updateSpellList(state: SpellState, payload: Spell[]) {
       state.spellList = payload;
+    },
+    updateSpell(state: SpellState, payload = undefined) {
+      state.spell = payload;
     },
     updatePagination(state: SpellState, payload: IPagination) {
       state.pagination = new Pagination(payload);
