@@ -55,11 +55,14 @@ module.exports = [
       },
     ],
     titleRus: "Кислотная стрела",
-    HighterLevelDescriptionRus: "Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, урон (и единовременный и последующий) увеличивается на 1к4 за каждый уровень ячейки выше второго.",
-    damage: "4d4 immediately and 2d4 at the end of target\'s next turn",
+    HighterLevelDescriptionRus:
+      "Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, урон (и единовременный и последующий) увеличивается на 1к4 за каждый уровень ячейки выше второго.",
+    damage: "4d4 immediately and 2d4 at the end of target's next turn",
     damageRus: "4d4 сразу и 2d4 в конце следующего хода цели",
     damageType: "Acid",
-    descriptionRus: "К цели, находящейся в пределах дистанции, устремляется мерцающая зелёная стрела, разлетающаяся брызгами кислоты.\n\nСовершите по цели дальнобойную атаку заклинанием. При попадании цель получает единовременно урон кислотой 4к4 и урон кислотой 2к4 в конце своего следующего хода. При промахе стрела немного задевает цель, причиняет половину единовременного урона и в конце следующего хода цель урона не получает.",
+    descriptionRus:
+      "К цели, находящейся в пределах дистанции, устремляется мерцающая зелёная стрела, разлетающаяся брызгами кислоты.\n\nСовершите по цели дальнобойную атаку заклинанием. При попадании цель получает единовременно урон кислотой 4к4 и урон кислотой 2к4 в конце своего следующего хода. При промахе стрела немного задевает цель, причиняет половину единовременного урона и в конце следующего хода цель урона не получает.",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 2,
@@ -102,7 +105,9 @@ module.exports = [
     damage: "1d6",
     damageRus: "1к6",
     damageType: "Acid",
-    descriptionRus: "Вы кидаете кислотный шарик.\n\nВыберите одно видимое вами существо в пределах дистанции или два видимых вами существа в пределах дистанции, находящихся в пределах 5 футов друг от друга. Цель должна преуспеть в спасброске Ловкости, иначе она получает урон кислотой 1к6.\n\nУрон этого заклинания увеличивается на 1к6, когда вы достигаете 5 уровня (2к6), 11 уровня (3к6) и 17 уровня (4к6).",
+    descriptionRus:
+      "Вы кидаете кислотный шарик.\n\nВыберите одно видимое вами существо в пределах дистанции или два видимых вами существа в пределах дистанции, находящихся в пределах 5 футов друг от друга. Цель должна преуспеть в спасброске Ловкости, иначе она получает урон кислотой 1к6.\n\nУрон этого заклинания увеличивается на 1к6, когда вы достигаете 5 уровня (2к6), 11 уровня (3к6) и 17 уровня (4к6).",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 3,
@@ -150,6 +155,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 4,
@@ -193,6 +199,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 5,
@@ -236,6 +243,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 6,
@@ -286,6 +294,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 7,
@@ -336,6 +345,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 8,
@@ -376,6 +386,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 9,
@@ -421,6 +432,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 10,
@@ -468,6 +480,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 11,
@@ -508,6 +521,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 12,
@@ -554,6 +568,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 13,
@@ -598,6 +613,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 14,
@@ -642,6 +658,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 15,
@@ -685,6 +702,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 16,
@@ -728,6 +746,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 17,
@@ -772,6 +791,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 18,
@@ -819,6 +839,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 19,
@@ -862,6 +883,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 20,
@@ -909,6 +931,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 21,
@@ -950,6 +973,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 22,
@@ -994,6 +1018,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 23,
@@ -1041,6 +1066,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 24,
@@ -1097,6 +1123,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 25,
@@ -1143,6 +1170,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 26,
@@ -1183,6 +1211,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 27,
@@ -1230,6 +1259,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 28,
@@ -1274,6 +1304,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 29,
@@ -1314,6 +1345,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 30,
@@ -1361,6 +1393,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 31,
@@ -1411,6 +1444,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 32,
@@ -1458,6 +1492,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 33,
@@ -1507,6 +1542,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 34,
@@ -1550,6 +1586,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 35,
@@ -1590,6 +1627,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 36,
@@ -1628,6 +1666,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 37,
@@ -1672,6 +1711,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 38,
@@ -1713,6 +1753,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 39,
@@ -1756,6 +1797,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 40,
@@ -1804,6 +1846,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 41,
@@ -1857,6 +1900,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 42,
@@ -1903,6 +1947,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 43,
@@ -1954,6 +1999,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 44,
@@ -2004,6 +2050,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 45,
@@ -2045,6 +2092,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 46,
@@ -2089,6 +2137,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 47,
@@ -2137,6 +2186,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 48,
@@ -2178,6 +2228,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 49,
@@ -2218,6 +2269,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 50,
@@ -2258,6 +2310,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 51,
@@ -2310,6 +2363,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 52,
@@ -2350,6 +2404,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 53,
@@ -2397,6 +2452,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 54,
@@ -2450,6 +2506,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 55,
@@ -2494,6 +2551,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 56,
@@ -2532,6 +2590,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 57,
@@ -2577,6 +2636,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 58,
@@ -2618,6 +2678,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 59,
@@ -2659,6 +2720,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 60,
@@ -2706,6 +2768,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 61,
@@ -2743,6 +2806,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 62,
@@ -2786,6 +2850,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 63,
@@ -2827,6 +2892,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 64,
@@ -2874,6 +2940,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 65,
@@ -2923,6 +2990,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 66,
@@ -2970,6 +3038,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 67,
@@ -3014,6 +3083,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 68,
@@ -3057,6 +3127,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 69,
@@ -3105,6 +3176,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 70,
@@ -3153,6 +3225,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 71,
@@ -3198,6 +3271,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 72,
@@ -3251,6 +3325,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 73,
@@ -3300,6 +3375,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 74,
@@ -3346,6 +3422,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 75,
@@ -3398,6 +3475,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 76,
@@ -3450,6 +3528,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 77,
@@ -3493,6 +3572,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 78,
@@ -3540,6 +3620,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 79,
@@ -3580,6 +3661,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 80,
@@ -3623,6 +3705,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 81,
@@ -3681,6 +3764,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 82,
@@ -3733,6 +3817,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 83,
@@ -3782,6 +3867,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 84,
@@ -3828,6 +3914,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 85,
@@ -3874,6 +3961,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 86,
@@ -3921,6 +4009,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 87,
@@ -3967,6 +4056,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 88,
@@ -4026,6 +4116,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 89,
@@ -4070,6 +4161,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 90,
@@ -4110,6 +4202,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 91,
@@ -4147,6 +4240,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 92,
@@ -4191,6 +4285,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 93,
@@ -4240,6 +4335,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 94,
@@ -4286,6 +4382,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 95,
@@ -4336,6 +4433,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 96,
@@ -4376,6 +4474,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 97,
@@ -4426,6 +4525,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 98,
@@ -4466,6 +4566,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 99,
@@ -4519,6 +4620,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 100,
@@ -4565,6 +4667,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 101,
@@ -4611,6 +4714,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 102,
@@ -4651,6 +4755,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 103,
@@ -4694,6 +4799,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 104,
@@ -4747,6 +4853,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 105,
@@ -4793,6 +4900,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 106,
@@ -4842,6 +4950,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 107,
@@ -4879,6 +4988,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 108,
@@ -4919,6 +5029,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 109,
@@ -4963,6 +5074,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 110,
@@ -5010,6 +5122,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 111,
@@ -5062,6 +5175,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 112,
@@ -5109,6 +5223,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 113,
@@ -5162,6 +5277,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 114,
@@ -5203,6 +5319,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 115,
@@ -5240,6 +5357,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 116,
@@ -5286,6 +5404,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 117,
@@ -5333,6 +5452,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 118,
@@ -5379,6 +5499,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 119,
@@ -5422,6 +5543,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 120,
@@ -5465,6 +5587,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 121,
@@ -5511,6 +5634,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 122,
@@ -5558,6 +5682,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 123,
@@ -5602,6 +5727,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 124,
@@ -5646,6 +5772,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 125,
@@ -5694,6 +5821,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 126,
@@ -5740,6 +5868,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 127,
@@ -5783,6 +5912,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 128,
@@ -5833,6 +5963,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 129,
@@ -5883,6 +6014,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 130,
@@ -5924,6 +6056,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 131,
@@ -5973,6 +6106,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 132,
@@ -6022,6 +6156,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 133,
@@ -6075,6 +6210,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 134,
@@ -6118,6 +6254,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 135,
@@ -6167,6 +6304,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 136,
@@ -6216,6 +6354,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 137,
@@ -6263,6 +6402,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 138,
@@ -6310,6 +6450,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 139,
@@ -6350,6 +6491,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 140,
@@ -6390,6 +6532,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 141,
@@ -6438,6 +6581,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 142,
@@ -6486,6 +6630,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 143,
@@ -6532,6 +6677,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 144,
@@ -6575,6 +6721,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 145,
@@ -6621,6 +6768,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 146,
@@ -6671,6 +6819,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 147,
@@ -6708,6 +6857,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 148,
@@ -6752,6 +6902,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 149,
@@ -6795,6 +6946,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 150,
@@ -6836,6 +6988,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 151,
@@ -6885,6 +7038,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 152,
@@ -6926,6 +7080,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 153,
@@ -6975,6 +7130,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 154,
@@ -7015,6 +7171,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 155,
@@ -7061,6 +7218,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 156,
@@ -7105,6 +7263,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 157,
@@ -7149,6 +7308,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 158,
@@ -7196,6 +7356,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 159,
@@ -7238,6 +7399,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 160,
@@ -7282,6 +7444,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 161,
@@ -7326,6 +7489,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 162,
@@ -7373,6 +7537,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 163,
@@ -7426,6 +7591,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 164,
@@ -7485,6 +7651,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 165,
@@ -7529,6 +7696,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 166,
@@ -7567,6 +7735,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 167,
@@ -7617,6 +7786,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 168,
@@ -7667,6 +7837,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 169,
@@ -7711,6 +7882,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 170,
@@ -7755,6 +7927,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 171,
@@ -7799,6 +7972,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 172,
@@ -7842,6 +8016,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 173,
@@ -7883,6 +8058,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 174,
@@ -7934,6 +8110,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 175,
@@ -7974,6 +8151,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 176,
@@ -8027,6 +8205,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 177,
@@ -8067,6 +8246,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 178,
@@ -8119,6 +8299,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 179,
@@ -8162,6 +8343,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 180,
@@ -8209,6 +8391,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 181,
@@ -8261,6 +8444,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 182,
@@ -8308,6 +8492,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 183,
@@ -8357,6 +8542,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 184,
@@ -8405,6 +8591,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 185,
@@ -8454,6 +8641,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 186,
@@ -8512,6 +8700,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 187,
@@ -8570,6 +8759,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 188,
@@ -8623,6 +8813,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 189,
@@ -8669,6 +8860,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 190,
@@ -8718,6 +8910,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 191,
@@ -8769,6 +8962,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 192,
@@ -8810,6 +9004,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 193,
@@ -8854,6 +9049,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 194,
@@ -8898,6 +9094,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 195,
@@ -8942,6 +9139,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 196,
@@ -8986,6 +9184,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 197,
@@ -9039,6 +9238,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 198,
@@ -9086,6 +9286,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 199,
@@ -9126,6 +9327,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 200,
@@ -9164,6 +9366,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 201,
@@ -9215,6 +9418,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 202,
@@ -9255,6 +9459,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 203,
@@ -9298,6 +9503,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 204,
@@ -9350,6 +9556,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 205,
@@ -9399,6 +9606,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 206,
@@ -9442,6 +9650,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 207,
@@ -9485,6 +9694,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 208,
@@ -9534,6 +9744,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 209,
@@ -9577,6 +9788,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 210,
@@ -9623,6 +9835,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 211,
@@ -9663,6 +9876,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 212,
@@ -9706,6 +9920,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 213,
@@ -9750,6 +9965,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 214,
@@ -9794,6 +10010,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 215,
@@ -9844,6 +10061,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 216,
@@ -9894,6 +10112,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 217,
@@ -9941,6 +10160,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 218,
@@ -9984,6 +10204,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 219,
@@ -10025,6 +10246,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 220,
@@ -10062,6 +10284,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 221,
@@ -10099,6 +10322,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 222,
@@ -10150,6 +10374,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 223,
@@ -10206,6 +10431,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 224,
@@ -10249,6 +10475,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 225,
@@ -10298,6 +10525,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 226,
@@ -10350,6 +10578,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 227,
@@ -10396,6 +10625,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 228,
@@ -10442,6 +10672,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 229,
@@ -10477,6 +10708,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 230,
@@ -10526,6 +10758,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 231,
@@ -10569,6 +10802,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 232,
@@ -10609,6 +10843,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 233,
@@ -10650,6 +10885,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 234,
@@ -10690,6 +10926,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 235,
@@ -10737,6 +10974,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 236,
@@ -10784,6 +11022,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 237,
@@ -10836,6 +11075,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 238,
@@ -10889,6 +11129,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 239,
@@ -10938,6 +11179,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 240,
@@ -10984,6 +11226,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 241,
@@ -11031,6 +11274,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 242,
@@ -11074,6 +11318,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 243,
@@ -11117,6 +11362,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 244,
@@ -11163,6 +11409,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 245,
@@ -11204,6 +11451,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 246,
@@ -11253,6 +11501,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 247,
@@ -11297,6 +11546,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 248,
@@ -11343,6 +11593,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 249,
@@ -11387,6 +11638,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 250,
@@ -11436,6 +11688,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 251,
@@ -11483,6 +11736,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 252,
@@ -11527,6 +11781,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 253,
@@ -11567,6 +11822,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 254,
@@ -11610,6 +11866,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 255,
@@ -11654,6 +11911,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 256,
@@ -11707,6 +11965,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 257,
@@ -11751,6 +12010,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 258,
@@ -11801,6 +12061,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 259,
@@ -11847,6 +12108,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 260,
@@ -11896,6 +12158,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 261,
@@ -11940,6 +12203,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 262,
@@ -11987,6 +12251,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 263,
@@ -12040,6 +12305,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 264,
@@ -12084,6 +12350,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 265,
@@ -12131,6 +12398,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 266,
@@ -12175,6 +12443,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 267,
@@ -12218,6 +12487,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 268,
@@ -12264,6 +12534,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 269,
@@ -12313,6 +12584,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 270,
@@ -12354,6 +12626,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 271,
@@ -12405,6 +12678,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 272,
@@ -12454,6 +12728,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 273,
@@ -12500,6 +12775,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 274,
@@ -12540,6 +12816,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 275,
@@ -12586,6 +12863,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 276,
@@ -12632,6 +12910,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 277,
@@ -12678,6 +12957,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 278,
@@ -12727,6 +13007,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 279,
@@ -12774,6 +13055,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 280,
@@ -12818,6 +13100,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 281,
@@ -12859,6 +13142,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 282,
@@ -12908,6 +13192,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 283,
@@ -12958,6 +13243,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 284,
@@ -13011,6 +13297,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 285,
@@ -13051,6 +13338,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 286,
@@ -13101,6 +13389,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 287,
@@ -13150,6 +13439,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 288,
@@ -13199,6 +13489,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 289,
@@ -13246,6 +13537,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 290,
@@ -13289,6 +13581,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 291,
@@ -13333,6 +13626,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 292,
@@ -13376,6 +13670,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 293,
@@ -13420,6 +13715,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 294,
@@ -13457,6 +13753,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 295,
@@ -13507,6 +13804,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 296,
@@ -13547,6 +13845,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 297,
@@ -13590,6 +13889,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 298,
@@ -13642,6 +13942,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 299,
@@ -13682,6 +13983,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 300,
@@ -13725,6 +14027,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 301,
@@ -13775,6 +14078,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 302,
@@ -13819,6 +14123,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 303,
@@ -13875,6 +14180,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 304,
@@ -13921,6 +14227,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 305,
@@ -13970,6 +14277,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 306,
@@ -14013,6 +14321,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 307,
@@ -14050,6 +14359,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 308,
@@ -14100,6 +14410,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 309,
@@ -14144,6 +14455,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 310,
@@ -14188,6 +14500,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 311,
@@ -14237,6 +14550,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 312,
@@ -14281,6 +14595,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 313,
@@ -14325,6 +14640,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 314,
@@ -14377,6 +14693,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 315,
@@ -14429,6 +14746,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 316,
@@ -14475,6 +14793,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 317,
@@ -14515,6 +14834,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 318,
@@ -14555,6 +14875,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 319,
@@ -14601,6 +14922,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 320,
@@ -14641,6 +14963,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 321,
@@ -14678,6 +15001,7 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
   {
     id: 322,
@@ -14724,5 +15048,6 @@ module.exports = [
     damageRus: "",
     damageType: "",
     descriptionRus: "",
+    spellComponentDescriptionRus: "",
   },
 ];
