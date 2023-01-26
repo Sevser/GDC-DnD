@@ -1,28 +1,12 @@
 <template>
-  <div>
+  <div @click.stop.prevent>
     <v-chip class="ma-0" label>
       {{ level }}
     </v-chip>
-    <v-tooltip v-if="concentration" :text="concentrationTooltipText">
-      <template #activator>
-        <v-chip class="ma-0 ml-2" label> K </v-chip>
-      </template>
-    </v-tooltip>
-    <v-tooltip v-if="verbalComponent" :text="verbalComponentTooltipText">
-      <template #activator>
-        <v-chip class="ma-0 ml-2" label> В </v-chip>
-      </template>
-    </v-tooltip>
-    <v-tooltip v-if="somaticComponent" :text="somaticComponentTooltipText">
-      <template #activator>
-        <v-chip class="ma-0 ml-2" label> С </v-chip>
-      </template>
-    </v-tooltip>
-    <v-tooltip v-if="materialComponent" :text="materialComponentTooltipText">
-      <template #activator>
-        <v-chip class="ma-0 ml-2" label> М </v-chip>
-      </template>
-    </v-tooltip>
+    <v-chip v-if="concentration" class="ma-0 ml-2" label v-tooltip="{ content: concentrationTooltipText, triggers: ['hover', 'click', 'focus', 'touch'] }"> K </v-chip>
+    <v-chip v-if="verbalComponent" class="ma-0 ml-2" label v-tooltip="{ content: verbalComponentTooltipText, triggers: ['hover', 'click', 'focus', 'touch'] }"> В </v-chip>
+    <v-chip v-if="somaticComponent" class="ma-0 ml-2" label v-tooltip="{ content: somaticComponentTooltipText, triggers: ['hover', 'click', 'focus', 'touch'] }"> С </v-chip>
+    <v-chip v-if="materialComponent" class="ma-0 ml-2" label v-tooltip="{ content: materialComponentTooltipText, triggers: ['hover', 'click', 'focus', 'touch'] }"> М </v-chip>
   </div>
 </template>
 <script lang="ts">
