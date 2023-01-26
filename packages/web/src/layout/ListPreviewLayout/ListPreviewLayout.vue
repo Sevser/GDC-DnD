@@ -3,11 +3,17 @@ import NavigationMenu from '@/components/menu/NavigationMenu.vue';
 import LoginDialog from '@/components/login/LoginDialog.vue';
 import { h } from 'vue';
 import { RouterView } from 'vue-router';
-import { VNavigationDrawer, VLayout, VAppBar, VAppBarNavIcon, VToolbarTitle, VMain, VSheet } from 'vuetify/components';
+import { VNavigationDrawer, VLayout, VAppBar, VAppBarNavIcon, VToolbarTitle } from 'vuetify/components';
+import ListPreviewLayoutMain from './ListPreviewLayoutMain.vue';
 
 interface IVAppBarChildren {
   default: () => unknown;
   extension?: () => unknown;
+}
+
+interface IListPreviewLayoutMain {
+  default: () => unknown;
+  listContentView?: () => unknown;
 }
 
 export default {
@@ -21,37 +27,29 @@ export default {
     VAppBar,
     VAppBarNavIcon,
     VToolbarTitle,
-    VMain,
-    VSheet,
+    ListPreviewLayoutMain,
   },
   computed: {
     title() {
       // todo: read name from package.json
       return this.$route.name || import.meta.env.VITE_APP_TITLE;
     },
-    hasListContentItem() {
+    hasListContentView() {
       const matched = this.$router.currentRoute.value.matched;
-      if (matched && matched.some((route) => Reflect.has(route.components, 'listContentItem'))) {
-        return true;
+      const route = matched && matched.find((route) => Reflect.has(route.components, 'listContentView'));
+      if (route) {
+        return [true, route.components.listContentView];
       }
-      return false;
+      return [false];
     },
   },
   data: () => ({
     drawer: false,
-    maxHeight: 10000,
     showMobileAdditionalMenu: false,
-    appBar: null,
   }),
   methods: {
     handleResize() {
       this.showMobileAdditionalMenu = document.body.clientWidth < 560;
-      setTimeout(() => {
-        const header = document.querySelector('header.v-toolbar');
-        if (header !== null) {
-          this.maxHeight = document.body.clientHeight - header.clientHeight;
-        }
-      }, 1500);
     },
   },
   beforeUnmount() {
@@ -84,6 +82,13 @@ export default {
         childrenForAppBar.extension = () => h(route.components.mobileAdditionalMenu);
       }
     }
+
+    const childrenForMain: IListPreviewLayoutMain = {
+      default: () => this.$slots.default && this.$slots.default(),
+    };
+    if (this.hasListContentView[0]) {
+      childrenForMain.listContentView = () => h(this.hasListContentView[1]);
+    }
     return [
       h(
         VNavigationDrawer,
@@ -105,29 +110,10 @@ export default {
               VAppBar,
               {
                 absolute: true,
-                ref: this.appBar,
               },
               childrenForAppBar
             ),
-            h(
-              VMain,
-              {},
-              {
-                default: () =>
-                  h(
-                    VSheet,
-                    {
-                      id: 'scrolling-techniques-4',
-                      class: 'overflow-y-auto',
-                      maxHeight: this.maxHeight,
-                      height: this.maxHeight,
-                    },
-                    {
-                      default: () => this.$slots.default && this.$slots.default(),
-                    }
-                  ),
-              }
-            ),
+            h(ListPreviewLayoutMain, {}, childrenForMain),
           ],
         }
       ),

@@ -42,6 +42,15 @@ const routes = [
       default: () => import('@/pages/SpellList.vue'),
       mobileAdditionalMenu: () => import('@/components/spell/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
     },
+    children: [
+      {
+        path: ':id',
+        name: 'SpellView',
+        components: {
+          listContentView: () => import('@/pages/SpellView.vue'),
+        },
+      },
+    ],
   },
   {
     path: '/*',
