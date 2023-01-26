@@ -6,7 +6,7 @@
     <template v-else>
       <SpellItem v-for="spell in spells" :spell="spell" :key="spell.id" />
     </template>
-    <div class="d-flex justify-center align-center" v-if="showLoader">
+    <div class="d-flex justify-center align-center" style="height: 20px" v-if="showLoader">
       <InfiniteLoading @infinite="loadNextPage" />
     </div>
   </div>

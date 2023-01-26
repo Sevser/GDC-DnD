@@ -16,10 +16,6 @@
           </div>
         </div>
         <SpellShortInfo :spell="spell" />
-        <div class="text-caption">
-          <v-banner :lines="lines" :text="spell.description" class="px-0 pt-0 pb-0" :border="0" />
-        </div>
-        <CollapseToggle v-if="showCollapse" :value="collapsed" @toggle="toggle" class="collapse-toggle" />
       </div>
     </v-card-item>
   </v-card>
@@ -28,7 +24,6 @@
 import { Spell } from '@/types/Spell';
 import { ICharacterClass } from '@/types/CharacterClass';
 import { defineComponent } from 'vue';
-import CollapseToggle from '../base/collapse/CollapseToggle.vue';
 import SpellShortInfo from './SpellShortInfo.vue';
 
 export default defineComponent({
@@ -39,7 +34,6 @@ export default defineComponent({
     },
   },
   components: {
-    CollapseToggle,
     SpellShortInfo,
   },
   data: () => ({
