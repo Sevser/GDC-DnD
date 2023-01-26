@@ -1,7 +1,6 @@
 <script lang="ts">
 import NavigationMenu from '@/components/menu/NavigationMenu.vue';
 import LoginDialog from '@/components/login/LoginDialog.vue';
-import { ComponentPublicInstance } from '@vue/runtime-dom';
 import { h } from 'vue';
 import { RouterView } from 'vue-router';
 import { VNavigationDrawer, VLayout, VAppBar, VAppBarNavIcon, VToolbarTitle, VMain, VSheet } from 'vuetify/components';
@@ -41,8 +40,9 @@ export default {
     handleResize() {
       this.showMobileAdditionalMenu = document.body.clientWidth < 560;
       setTimeout(() => {
-        if (this.$refs.appBar) {
-          this.maxHeight = document.body.clientHeight - (this.$refs.appBar as ComponentPublicInstance).$el.clientHeight;
+        const header = document.querySelector('header.v-toolbar');
+        if (header !== null) {
+          this.maxHeight = document.body.clientHeight - header.clientHeight;
         }
       }, 1500);
     },
@@ -60,7 +60,13 @@ export default {
         h(VAppBarNavIcon, {
           onClick: () => (this.drawer = !this.drawer),
         }),
-        h(VToolbarTitle, [this.title]),
+        h(
+          VToolbarTitle,
+          {},
+          {
+            default: () => this.title,
+          }
+        ),
         h(LoginDialog),
       ],
     };
@@ -81,30 +87,45 @@ export default {
           'onUpdate:modelValue': (value: boolean) => (this.drawer = value),
           app: true,
         },
-        [h(NavigationMenu)]
+        {
+          default: () => h(NavigationMenu),
+        }
       ),
-      h(VLayout, [
-        h(
-          VAppBar,
-          {
-            absolute: true,
-            ref: this.appBar,
-          },
-          childrenForAppBar
-        ),
-        h(VMain, [
-          h(
-            VSheet,
-            {
-              id: 'scrolling-techniques-4',
-              class: 'overflow-y-auto',
-              maxHeight: 'maxHeight',
-              height: 'maxHeight',
-            },
-            [h(RouterView)]
-          ),
-        ]),
-      ]),
+      h(
+        VLayout,
+        {},
+        {
+          default: () => [
+            h(
+              VAppBar,
+              {
+                absolute: true,
+                ref: this.appBar,
+              },
+              childrenForAppBar
+            ),
+            h(
+              VMain,
+              {},
+              {
+                default: () =>
+                  h(
+                    VSheet,
+                    {
+                      id: 'scrolling-techniques-4',
+                      class: 'overflow-y-auto',
+                      maxHeight: this.maxHeight,
+                      height: this.maxHeight,
+                    },
+                    {
+                      default: () => h(RouterView),
+                    }
+                  ),
+              }
+            ),
+          ],
+        }
+      ),
     ];
   },
 };

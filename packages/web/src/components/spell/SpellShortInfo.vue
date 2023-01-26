@@ -3,10 +3,26 @@
     <v-chip class="ma-0" label>
       {{ level }}
     </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="concentration"> K </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="verbalComponent"> В </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="somaticComponent"> С </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="materialComponent"> М </v-chip>
+    <v-tooltip v-if="concentration" :text="concentrationTooltipText">
+      <template #activator>
+        <v-chip class="ma-0 ml-2" label> K </v-chip>
+      </template>
+    </v-tooltip>
+    <v-tooltip v-if="verbalComponent" :text="verbalComponentTooltipText">
+      <template #activator>
+        <v-chip class="ma-0 ml-2" label> В </v-chip>
+      </template>
+    </v-tooltip>
+    <v-tooltip v-if="somaticComponent" :text="somaticComponentTooltipText">
+      <template #activator>
+        <v-chip class="ma-0 ml-2" label> С </v-chip>
+      </template>
+    </v-tooltip>
+    <v-tooltip v-if="materialComponent" :text="materialComponentTooltipText">
+      <template #activator>
+        <v-chip class="ma-0 ml-2" label> М </v-chip>
+      </template>
+    </v-tooltip>
   </div>
 </template>
 <script lang="ts">

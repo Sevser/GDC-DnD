@@ -4,7 +4,7 @@
       <v-progress-circular indeterminate :size="60" />
     </div>
     <template v-else>
-      <SpellItem v-for="spell in spells" :spell="spell" :key="spell.id" />
+      <SpellItem v-for="spell in spells" :spell="spell" :key="spell.id" short />
     </template>
     <div class="d-flex justify-center align-center" style="height: 20px" v-if="showLoader">
       <InfiniteLoading @infinite="loadNextPage" />

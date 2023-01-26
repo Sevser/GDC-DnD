@@ -47,6 +47,14 @@ export class Spell implements ISpell {
   activeTime: string;
 }
 
+export interface IShortSpell {
+  title: string;
+  SpellComponent: ISpellComponent[];
+  Concentration: boolean;
+  class: ICharacterClass[];
+  ActionType: true;
+}
+
 export interface ISpellFilters extends IFilter {
   level?: number;
   concentration?: boolean;
