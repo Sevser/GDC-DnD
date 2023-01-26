@@ -29,6 +29,13 @@ export default {
       // todo: read name from package.json
       return this.$route.name || import.meta.env.VITE_APP_TITLE;
     },
+    hasListContentItem() {
+      const matched = this.$router.currentRoute.value.matched;
+      if (matched && matched.some((route) => Reflect.has(route.components, 'listContentItem'))) {
+        return true;
+      }
+      return false;
+    },
   },
   data: () => ({
     drawer: false,
@@ -72,11 +79,9 @@ export default {
     };
     if (this.showMobileAdditionalMenu) {
       const matched = this.$router.currentRoute.value.matched;
-      if (matched && matched.some((route) => Reflect.has(route.components, 'mobileAdditionalMenu'))) {
-        childrenForAppBar.extension = () =>
-          h(RouterView, {
-            name: 'mobileAdditionalMenu',
-          });
+      const route = matched && matched.find((route) => Reflect.has(route.components, 'mobileAdditionalMenu'));
+      if (route) {
+        childrenForAppBar.extension = () => h(route.components.mobileAdditionalMenu);
       }
     }
     return [
@@ -118,7 +123,7 @@ export default {
                       height: this.maxHeight,
                     },
                     {
-                      default: () => h(RouterView),
+                      default: () => this.$slots.default && this.$slots.default(),
                     }
                   ),
               }

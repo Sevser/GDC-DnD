@@ -1,15 +1,17 @@
 <template>
-  <div class="pl-2 pr-2" style="height: 100%">
-    <div v-if="pending" class="d-flex justify-center align-center" style="height: 100%">
-      <v-progress-circular indeterminate :size="60" />
+  <DefaultLayout>
+    <div class="pl-2 pr-2" style="height: 100%">
+      <div v-if="pending" class="d-flex justify-center align-center" style="height: 100%">
+        <v-progress-circular indeterminate :size="60" />
+      </div>
+      <template v-else>
+        <SpellItem v-for="spell in spells" :spell="spell" :key="spell.id" short />
+      </template>
+      <div class="d-flex justify-center align-center" style="height: 20px" v-if="showLoader">
+        <InfiniteLoading @infinite="loadNextPage" />
+      </div>
     </div>
-    <template v-else>
-      <SpellItem v-for="spell in spells" :spell="spell" :key="spell.id" short />
-    </template>
-    <div class="d-flex justify-center align-center" style="height: 20px" v-if="showLoader">
-      <InfiniteLoading @infinite="loadNextPage" />
-    </div>
-  </div>
+  </DefaultLayout>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -17,11 +19,13 @@ import SpellItem from '@/components/spell/SpellItem.vue';
 import InfiniteLoading from 'v3-infinite-loading';
 import 'v3-infinite-loading/lib/style.css';
 import { Pagination } from '@/types/Pagination';
+import DefaultLayout from '@/layout/DefaultLayout.vue';
 
 export default defineComponent({
   components: {
     SpellItem,
     InfiniteLoading,
+    DefaultLayout,
   },
   data: () => ({}),
   created() {

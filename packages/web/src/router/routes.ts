@@ -37,18 +37,11 @@ const routes = [
   },
   {
     path: '/spells',
-    name: 'Spells',
+    name: 'SpellList',
     components: {
-      default: () => import('@/pages/SpellDefault.vue'),
+      default: () => import('@/pages/SpellList.vue'),
       mobileAdditionalMenu: () => import('@/components/spell/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
     },
-    children: [
-      {
-        path: 'list',
-        name: 'SpellList',
-        component: () => import('@/pages/SpellList.vue'),
-      },
-    ],
   },
   {
     path: '/*',
