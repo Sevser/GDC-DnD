@@ -27,8 +27,8 @@ export default defineComponent({
             VMain,
             {
               scrollable: true,
-              style: {
-                display: 'none',
+              class: {
+                'w-50': true,
               },
             },
             {
@@ -39,6 +39,13 @@ export default defineComponent({
             VMain,
             {
               scrollable: true,
+              class: {
+                'w-50': true,
+              },
+              style: {
+                left: 'unset',
+                right: '0',
+              },
             },
             {
               default: () => this.$slots.listContentView(),

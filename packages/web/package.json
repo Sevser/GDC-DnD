@@ -2,7 +2,7 @@
   "name": "@gdc/web",
   "version": "0.1.0",
   "scripts": {
-    "dev": "export APP_ENV=develop || set APP_ENV=develop && vite",
+    "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "export APP_ENV=prod || set APP_ENV=prod && vite preview",
     "lint:js": "eslint"

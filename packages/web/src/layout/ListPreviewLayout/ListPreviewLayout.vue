@@ -42,29 +42,39 @@ export default {
       }
       return [false];
     },
+    mobileAdditionalMenu() {
+      const matched = this.$router.currentRoute.value.matched;
+      const route = matched && matched.find((route) => Reflect.has(route.components, 'mobileAdditionalMenu'));
+      if (route) {
+        return [true, route.components.mobileAdditionalMenu];
+      }
+      return [false];
+    },
   },
   data: () => ({
     drawer: false,
-    showMobileAdditionalMenu: false,
   }),
-  methods: {
-    handleResize() {
-      this.showMobileAdditionalMenu = document.body.clientWidth < 560;
-    },
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize.bind(this));
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleResize.bind(this));
-    this.handleResize();
-  },
   render() {
     const childrenForMain: IListPreviewLayoutMain = {
       default: () => this.$slots.default && this.$slots.default(),
     };
     if (this.hasListContentView[0]) {
       childrenForMain.listContentView = () => h(this.hasListContentView[1]);
+    }
+
+    let toolbarContent = () => this.title;
+
+    if (!this.$vuetify.display.xs && this.mobileAdditionalMenu[0]) {
+      toolbarContent = () =>
+        h(
+          'div',
+          {
+            class: {
+              'd-flex': true,
+            },
+          },
+          [this.title, h(this.mobileAdditionalMenu[1])]
+        );
     }
 
     const childrenForAppBar: IVAppBarChildren = {
@@ -76,20 +86,14 @@ export default {
           VToolbarTitle,
           {},
           {
-            default: () => this.title,
+            default: toolbarContent,
           }
         ),
         h(LoginDialog),
       ],
     };
-    if (this.showMobileAdditionalMenu) {
-      if (!this.$vuetify.display.xs || !this.hasListContentView[0]) {
-        const matched = this.$router.currentRoute.value.matched;
-        const route = matched && matched.find((route) => Reflect.has(route.components, 'mobileAdditionalMenu'));
-        if (route) {
-          childrenForAppBar.extension = () => h(route.components.mobileAdditionalMenu);
-        }
-      }
+    if (this.$vuetify.display.xs && this.hasListContentView[0] && this.mobileAdditionalMenu[0]) {
+      childrenForAppBar.extension = () => h(this.mobileAdditionalMenu[1]);
     }
 
     return [

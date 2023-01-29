@@ -1,5 +1,8 @@
 <template>
-  <v-card class="h-100">
+  <div v-if="$vuetify.display.xs" class="pl-3 pt-3 pb-3">
+    <v-btn :to="{ name: 'SpellList' }"> Назад </v-btn>
+  </div>
+  <v-card :class="{ 'h-100': !$vuetify.display.xs, 'h-calc': $vuetify.display.xs, 'overflow-y-auto': true }">
     <template #title>
       {{ spell.title }}
     </template>
@@ -38,10 +41,10 @@
         <div class="mb-2">{{ components }} {{ spellComponentDescription }}</div>
       </div>
       <div class="d-flex flex-column mb-2">
-        <div class="mb-2">{{ description }}</div>
+        <div class="mb-2" v-html="description"></div>
       </div>
       <div class="d-flex flex-column mb-2">
-        <div class="mb-2">{{ highLevelDescription }}</div>
+        <div class="mb-2" v-html="highLevelDescription"></div>
       </div>
     </template>
   </v-card>
@@ -53,15 +56,21 @@ import { ISpellComponent } from '@/types/SpellComponent';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  created() {
-    const unwatch = this.$watch(
-      () => this.$route.params,
-      () => {
-        this.$store.dispatch('spells/fetchSpell', this.$route.params.id);
-        this.$nextTick(() => unwatch());
+  watch: {
+    '$route.params': {
+      immediate: true,
+      deep: true,
+      handler() {
+        if (this.$router.currentRoute !== undefined && this.$router.currentRoute.value.name === 'SpellView') {
+          this.fetchData();
+        }
       },
-      { immediate: true }
-    );
+    },
+  },
+  methods: {
+    fetchData() {
+      this.$store.dispatch('spells/fetchSpell', this.$route.params.id);
+    },
   },
   computed: {
     distanceContent() {
@@ -109,3 +118,8 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.h-calc {
+  height: calc(100% - 60px);
+}
+</style>
