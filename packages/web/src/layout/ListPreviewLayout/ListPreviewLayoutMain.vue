@@ -17,7 +17,7 @@ export default defineComponent({
               scrollable: true,
             },
             {
-              default: () => this.$slots.listContentView(),
+              default: () => this.$slots.listContentView && this.$slots.listContentView(),
             }
           ),
         ];
@@ -32,7 +32,7 @@ export default defineComponent({
               },
             },
             {
-              default: () => this.$slots.default(),
+              default: () => this.$slots.default && this.$slots.default(),
             }
           ),
           h(
@@ -48,7 +48,7 @@ export default defineComponent({
               },
             },
             {
-              default: () => this.$slots.listContentView(),
+              default: () => this.$slots.listContentView && this.$slots.listContentView(),
             }
           ),
         ];
@@ -60,7 +60,7 @@ export default defineComponent({
           scrollable: true,
         },
         {
-          default: () => this.$slots.default(),
+          default: () => this.$slots.default && this.$slots.default(),
         }
       );
     }

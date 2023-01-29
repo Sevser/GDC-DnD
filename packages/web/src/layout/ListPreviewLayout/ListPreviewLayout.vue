@@ -1,20 +1,11 @@
 <script lang="ts">
 import NavigationMenu from '@/components/menu/NavigationMenu.vue';
 import LoginDialog from '@/components/login/LoginDialog.vue';
-import { h } from 'vue';
+import { h, VueElement } from 'vue';
 import { RouterView } from 'vue-router';
 import { VNavigationDrawer, VLayout, VAppBar, VAppBarNavIcon, VToolbarTitle } from 'vuetify/components';
 import ListPreviewLayoutMain from './ListPreviewLayoutMain.vue';
-
-interface IVAppBarChildren {
-  default: () => unknown;
-  extension?: () => unknown;
-}
-
-interface IListPreviewLayoutMain {
-  default: () => unknown;
-  listContentView?: () => unknown;
-}
+import { RawSlots } from '../../types/Vue';
 
 export default {
   name: 'DefaultLayout',
@@ -55,11 +46,11 @@ export default {
     drawer: false,
   }),
   render() {
-    const childrenForMain: IListPreviewLayoutMain = {
+    const childrenForMain: RawSlots = {
       default: () => this.$slots.default && this.$slots.default(),
     };
     if (this.hasListContentView[0]) {
-      childrenForMain.listContentView = () => h(this.hasListContentView[1]);
+      childrenForMain.listContentView = () => h(this.hasListContentView[1] as VueElement);
     }
 
     let toolbarContent = () => this.title;
@@ -73,11 +64,11 @@ export default {
               'd-flex': true,
             },
           },
-          [this.title, h(this.mobileAdditionalMenu[1])]
+          [this.title, h(this.mobileAdditionalMenu[1] as VueElement)]
         );
     }
 
-    const childrenForAppBar: IVAppBarChildren = {
+    const childrenForAppBar: RawSlots = {
       default: () => [
         h(VAppBarNavIcon, {
           onClick: () => (this.drawer = !this.drawer),
@@ -93,7 +84,7 @@ export default {
       ],
     };
     if (this.$vuetify.display.xs && this.hasListContentView[0] && this.mobileAdditionalMenu[0]) {
-      childrenForAppBar.extension = () => h(this.mobileAdditionalMenu[1]);
+      childrenForAppBar.extension = () => h(this.mobileAdditionalMenu[1] as VueElement);
     }
 
     return [
