@@ -5,15 +5,7 @@ import { h } from 'vue';
 import { RouterView } from 'vue-router';
 import { VNavigationDrawer, VLayout, VAppBar, VAppBarNavIcon, VToolbarTitle } from 'vuetify/components';
 import DefaultLayoutMain from './DefaultLayoutMain.vue';
-
-interface IVAppBarChildren {
-  default: () => unknown;
-  extension?: () => unknown;
-}
-
-interface IDefaultLayoutMain {
-  default: () => unknown;
-}
+import { RawSlots } from '../../types/Vue';
 
 export default {
   name: 'DefaultLayout',
@@ -51,7 +43,7 @@ export default {
     this.handleResize();
   },
   render() {
-    const childrenForAppBar: IVAppBarChildren = {
+    const childrenForAppBar: RawSlots = {
       default: () => [
         h(VAppBarNavIcon, {
           onClick: () => (this.drawer = !this.drawer),
@@ -74,7 +66,7 @@ export default {
       }
     }
 
-    const childrenForMain: IDefaultLayoutMain = {
+    const childrenForMain: RawSlots = {
       default: () => this.$slots.default && this.$slots.default(),
     };
     return [
@@ -101,7 +93,7 @@ export default {
               },
               childrenForAppBar
             ),
-            h(DefaultLayoutMain, {}, childrenForMain),
+            h(DefaultLayoutMain, {}, childrenForMain as RawSlots),
           ],
         }
       ),
