@@ -3,7 +3,7 @@
 const { createCoreController } = require("@strapi/strapi").factories;
 
 /*
- 200: {
+ find: 200: {
         title: true,
         SpellComponent: true,
         Concentration: true,
@@ -21,7 +21,24 @@ module.exports = createCoreController("api::spell.spell", ({ strapi }) => ({
       populate: "*",
     };
     const { data, meta } = await super.findOne(ctx);
-
+    const distance = await strapi.entityService.findMany(
+      "api::distance.distance",
+      {
+        filters: {
+          spell: {
+            id: {
+              $eq: data.id,
+            },
+          },
+        },
+        fields: ["distanceShort", "longText", "id"],
+      }
+    );
+    if (distance.length) {
+      data.attributes.distance = distance[0];
+    } else {
+      data.attributes.distance = null;
+    }
     return { data, meta };
   },
   async find(ctx) {

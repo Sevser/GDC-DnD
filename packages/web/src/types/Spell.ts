@@ -1,6 +1,7 @@
 import { ActionType } from './Action';
 import { ChacacterClass, ICharacterClass } from './CharacterClass';
 import { DamageType } from './DamageType';
+import { IDistance } from './Distance';
 import { IFilter } from './Filters';
 import { ISchoolOfMagic, SchoolOfMagicType } from './SchoolOfMagic';
 import { ISource } from './Source';
@@ -20,6 +21,7 @@ export interface ISpell {
   SpellComponent: ISpellComponent[];
   source: ISource;
   spellComponentDescription: string;
+  distance: IDistance;
 }
 
 export class Spell implements ISpell {
@@ -38,6 +40,7 @@ export class Spell implements ISpell {
     this.SpellComponent = prop.SpellComponent;
     this.spellComponentDescription = prop.spellComponentDescription;
     this.source = prop.source;
+    this.distance = prop.distance;
   }
   source: ISource;
   SpellComponent: ISpellComponent[];
@@ -52,6 +55,7 @@ export class Spell implements ISpell {
   actionTypeDescription: string;
   spellComponentDescription: string;
   activeTime: string;
+  distance: IDistance;
 }
 
 export interface IShortSpell {

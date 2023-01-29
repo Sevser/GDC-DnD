@@ -25,7 +25,7 @@
           </div>
           <div class="w-33 d-flex flex-column">
             <div class="text-subtitle-2">Дистанция</div>
-            <div>На себя</div>
+            <div>{{ distanceContent }}</div>
           </div>
           <div class="w-33 d-flex flex-column">
             <div class="text-subtitle-2">Длительность</div>
@@ -64,6 +64,12 @@ export default defineComponent({
     );
   },
   computed: {
+    distanceContent() {
+      if (this.spell?.distance) {
+        return `${this.spell.distance.distanceShort}. ${this.spell.distance.longText}`;
+      }
+      return '';
+    },
     spell() {
       return this.$store.state.spells.spell || new Spell({} as ISpell);
     },

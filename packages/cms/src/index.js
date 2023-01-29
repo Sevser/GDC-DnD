@@ -1,5 +1,5 @@
-'use strict';
-const boostrap = require('./bootstrap');
+"use strict";
+const boostrap = require("./bootstrap/index");
 
 module.exports = {
   /**
