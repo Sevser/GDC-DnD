@@ -3,7 +3,9 @@
 const fs = require("fs");
 const path = require("path");
 
-const { experience, archetypes, spells } = require("../data/data");
+const { experience, archetypes, spells } = require("./data/data");
+
+const createEntry = require("./common/createEntry");
 
 async function setPublicPermissions(newPermissions) {
   // Find the ID of the public role
@@ -65,45 +67,6 @@ function getFileData(fileName) {
   };
 }
 
-// Create an entry and attach files if there are any
-async function createEntry({ model, entry, files }) {
-  try {
-    if (files) {
-      for (const [key, file] of Object.entries(files)) {
-        // Get file name without the extension
-        const [fileName] = file.name.split(".");
-        // Upload each individual file
-        const uploadedFile = await strapi
-          .plugin("upload")
-          .service("upload")
-          .upload({
-            files: file,
-            data: {
-              fileInfo: {
-                alternativeText: fileName,
-                caption: fileName,
-                name: fileName,
-              },
-            },
-          });
-
-        // Attach each file to its entry
-        set(entry, key, uploadedFile[0].id);
-      }
-    }
-
-    // Actually create the entry in Strapi
-    const createdEntry = await strapi.entityService.create(
-      `api::${model}.${model}`,
-      {
-        data: entry,
-      }
-    );
-  } catch (e) {
-    console.log("model", entry, e);
-  }
-}
-
 async function createExperience(experience) {
   return Promise.all(
     experience.map((exp) => {
@@ -128,10 +91,21 @@ async function createArchetypes(archetypes) {
 
 async function createSpells(spells) {
   return Promise.all(
-    spells.map((arc) => {
+    spells.map((spell) => {
       return createEntry({
         model: "spell",
-        entry: arc,
+        entry: spell,
+      });
+    })
+  );
+}
+
+async function createDistances(distances) {
+  return Promise.all(
+    distances.map(async (distance) => {
+      return createEntry({
+        model: "distance",
+        entry: distance,
       });
     })
   );
@@ -146,7 +120,13 @@ async function importSeedData() {
   // Create all entries
   await createExperience(experience);
   await createArchetypes(archetypes);
-  await createSpells(spells);
+  const createdSpells = await createSpells(spells);
+  await createDistances(
+    spells.map((spell, index) => ({
+      ...spell.distance,
+      spell: createdSpells[index],
+    }))
+  );
 }
 
 module.exports = async () => {

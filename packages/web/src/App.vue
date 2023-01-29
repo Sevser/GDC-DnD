@@ -1,19 +1,11 @@
 <template>
   <v-app>
-    <DefaultLayout>
-      <router-view />
-    </DefaultLayout>
+    <router-view />
   </v-app>
 </template>
 
 <script lang="ts">
-import DefaultLayout from './layout/DefaultLayout.vue';
-
-export default {
-  components: {
-    DefaultLayout,
-  },
-};
+export default {};
 </script>
 <style>
 html,

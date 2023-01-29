@@ -2,7 +2,7 @@
   "name": "@gdc/web",
   "version": "0.1.0",
   "scripts": {
-    "dev": "export APP_ENV=develop || set APP_ENV=develop && vite",
+    "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "export APP_ENV=prod || set APP_ENV=prod && vite preview",
     "lint:js": "eslint"
@@ -10,11 +10,12 @@
   "dependencies": {
     "@mdi/font": "7.0.96",
     "axios": "^1.2.0",
+    "floating-vue": "^2.0.0-beta.20",
     "roboto-fontface": "*",
     "v3-infinite-loading": "^1.2.2",
     "vue": "^3.2.38",
     "vue-router": "4.0.13",
-    "vuetify": "^3.0.0",
+    "vuetify": "^3.1.2",
     "vuex": "4.1.0",
     "webfontloader": "^1.0.0"
   },

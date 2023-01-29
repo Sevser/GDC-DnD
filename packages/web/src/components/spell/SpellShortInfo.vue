@@ -3,10 +3,10 @@
     <v-chip class="ma-0" label>
       {{ level }}
     </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="concentration"> K </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="verbalComponent"> В </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="somaticComponent"> С </v-chip>
-    <v-chip class="ma-0 ml-2" label v-if="materialComponent"> М </v-chip>
+    <v-chip v-if="concentration" class="ma-0 ml-2" label v-tooltip="{ content: concentrationTooltipText, triggers: ['hover', 'click', 'focus', 'touch'] }"> K </v-chip>
+    <v-chip v-if="verbalComponent" class="ma-0 ml-2" label v-tooltip="{ content: verbalComponentTooltipText, triggers: ['hover', 'click', 'focus', 'touch'] }"> В </v-chip>
+    <v-chip v-if="somaticComponent" class="ma-0 ml-2" label v-tooltip="{ content: somaticComponentTooltipText, triggers: ['hover', 'click', 'focus', 'touch'] }"> С </v-chip>
+    <v-chip v-if="materialComponent" class="ma-0 ml-2" label v-tooltip="{ content: materialComponentTooltipText, triggers: ['hover', 'click', 'focus', 'touch'] }"> М </v-chip>
   </div>
 </template>
 <script lang="ts">
@@ -24,38 +24,37 @@ export default defineComponent({
   },
   data: () => ({
     tooltipProps: {},
+    somaticComponent: false,
+    verbalComponent: false,
+    materialComponent: false,
+    concentration: false,
+    level: '',
+    levelTooltipText: '',
+    concentrationTooltipText: 'Концентрация',
+    verbalComponentTooltipText: 'Вербальный компонент',
+    somaticComponentTooltipText: 'Соматический компонент',
+    materialComponentTooltipText: 'Материальный компонент',
   }),
-  computed: {
-    level() {
-      return this.spell.Level;
+  methods: {
+    calcComponents() {
+      this.spell.SpellComponent.forEach((value: ISpellComponent) => {
+        if (value.SpellComponent === 'Verbal') {
+          this.verbalComponent = true;
+        }
+        if (value.SpellComponent === 'Somatic') {
+          this.somaticComponent = true;
+        }
+        if (value.SpellComponent === 'Material Components') {
+          this.materialComponent = true;
+        }
+      });
+      this.concentration = this.spell.Concentration;
+      this.level = this.spell.Level.toString();
+      this.levelTooltipText = this.spell.Level === 0 ? 'Это заговор' : `Это заклинание ${this.spell.Level} уровня`;
     },
-    levelTooltipText() {
-      return this.spell.Level === 0 ? 'Это заговор' : `Это заклинание ${this.spell.Level} уровня`;
-    },
-    concentrationTooltipText() {
-      return 'Концентрация';
-    },
-    concentration() {
-      return this.spell.Concentration;
-    },
-    verbalComponent() {
-      return this.spell.SpellComponent.some((value: ISpellComponent) => value.SpellComponent === 'Verbal');
-    },
-    somaticComponent() {
-      return this.spell.SpellComponent.some((value: ISpellComponent) => value.SpellComponent === 'Somatic');
-    },
-    materialComponent() {
-      return this.spell.SpellComponent.some((value: ISpellComponent) => value.SpellComponent === 'Material Components');
-    },
-    verbalComponentTooltipText() {
-      return 'Вербальный компонент';
-    },
-    somaticComponentTooltipText() {
-      return 'Соматический компонент';
-    },
-    materialComponentTooltipText() {
-      return 'Материальный компонент';
-    },
+  },
+  created() {
+    this.calcComponents();
   },
 });
 </script>

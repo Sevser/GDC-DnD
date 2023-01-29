@@ -25,6 +25,12 @@ export class Pagination implements IPagination {
       pageSize: this.pageSize,
     };
   }
+  get currentPage(): Partial<IPagination> {
+    return {
+      page: this.page,
+      pageSize: this.pageSize,
+    };
+  }
   static default() {
     return {
       page: 1,

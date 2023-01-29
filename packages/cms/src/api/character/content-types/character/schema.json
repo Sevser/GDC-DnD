@@ -73,7 +73,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::spell.spell",
-      "inversedBy": "characters"
+      "mappedBy": "characters"
     },
     "VisibilityType": {
       "type": "component",

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-space-evenly w-100 d-sm-none">
+  <div class="d-flex justify-space-evenly w-100">
     <v-btn elevation="2" rounded color="primary" size="small" @click="openFilters = true">Фильтры</v-btn>
     <v-btn elevation="2" rounded color="primary" size="small" @click="openSort = true">Сортировка</v-btn>
     <v-btn elevation="2" rounded color="primary" size="small">Избранное</v-btn>
