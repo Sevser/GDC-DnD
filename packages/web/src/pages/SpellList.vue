@@ -10,6 +10,10 @@
       <div class="d-flex justify-center align-center" style="height: 20px" v-if="showLoader">
         <InfiniteLoading @infinite="loadNextPage" />
       </div>
+      <div v-if="hasNoSpells" class="d-flex flex-column p-4 justify-center align-center h-100">
+        <div class="text-h4 mb-4">Фильтры слишком жесткие</div>
+        <v-btn prepend-icon="mdi-restore" color="secondary" @click="resetFilters"> сбросить фильтры </v-btn>
+      </div>
     </div>
   </ListPreviewLayout>
 </template>
@@ -42,6 +46,9 @@ export default defineComponent({
     );
   },
   computed: {
+    hasNoSpells() {
+      return this.$store.state.spells?.pagination?.total === 0;
+    },
     showLoader() {
       if (this.$store.state.spells.pagination.total) {
         return this.spells.length > 0 && this.$store.state.spells.pagination.total > this.spells.length;
@@ -56,6 +63,10 @@ export default defineComponent({
     },
   },
   methods: {
+    resetFilters() {
+      this.$store.commit('spells/setCurrentFilters', {});
+      this.$store.dispatch('spells/fetchSpellList', {});
+    },
     handleClick(spell: ISpell) {
       this.$router.push({
         name: 'SpellView',

@@ -1,5 +1,5 @@
 <template>
-  <v-dialog :model-value="open" @update:modelValue="handleUpdateValue">
+  <v-dialog :model-value="open" @update:modelValue="handleUpdateValue" max-width="600">
     <v-card>
       <v-card-title>
         <span class="text-h5">Sort by</span>
@@ -7,7 +7,7 @@
       <v-card-text>
         <v-container>
           <v-row>
-            <v-col cols="12" sm="6" md="4">
+            <v-col cols="12">
               <v-select label="sort" :items="sortFields" :model-value="current" @update:modelValue="updateCurrent"></v-select>
             </v-col>
           </v-row>
@@ -56,6 +56,11 @@ export default defineComponent({
         this.$emit('close');
         if (this.$store.state.spells.sort.current) {
           this.$store.dispatch('spells/fetchSpellList', { ...this.$store.state.spells.sort.current.forParams });
+        }
+        if (this.$router.currentRoute.value.name === 'SpellView') {
+          this.$router.push({
+            name: 'SpellList',
+          });
         }
       }
     },

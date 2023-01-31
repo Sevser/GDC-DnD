@@ -8,7 +8,7 @@ import ListPreviewLayoutMain from './ListPreviewLayoutMain.vue';
 import { RawSlots } from '../../types/Vue';
 
 export default {
-  name: 'DefaultLayout',
+  name: 'ListPreviewLayour',
   components: {
     NavigationMenu,
     LoginDialog,
@@ -41,6 +41,11 @@ export default {
       }
       return [false];
     },
+    currentRouteHasAdditionalMenu() {
+      const matched = this.$router.currentRoute.value.matched;
+      const route = matched && matched.find((route) => Reflect.has(route.components, 'mobileAdditionalMenu'));
+      return route && route.name === this.$router.currentRoute.value.name;
+    },
   },
   data: () => ({
     drawer: false,
@@ -64,7 +69,7 @@ export default {
               'd-flex': true,
             },
           },
-          [this.title, h(this.mobileAdditionalMenu[1] as VueElement)]
+          [h(this.mobileAdditionalMenu[1] as VueElement)]
         );
     }
 
@@ -83,7 +88,7 @@ export default {
         h(LoginDialog),
       ],
     };
-    if (this.$vuetify.display.xs && this.hasListContentView[0] && this.mobileAdditionalMenu[0]) {
+    if (this.$vuetify.display.xs && this.mobileAdditionalMenu[0] && this.currentRouteHasAdditionalMenu) {
       childrenForAppBar.extension = () => h(this.mobileAdditionalMenu[1] as VueElement);
     }
 
