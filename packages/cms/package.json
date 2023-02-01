@@ -10,11 +10,12 @@
     "strapi": "strapi",
     "clear": "if exist .tmp rmdir .tmp /s /q"
   },
-  "devDependencies": {},
   "dependencies": {
+    "5e-database": "git@github.com:Sevser/5e-database.git",
     "@strapi/plugin-i18n": "4.5.1",
     "@strapi/plugin-users-permissions": "4.5.1",
     "@strapi/strapi": "4.5.1",
+    "axios": "^1.3.0",
     "better-sqlite3": "7.4.6",
     "strapi-plugin-init-admin-user": "^0.1.3"
   },

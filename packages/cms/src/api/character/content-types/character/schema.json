@@ -42,8 +42,7 @@
     "base_characteristic": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::base-characteristic.base-characteristic",
-      "inversedBy": "character"
+      "target": "api::base-characteristic.base-characteristic"
     },
     "extended_characteristic": {
       "type": "relation",

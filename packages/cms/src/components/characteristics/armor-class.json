@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_characteristics_armor_classes",
+  "info": {
+    "displayName": "Armor Class"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "value": {
+      "type": "integer",
+      "min": 0
+    }
+  }
+}

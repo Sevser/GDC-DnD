@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_characteristics_senses",
+  "info": {
+    "displayName": "senses"
+  },
+  "options": {},
+  "attributes": {
+    "passive_perception": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "darkvision": {
+      "type": "string",
+      "maxLength": 8
+    },
+    "blindsight": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "truesight": {
+      "type": "text",
+      "maxLength": 8
+    }
+  }
+}

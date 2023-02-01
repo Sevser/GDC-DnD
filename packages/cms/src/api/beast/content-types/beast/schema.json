@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "beasts",
+  "info": {
+    "singularName": "beast",
+    "pluralName": "beasts",
+    "displayName": "Beast",
+    "description": ""
+  },
+  "options": {},
+  "pluginOptions": {},
+  "attributes": {
+    "base_characteristic": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::base-characteristic.base-characteristic"
+    },
+    "hit_dice": {
+      "type": "string"
+    },
+    "hit_points": {
+      "min": 0,
+      "default": 0,
+      "type": "integer"
+    },
+    "hit_points_roll": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "string"
+    },
+    "alignment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.alignment"
+    },
+    "Size": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.size"
+    },
+    "xp": {
+      "type": "integer",
+      "min": 0
+    },
+    "name": {
+      "type": "string"
+    },
+    "senses": {
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.senses"
+    },
+    "speed": {
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.speed"
+    },
+    "armorClass": {
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.armor-class"
+    },
+    "actions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.actions"
+    }
+  }
+}

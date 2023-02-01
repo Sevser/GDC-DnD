@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_enums_alignments",
+  "info": {
+    "displayName": "alignment"
+  },
+  "options": {},
+  "attributes": {
+    "alignment": {
+      "type": "enumeration",
+      "enum": [
+        "lawful evil",
+        "any alignment",
+        "chaotic evil",
+        "chaotic good",
+        "lawful good",
+        "neutral",
+        "lawful neutral",
+        "unaligned",
+        "any non-good alignment",
+        "any non-lawful alignment",
+        "neutral evil",
+        "any chaotic alignment",
+        "neutral good",
+        "chaotic neutral",
+        "neutral good (50%) or neutral evil (50%)",
+        "any evil alignment"
+      ]
+    }
+  }
+}
