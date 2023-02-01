@@ -1,7 +1,23 @@
 const createEntry = require("../../common/createEntry");
 const axios = require("axios");
+const createInstanceBaseCharacteristics = require("../baseCharacteristics/createInstanceBaseCharacteristics");
 
-const transformBeast = (beastRaw) => {
+const transformBeast = async (beastRaw) => {
+  const baseCharacteristics = await createInstanceBaseCharacteristics({
+    Strength: beastRaw.strength,
+    Dexterity: beastRaw.dexterity,
+    Constitution: beastRaw.constitution,
+    Intelligence: beastRaw.intelligence,
+    Wisdom: beastRaw.wisdom,
+    Charisma: beastRaw.charisma,
+    CharismaMaster: false,
+    WisdomMaster: false,
+    IntelligenceMaster: false,
+    ConstitutionMaster: false,
+    DexterityMaster: false,
+    StrengthMaster: false,
+  });
+
   const beast = {
     hit_points: beastRaw.hit_points,
     hit_dice: beastRaw.hit_dice,
@@ -9,6 +25,7 @@ const transformBeast = (beastRaw) => {
     Size: {
       Size: beastRaw.size,
     },
+    base_characteristic: baseCharacteristics,
     speed: beastRaw.speed,
     name: beastRaw.name,
     xp: beastRaw.xp,
@@ -48,6 +65,16 @@ const transformBeast = (beastRaw) => {
               : undefined,
           }))
         : [],
+    legendaryAction:
+      beastRaw.legendary_actions && beastRaw.legendary_actions.length
+        ? beastRaw.legendary_actions.map((action) => ({
+            name: action.name,
+            desc: action.desc,
+            attack_bonus: action.attack_bonus,
+            dc: action.dc ? JSON.stringify(action.dc) : undefined,
+            damage: action.damage ? JSON.stringify(action.damage) : undefined,
+          }))
+        : [],
   };
 
   return beast;
@@ -58,10 +85,10 @@ async function createBeast() {
       "https://raw.githubusercontent.com/Sevser/5e-database/main/src/5e-SRD-Monsters.json"
     );
     return Promise.all(
-      beasts.data.map((beastRaw) => {
+      beasts.data.map(async (beastRaw) => {
         return createEntry({
           model: "beast",
-          entry: transformBeast(beastRaw),
+          entry: await transformBeast(beastRaw),
         });
       })
     );

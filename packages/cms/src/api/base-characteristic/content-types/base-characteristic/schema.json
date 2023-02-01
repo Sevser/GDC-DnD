@@ -7,45 +7,37 @@
     "displayName": "BaseCharacteristic",
     "description": ""
   },
-  "options": {
-    "draftAndPublish": true
-  },
+  "options": {},
   "pluginOptions": {},
   "attributes": {
     "Strength": {
       "type": "integer",
       "required": true,
-      "max": 20,
       "min": 0
     },
     "Dexterity": {
       "type": "integer",
       "required": true,
-      "min": 0,
-      "max": 20
+      "min": 0
     },
     "Constitution": {
       "type": "integer",
       "required": true,
-      "max": 20,
       "min": 0
     },
     "Intelligence": {
       "type": "integer",
       "required": true,
-      "max": 20,
       "min": 0
     },
     "Wisdom": {
       "type": "integer",
-      "max": 20,
       "min": 0,
       "required": true
     },
     "Charisma": {
       "type": "integer",
       "required": true,
-      "max": 20,
       "min": 0
     },
     "CharismaMaster": {
