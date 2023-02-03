@@ -30,6 +30,15 @@ const routes = [
       default: () => import('@/pages/BestiaryList.vue'),
       mobileAdditionalMenu: () => import('@/components/bestiary/MobileAdditionalMenu/BeastMobileAdditionalMenu.vue'),
     },
+    children: [
+      {
+        path: ':id',
+        name: 'BestiaryView',
+        components: {
+          listContentView: () => import('@/pages/BestiaryView.vue'),
+        },
+      },
+    ],
   },
   {
     path: '/events',

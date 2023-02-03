@@ -1,3 +1,4 @@
+import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
 import { Spell } from '@/types/Spell';
@@ -41,10 +42,19 @@ const fetchBestiary = async (params: IGenericQueryParams<IBeastListItem>): Promi
   };
 };
 
+const fetchBeast = async (beastId: string | number): Promise<IBeastModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/beasts/${beastId}`);
+  return new BeastModel({
+    id: result.data.data.id,
+    ...result.data.data.attributes,
+  });
+};
+
 export interface ICMSClient {
   login: typeof login;
   fetchSpells: typeof fetchSpells;
   fetchSpell: typeof fetchSpell;
+  fetchBeast: typeof fetchBeast;
 }
 
-export { fetchSpells, login, fetchSpell, fetchBestiary };
+export { fetchSpells, login, fetchSpell, fetchBestiary, fetchBeast };

@@ -33,7 +33,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { IBeastFilter } from '@/types/beasts/BeastFilters';
-import { BeastType, BeastChallengeRating } from '@/types/beasts/BeastFilters';
+import { BeastType } from '@/types/beasts/BeastType';
+import { BeastChallengeRating } from '@/types/beasts/BeastChallengeRating';
+import { BeastSize } from '@/types/beasts/BeastSize';
 
 interface AdditionalMenuSortData {
   dialog: boolean;
@@ -84,7 +86,7 @@ export default defineComponent({
     updateType(type?: BeastType) {
       this.filter.type = type;
     },
-    updateSize(size?: string) {
+    updateSize(size?: BeastSize) {
       this.filter.size = size;
     },
     handleUpdateValue(val: boolean) {

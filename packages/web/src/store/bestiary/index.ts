@@ -1,4 +1,5 @@
 import { cmsClient } from '@/plugins/http';
+import { IBeastModel } from '@/types/beasts/Beast';
 import { BeastFilter, IBeastFilter } from '@/types/beasts/BeastFilters';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
 import { IGenericQueryParams } from '@/types/GenericStrapiData';
@@ -16,7 +17,7 @@ export interface IBeastiaryState {
     available: Sorting[];
   };
   filters: IBeastFilter;
-  beast?: Spell;
+  beast?: IBeastModel;
   beastPending: boolean;
 }
 
@@ -35,6 +36,21 @@ const bestiary = {
     beastPending: false,
   }),
   actions: {
+    async fetchBeast(context: ActionContext<IBeastiaryState, State>, beastId: number | string) {
+      context.commit('updateBeastPending', true);
+      context.commit('updateBeast');
+      try {
+        const beast = await cmsClient.fetchBeast(beastId);
+        console.log(beast);
+        context.commit('updateBeast', beast);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch (e) {
+        console.log(e);
+      } finally {
+        context.commit('updateBeastPending', false);
+      }
+    },
     async fetchBeastList(context: ActionContext<IBeastiaryState, State>, params: IGenericQueryParams<IBeastListItem>) {
       context.commit('updateBeastListPending', true);
       context.commit('updateBeastList', new Array<BeastListItem>());
@@ -79,6 +95,12 @@ const bestiary = {
   mutations: {
     updateBeastListPending(state: IBeastiaryState, payload = false) {
       state.bestiaryListPending = payload;
+    },
+    updateBeastPending(state: IBeastiaryState, payload = false) {
+      state.beastPending = payload;
+    },
+    updateBeast(state: IBeastiaryState, payload: IBeastModel) {
+      state.beast = payload;
     },
     updateBeastList(state: IBeastiaryState, payload: IBeastListItem[]) {
       state.bestiaryList = payload;

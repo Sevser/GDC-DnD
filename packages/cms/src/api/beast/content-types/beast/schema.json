@@ -22,7 +22,8 @@
     "base_characteristic": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::base-characteristic.base-characteristic"
+      "target": "api::base-characteristic.base-characteristic",
+      "mappedBy": "beast"
     },
     "hit_dice": {
       "type": "string"

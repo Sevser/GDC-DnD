@@ -1,30 +1,15 @@
+import { BeastChallengeRating } from './BeastChallengeRating';
+import { BeastSize } from './BeastSize';
+import { BeastType } from './BeastType';
+
 export interface IBeastFilter {
-  size?: string;
+  size?: BeastSize;
   type?: BeastType;
   challengeRating?: BeastChallengeRating;
 }
 
-export type BeastType =
-  | 'aberration'
-  | 'humanoid'
-  | 'dragon'
-  | 'elemental'
-  | 'monstrosity'
-  | 'construct'
-  | 'beast'
-  | 'plant'
-  | 'fiend'
-  | 'ooze'
-  | 'fey'
-  | 'giant'
-  | 'celestial'
-  | 'undead'
-  | 'swarm of Tiny beasts';
-
-export type BeastChallengeRating = 10 | 0.25 | 14 | 16 | 13 | 15 | 17 | 5 | 21 | 23 | 20 | 22 | 24 | 1 | 2 | 0.5 | 12 | 8 | 0 | 19 | 0.125 | 3 | 11 | 4 | 6 | 9 | 7 | 30;
-
 export class BeastFilter implements IBeastFilter {
-  size?: string;
+  size?: BeastSize;
   type?: BeastType;
   challengeRating?: BeastChallengeRating;
   constructor(prop: IBeastFilter) {

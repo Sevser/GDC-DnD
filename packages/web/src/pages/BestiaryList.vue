@@ -5,7 +5,7 @@
         <v-progress-circular indeterminate :size="60" />
       </div>
       <template v-else>
-        <beast-item v-for="beast in beasts" :key="beast.name" :beast="beast" />
+        <beast-item v-for="beast in beasts" :key="beast.name" :beast="beast" @click="handleClick(beast)" />
       </template>
       <div class="d-flex justify-center align-center" style="height: 20px" v-if="showLoader">
         <InfiniteLoading @infinite="loadNextPage" />
@@ -24,6 +24,7 @@ import 'v3-infinite-loading/lib/style.css';
 import ListPreviewLayout from '../layout/ListPreviewLayout/ListPreviewLayout.vue';
 import { Pagination } from '@/types/Pagination';
 import BeastItem from '@/components/bestiary/BeastItem.vue';
+import { IBeastListItem } from '@/types/beasts/BeastListItem';
 
 export default defineComponent({
   components: {
@@ -62,8 +63,13 @@ export default defineComponent({
     },
   },
   methods: {
-    handleClick() {
-      console.log('handleClick');
+    handleClick(beast: IBeastListItem) {
+      this.$router.push({
+        name: 'BestiaryView',
+        params: {
+          id: beast.id,
+        },
+      });
     },
     loadNextPage() {
       if ((this.$store.state.bestiary.pagination as Pagination).hasNextPage && !this.pending) {
@@ -73,7 +79,8 @@ export default defineComponent({
       }
     },
     resetFilters() {
-      console.log('handleClick');
+      this.$store.commit('bestiary/setCurrentFilters', {});
+      this.$store.dispatch('bestiary/fetchSpellList', {});
     },
   },
 });

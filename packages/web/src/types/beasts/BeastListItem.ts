@@ -1,24 +1,21 @@
+import { IBeastSizeModel } from './BeastSize';
+
 export type BeastAlignment = {
   alignment: string;
-  id: number;
-};
-
-export type BeastSize = {
-  Size: string;
   id: number;
 };
 
 export interface IBeastListItem {
   id: number;
   name: string;
-  Size: BeastSize;
+  Size: IBeastSizeModel;
   alignment: BeastAlignment;
   challenge_rating: number;
   type: string;
 }
 
 export class BeastListItem implements IBeastListItem {
-  Size: BeastSize;
+  Size: IBeastSizeModel;
   id: number;
   alignment: BeastAlignment;
   challenge_rating: number;

@@ -69,6 +69,12 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "beast": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::beast.beast",
+      "inversedBy": "base_characteristic"
     }
   }
 }
