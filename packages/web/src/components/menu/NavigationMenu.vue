@@ -32,6 +32,11 @@ export default defineComponent({
         text: 'Spells',
         navigation: 'SpellList',
       },
+      {
+        icon: 'mdi-alien',
+        text: 'Bestiary',
+        navigation: 'BestiaryList',
+      },
     ],
     model: 1,
   }),

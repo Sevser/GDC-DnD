@@ -10,6 +10,7 @@ async function importSeedData() {
   // Allow read of application content types
   await setPublicPermissions({
     spell: ["find", "findOne"],
+    beast: ["find", "findOne"],
   });
 
   // Create all entries

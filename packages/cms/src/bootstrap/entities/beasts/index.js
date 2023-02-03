@@ -1,6 +1,7 @@
 const createEntry = require("../../common/createEntry");
 const axios = require("axios");
 const createInstanceBaseCharacteristics = require("../baseCharacteristics/createInstanceBaseCharacteristics");
+const experience = require("./experienceToDangereouse");
 
 const transformBeast = async (beastRaw) => {
   const baseCharacteristics = await createInstanceBaseCharacteristics({
@@ -29,6 +30,8 @@ const transformBeast = async (beastRaw) => {
     speed: beastRaw.speed,
     name: beastRaw.name,
     xp: beastRaw.xp,
+    type: beastRaw.type,
+    challenge_rating: beastRaw.challenge_rating,
     languages: beastRaw.languages,
     alignment: {
       alignment: beastRaw.alignment,

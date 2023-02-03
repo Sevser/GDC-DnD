@@ -38,6 +38,14 @@
     "languages": {
       "type": "string"
     },
+    "type": {
+      "type": "string"
+    },
+    "challenge_rating": {
+      "min": 0,
+      "default": 0,
+      "type": "decimal"
+    },
     "alignment": {
       "type": "component",
       "repeatable": false,

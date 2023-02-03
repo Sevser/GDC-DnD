@@ -25,7 +25,11 @@ const routes = [
   },
   {
     path: '/bestiary',
-    name: 'Bestiary',
+    name: 'BestiaryList',
+    components: {
+      default: () => import('@/pages/BestiaryList.vue'),
+      mobileAdditionalMenu: () => import('@/components/bestiary/MobileAdditionalMenu/BeastMobileAdditionalMenu.vue'),
+    },
   },
   {
     path: '/events',
@@ -40,7 +44,7 @@ const routes = [
     name: 'SpellList',
     components: {
       default: () => import('@/pages/SpellList.vue'),
-      mobileAdditionalMenu: () => import('@/components/spell/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
+      mobileAdditionalMenu: () => import('@/components/beast/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
     },
     children: [
       {
