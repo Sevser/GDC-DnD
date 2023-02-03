@@ -49,7 +49,10 @@ export class BeastModel implements IBeastModel {
   armorClass: IArmorClass[];
   actions: IActions[];
   legendaryAction: IActions[];
-  constructor(prop: IBeastModel) {
+  constructor(prop?: IBeastModel) {
+    if (!prop) {
+      prop = BeastModel.getEmpty();
+    }
     this.id = prop.id;
     this.hit_dice = prop.hit_dice;
     this.hit_points = prop.hit_points;
