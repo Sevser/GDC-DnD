@@ -1,0 +1,16 @@
+export type BeastType =
+  | 'aberration'
+  | 'humanoid'
+  | 'dragon'
+  | 'elemental'
+  | 'monstrosity'
+  | 'construct'
+  | 'beast'
+  | 'plant'
+  | 'fiend'
+  | 'ooze'
+  | 'fey'
+  | 'giant'
+  | 'celestial'
+  | 'undead'
+  | 'swarm of Tiny beasts';

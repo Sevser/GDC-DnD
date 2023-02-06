@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_characteristics_actions",
+  "info": {
+    "displayName": "actions"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "multiattack_type": {
+      "type": "string"
+    },
+    "attack_bonus": {
+      "type": "integer"
+    },
+    "usage": {
+      "type": "json"
+    },
+    "dc": {
+      "type": "json"
+    },
+    "actions": {
+      "type": "json"
+    },
+    "damage": {
+      "type": "json"
+    },
+    "options": {
+      "type": "json"
+    },
+    "attacks": {
+      "type": "json"
+    },
+    "action_options": {
+      "type": "json"
+    }
+  }
+}

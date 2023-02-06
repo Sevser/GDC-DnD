@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_characteristics_legendary_actions",
+  "info": {
+    "displayName": "Legendary Action"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "dc": {
+      "type": "json"
+    },
+    "damage": {
+      "type": "json"
+    },
+    "attack_bonus": {
+      "type": "number"
+    }
+  }
+}
