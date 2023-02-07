@@ -80,7 +80,7 @@ export default defineComponent({
     },
     resetFilters() {
       this.$store.commit('bestiary/setCurrentFilters', {});
-      this.$store.dispatch('bestiary/fetchSpellList', {});
+      this.$store.dispatch('bestiary/fetchBeastList', {});
     },
   },
 });

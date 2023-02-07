@@ -56,4 +56,8 @@ export class BaseCharacteristics implements IBaseCharacteristics {
       StrengthMaster: false,
     });
   }
+  toText(num: number) {
+    const modificator: number = Math.floor(num / 2) - 5;
+    return `${num} (${modificator > 0 ? '+' + modificator : modificator})`;
+  }
 }

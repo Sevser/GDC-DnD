@@ -62,4 +62,18 @@ export class Actions implements IActions {
       this.action_options = prop.action_options;
     }
   }
+  static getEmpty() {
+    return new Actions({
+      name: '',
+      desc: '',
+      attack_bonus: '',
+      usage: {},
+      action_options: {},
+      options: {},
+      actions: {},
+      attacks: {},
+      damage: {},
+      dc: {},
+    });
+  }
 }
