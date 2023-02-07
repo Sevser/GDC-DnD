@@ -11,6 +11,7 @@ export interface IBaseCharacteristics {
   ConstitutionMaster: boolean;
   DexterityMaster: boolean;
   StrengthMaster: boolean;
+  toText: (num: number) => string;
 }
 
 export class BaseCharacteristics implements IBaseCharacteristics {
@@ -26,7 +27,7 @@ export class BaseCharacteristics implements IBaseCharacteristics {
   ConstitutionMaster: boolean;
   DexterityMaster: boolean;
   StrengthMaster: boolean;
-  constructor(prop: IBaseCharacteristics) {
+  constructor(prop: Omit<IBaseCharacteristics, 'toText'>) {
     this.Strength = prop.Strength;
     this.StrengthMaster = prop.StrengthMaster;
     this.Dexterity = prop.Dexterity;

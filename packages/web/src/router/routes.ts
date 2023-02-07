@@ -53,7 +53,7 @@ const routes = [
     name: 'SpellList',
     components: {
       default: () => import('@/pages/SpellList.vue'),
-      mobileAdditionalMenu: () => import('@/components/skill/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
+      mobileAdditionalMenu: () => import('@/components/spell/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
     },
     children: [
       {

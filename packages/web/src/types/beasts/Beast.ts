@@ -40,7 +40,7 @@ export class BeastModel implements IBeastModel {
   hit_dice: string;
   hit_points_roll: string;
   Size: IBeastSizeModel;
-  base_characteristic: IBaseCharacteristics;
+  base_characteristic: BaseCharacteristics;
   speed: ISpeed;
   name: string;
   xp: number;

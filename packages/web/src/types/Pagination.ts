@@ -19,13 +19,13 @@ export class Pagination implements IPagination {
   get hasNextPage() {
     return this.page < this.pageCount;
   }
-  get nextPage(): Omit<IPagination, 'page', 'pageSize'> {
+  get nextPage(): Omit<IPagination, 'total' | 'pageCount'> {
     return {
       page: this.page + 1,
       pageSize: this.pageSize,
     };
   }
-  get currentPage(): Omit<IPagination> {
+  get currentPage(): Omit<IPagination, 'total' | 'pageCount'> {
     return {
       page: this.page,
       pageSize: this.pageSize,
