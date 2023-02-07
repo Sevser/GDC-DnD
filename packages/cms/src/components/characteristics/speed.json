@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_characteristics_speeds",
+  "info": {
+    "displayName": "Speed"
+  },
+  "options": {},
+  "attributes": {
+    "walk": {
+      "type": "string"
+    },
+    "fly": {
+      "type": "string"
+    },
+    "swim": {
+      "type": "string"
+    }
+  }
+}

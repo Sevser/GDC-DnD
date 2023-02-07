@@ -86,7 +86,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::character.character",
-      "inversedBy": "abilities"
+      "mappedBy": "abilities"
     }
   }
 }

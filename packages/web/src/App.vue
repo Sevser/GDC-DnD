@@ -13,5 +13,6 @@ body,
 #app {
   height: 100% !important;
   width: 100% !important;
+  overflow: hidden;
 }
 </style>

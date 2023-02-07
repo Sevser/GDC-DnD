@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_characteristics_action_usages",
+  "info": {
+    "displayName": "Action usage"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "times": {
+      "type": "integer"
+    },
+    "dice": {
+      "type": "string"
+    },
+    "min_value": {
+      "type": "integer"
+    }
+  }
+}

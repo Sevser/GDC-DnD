@@ -4,7 +4,9 @@
   </div>
   <v-card :class="{ 'h-100': !$vuetify.display.xs, 'h-calc': $vuetify.display.xs, 'overflow-y-auto': true }">
     <template #title>
-      {{ spell.title }}
+      <div class="text-h4">
+        {{ spell.title }}
+      </div>
     </template>
     <template #subtitle>
       <div class="d-flex flex-column">
@@ -13,24 +15,18 @@
       </div>
     </template>
     <template #text>
-      <div class="d-flex flex-column mb-2">
-        <div class="d-flex">
-          <div class="w-33">{{ level }}</div>
-          <div class="w-33">{{ scoolOfMagic }}</div>
-          <div class="w-33">Ритуал</div>
-        </div>
-      </div>
+      <div class="d-flex flex-column mb-2">{{ level }} {{ scoolOfMagic }} Ритуал</div>
       <div class="d-flex flex-column mb-2">
         <div class="d-flex mb-2">
-          <div class="w-33 d-flex flex-column">
+          <div class="w-33 d-flex flex-column pr-4">
             <div class="text-subtitle-2">Наложение</div>
             <div>{{ actionTypeDescription }}</div>
           </div>
-          <div class="w-33 d-flex flex-column">
+          <div class="w-33 d-flex flex-column pr-4 pl-4">
             <div class="text-subtitle-2">Дистанция</div>
             <div>{{ distanceContent }}</div>
           </div>
-          <div class="w-33 d-flex flex-column">
+          <div class="w-33 d-flex flex-column pr-4 pl-4">
             <div class="text-subtitle-2">Длительность</div>
             <div>{{ lengthSpell }}</div>
           </div>
