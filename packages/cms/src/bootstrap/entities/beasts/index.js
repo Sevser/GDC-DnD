@@ -1,7 +1,26 @@
 const createEntry = require("../../common/createEntry");
 const axios = require("axios");
 const createInstanceBaseCharacteristics = require("../baseCharacteristics/createInstanceBaseCharacteristics");
-const experience = require("./experienceToDangereouse");
+
+const checkForDamageType = (val) => {
+  return (
+    [
+      "Acid",
+      "Bludgeoning",
+      "Cold",
+      "Fire",
+      "Force",
+      "Lightning",
+      "Necrotic",
+      "Piercing",
+      "Poison",
+      "Psychic",
+      "Radiant",
+      "Slashing",
+      "Thunder",
+    ].indexOf(val) !== -1
+  );
+};
 
 const transformBeast = async (beastRaw) => {
   const baseCharacteristics = await createInstanceBaseCharacteristics({
@@ -76,6 +95,69 @@ const transformBeast = async (beastRaw) => {
             attack_bonus: action.attack_bonus,
             dc: action.dc ? JSON.stringify(action.dc) : undefined,
             damage: action.damage ? JSON.stringify(action.damage) : undefined,
+          }))
+        : [],
+    damageImmunities: beastRaw.damage_immunities.map((item) => {
+      if (checkForDamageType(item.capitalize())) {
+        return {
+          DamageType: item.capitalize(),
+          CustomDamage: "",
+        };
+      } else {
+        return {
+          DamageType: "None",
+          CustomDamage: item.capitalize(),
+        };
+      }
+    }),
+    damageResistances: beastRaw.damage_resistances.map((item) => {
+      if (checkForDamageType(item.capitalize())) {
+        return {
+          DamageType: item.capitalize(),
+          CustomDamage: "",
+        };
+      } else {
+        return {
+          DamageType: "None",
+          CustomDamage: item.capitalize(),
+        };
+      }
+    }),
+    damageVulnerabilities: beastRaw.damage_vulnerabilities.map((item) => {
+      if (checkForDamageType(item.capitalize())) {
+        return {
+          DamageType: item.capitalize(),
+          CustomDamage: "",
+        };
+      } else {
+        return {
+          DamageType: "None",
+          CustomDamage: item.capitalize(),
+        };
+      }
+    }),
+    specialAbilities:
+      beastRaw.special_abilities && beastRaw.special_abilities.length
+        ? beastRaw.special_abilities.map((action) => ({
+            name: action.name,
+            desc: action.desc,
+            action_options: action.action_options,
+            attack_bonus: action.attack_bonus,
+            usage: action.usage ? JSON.stringify(action.usage) : undefined,
+            dc: action.dc ? JSON.stringify(action.dc) : undefined,
+            actions: action.actions
+              ? JSON.stringify(action.actions)
+              : undefined,
+            damage: action.damage ? JSON.stringify(action.damage) : undefined,
+            options: action.options
+              ? JSON.stringify(action.options)
+              : undefined,
+            attacks: action.attacks
+              ? JSON.stringify(action.attacks)
+              : undefined,
+            action_options: action.action_options
+              ? JSON.stringify(action.action_options)
+              : undefined,
           }))
         : [],
   };

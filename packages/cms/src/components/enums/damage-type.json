@@ -4,13 +4,13 @@
   "info": {
     "singularName": "damage-type",
     "pluralName": "damage-types",
-    "displayName": "DamageType"
+    "displayName": "DamageType",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-  },
+  "pluginOptions": {},
   "attributes": {
     "DamageType": {
       "type": "enumeration",
@@ -27,8 +27,12 @@
         "Psychic",
         "Radiant",
         "Slashing",
-        "Thunder"
+        "Thunder",
+        "None"
       ]
+    },
+    "CustomDamage": {
+      "type": "string"
     }
   }
 }

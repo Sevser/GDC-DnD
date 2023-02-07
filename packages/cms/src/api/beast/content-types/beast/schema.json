@@ -81,6 +81,26 @@
       "type": "component",
       "repeatable": true,
       "component": "characteristics.legendary-action"
+    },
+    "damageImmunities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "enums.damage-type"
+    },
+    "damageResistances": {
+      "type": "component",
+      "repeatable": true,
+      "component": "enums.damage-type"
+    },
+    "damageVulnerabilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "enums.damage-type"
+    },
+    "specialAbilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.actions"
     }
   }
 }

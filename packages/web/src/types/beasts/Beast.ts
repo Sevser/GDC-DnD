@@ -1,6 +1,7 @@
 import { Actions, IActions } from '../Actions/Actions';
 import { ArmorClass, IArmorClass } from '../ArmorClass/ArmorClass';
 import { BaseCharacteristics, IBaseCharacteristics } from '../BaseCharacteristics/BaseCharacteristics';
+import { DamageType, DamageTypeModel, IDamageTypeModel } from '../DamageType';
 import { ISenses, Senses } from '../Senses/senses';
 import { ISpeed, Speed } from '../speed/Speed';
 import { BeastChallengeRating } from './BeastChallengeRating';
@@ -27,6 +28,10 @@ export interface IBeastModel {
   armorClass: IArmorClass[];
   actions: IActions[];
   legendaryAction: IActions[];
+  damageImmunities: IDamageTypeModel[];
+  damageResistances: IDamageTypeModel[];
+  damageVulnerabilities: IDamageTypeModel[];
+  specialAbilities: IActions[];
 }
 
 export class BeastModel implements IBeastModel {
@@ -49,6 +54,10 @@ export class BeastModel implements IBeastModel {
   armorClass: IArmorClass[];
   actions: IActions[];
   legendaryAction: IActions[];
+  specialAbilities: IActions[];
+  damageImmunities: IDamageTypeModel[];
+  damageResistances: IDamageTypeModel[];
+  damageVulnerabilities: IDamageTypeModel[];
   constructor(prop?: IBeastModel) {
     if (!prop) {
       prop = BeastModel.getEmpty();
@@ -70,6 +79,10 @@ export class BeastModel implements IBeastModel {
     this.armorClass = prop.armorClass.map((item) => new ArmorClass(item));
     this.actions = prop.actions.map((action) => new Actions(action));
     this.legendaryAction = prop.legendaryAction.map((action) => new Actions(action));
+    this.specialAbilities = prop.specialAbilities.map((action) => new Actions(action));
+    this.damageImmunities = prop.damageImmunities.map((damage) => new DamageTypeModel(damage));
+    this.damageResistances = prop.damageResistances.map((damage) => new DamageTypeModel(damage));
+    this.damageVulnerabilities = prop.damageVulnerabilities.map((damage) => new DamageTypeModel(damage));
   }
   static getEmpty() {
     return new BeastModel({
@@ -89,7 +102,11 @@ export class BeastModel implements IBeastModel {
       alignment: { alignment: '' },
       armorClass: new Array<IArmorClass>(),
       actions: new Array<IActions>(),
+      specialAbilities: new Array<IActions>(),
       legendaryAction: new Array<IActions>(),
+      damageImmunities: new Array<IDamageTypeModel>(),
+      damageResistances: new Array<IDamageTypeModel>(),
+      damageVulnerabilities: new Array<IDamageTypeModel>(),
     });
   }
 }

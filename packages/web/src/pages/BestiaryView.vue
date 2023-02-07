@@ -19,8 +19,24 @@
       <div class="d-flex flex-column">
         <BeastViewCharacteristicsImage :beast="beast" />
         <beast-view-base-characteristics :bc="beast.base_characteristic" />
-        <div>immune damage</div>
-        <div>immune conditions</div>
+        <div class="d-flex">
+          <div class="text-subtitle-2 mr-2">Damage Immunities:</div>
+          <div>
+            {{ damageImmunities }}
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="text-subtitle-2 mr-2">Damage Resistances:</div>
+          <div>
+            {{ damageResistances }}
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="text-subtitle-2 mr-2">Damage Vulnerabilities:</div>
+          <div>
+            {{ damageVulnerabilities }}
+          </div>
+        </div>
         <div class="d-flex">
           <div class="text-subtitle-2 mr-2">Senses:</div>
           <div>
@@ -39,12 +55,16 @@
             {{ dangereous }}
           </div>
         </div>
+        <div class="d-flex flex-column" v-if="specialAbilities.length">
+          <div class="text-h6">Special Abilities</div>
+          <BeastViewAction v-for="action in specialAbilities" :key="action.name" :action="action" />
+        </div>
         <div class="d-flex flex-column" v-if="actions.length">
-          <div class="text-h6">Abilities</div>
+          <div class="text-h6">Actions</div>
           <BeastViewAction v-for="action in actions" :key="action.name" :action="action" />
         </div>
         <div class="d-flex flex-column" v-if="legendaryAction.length">
-          <div class="text-h6">Legendary Abilities</div>
+          <div class="text-h6">Legendary Actions</div>
           <BeastViewAction v-for="action in legendaryAction" :key="action.name" :action="action" />
         </div>
       </div>
@@ -101,6 +121,12 @@ export default defineComponent({
       }
       return senseDescr.join(', ');
     },
+    specialAbilities() {
+      if (this.beast.specialAbilities) {
+        return this.beast.specialAbilities;
+      }
+      return new Array<Actions>();
+    },
     actions() {
       if (this.beast.actions) {
         return this.beast.actions;
@@ -112,6 +138,45 @@ export default defineComponent({
         return this.beast.legendaryAction;
       }
       return new Array<Actions>();
+    },
+    damageImmunities() {
+      if (this.beast.damageImmunities) {
+        return this.beast.damageImmunities
+          .map((damage) => {
+            if (damage.DamageType === 'None') {
+              return damage.CustomDamage;
+            }
+            return damage.DamageType;
+          })
+          .join(', ');
+      }
+      return new Array<string>();
+    },
+    damageResistances() {
+      if (this.beast.damageResistances) {
+        return this.beast.damageResistances
+          .map((damage) => {
+            if (damage.DamageType === 'None') {
+              return damage.CustomDamage;
+            }
+            return damage.DamageType;
+          })
+          .join(', ');
+      }
+      return new Array<string>();
+    },
+    damageVulnerabilities() {
+      if (this.beast.damageVulnerabilities) {
+        return this.beast.damageVulnerabilities
+          .map((damage) => {
+            if (damage.DamageType === 'None') {
+              return damage.CustomDamage;
+            }
+            return damage.DamageType;
+          })
+          .join(', ');
+      }
+      return new Array<string>();
     },
     dangereous() {
       return `${this.beast.challenge_rating} (${this.beast.xp} xp)`;
