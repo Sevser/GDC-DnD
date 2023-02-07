@@ -2,7 +2,8 @@
 FROM node:16-alpine as build-stage
 WORKDIR /build
 COPY . /build
-RUN yarn
+RUN apk add --no-cache git
+RUN npm i
 RUN yarn build
 
 # second stage copies the static dist files and Node server files
