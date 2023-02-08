@@ -15,7 +15,10 @@
       </div>
     </template>
     <template #text>
-      <div class="d-flex flex-column mb-2">{{ level }} {{ scoolOfMagic }} Ритуал</div>
+      <div class="d-flex mb-2">
+        {{ level }}
+        <router-link class="ml-2 mr-2" :to="{ name: 'DictionaryView', params: { id: 'magic-schools' } }">{{ scoolOfMagic }}</router-link> Ритуал
+      </div>
       <div class="d-flex flex-column mb-2">
         <div class="d-flex mb-2">
           <div class="w-33 d-flex flex-column pr-4">
@@ -38,7 +41,7 @@
       </div>
       <div class="d-flex flex-column mb-2">
         <div class="text-subtitle-2">Тип урона</div>
-        <div class="mb-2">{{ damageType }}</div>
+        <router-link class="mb-2" :to="{ name: 'DictionaryView', params: { id: 'damage-type-entitys' } }">{{ damageType }}</router-link>
       </div>
       <div class="d-flex flex-column mb-2">
         <div class="mb-2" v-html="description"></div>

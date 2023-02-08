@@ -3,7 +3,7 @@ import { ChacacterClass, ChacacterClassModel, ICharacterClass } from './Characte
 import { DamageType, DamageTypeModel, IDamageTypeModel } from './DamageType/DamageType';
 import { Distance, IDistance } from './Distance';
 import { IFilter } from './Filters';
-import { ISchoolOfMagic, SchoolOfMagicModel, SchoolOfMagicType } from './SchoolOfMagic';
+import { ISchoolOfMagic, SchoolOfMagicModel, SchoolOfMagicType } from './MagicSchools/SchoolOfMagic';
 import { ISource, Source } from './Source';
 import { ISpellComponent, SpellComponentModel } from './SpellComponent';
 

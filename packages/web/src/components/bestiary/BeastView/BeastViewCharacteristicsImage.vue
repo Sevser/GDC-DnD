@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex">
+  <div class="d-flex mb-2">
     <div class="d-flex flex-column">
       <div class="text-subtitle-2 mr-2">HP</div>
       <div>{{ hp }}</div>

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "magic_schools",
+  "info": {
+    "singularName": "magic-school",
+    "pluralName": "magic-schools",
+    "displayName": "Magic School"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    }
+  }
+}

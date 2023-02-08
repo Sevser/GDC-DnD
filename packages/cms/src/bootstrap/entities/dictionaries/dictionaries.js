@@ -9,6 +9,21 @@ const dictionaries = [
     subtitle: "Damage type",
     collectionName: "damage-type-entitys",
   },
+  {
+    title: "Alignment",
+    subtitle: "Alignment",
+    collectionName: "alignments",
+  },
+  {
+    title: "Magic school",
+    subtitle: "Magic school",
+    collectionName: "magic-schools",
+  },
+  {
+    title: "Weapon properties",
+    subtitle: "Weapon properties",
+    collectionName: "weapon-properties",
+  },
 ];
 
 module.exports = dictionaries;

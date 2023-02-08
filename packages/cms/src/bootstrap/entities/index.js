@@ -8,9 +8,11 @@ const createBeast = require("./beasts");
 const createDamageTypes = require("./damageType");
 const createConditions = require("./condition");
 const createDictionaries = require("./dictionaries");
+const createAlignments = require("./alignments");
+const createMagicSchool = require("./magicSchool");
+const createWeaponProperty = require("./weaponProperty");
 
 async function importSeedData() {
-  // Allow read of application content types
   await setPublicPermissions({
     spell: ["find", "findOne"],
     beast: ["find", "findOne"],
@@ -20,6 +22,9 @@ async function importSeedData() {
     "damage-type-entity": ["find", "findOne"],
     dictionary: ["find", "findOne"],
     experience: ["find", "findOne"],
+    alignment: ["find", "findOne"],
+    "magic-school": ["find", "findOne"],
+    "weapon-property": ["find", "findOne"],
   });
 
   // Create all entries
@@ -30,6 +35,9 @@ async function importSeedData() {
   await createDamageTypes();
   await createConditions();
   await createDictionaries();
+  await createAlignments();
+  await createMagicSchool();
+  await createWeaponProperty();
 }
 
 module.exports = importSeedData;
