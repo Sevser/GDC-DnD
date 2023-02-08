@@ -1,12 +1,10 @@
 import { cmsClient } from '@/plugins/http';
-import { IConditionModel } from '@/types/Condition/Condition';
-import { IDamageTypeEntityModel } from '@/types/DamageType/DamageTypeEntity';
-import { CanBeDictionaryProvider } from '@/types/Dictionaries/CanBeDictionary';
+import { AllowedDictionaryClasses, CanBeDictionaryProvider } from '@/types/Dictionaries/CanBeDictionary';
 import { IDictionary } from '@/types/Dictionaries/Dictionary';
 import { ActionContext } from 'vuex';
 import { State } from '..';
 
-type dictionaryContentType = undefined | IConditionModel[] | IDamageTypeEntityModel[];
+type dictionaryContentType = undefined | AllowedDictionaryClasses[];
 
 export interface IDictionaryState {
   dictionariesList: IDictionary[];
