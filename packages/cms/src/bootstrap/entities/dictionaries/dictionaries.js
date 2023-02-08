@@ -24,6 +24,11 @@ const dictionaries = [
     subtitle: "Weapon properties",
     collectionName: "weapon-properties",
   },
+  {
+    title: "Proficiencies",
+    subtitle: "Proficiencies",
+    collectionName: "proficiencies",
+  },
 ];
 
 module.exports = dictionaries;

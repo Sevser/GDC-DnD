@@ -1,4 +1,5 @@
 import { cmsClient } from '@/plugins/http';
+import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 
 export interface IMagicSchool {
@@ -8,12 +9,12 @@ export interface IMagicSchool {
 }
 
 export class MagicSchoolModel implements IMagicSchool, ICanBeDictionary {
-  type: string;
+  [DictionaryTypePropName]: string;
   index: string;
   name: string;
   desc: string;
   constructor(prop: IMagicSchool) {
-    this.type = 'magic-schools';
+    this[DictionaryTypePropName] = 'magic-schools';
     this.index = prop.index;
     this.name = prop.name;
     this.desc = prop.desc;

@@ -1,4 +1,5 @@
 import { cmsClient } from '@/plugins/http';
+import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 
 export type DamageTypeEntityModelName = 'damage-type-entitys';
@@ -13,12 +14,12 @@ export class DamageTypeEntityModel implements IDamageTypeEntityModel, ICanBeDict
   index: string;
   name: string;
   desc: string;
-  type: string;
+  [DictionaryTypePropName]: string;
   constructor(prop: IDamageTypeEntityModel) {
     this.desc = prop.desc;
     this.name = prop.name;
     this.index = prop.index;
-    this.type = 'damage-type-entitys';
+    this[DictionaryTypePropName] = 'damage-type-entitys';
   }
   static getEmpty() {
     return new DamageTypeEntityModel({

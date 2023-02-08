@@ -11,6 +11,7 @@ const createDictionaries = require("./dictionaries");
 const createAlignments = require("./alignments");
 const createMagicSchool = require("./magicSchool");
 const createWeaponProperty = require("./weaponProperty");
+const createProficiencies = require("./proficiencies");
 
 async function importSeedData() {
   await setPublicPermissions({
@@ -25,6 +26,7 @@ async function importSeedData() {
     alignment: ["find", "findOne"],
     "magic-school": ["find", "findOne"],
     "weapon-property": ["find", "findOne"],
+    proficiency: ["find", "findOne"],
   });
 
   // Create all entries
@@ -38,6 +40,7 @@ async function importSeedData() {
   await createAlignments();
   await createMagicSchool();
   await createWeaponProperty();
+  await createProficiencies();
 }
 
 module.exports = importSeedData;

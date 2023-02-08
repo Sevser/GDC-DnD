@@ -6,6 +6,7 @@ import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageTyp
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
+import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
 import { Spell } from '@/types/Spell';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
 import baseClient from './baseClient';
@@ -81,7 +82,7 @@ const fetchConditions = async (): Promise<IGenericStrapiMappedData<IConditionMod
 };
 
 const fetchAlignments = async (): Promise<IGenericStrapiMappedData<IAlignment>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/conditions`);
+  const result = await baseClient.get(`${cmsUrl}/api/alignments`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IAlignment>) => new AlignmentModel({ ...item.attributes })),
@@ -89,7 +90,7 @@ const fetchAlignments = async (): Promise<IGenericStrapiMappedData<IAlignment>> 
 };
 
 const fetchMagicSchools = async (): Promise<IGenericStrapiMappedData<IMagicSchool>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/conditions`);
+  const result = await baseClient.get(`${cmsUrl}/api/magic-schools`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IMagicSchool>) => new MagicSchoolModel({ ...item.attributes })),
@@ -104,6 +105,14 @@ const fetchWeaponProperties = async (): Promise<IGenericStrapiMappedData<IWeapon
   };
 };
 
+const fetchProficiency = async (): Promise<IGenericStrapiMappedData<IProficiency>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/proficiencies`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IProficiency>) => new ProficiencyModel({ ...item.attributes })),
+  };
+};
+
 export interface ICMSClient {
   login: typeof login;
   fetchSpells: typeof fetchSpells;
@@ -115,10 +124,30 @@ export interface ICMSClient {
   fetchAlignments: typeof fetchAlignments;
   fetchMagicSchools: typeof fetchMagicSchools;
   fetchWeaponProperties: typeof fetchWeaponProperties;
+  fetchProficiency: typeof fetchProficiency;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
 
-export type ICMSClientDictionariesFetchType = typeof fetchDamageTypeEntity | typeof fetchConditions | typeof fetchAlignments | typeof fetchMagicSchools | typeof fetchWeaponProperties;
+export type ICMSClientDictionariesFetchType =
+  | typeof fetchDamageTypeEntity
+  | typeof fetchConditions
+  | typeof fetchAlignments
+  | typeof fetchMagicSchools
+  | typeof fetchWeaponProperties
+  | typeof fetchProficiency;
 
-export { fetchSpells, login, fetchSpell, fetchBestiary, fetchBeast, fetchDictionaries, fetchDamageTypeEntity, fetchConditions, fetchAlignments, fetchMagicSchools, fetchWeaponProperties };
+export {
+  fetchSpells,
+  login,
+  fetchSpell,
+  fetchBestiary,
+  fetchBeast,
+  fetchDictionaries,
+  fetchDamageTypeEntity,
+  fetchConditions,
+  fetchAlignments,
+  fetchMagicSchools,
+  fetchWeaponProperties,
+  fetchProficiency,
+};
