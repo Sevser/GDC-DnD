@@ -70,7 +70,7 @@ const routes = [
         path: ':id',
         name: 'SpellView',
         components: {
-          listContentView: () => import('@/pages/SpellView.vue'),
+          listContentView: () => import('@/pages/spellTest.vue'),
         },
       },
     ],
