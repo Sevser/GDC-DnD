@@ -20,6 +20,7 @@ export default defineComponent({
     spell: {
       type: Spell,
       required: true,
+      default: () => Spell.getEmpty(),
     },
   },
   data: () => ({

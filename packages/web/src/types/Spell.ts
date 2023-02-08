@@ -1,11 +1,11 @@
 import { ActionType } from './Action';
-import { ChacacterClass, ICharacterClass } from './CharacterClass';
-import { DamageType } from './DamageType';
-import { IDistance } from './Distance';
+import { ChacacterClass, ChacacterClassModel, ICharacterClass } from './CharacterClass';
+import { DamageType, DamageTypeModel, IDamageTypeModel } from './DamageType';
+import { Distance, IDistance } from './Distance';
 import { IFilter } from './Filters';
-import { ISchoolOfMagic, SchoolOfMagicType } from './SchoolOfMagic';
-import { ISource } from './Source';
-import { ISpellComponent } from './SpellComponent';
+import { ISchoolOfMagic, SchoolOfMagicModel, SchoolOfMagicType } from './SchoolOfMagic';
+import { ISource, Source } from './Source';
+import { ISpellComponent, SpellComponentModel } from './SpellComponent';
 
 export interface ISpell {
   title: string;
@@ -22,6 +22,7 @@ export interface ISpell {
   source: ISource;
   spellComponentDescription: string;
   distance: IDistance;
+  damageType: IDamageTypeModel;
 }
 
 export class Spell implements ISpell {
@@ -33,14 +34,34 @@ export class Spell implements ISpell {
     this.Concentration = prop.Concentration;
     this.actionTypeDescription = prop.actionTypeDescription;
     this.activeTime = prop.activeTime;
-    this.description = prop.description;
     this.id = prop.id;
-    this.SchoolOfMagic = prop.SchoolOfMagic;
     this.class = prop.class;
-    this.SpellComponent = prop.SpellComponent;
+    this.SpellComponent = prop.SpellComponent ? prop.SpellComponent.map((sc) => new SpellComponentModel(sc)) : new Array<SpellComponentModel>();
     this.spellComponentDescription = prop.spellComponentDescription;
     this.source = prop.source;
-    this.distance = prop.distance;
+    this.damageType = prop.damageType ? new DamageTypeModel(prop.damageType) : DamageTypeModel.getEmpty();
+    this.source = prop.source ? new Source(prop.source) : Source.getEmpty();
+    this.distance = prop.distance ? new Distance(prop.distance) : Distance.getEmpty();
+    this.SchoolOfMagic = prop.SchoolOfMagic ? new SchoolOfMagicModel(prop.SchoolOfMagic) : SchoolOfMagicModel.getEmpty();
+  }
+  static getEmpty() {
+    return new Spell({
+      source: Source.getEmpty(),
+      SpellComponent: new Array<SpellComponentModel>(),
+      class: new Array<ChacacterClassModel>(),
+      SchoolOfMagic: SchoolOfMagicModel.getEmpty(),
+      id: NaN,
+      title: '',
+      description: '',
+      HighterLevelDescription: '',
+      Level: NaN,
+      Concentration: false,
+      actionTypeDescription: '',
+      spellComponentDescription: '',
+      activeTime: '',
+      distance: Distance.getEmpty(),
+      damageType: DamageTypeModel.getEmpty(),
+    });
   }
   source: ISource;
   SpellComponent: ISpellComponent[];
@@ -56,6 +77,7 @@ export class Spell implements ISpell {
   spellComponentDescription: string;
   activeTime: string;
   distance: IDistance;
+  damageType: DamageTypeModel;
 }
 
 export interface IShortSpell {

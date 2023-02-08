@@ -2,9 +2,11 @@ const createArchetypes = require("./archetypes");
 const createDistances = require("./distances");
 const createExperience = require("./experience");
 const createSpells = require("./spells");
-const { experience, archetypes, spells } = require("../data/data");
+const { experience, archetypes } = require("../data/data");
 const setPublicPermissions = require("../common/setPublicPermissions");
 const createBeast = require("./beasts");
+const createDamageTypes = require("./damageType");
+const createConditions = require("./condition");
 
 async function importSeedData() {
   // Allow read of application content types
@@ -16,14 +18,10 @@ async function importSeedData() {
   // Create all entries
   await createExperience(experience);
   await createArchetypes(archetypes);
-  const createdSpells = await createSpells(spells);
-  await createDistances(
-    spells.map((spell, index) => ({
-      ...spell.distance,
-      spell: createdSpells[index],
-    }))
-  );
+  const createdSpells = await createSpells();
   await createBeast();
+  await createDamageTypes();
+  await createConditions();
 }
 
 module.exports = importSeedData;

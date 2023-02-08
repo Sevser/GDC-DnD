@@ -1,6 +1,6 @@
 const createEntry = require("../../common/createEntry");
-const axios = require("axios");
 const createInstanceBaseCharacteristics = require("../baseCharacteristics/createInstanceBaseCharacteristics");
+const bestiary = require("5e-database/src/5e-SRD-Monsters.json");
 
 const checkForDamageType = (val) => {
   return (
@@ -61,6 +61,12 @@ const transformBeast = async (beastRaw) => {
         ? beastRaw.armor_class.map((armor) => ({
             type: armor.type,
             value: armor.value,
+            condition: armor.condition
+              ? {
+                  name: armor.condition.name,
+                  index: armor.condition.index,
+                }
+              : null,
           }))
         : [],
     actions:
@@ -166,11 +172,8 @@ const transformBeast = async (beastRaw) => {
 };
 async function createBeast() {
   try {
-    const beasts = await axios.get(
-      "https://raw.githubusercontent.com/Sevser/5e-database/main/src/5e-SRD-Monsters.json"
-    );
     return Promise.all(
-      beasts.data.map(async (beastRaw) => {
+      bestiary.map(async (beastRaw) => {
         return createEntry({
           model: "beast",
           entry: await transformBeast(beastRaw),

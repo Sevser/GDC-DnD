@@ -37,6 +37,10 @@
         <div class="mb-2">{{ components }} {{ spellComponentDescription }}</div>
       </div>
       <div class="d-flex flex-column mb-2">
+        <div class="text-subtitle-2">Тип урона</div>
+        <div class="mb-2">{{ damageType }}</div>
+      </div>
+      <div class="d-flex flex-column mb-2">
         <div class="mb-2" v-html="description"></div>
       </div>
       <div class="d-flex flex-column mb-2">
@@ -76,7 +80,7 @@ export default defineComponent({
       return '';
     },
     spell() {
-      return this.$store.state.spells.spell || new Spell({} as ISpell);
+      return this.$store.state.spells.spell || Spell.getEmpty();
     },
     source() {
       return this.spell?.source?.source || '';
@@ -110,6 +114,12 @@ export default defineComponent({
         return '';
       }
       return (this.spell.Concentration ? 'Концентрация,' : '') + this.spell.activeTime;
+    },
+    damageType() {
+      if (!this.spell) {
+        return '';
+      }
+      return this.spell.damageType.DamageType;
     },
   },
 });
