@@ -20,8 +20,17 @@ export default {
     VToolbarTitle,
     ListPreviewLayoutMain,
   },
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+  },
   computed: {
-    title() {
+    calcTitle() {
+      if (this.title && this.title.length) {
+        return this.title;
+      }
       // todo: read name from package.json
       return this.$route.name || import.meta.env.VITE_APP_TITLE;
     },
@@ -58,7 +67,7 @@ export default {
       childrenForMain.listContentView = () => h(this.hasListContentView[1] as VueElement);
     }
 
-    let toolbarContent = () => this.title;
+    let toolbarContent = () => this.calcTitle;
 
     if (!this.$vuetify.display.xs && this.mobileAdditionalMenu[0]) {
       toolbarContent = () =>

@@ -20,8 +20,17 @@ export default {
     VToolbarTitle,
     DefaultLayoutMain,
   },
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+  },
   computed: {
-    title() {
+    calcTitle() {
+      if (this.title && this.title.length) {
+        return this.title;
+      }
       // todo: read name from package.json
       return this.$route.name || import.meta.env.VITE_APP_TITLE;
     },
@@ -52,7 +61,7 @@ export default {
           VToolbarTitle,
           {},
           {
-            default: () => this.title,
+            default: () => this.calcTitle,
           }
         ),
         h(LoginDialog),

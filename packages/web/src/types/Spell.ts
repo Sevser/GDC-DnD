@@ -1,6 +1,6 @@
 import { ActionType } from './Action';
 import { ChacacterClass, ChacacterClassModel, ICharacterClass } from './CharacterClass';
-import { DamageType, DamageTypeModel, IDamageTypeModel } from './DamageType';
+import { DamageType, DamageTypeModel, IDamageTypeModel } from './DamageType/DamageType';
 import { Distance, IDistance } from './Distance';
 import { IFilter } from './Filters';
 import { ISchoolOfMagic, SchoolOfMagicModel, SchoolOfMagicType } from './SchoolOfMagic';
