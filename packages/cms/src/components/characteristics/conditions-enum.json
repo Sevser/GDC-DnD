@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_characteristics_conditions_enums",
+  "info": {
+    "displayName": "ConditionsEnum"
+  },
+  "options": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

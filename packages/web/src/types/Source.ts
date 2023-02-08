@@ -10,4 +10,10 @@ export class Source implements ISource {
     this.id = source.id;
     this.source = source.source;
   }
+  static getEmpty() {
+    return new Source({
+      id: NaN,
+      source: '',
+    });
+  }
 }

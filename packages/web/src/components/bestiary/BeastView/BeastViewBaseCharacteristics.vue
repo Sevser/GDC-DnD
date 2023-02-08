@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-space-between">
+  <div class="d-flex justify-space-between mb-2">
     <div class="d-flex flex-column align-center">
       <div class="text-subtitle-2">СИЛ</div>
       <div>

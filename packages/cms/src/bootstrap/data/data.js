@@ -1,9 +1,7 @@
-const experience = require("./source/experience")
-const archetypes = require("./source/archetypes")
-const spells = require("./source/spells")
+const experience = require("./source/experience");
+const archetypes = require("./source/archetypes");
 
 module.exports = {
-    experience,
-    archetypes,
-    spells,
-}
+  experience,
+  archetypes,
+};

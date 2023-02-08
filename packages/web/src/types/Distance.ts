@@ -13,4 +13,10 @@ export class Distance implements IDistance {
     this.longText = prop.longText;
     this.id = prop.id;
   }
+  static getEmpty() {
+    return new Distance({
+      distanceShort: '',
+      longText: '',
+    });
+  }
 }

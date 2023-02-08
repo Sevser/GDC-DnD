@@ -37,6 +37,11 @@ export default defineComponent({
         text: 'Bestiary',
         navigation: 'BestiaryList',
       },
+      {
+        icon: 'mdi-book',
+        text: 'DictionaryList',
+        navigation: 'DictionaryList',
+      },
     ],
     model: 1,
   }),

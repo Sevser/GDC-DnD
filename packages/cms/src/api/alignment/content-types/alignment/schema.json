@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alignments",
+  "info": {
+    "singularName": "alignment",
+    "pluralName": "alignments",
+    "displayName": "Alignment"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "abbriviation": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  }
+}

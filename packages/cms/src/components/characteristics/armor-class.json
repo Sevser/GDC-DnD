@@ -1,7 +1,8 @@
 {
   "collectionName": "components_characteristics_armor_classes",
   "info": {
-    "displayName": "Armor Class"
+    "displayName": "Armor Class",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,11 @@
     "value": {
       "type": "integer",
       "min": 0
+    },
+    "condition": {
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.conditions-enum"
     }
   }
 }

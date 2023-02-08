@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "damage_type_entity",
+  "info": {
+    "singularName": "damage-type-entity",
+    "pluralName": "damage-type-entitys",
+    "displayName": "DamageTypeEntity"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  }
+}

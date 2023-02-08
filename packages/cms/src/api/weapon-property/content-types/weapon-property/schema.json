@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weapon_properties",
+  "info": {
+    "singularName": "weapon-property",
+    "pluralName": "weapon-properties",
+    "displayName": "Weapon property"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    }
+  }
+}

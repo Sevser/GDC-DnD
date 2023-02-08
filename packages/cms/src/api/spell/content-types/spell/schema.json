@@ -99,6 +99,11 @@
       "relation": "oneToOne",
       "target": "api::distance.distance",
       "inversedBy": "spell"
+    },
+    "damageType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.damage-type"
     }
   }
 }
