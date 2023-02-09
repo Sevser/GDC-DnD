@@ -83,7 +83,6 @@ export class Spell implements ISpell {
   activeTime: string;
   distance: IDistance;
   damageType: DamageTypeModel;
-  spellSaveDifficultyClass: ISpellSaveDifficultyClass;
 }
 
 export interface IShortSpell {
