@@ -7,7 +7,7 @@
       <template v-else>
         <v-container fluid>
           <v-row dense>
-            <v-col v-for="rule in rules" :key="rule.index" cols="4">
+            <v-col v-for="rule in rules" :key="rule.index" :cols="cols">
               <v-card :title="rule.name" class="mb-4" @click="() => handleClickDictionary(rule)" />
             </v-col>
           </v-row>
@@ -36,6 +36,15 @@ export default defineComponent({
     );
   },
   computed: {
+    cols() {
+      if (this.$vuetify.display.xs) {
+        return 12;
+      }
+      if (this.$vuetify.display.sm) {
+        return 6;
+      }
+      return 4;
+    },
     rules() {
       return this.$store.state.rules.ruleList;
     },

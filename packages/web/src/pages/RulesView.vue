@@ -53,17 +53,8 @@ export default defineComponent({
       return this.$store.state.rules.currentRuleViewPending && this.rule === undefined;
     },
   },
-  methods: {
-    handleScroll() {
-      console.log('scroll');
-    },
-  },
   beforeUnmount() {
     this.$store.commit('rules/updateRuleView');
-    (this.$refs.ruleContainer as VueElement).$el.removeEventListener('scroll', this.handleScroll.bind(this));
-  },
-  mounted() {
-    (this.$refs.ruleContainer as VueElement).$el.addEventListener('scroll', this.handleScroll.bind(this));
   },
 });
 </script>
