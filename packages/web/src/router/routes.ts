@@ -51,6 +51,16 @@ const routes = [
     component: () => import('@/pages/DictionaryView.vue'),
   },
   {
+    path: '/rules',
+    name: 'RulesList',
+    component: () => import('@/pages/RulesList.vue'),
+  },
+  {
+    path: '/rules/:id',
+    name: 'RulesView',
+    component: () => import('@/pages/RulesView.vue'),
+  },
+  {
     path: '/events',
     name: 'Events',
   },
