@@ -1,7 +1,7 @@
 <template>
   <default-layout>
     <div class="pl-2 pr-2" style="height: 100%">
-      <div v-if="false" class="d-flex justify-center align-center" style="height: 100%">
+      <div v-if="pending" class="d-flex justify-center align-center" style="height: 100%">
         <v-progress-circular indeterminate :size="60" />
       </div>
       <template v-else> <DictionaryViewListItem v-for="item in items" :key="item.name" :dictionary-list-item="item" /> </template>

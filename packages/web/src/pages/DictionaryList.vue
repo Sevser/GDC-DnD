@@ -21,16 +21,21 @@ import { defineComponent } from 'vue';
 import DefaultLayout from '@/layout/default/DefaultLayout.vue';
 import { IDictionary } from '@/types/Dictionaries/Dictionary';
 
+interface IDataDictionaryList {
+  unwatch: any;
+}
 export default defineComponent({
   components: {
     DefaultLayout,
   },
+  data: (): IDataDictionaryList => ({
+    unwatch: null,
+  }),
   created() {
-    const unwatch = this.$watch(
+    this.unwatch = this.$watch(
       () => this.$route.params,
       () => {
         this.$store.dispatch('dictionary/fetchDictionaries');
-        this.$nextTick(() => unwatch());
       },
       { immediate: true }
     );
@@ -42,6 +47,9 @@ export default defineComponent({
     pending() {
       return this.$store.state.dictionary.dictionariesListPending && this.dictionaries.length === 0;
     },
+  },
+  beforeUnmount() {
+    this.unwatch();
   },
   methods: {
     handleClickDictionary(dictionary: IDictionary) {
