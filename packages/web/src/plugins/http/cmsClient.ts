@@ -1,3 +1,4 @@
+import { AbilityScoreModel, IAbilityScore } from '@/types/AbilityScore/AbilityScore';
 import { AlignmentModel, IAlignment } from '@/types/Alignment/Alignment';
 import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
@@ -7,6 +8,7 @@ import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
 import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
+import { ISkill, SkillModel } from '@/types/Skills/Skills';
 import { Spell } from '@/types/Spell';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
 import baseClient from './baseClient';
@@ -113,6 +115,22 @@ const fetchProficiency = async (): Promise<IGenericStrapiMappedData<IProficiency
   };
 };
 
+const fetchAbilityScores = async (): Promise<IGenericStrapiMappedData<IAbilityScore>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/ability-scores`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IAbilityScore>) => new AbilityScoreModel({ ...item.attributes })),
+  };
+};
+
+const fetchSkills = async (): Promise<IGenericStrapiMappedData<ISkill>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/skills`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<ISkill>) => new SkillModel({ ...item.attributes })),
+  };
+};
+
 export interface ICMSClient {
   login: typeof login;
   fetchSpells: typeof fetchSpells;
@@ -125,6 +143,8 @@ export interface ICMSClient {
   fetchMagicSchools: typeof fetchMagicSchools;
   fetchWeaponProperties: typeof fetchWeaponProperties;
   fetchProficiency: typeof fetchProficiency;
+  fetchAbilityScores: typeof fetchAbilityScores;
+  fetchSkills: typeof fetchSkills;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -135,6 +155,8 @@ export type ICMSClientDictionariesFetchType =
   | typeof fetchAlignments
   | typeof fetchMagicSchools
   | typeof fetchWeaponProperties
+  | typeof fetchAbilityScores
+  | typeof fetchSkills
   | typeof fetchProficiency;
 
 export {
@@ -150,4 +172,6 @@ export {
   fetchMagicSchools,
   fetchWeaponProperties,
   fetchProficiency,
+  fetchAbilityScores,
+  fetchSkills,
 };

@@ -1,14 +1,13 @@
 "use strict";
 
 /**
- * skill controller
+ * ability-score controller
  */
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController(
-  "api::skill.skill",
-
+  "api::ability-score.ability-score",
   ({ strapi }) => ({
     async find(ctx) {
       ctx.query = {
@@ -23,12 +22,10 @@ module.exports = createCoreController(
         data: data.map((item) => ({
           attributes: {
             ...item.attributes,
-            ability: item.attributes.abilityScores.data[0]
-              ? {
-                  ...item.attributes.abilityScores.data[0].attributes,
-                  id: item.attributes.abilityScores.data[0].id,
-                }
-              : null,
+            skills: item.attributes.skills.data.map((skill) => ({
+              ...skill.attributes,
+              id: skill.id,
+            })),
           },
         })),
         meta,

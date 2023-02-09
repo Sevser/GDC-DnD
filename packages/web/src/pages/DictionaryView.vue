@@ -19,11 +19,12 @@ export default defineComponent({
     DictionaryViewListItem,
   },
   created() {
-    const unwatch = this.$watch(
+    this.$watch(
       () => this.$route.params,
-      () => {
-        this.$store.dispatch('dictionary/fetchDicrionary', this.$route.params.id);
-        this.$nextTick(() => unwatch());
+      (newValue, oldValue) => {
+        if (!oldValue || newValue.id !== oldValue.id) {
+          this.$store.dispatch('dictionary/fetchDicrionary', this.$route.params.id);
+        }
       },
       { immediate: true }
     );

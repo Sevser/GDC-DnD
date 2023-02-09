@@ -16,7 +16,6 @@ const transformProp = (prop) => ({
 async function createProficiencies() {
   return Promise.all(
     proficiencies.map((proficiency) => {
-      console.log(transformProp(proficiency));
       return createEntry({
         model: "proficiency",
         entry: transformProp(proficiency),

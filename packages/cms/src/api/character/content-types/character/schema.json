@@ -47,7 +47,7 @@
     "extended_characteristic": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::skill.skill",
+      "target": "api::extended-characteristic.extended-characteristic",
       "inversedBy": "character"
     },
     "Experience": {
