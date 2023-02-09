@@ -34,10 +34,43 @@ module.exports = createCoreController("api::spell.spell", ({ strapi }) => ({
         fields: ["distanceShort", "longText", "id"],
       }
     );
+    const spellSaveDifficultyClass = await strapi.entityService.findMany(
+      "api::spell-save-difficulty-class.spell-save-difficulty-class",
+      {
+        filters: {
+          spell: {
+            id: {
+              $eq: data.id,
+            },
+          },
+        },
+        fields: ["desc", "dcSuccess", "id"],
+      }
+    );
     if (distance.length) {
       data.attributes.distance = distance[0];
     } else {
       data.attributes.distance = null;
+    }
+    console.log(spellSaveDifficultyClass);
+    if (spellSaveDifficultyClass.length) {
+      const abilityScore = await strapi.entityService.findMany(
+        "api::ability-score.ability-score",
+        {
+          filters: {
+            spell_save_difficulty_classes: {
+              id: {
+                $eq: spellSaveDifficultyClass[0].id,
+              },
+            },
+          },
+          fields: ["index", "fullName"],
+        }
+      );
+      data.attributes.spellSaveDifficultyClass = spellSaveDifficultyClass[0];
+      data.attributes.spellSaveDifficultyClass.abilityScore = abilityScore[0];
+    } else {
+      data.attributes.spellSaveDifficultyClass = null;
     }
     return { data, meta };
   },

@@ -40,7 +40,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { ISpellFilters } from '@/types/Spell';
+import { ISpellFilters } from '@/types/Spell/Spell';
 import { ChacacterClass } from '@/types/CharacterClass';
 import { SchoolOfMagicType } from '@/types/MagicSchools/SchoolOfMagic';
 import { ActionType } from '@/types/Action';

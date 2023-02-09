@@ -36,7 +36,6 @@ async function importSeedData() {
   // Create all entries
   await createExperience(experience);
   await createArchetypes(archetypes);
-  const createdSpells = await createSpells();
   await createBeast();
   await createDamageTypes();
   await createConditions();
@@ -47,6 +46,7 @@ async function importSeedData() {
   await createProficiencies();
   const abilityScores = await createAbilityScore();
   await createSkills({ abilityScores });
+  const createdSpells = await createSpells({ abilityScores });
 }
 
 module.exports = importSeedData;

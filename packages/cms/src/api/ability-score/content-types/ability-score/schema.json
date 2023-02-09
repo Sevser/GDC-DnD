@@ -28,6 +28,12 @@
       "relation": "manyToMany",
       "target": "api::skill.skill",
       "inversedBy": "abilityScores"
+    },
+    "spell_save_difficulty_classes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::spell-save-difficulty-class.spell-save-difficulty-class",
+      "mappedBy": "abilityScore"
     }
   }
 }

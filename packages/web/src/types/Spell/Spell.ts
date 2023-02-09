@@ -1,11 +1,12 @@
-import { ActionType } from './Action';
-import { ChacacterClass, ChacacterClassModel, ICharacterClass } from './CharacterClass';
-import { DamageType, DamageTypeModel, IDamageTypeModel } from './DamageType/DamageType';
-import { Distance, IDistance } from './Distance';
-import { IFilter } from './Filters';
-import { ISchoolOfMagic, SchoolOfMagicModel, SchoolOfMagicType } from './MagicSchools/SchoolOfMagic';
-import { ISource, Source } from './Source';
-import { ISpellComponent, SpellComponentModel } from './SpellComponent';
+import { ActionType } from '../Action';
+import { ChacacterClass, ChacacterClassModel, ICharacterClass } from '../CharacterClass';
+import { DamageType, DamageTypeModel, IDamageTypeModel } from '../DamageType/DamageType';
+import { Distance, IDistance } from '../Distance';
+import { IFilter } from '../Filters';
+import { ISchoolOfMagic, SchoolOfMagicModel, SchoolOfMagicType } from '../MagicSchools/SchoolOfMagic';
+import { ISource, Source } from '../Source';
+import { ISpellComponent, SpellComponentModel } from '../SpellComponent';
+import { ISpellSaveDifficultyClass, SpellSaveDifficultyClassModel } from '../SpellSaveDifficultyClass/SpellSaveDifficultyClass';
 
 export interface ISpell {
   title: string;
@@ -23,6 +24,7 @@ export interface ISpell {
   spellComponentDescription: string;
   distance: IDistance;
   damageType: IDamageTypeModel;
+  spellSaveDifficultyClass: ISpellSaveDifficultyClass;
 }
 
 export class Spell implements ISpell {
@@ -43,7 +45,9 @@ export class Spell implements ISpell {
     this.source = prop.source ? new Source(prop.source) : Source.getEmpty();
     this.distance = prop.distance ? new Distance(prop.distance) : Distance.getEmpty();
     this.SchoolOfMagic = prop.SchoolOfMagic ? new SchoolOfMagicModel(prop.SchoolOfMagic) : SchoolOfMagicModel.getEmpty();
+    this.spellSaveDifficultyClass = prop.spellSaveDifficultyClass ? new SpellSaveDifficultyClassModel(prop.spellSaveDifficultyClass) : SpellSaveDifficultyClassModel.getEmpty();
   }
+  spellSaveDifficultyClass: ISpellSaveDifficultyClass;
   static getEmpty() {
     return new Spell({
       source: Source.getEmpty(),
@@ -61,6 +65,7 @@ export class Spell implements ISpell {
       activeTime: '',
       distance: Distance.getEmpty(),
       damageType: DamageTypeModel.getEmpty(),
+      spellSaveDifficultyClass: SpellSaveDifficultyClassModel.getEmpty(),
     });
   }
   source: ISource;
@@ -78,6 +83,7 @@ export class Spell implements ISpell {
   activeTime: string;
   distance: IDistance;
   damageType: DamageTypeModel;
+  spellSaveDifficultyClass: ISpellSaveDifficultyClass;
 }
 
 export interface IShortSpell {

@@ -10,7 +10,7 @@
   </div>
 </template>
 <script lang="ts">
-import { Spell } from '@/types/Spell';
+import { Spell } from '@/types/Spell/Spell';
 import { ISpellComponent } from '@/types/SpellComponent';
 import { defineComponent } from 'vue';
 

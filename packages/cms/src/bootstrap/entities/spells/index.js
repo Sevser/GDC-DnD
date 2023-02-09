@@ -8,6 +8,27 @@ Object.defineProperty(String.prototype, "capitalize", {
   enumerable: false,
 });
 
+const getAllSpellSaveDifficultyClass = (abilityScores, createdSpells) => {
+  return spells
+    .filter((spell) => Reflect.has(spell, "dc"))
+    .map((spell) => {
+      const sp = createdSpells.find((sp) => sp.index === spell.index);
+      const result = {
+        desc: spell.dc.desc || "",
+        dcSuccess: spell.dc.dc_success,
+        abilityScore: null,
+        spell: sp,
+      };
+      const ability = abilityScores.find(
+        (ab) => ab.index === spell.dc.dc_type.index
+      );
+      if (ability) {
+        result.abilityScore = ability;
+      }
+      return result;
+    });
+};
+
 const calcActionType = (actionRaw) => {
   if (actionRaw === "1 action") {
     return {
@@ -29,6 +50,7 @@ const transformData = (listResults) =>
   listResults.map((sp, index) => ({
     id: index + 1,
     title: sp.name,
+    index: sp.index,
     description: sp.desc.join(", "),
     HighterLevelDescription: sp.higher_level ? sp.higher_level.join(", ") : "",
     Level: sp.level,
@@ -60,15 +82,25 @@ const transformData = (listResults) =>
         : null,
   }));
 
-async function createSpells() {
-  return Promise.all(
-    transformData(spells).map((spell) => {
+async function createSpells({ abilityScores }) {
+  const transformedSpells = transformData(spells);
+  const createdSpells = await Promise.all(
+    transformedSpells.map((spell) => {
       return createEntry({
         model: "spell",
         entry: spell,
       });
     })
   );
+  await Promise.all(
+    getAllSpellSaveDifficultyClass(abilityScores, createdSpells).map((ssdc) => {
+      return createEntry({
+        model: "spell-save-difficulty-class",
+        entry: ssdc,
+      });
+    })
+  );
+  return createdSpells;
 }
 
 module.exports = createSpells;

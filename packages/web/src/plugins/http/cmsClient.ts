@@ -9,7 +9,7 @@ import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMap
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
 import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
 import { ISkill, SkillModel } from '@/types/Skills/Skills';
-import { Spell } from '@/types/Spell';
+import { Spell } from '@/types/Spell/Spell';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
 import baseClient from './baseClient';
 
