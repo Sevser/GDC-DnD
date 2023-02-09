@@ -11,6 +11,9 @@ const createDictionaries = require("./dictionaries");
 const createAlignments = require("./alignments");
 const createMagicSchool = require("./magicSchool");
 const createWeaponProperty = require("./weaponProperty");
+const createProficiencies = require("./proficiencies");
+const createAbilityScore = require("./abilityScores");
+const createSkills = require("./skills");
 
 async function importSeedData() {
   await setPublicPermissions({
@@ -25,12 +28,14 @@ async function importSeedData() {
     alignment: ["find", "findOne"],
     "magic-school": ["find", "findOne"],
     "weapon-property": ["find", "findOne"],
+    proficiency: ["find", "findOne"],
+    "ability-score": ["find", "findOne"],
+    skill: ["find", "findOne"],
   });
 
   // Create all entries
   await createExperience(experience);
   await createArchetypes(archetypes);
-  const createdSpells = await createSpells();
   await createBeast();
   await createDamageTypes();
   await createConditions();
@@ -38,6 +43,10 @@ async function importSeedData() {
   await createAlignments();
   await createMagicSchool();
   await createWeaponProperty();
+  await createProficiencies();
+  const abilityScores = await createAbilityScore();
+  await createSkills({ abilityScores });
+  const createdSpells = await createSpells({ abilityScores });
 }
 
 module.exports = importSeedData;

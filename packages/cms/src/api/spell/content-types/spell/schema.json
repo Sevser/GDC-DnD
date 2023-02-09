@@ -104,6 +104,15 @@
       "type": "component",
       "repeatable": false,
       "component": "enums.damage-type"
+    },
+    "spellSaveDifficultyClass": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::spell-save-difficulty-class.spell-save-difficulty-class",
+      "inversedBy": "spell"
+    },
+    "index": {
+      "type": "string"
     }
   }
 }

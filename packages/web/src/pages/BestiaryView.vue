@@ -12,7 +12,7 @@
       <div class="text-subtitle-1 d-flex">
         <div class="mr-3">{{ beast.type }}</div>
         <div class="mr-3">{{ beast.Size && beast.Size.Size }}</div>
-        <router-link class="mr-3" :to="{ name: 'DictionaryView', params: { id: 'alignment' } }">{{ beast.alignment && beast.alignment.alignment }}</router-link>
+        <router-link class="mr-3" :to="{ name: 'DictionaryView', params: { id: 'alignments' } }">{{ beast.alignment && beast.alignment.alignment }}</router-link>
       </div>
     </template>
     <template #text>

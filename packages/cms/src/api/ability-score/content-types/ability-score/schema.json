@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ability_scores",
+  "info": {
+    "singularName": "ability-score",
+    "pluralName": "ability-scores",
+    "displayName": "Ability Score"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::skill.skill",
+      "inversedBy": "abilityScores"
+    },
+    "spell_save_difficulty_classes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::spell-save-difficulty-class.spell-save-difficulty-class",
+      "mappedBy": "abilityScore"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "spell_save_difficulty_classes",
+  "info": {
+    "singularName": "spell-save-difficulty-class",
+    "pluralName": "spell-save-difficulty-classes",
+    "displayName": "SpellSaveDifficultyClass",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "desc": {
+      "type": "text"
+    },
+    "dcSuccess": {
+      "type": "string"
+    },
+    "abilityScore": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ability-score.ability-score",
+      "inversedBy": "spell_save_difficulty_classes"
+    },
+    "spell": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::spell.spell",
+      "mappedBy": "spellSaveDifficultyClass"
+    }
+  }
+}

@@ -36,6 +36,10 @@
         </div>
       </div>
       <div class="d-flex flex-column mb-2">
+        <div class="text-subtitle-2">Спас бросок</div>
+        <div class="mb-2">{{ saveDifficulty }}</div>
+      </div>
+      <div class="d-flex flex-column mb-2">
         <div class="text-subtitle-2">Компоненты</div>
         <div class="mb-2">{{ components }} {{ spellComponentDescription }}</div>
       </div>
@@ -54,7 +58,7 @@
 </template>
 <script lang="ts">
 import { ICharacterClass } from '@/types/CharacterClass';
-import { ISpell, Spell } from '@/types/Spell';
+import { ISpell, Spell } from '@/types/Spell/Spell';
 import { ISpellComponent } from '@/types/SpellComponent';
 import { defineComponent } from 'vue';
 
@@ -117,6 +121,12 @@ export default defineComponent({
         return '';
       }
       return (this.spell.Concentration ? 'Концентрация,' : '') + this.spell.activeTime;
+    },
+    saveDifficulty() {
+      if (!this.spell || !this.spell.spellSaveDifficultyClass) {
+        return '';
+      }
+      return `${this.spell.spellSaveDifficultyClass?.abilityScore?.fullName} - ${this.spell.spellSaveDifficultyClass.dcSuccess} - ${this.spell.spellSaveDifficultyClass?.desc}`;
     },
     damageType() {
       if (!this.spell) {

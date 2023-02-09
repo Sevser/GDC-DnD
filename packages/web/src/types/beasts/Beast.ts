@@ -1,7 +1,7 @@
 import { Actions, IActions } from '../Actions/Actions';
 import { ArmorClass, IArmorClass } from '../ArmorClass/ArmorClass';
 import { BaseCharacteristics, IBaseCharacteristics } from '../BaseCharacteristics/BaseCharacteristics';
-import { DamageType, DamageTypeModel, IDamageTypeModel } from '../DamageType/DamageType';
+import { DamageTypeModel, IDamageTypeModel } from '../DamageType/DamageType';
 import { ISenses, Senses } from '../Senses/senses';
 import { ISpeed, Speed } from '../speed/Speed';
 import { BeastChallengeRating } from './BeastChallengeRating';

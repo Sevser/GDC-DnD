@@ -24,7 +24,7 @@ import InfiniteLoading from 'v3-infinite-loading';
 import 'v3-infinite-loading/lib/style.css';
 import { Pagination } from '@/types/Pagination';
 import ListPreviewLayout from '@/layout/ListPreviewLayout/ListPreviewLayout.vue';
-import { ISpell } from '@/types/Spell';
+import { ISpell } from '@/types/Spell/Spell';
 
 export default defineComponent({
   components: {

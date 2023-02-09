@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proficiencies",
+  "info": {
+    "singularName": "proficiency",
+    "pluralName": "proficiencies",
+    "displayName": "Proficiency",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "races": {
+      "type": "component",
+      "repeatable": true,
+      "component": "enums.race"
+    },
+    "classes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "enums.class"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

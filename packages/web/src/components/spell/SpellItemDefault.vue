@@ -21,7 +21,7 @@
   </v-card>
 </template>
 <script lang="ts">
-import { Spell } from '@/types/Spell';
+import { Spell } from '@/types/Spell/Spell';
 import { ICharacterClass } from '@/types/CharacterClass';
 import { defineComponent } from 'vue';
 import SpellShortInfo from './SpellShortInfo.vue';

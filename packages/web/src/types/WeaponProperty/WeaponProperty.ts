@@ -1,4 +1,5 @@
 import { cmsClient } from '@/plugins/http';
+import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 
 export type ConditionModelName = 'conditions';
@@ -13,12 +14,12 @@ export class WeaponPropertyModel implements IWeaponProperty, ICanBeDictionary {
   index: string;
   name: string;
   desc: string;
-  type: string;
+  [DictionaryTypePropName]: string;
   constructor(prop: IWeaponProperty) {
     this.index = prop.index;
     this.name = prop.name;
     this.desc = prop.desc;
-    this.type = 'weapon-properties';
+    this[DictionaryTypePropName] = 'weapon-properties';
   }
   static getEmpty() {
     return new WeaponPropertyModel({
