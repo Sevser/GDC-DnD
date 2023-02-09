@@ -8,6 +8,7 @@ import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
 import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
+import { IRuleListItem, IRuleViewItem, RuleListItem, RuleViewItemModel } from '@/types/Rule/Rule';
 import { ISkill, SkillModel } from '@/types/Skills/Skills';
 import { Spell } from '@/types/Spell/Spell';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
@@ -131,6 +132,22 @@ const fetchSkills = async (): Promise<IGenericStrapiMappedData<ISkill>> => {
   };
 };
 
+const fetchRules = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/rules`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IRuleListItem>) => new RuleListItem({ ...item.attributes, id: item.id })),
+  };
+};
+
+const fetchRuleItem = async (ruleId: number | string): Promise<IRuleViewItem & IRuleListItem> => {
+  const result = await baseClient.get(`${cmsUrl}/api/rules/${ruleId}`);
+  return new RuleViewItemModel({
+    id: result.data.data.id,
+    ...result.data.data.attributes,
+  });
+};
+
 export interface ICMSClient {
   login: typeof login;
   fetchSpells: typeof fetchSpells;
@@ -145,6 +162,8 @@ export interface ICMSClient {
   fetchProficiency: typeof fetchProficiency;
   fetchAbilityScores: typeof fetchAbilityScores;
   fetchSkills: typeof fetchSkills;
+  fetchRules: typeof fetchRules;
+  fetchRuleItem: typeof fetchRuleItem;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -174,4 +193,6 @@ export {
   fetchProficiency,
   fetchAbilityScores,
   fetchSkills,
+  fetchRules,
+  fetchRuleItem,
 };

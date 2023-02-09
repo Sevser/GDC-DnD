@@ -42,6 +42,11 @@ export default defineComponent({
         text: 'DictionaryList',
         navigation: 'DictionaryList',
       },
+      {
+        icon: 'mdi-book',
+        text: 'RulesList',
+        navigation: 'RulesList',
+      },
     ],
     model: 1,
   }),

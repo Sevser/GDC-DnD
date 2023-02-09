@@ -14,6 +14,8 @@ const createWeaponProperty = require("./weaponProperty");
 const createProficiencies = require("./proficiencies");
 const createAbilityScore = require("./abilityScores");
 const createSkills = require("./skills");
+const createRuleSection = require("./ruleSection");
+const createRules = require("./rules");
 
 async function importSeedData() {
   await setPublicPermissions({
@@ -30,7 +32,9 @@ async function importSeedData() {
     "weapon-property": ["find", "findOne"],
     proficiency: ["find", "findOne"],
     "ability-score": ["find", "findOne"],
+    "rule-section": ["find", "findOne"],
     skill: ["find", "findOne"],
+    rules: ["find", "findOne"],
   });
 
   // Create all entries
@@ -47,6 +51,8 @@ async function importSeedData() {
   const abilityScores = await createAbilityScore();
   await createSkills({ abilityScores });
   const createdSpells = await createSpells({ abilityScores });
+  const ruleSections = await createRuleSection();
+  await createRules(ruleSections);
 }
 
 module.exports = importSeedData;

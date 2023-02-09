@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rules",
+  "info": {
+    "singularName": "rule",
+    "pluralName": "rules",
+    "displayName": "Rule"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "ruleSections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::rule-section.rule-section",
+      "inversedBy": "rules"
+    }
+  }
+}
