@@ -7,10 +7,9 @@
     "displayName": "Spell Component"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {
-  },
+  "pluginOptions": {},
   "attributes": {
     "SpellComponent": {
       "type": "enumeration",

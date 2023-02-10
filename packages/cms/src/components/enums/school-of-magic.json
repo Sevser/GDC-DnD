@@ -7,10 +7,9 @@
     "displayName": "School of Magic"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {
-  },
+  "pluginOptions": {},
   "attributes": {
     "SchoolOfMagic": {
       "type": "enumeration",

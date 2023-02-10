@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_characteristics_proficiency_choises",
+  "info": {
+    "displayName": "proficiencyChoise"
+  },
+  "options": {},
+  "attributes": {
+    "chose": {
+      "type": "integer"
+    },
+    "proficiencies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proficiency.proficiency"
+    }
+  }
+}

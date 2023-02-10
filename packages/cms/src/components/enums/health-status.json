@@ -7,10 +7,9 @@
     "displayName": "HealthStatus"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {
-  },
+  "pluginOptions": {},
   "attributes": {
     "HealthStatus": {
       "type": "enumeration",

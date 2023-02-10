@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_characteristics_ability_bonuses",
+  "info": {
+    "displayName": "abilityBonuses"
+  },
+  "options": {},
+  "attributes": {
+    "bonus": {
+      "type": "integer"
+    },
+    "abilityScore": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ability-score.ability-score"
+    }
+  }
+}

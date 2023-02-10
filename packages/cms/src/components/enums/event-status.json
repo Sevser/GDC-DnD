@@ -7,10 +7,9 @@
     "displayName": "Event Status"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {
-  },
+  "pluginOptions": {},
   "attributes": {
     "eventStatus": {
       "type": "enumeration",

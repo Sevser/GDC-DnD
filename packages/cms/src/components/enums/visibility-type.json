@@ -7,10 +7,9 @@
     "displayName": "VisibilityType"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {
-  },
+  "pluginOptions": {},
   "attributes": {
     "VisibilityType": {
       "type": "enumeration",

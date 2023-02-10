@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_characteristics_starting_proficiency_options",
+  "info": {
+    "displayName": "startingProficiencyOption"
+  },
+  "options": {},
+  "attributes": {
+    "choose": {
+      "type": "integer"
+    },
+    "proficiencies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proficiency.proficiency"
+    }
+  }
+}

@@ -7,10 +7,9 @@
     "displayName": "Creature type"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {
-  },
+  "pluginOptions": {},
   "attributes": {
     "creatureType": {
       "type": "enumeration",

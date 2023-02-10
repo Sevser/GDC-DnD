@@ -18,11 +18,6 @@
     "name": {
       "type": "string"
     },
-    "races": {
-      "type": "component",
-      "repeatable": true,
-      "component": "enums.race"
-    },
     "classes": {
       "type": "component",
       "repeatable": true,
@@ -30,6 +25,24 @@
     },
     "type": {
       "type": "string"
+    },
+    "races": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::race.race",
+      "mappedBy": "startProficiencies"
+    },
+    "traits": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::trait.trait",
+      "inversedBy": "proficiencies"
+    },
+    "subraces": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subrace.subrace",
+      "inversedBy": "startProficiencies"
     }
   }
 }

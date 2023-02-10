@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -28,11 +28,6 @@
     },
     "Description": {
       "type": "text"
-    },
-    "Race": {
-      "type": "component",
-      "repeatable": false,
-      "component": "enums.race"
     },
     "Class": {
       "type": "component",

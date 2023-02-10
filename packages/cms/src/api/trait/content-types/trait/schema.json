@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "traits",
+  "info": {
+    "singularName": "trait",
+    "pluralName": "traits",
+    "displayName": "Trait"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "races": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::race.race",
+      "mappedBy": "traits"
+    },
+    "proficiencies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::proficiency.proficiency",
+      "inversedBy": "traits"
+    },
+    "proficiencyChoise": {
+      "displayName": "proficiencyChoise",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.proficiency-choise"
+    },
+    "subraces": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subrace.subrace",
+      "inversedBy": "racialTraits"
+    }
+  }
+}

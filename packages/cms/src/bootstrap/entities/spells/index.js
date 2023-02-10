@@ -1,12 +1,6 @@
 const createEntry = require("../../common/createEntry");
 const spells = require("5e-database/src/5e-SRD-Spells.json");
 
-Object.defineProperty(String.prototype, "capitalize", {
-  value: function () {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-  },
-  enumerable: false,
-});
 
 const getAllSpellSaveDifficultyClass = (abilityScores, createdSpells) => {
   return spells

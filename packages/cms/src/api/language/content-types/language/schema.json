@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "languages",
+  "info": {
+    "singularName": "language",
+    "pluralName": "languages",
+    "displayName": "Language"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "script": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "races": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::race.race",
+      "mappedBy": "languages"
+    }
+  }
+}
