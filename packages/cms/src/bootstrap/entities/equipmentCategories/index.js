@@ -6,7 +6,10 @@ async function createEquipmentCategories() {
     categories.map((category) => {
       return createEntry({
         model: "equipment-category",
-        entry: category,
+        entry: {
+          index: category.index,
+          name: category.name,
+        },
       });
     })
   );

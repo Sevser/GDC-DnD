@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_characteristics_damages",
+  "info": {
+    "displayName": "damage"
+  },
+  "options": {},
+  "attributes": {
+    "damageDice": {
+      "type": "string"
+    },
+    "damageTypeEntity": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::damage-type-entity.damage-type-entity"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_characteristics_armor_class_equipments",
+  "info": {
+    "displayName": "Armor Class Equipment"
+  },
+  "options": {},
+  "attributes": {
+    "base": {
+      "type": "integer"
+    },
+    "dexBonus": {
+      "type": "boolean"
+    },
+    "maxBonus": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_characteristics_speed_equipments",
+  "info": {
+    "displayName": "Speed Equipment"
+  },
+  "options": {},
+  "attributes": {
+    "quantity": {
+      "type": "float"
+    },
+    "unit": {
+      "type": "string"
+    }
+  }
+}

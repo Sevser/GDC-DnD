@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::equipment.equipment",
-      "inversedBy": "weaponProperties"
+      "mappedBy": "weaponProperties"
     }
   }
 }
