@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "levels",
+  "info": {
+    "singularName": "level",
+    "pluralName": "levels",
+    "displayName": "Level"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class.class"
+    },
+    "spellcasting": {
+      "displayName": "Spellcasting",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.spellcasting"
+    },
+    "subclass": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::subclass.subclass"
+    },
+    "profBonus": {
+      "type": "integer"
+    },
+    "features": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feature.feature",
+      "inversedBy": "levels"
+    }
+  }
+}

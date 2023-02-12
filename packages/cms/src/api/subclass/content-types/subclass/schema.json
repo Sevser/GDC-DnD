@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subclasses",
+  "info": {
+    "singularName": "subclass",
+    "pluralName": "subclasses",
+    "displayName": "Subclass"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "subclassFlavor": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class.class"
+    },
+    "spells": {
+      "displayName": "Spell Prerequest",
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.spell-prerequest"
+    }
+  }
+}

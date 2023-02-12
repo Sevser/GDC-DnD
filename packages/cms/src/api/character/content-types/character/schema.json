@@ -29,11 +29,6 @@
     "Description": {
       "type": "text"
     },
-    "Class": {
-      "type": "component",
-      "repeatable": false,
-      "component": "enums.class"
-    },
     "base_characteristic": {
       "type": "relation",
       "relation": "oneToOne",

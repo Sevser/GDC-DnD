@@ -4,7 +4,8 @@
   "info": {
     "singularName": "trait",
     "pluralName": "traits",
-    "displayName": "Trait"
+    "displayName": "Trait",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -30,19 +31,18 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::proficiency.proficiency",
-      "inversedBy": "traits"
-    },
-    "proficiencyChoise": {
-      "displayName": "proficiencyChoise",
-      "type": "component",
-      "repeatable": false,
-      "component": "characteristics.proficiency-choise"
+      "mappedBy": "traits"
     },
     "subraces": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::subrace.subrace",
       "inversedBy": "racialTraits"
+    },
+    "proficiencyChoise": {
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.starting-proficiency-option"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "magic-item",
     "pluralName": "magic-items",
-    "displayName": "Magic Item"
+    "displayName": "Magic Item",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -30,6 +31,12 @@
     },
     "variant": {
       "type": "boolean"
+    },
+    "variants": {
+      "displayName": "Magic Item Variant",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.magic-item-variant"
     }
   }
 }

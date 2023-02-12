@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_characteristics_spell_prerequests",
+  "info": {
+    "displayName": "Spell Prerequest"
+  },
+  "options": {},
+  "attributes": {
+    "spell": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::spell.spell"
+    }
+  }
+}

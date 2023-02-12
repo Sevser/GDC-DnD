@@ -33,17 +33,6 @@
       },
       "type": "richtext"
     },
-    "class": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "component": "enums.class",
-      "required": true
-    },
     "ability": {
       "type": "relation",
       "relation": "manyToOne",

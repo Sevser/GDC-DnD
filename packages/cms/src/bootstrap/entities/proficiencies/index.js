@@ -5,9 +5,6 @@ const transformProp = (prop, races) => ({
   index: prop.index,
   name: prop.name,
   type: prop.type,
-  classes: prop.classes.map((cl) => ({
-    class: cl.name,
-  })),
 });
 
 async function createProficiencies() {

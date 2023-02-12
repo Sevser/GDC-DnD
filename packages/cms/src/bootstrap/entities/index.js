@@ -22,7 +22,11 @@ const createLanguage = require("./language");
 const createSubraces = require("./subrace");
 const createEquipmentCategories = require("./equipmentCategories");
 const createEquipment = require("./equipment");
-const createMagicItems = require("./magic-items");
+const createMagicItems = require("./magicItems");
+const createClasses = require("./classes");
+const createSubclass = require("./subclass");
+const createFeatures = require("./features");
+const createLevels = require("./levels");
 
 async function importSeedData() {
   await setPublicPermissions({
@@ -43,11 +47,16 @@ async function importSeedData() {
     skill: ["find", "findOne"],
     rules: ["find", "findOne"],
     race: ["find", "findOne"],
+    subrace: ["find", "findOne"],
     trait: ["find", "findOne"],
     language: ["find", "findOne"],
-    subrace: ["find", "findOne"],
+    "magic-item": ["find", "findOne"],
     "equipment-category": ["find", "findOne"],
     equipment: ["find", "findOne"],
+    class: ["find", "findOne"],
+    subclass: ["find", "findOne"],
+    feature: ["find", "findOne"],
+    level: ["find", "findOne"],
   });
 
   // Create all entries
@@ -68,16 +77,33 @@ async function importSeedData() {
   await createMagicSchool();
   const weaponProperties = await createWeaponProperty();
   await createSkills({ abilityScores });
-  const createdSpells = await createSpells({ abilityScores });
   const ruleSections = await createRuleSection();
   await createRules(ruleSections);
-  await createEquipment({
+  const equipment = await createEquipment({
     eqCategories,
     weaponProperties,
     damageTypes,
   });
   await createMagicItems({
     eqCategories,
+  });
+  const classes = await createClasses({
+    proficiencies,
+    equipment,
+    abilityScores,
+  });
+  const createdSpells = await createSpells({ abilityScores, classes });
+  const subclasses = await createSubclass({
+    classes,
+  });
+  const features = await createFeatures({
+    classes,
+    subclasses,
+  });
+  await createLevels({
+    classes,
+    subclasses,
+    features,
   });
 }
 

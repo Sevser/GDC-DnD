@@ -34,16 +34,6 @@
       },
       "type": "richtext"
     },
-    "Class": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "component": "enums.class"
-    },
     "CoolDown": {
       "pluginOptions": {
         "i18n": {
