@@ -5,7 +5,9 @@ import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
 import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageType/DamageTypeEntity';
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
+import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
+import { ILanguageListItem, LanguageListItemModel } from '@/types/Language/Language';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
 import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
 import { IRuleListItem, IRuleViewItem, RuleListItem, RuleViewItemModel } from '@/types/Rule/Rule';
@@ -140,6 +142,22 @@ const fetchRules = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> =>
   };
 };
 
+const fetchLanguages = async (): Promise<IGenericStrapiMappedData<ILanguageListItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/languages`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<ILanguageListItem>) => new LanguageListItemModel({ ...item.attributes, id: item.id })),
+  };
+};
+
+const fetchFeatures = async (): Promise<IGenericStrapiMappedData<IFeatureItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/features`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IFeatureItem>) => new FeatureItemModel({ ...item.attributes, id: item.id })),
+  };
+};
+
 const fetchRuleItem = async (ruleId: number | string): Promise<IRuleViewItem & IRuleListItem> => {
   const result = await baseClient.get(`${cmsUrl}/api/rules/${ruleId}`);
   return new RuleViewItemModel({
@@ -164,6 +182,8 @@ export interface ICMSClient {
   fetchSkills: typeof fetchSkills;
   fetchRules: typeof fetchRules;
   fetchRuleItem: typeof fetchRuleItem;
+  fetchLanguages: typeof fetchLanguages;
+  fetchFeatures: typeof fetchFeatures;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -176,7 +196,9 @@ export type ICMSClientDictionariesFetchType =
   | typeof fetchWeaponProperties
   | typeof fetchAbilityScores
   | typeof fetchSkills
-  | typeof fetchProficiency;
+  | typeof fetchProficiency
+  | typeof fetchFeatures
+  | typeof fetchLanguages;
 
 export {
   fetchSpells,
@@ -195,4 +217,6 @@ export {
   fetchSkills,
   fetchRules,
   fetchRuleItem,
+  fetchLanguages,
+  fetchFeatures,
 };

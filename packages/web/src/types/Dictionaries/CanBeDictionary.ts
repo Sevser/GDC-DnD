@@ -4,6 +4,8 @@ import { AlignmentModel } from '../Alignment/Alignment';
 import { ConditionModel } from '../Condition/Condition';
 import { DictionaryTypePropName } from '../constants';
 import { DamageTypeEntityModel } from '../DamageType/DamageTypeEntity';
+import { FeatureItemModel } from '../Feature/Feature';
+import { LanguageListItemModel } from '../Language/Language';
 import { MagicSchoolModel } from '../MagicSchools/MagicSchool';
 import { ProficiencyModel } from '../Proficiency/Proficiency';
 import { SkillModel } from '../Skills/Skills';
@@ -22,7 +24,17 @@ export interface ICanBeDictionaryProvider {
   getCmsProviderByType: (type: string) => ICMSClientDictionariesFetchType;
 }
 
-export type AllowedDictionaryClasses = DamageTypeEntityModel | ConditionModel | AlignmentModel | MagicSchoolModel | WeaponPropertyModel | ProficiencyModel | AbilityScoreModel | SkillModel;
+export type AllowedDictionaryClasses =
+  | DamageTypeEntityModel
+  | ConditionModel
+  | AlignmentModel
+  | MagicSchoolModel
+  | WeaponPropertyModel
+  | ProficiencyModel
+  | AbilityScoreModel
+  | SkillModel
+  | FeatureItemModel
+  | LanguageListItemModel;
 
 export class CanBeDictionaryProvider implements ICanBeDictionaryProvider {
   allowedClasses: AllowedDictionaryClasses[];
@@ -36,6 +48,8 @@ export class CanBeDictionaryProvider implements ICanBeDictionaryProvider {
       ProficiencyModel.getEmpty(),
       AbilityScoreModel.getEmpty(),
       SkillModel.getEmpty(),
+      LanguageListItemModel.getEmpty(),
+      FeatureItemModel.getEmpty(),
     ];
   }
   getCmsProviderByType(type: string) {

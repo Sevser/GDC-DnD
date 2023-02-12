@@ -39,6 +39,16 @@ const dictionaries = [
     subtitle: "Skills",
     collectionName: "skills",
   },
+  {
+    title: "Language",
+    subtitle: "Language",
+    collectionName: "language",
+  },
+  {
+    title: "Features",
+    subtitle: "Features",
+    collectionName: "feature",
+  },
 ];
 
 module.exports = dictionaries;
