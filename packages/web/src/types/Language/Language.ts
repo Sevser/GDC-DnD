@@ -2,7 +2,7 @@ import { cmsClient } from '@/plugins/http';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 
-export interface ILanguageListItem {
+export interface ILanguageListItemModel {
   index: string;
   name: string;
   script: string;
@@ -10,7 +10,7 @@ export interface ILanguageListItem {
   id: number;
 }
 
-export class LanguageListItemModel implements ILanguageListItem, ICanBeDictionary {
+export class LanguageListItemModel implements ILanguageListItemModel, ICanBeDictionary {
   index: string;
   name: string;
   script: string;
@@ -18,7 +18,7 @@ export class LanguageListItemModel implements ILanguageListItem, ICanBeDictionar
   id: number;
   desc?: string | undefined;
   [DictionaryTypePropName]: string;
-  constructor(prop: ILanguageListItem) {
+  constructor(prop: ILanguageListItemModel) {
     this.index = prop.index;
     this.name = prop.name;
     this.script = prop.script;

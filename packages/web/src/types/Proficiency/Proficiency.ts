@@ -2,7 +2,7 @@ import { cmsClient } from '@/plugins/http';
 import { ChacacterClassModel, ICharacterClass } from '../CharacterClass';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
-import { IRace, RaceModel } from '../Race/Race';
+import { IRace, RaceModel } from '../Race/RaceListItem';
 
 export interface IProficiency {
   index: string;

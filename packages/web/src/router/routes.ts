@@ -41,6 +41,22 @@ const routes = [
     ],
   },
   {
+    path: '/races',
+    name: 'RaceList',
+    components: {
+      default: () => import('@/pages/RaceList.vue'),
+    },
+    children: [
+      {
+        path: ':id',
+        name: 'RaceView',
+        components: {
+          listContentView: () => import('@/pages/RaceView.vue'),
+        },
+      },
+    ],
+  },
+  {
     path: '/dictionaries',
     name: 'DictionaryList',
     component: () => import('@/pages/DictionaryList.vue'),

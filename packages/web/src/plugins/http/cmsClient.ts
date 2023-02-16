@@ -7,9 +7,11 @@ import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageTyp
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
 import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
-import { ILanguageListItem, LanguageListItemModel } from '@/types/Language/Language';
+import { ILanguageListItemModel, LanguageListItemModel } from '@/types/Language/Language';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
 import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
+import { IRaceListItemModel, RaceListItemModel } from '@/types/Race/RaceListItem';
+import { IRaceViewItemModel, RaceViewItemModel } from '@/types/Race/RaceViewItem';
 import { IRuleListItem, IRuleViewItem, RuleListItem, RuleViewItemModel } from '@/types/Rule/Rule';
 import { ISkill, SkillModel } from '@/types/Skills/Skills';
 import { Spell } from '@/types/Spell/Spell';
@@ -142,11 +144,11 @@ const fetchRules = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> =>
   };
 };
 
-const fetchLanguages = async (): Promise<IGenericStrapiMappedData<ILanguageListItem>> => {
+const fetchLanguages = async (): Promise<IGenericStrapiMappedData<ILanguageListItemModel>> => {
   const result = await baseClient.get(`${cmsUrl}/api/languages`);
   return {
     meta: result.data.meta,
-    data: result.data.data.map((item: IGenericStrapiData<ILanguageListItem>) => new LanguageListItemModel({ ...item.attributes, id: item.id })),
+    data: result.data.data.map((item: IGenericStrapiData<ILanguageListItemModel>) => new LanguageListItemModel({ ...item.attributes, id: item.id })),
   };
 };
 
@@ -164,6 +166,19 @@ const fetchRuleItem = async (ruleId: number | string): Promise<IRuleViewItem & I
     id: result.data.data.id,
     ...result.data.data.attributes,
   });
+};
+
+const fetchRaces = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/races`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IRaceListItemModel>) => new RaceListItemModel({ ...item.attributes, id: item.id, tabDescription: (item.attributes as any).alignment })),
+  };
+};
+
+const fetchRace = async (raceId: string | number): Promise<IRaceViewItemModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/races/${raceId}`);
+  return new RaceViewItemModel({ ...result.data.data.attributes, id: result.data.data.id });
 };
 
 export interface ICMSClient {
@@ -184,6 +199,8 @@ export interface ICMSClient {
   fetchRuleItem: typeof fetchRuleItem;
   fetchLanguages: typeof fetchLanguages;
   fetchFeatures: typeof fetchFeatures;
+  fetchRaces: typeof fetchRaces;
+  fetchRace: typeof fetchRace;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -219,4 +236,6 @@ export {
   fetchRuleItem,
   fetchLanguages,
   fetchFeatures,
+  fetchRaces,
+  fetchRace,
 };

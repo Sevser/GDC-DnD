@@ -41,7 +41,6 @@ const bestiary = {
       context.commit('updateBeast');
       try {
         const beast = await cmsClient.fetchBeast(beastId);
-        console.log(beast);
         context.commit('updateBeast', beast);
         // Todo: add toast to handle error;
         // eslint-disable-next-line

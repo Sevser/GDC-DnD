@@ -1,20 +1,20 @@
-export interface ISpeed {
+export interface ISpeedModel {
   walk: string;
   swim: string;
   fly: string;
 }
 
-export class Speed implements ISpeed {
+export class SpeedModel implements ISpeedModel {
   walk: string;
   swim: string;
   fly: string;
-  constructor(prop: ISpeed) {
+  constructor(prop: ISpeedModel) {
     this.walk = prop.walk;
     this.fly = prop.fly;
     this.swim = prop.swim;
   }
   static getEmpty() {
-    return new Speed({
+    return new SpeedModel({
       walk: '',
       swim: '',
       fly: '',

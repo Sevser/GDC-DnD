@@ -47,6 +47,11 @@ export default defineComponent({
         text: 'RulesList',
         navigation: 'RulesList',
       },
+      {
+        icon: 'mdi-human',
+        text: 'RaceList',
+        navigation: 'RaceList',
+      },
     ],
     model: 1,
   }),
