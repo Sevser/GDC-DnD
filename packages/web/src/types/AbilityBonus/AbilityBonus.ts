@@ -1,13 +1,13 @@
 import { IAbilityScore, AbilityScoreModel } from '../AbilityScore/AbilityScore';
 
 export interface IAbilityBonus {
-  bonus: number;
+  bonus?: number;
   abilityScore: IAbilityScore;
   id: number;
 }
 
 export class AbilityBonusModel implements IAbilityBonus {
-  bonus: number;
+  bonus?: number;
   abilityScore: IAbilityScore;
   id: number;
   constructor(props: IAbilityBonus) {
@@ -17,7 +17,7 @@ export class AbilityBonusModel implements IAbilityBonus {
   }
   static getEmpty() {
     return new AbilityBonusModel({
-      bonus: NaN,
+      bonus: undefined,
       id: NaN,
       abilityScore: AbilityScoreModel.getEmpty(),
     });

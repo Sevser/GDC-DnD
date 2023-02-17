@@ -1,4 +1,5 @@
 import { IRuleSection, RuleSectionModel } from '../RuleSection/RuleSection';
+import { ITraitModel, TraitModel } from '../Trait/Trait';
 
 export interface IRuleListItem {
   id: number;

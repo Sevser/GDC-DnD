@@ -3,6 +3,8 @@ import { BeastSizeModel, IBeastSizeModel } from '../beasts/BeastSize';
 import { ILanguageListItemModel, LanguageListItemModel } from '../Language/Language';
 import { IProficiency, ProficiencyModel } from '../Proficiency/Proficiency';
 import { ISpeedModel, SpeedModel } from '../speed/Speed';
+import { ISubraceModel, SubraceModel } from '../Subrace/Subrace';
+import { ITraitModel, TraitModel } from '../Trait/Trait';
 
 export interface IRaceViewItemModel {
   id: number;
@@ -16,6 +18,8 @@ export interface IRaceViewItemModel {
   abilityBonuses: IAbilityBonus[];
   startProficiencies: IProficiency[];
   languages: ILanguageListItemModel[];
+  traits: ITraitModel[];
+  subraces: ISubraceModel[];
 }
 
 export class RaceViewItemModel implements IRaceViewItemModel {
@@ -30,6 +34,8 @@ export class RaceViewItemModel implements IRaceViewItemModel {
   abilityBonuses: IAbilityBonus[];
   startProficiencies: IProficiency[];
   languages: ILanguageListItemModel[];
+  traits: ITraitModel[];
+  subraces: ISubraceModel[];
   constructor(prop: IRaceViewItemModel) {
     this.index = prop.index;
     this.id = prop.id;
@@ -57,6 +63,21 @@ export class RaceViewItemModel implements IRaceViewItemModel {
       }
       return new LanguageListItemModel(l);
     });
+    this.traits = prop.traits.map((trait) => {
+      if (trait instanceof TraitModel) {
+        return trait;
+      }
+      return new TraitModel(trait);
+    });
+    this.subraces = prop.subraces.map((trait) => {
+      if (trait instanceof SubraceModel) {
+        return trait;
+      }
+      return new SubraceModel({
+        ...trait,
+        race: this,
+      });
+    });
   }
   static getEmpty() {
     return new RaceViewItemModel({
@@ -71,6 +92,8 @@ export class RaceViewItemModel implements IRaceViewItemModel {
       abilityBonuses: new Array<IAbilityBonus>(),
       startProficiencies: new Array<IProficiency>(),
       languages: new Array<ILanguageListItemModel>(),
+      traits: new Array<ITraitModel>(),
+      subraces: new Array<ISubraceModel>(),
     });
   }
 }
