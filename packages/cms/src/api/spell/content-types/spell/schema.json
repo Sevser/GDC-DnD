@@ -54,11 +54,6 @@
       "repeatable": false,
       "component": "enums.school-of-magic"
     },
-    "class": {
-      "type": "component",
-      "repeatable": true,
-      "component": "enums.class"
-    },
     "archetypes": {
       "type": "relation",
       "relation": "manyToMany",
@@ -113,6 +108,12 @@
     },
     "index": {
       "type": "string"
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::class.class",
+      "inversedBy": "spells"
     }
   }
 }

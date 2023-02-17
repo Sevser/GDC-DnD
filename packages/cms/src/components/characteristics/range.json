@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_characteristics_ranges",
+  "info": {
+    "displayName": "range"
+  },
+  "options": {},
+  "attributes": {
+    "normal": {
+      "type": "decimal"
+    },
+    "long": {
+      "type": "decimal"
+    }
+  }
+}

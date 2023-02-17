@@ -19,6 +19,12 @@
     },
     "desc": {
       "type": "richtext"
+    },
+    "equipment": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::equipment.equipment",
+      "mappedBy": "weaponProperties"
     }
   }
 }

@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classes",
+  "info": {
+    "singularName": "class",
+    "pluralName": "classes",
+    "displayName": "Class ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "hitDie": {
+      "type": "integer"
+    },
+    "proficiencyChoices": {
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.starting-proficiency-option"
+    },
+    "proficiencies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::proficiency.proficiency",
+      "inversedBy": "classes"
+    },
+    "savingThrows": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ability-score.ability-score",
+      "inversedBy": "classes"
+    },
+    "startingEquipment": {
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.content-item-quantity"
+    },
+    "spells": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::spell.spell",
+      "inversedBy": "classes"
+    }
+  }
+}

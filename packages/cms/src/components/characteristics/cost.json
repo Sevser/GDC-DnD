@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_characteristics_costs",
+  "info": {
+    "displayName": "cost"
+  },
+  "options": {},
+  "attributes": {
+    "unit": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "decimal"
+    }
+  }
+}

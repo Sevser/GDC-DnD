@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "races",
+  "info": {
+    "singularName": "race",
+    "pluralName": "races",
+    "displayName": "Race",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "alignment": {
+      "type": "text"
+    },
+    "languageDesc": {
+      "type": "text"
+    },
+    "size": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enums.size"
+    },
+    "sizeDescription": {
+      "type": "text"
+    },
+    "speed": {
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.speed"
+    },
+    "abilityBonuses": {
+      "displayName": "abilityBonuses",
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.ability-bonuses"
+    },
+    "startProficiencies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::proficiency.proficiency",
+      "inversedBy": "races"
+    },
+    "traits": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::trait.trait",
+      "inversedBy": "races"
+    },
+    "languages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::language.language",
+      "inversedBy": "races"
+    },
+    "startingProficiencyOption": {
+      "displayName": "startingProficiencyOption",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.starting-proficiency-option"
+    },
+    "subraces": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subrace.subrace",
+      "mappedBy": "race"
+    }
+  }
+}

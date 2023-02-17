@@ -1,13 +1,6 @@
 const createEntry = require("../../common/createEntry");
 const spells = require("5e-database/src/5e-SRD-Spells.json");
 
-Object.defineProperty(String.prototype, "capitalize", {
-  value: function () {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-  },
-  enumerable: false,
-});
-
 const getAllSpellSaveDifficultyClass = (abilityScores, createdSpells) => {
   return spells
     .filter((spell) => Reflect.has(spell, "dc"))
@@ -46,7 +39,7 @@ const calcActionType = (actionRaw) => {
   return undefined;
 };
 
-const transformData = (listResults) =>
+const transformData = (listResults, props) =>
   listResults.map((sp, index) => ({
     id: index + 1,
     title: sp.name,
@@ -68,7 +61,9 @@ const transformData = (listResults) =>
       })
       .map((s) => ({ SpellComponent: s })),
     spellComponentDescription: sp.material,
-    class: sp.classes.map((cl) => ({ class: cl.name })),
+    classes: sp.classes.map((cl) =>
+      props.classes.find((c) => c.index === cl.index)
+    ),
     distance: {
       distanceShort: sp.range || "",
       longText: "",
@@ -82,8 +77,8 @@ const transformData = (listResults) =>
         : null,
   }));
 
-async function createSpells({ abilityScores }) {
-  const transformedSpells = transformData(spells);
+async function createSpells(props) {
+  const transformedSpells = transformData(spells, props);
   const createdSpells = await Promise.all(
     transformedSpells.map((spell) => {
       return createEntry({
@@ -93,12 +88,14 @@ async function createSpells({ abilityScores }) {
     })
   );
   await Promise.all(
-    getAllSpellSaveDifficultyClass(abilityScores, createdSpells).map((ssdc) => {
-      return createEntry({
-        model: "spell-save-difficulty-class",
-        entry: ssdc,
-      });
-    })
+    getAllSpellSaveDifficultyClass(props.abilityScores, createdSpells).map(
+      (ssdc) => {
+        return createEntry({
+          model: "spell-save-difficulty-class",
+          entry: ssdc,
+        });
+      }
+    )
   );
   return createdSpells;
 }

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipment_categories",
+  "info": {
+    "singularName": "equipment-category",
+    "pluralName": "equipment-categories",
+    "displayName": "Equipment Category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "equipment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipment.equipment",
+      "mappedBy": "gearCategory"
+    }
+  }
+}

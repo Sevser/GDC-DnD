@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_characteristics_content_item_quantities",
+  "info": {
+    "displayName": "Content Item Quantity"
+  },
+  "options": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer"
+    },
+    "equipment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::equipment.equipment"
+    }
+  }
+}

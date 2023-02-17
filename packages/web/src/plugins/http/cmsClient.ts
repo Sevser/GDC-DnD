@@ -2,12 +2,18 @@ import { AbilityScoreModel, IAbilityScore } from '@/types/AbilityScore/AbilitySc
 import { AlignmentModel, IAlignment } from '@/types/Alignment/Alignment';
 import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
+import { ClassListItemModel, IClassListItemModel } from '@/types/Class/ClassListItemModel';
+import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
 import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageType/DamageTypeEntity';
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
+import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
+import { ILanguageListItemModel, LanguageListItemModel } from '@/types/Language/Language';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
 import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
+import { IRaceListItemModel, RaceListItemModel } from '@/types/Race/RaceListItem';
+import { IRaceViewItemModel, RaceViewItemModel } from '@/types/Race/RaceViewItem';
 import { IRuleListItem, IRuleViewItem, RuleListItem, RuleViewItemModel } from '@/types/Rule/Rule';
 import { ISkill, SkillModel } from '@/types/Skills/Skills';
 import { Spell } from '@/types/Spell/Spell';
@@ -140,12 +146,54 @@ const fetchRules = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> =>
   };
 };
 
+const fetchLanguages = async (): Promise<IGenericStrapiMappedData<ILanguageListItemModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/languages`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<ILanguageListItemModel>) => new LanguageListItemModel({ ...item.attributes, id: item.id })),
+  };
+};
+
+const fetchFeatures = async (): Promise<IGenericStrapiMappedData<IFeatureItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/features`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IFeatureItem>) => new FeatureItemModel({ ...item.attributes, id: item.id })),
+  };
+};
+
 const fetchRuleItem = async (ruleId: number | string): Promise<IRuleViewItem & IRuleListItem> => {
   const result = await baseClient.get(`${cmsUrl}/api/rules/${ruleId}`);
   return new RuleViewItemModel({
     id: result.data.data.id,
     ...result.data.data.attributes,
   });
+};
+
+const fetchRaces = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/races`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IRaceListItemModel>) => new RaceListItemModel({ ...item.attributes, id: item.id, tabDescription: (item.attributes as any).alignment })),
+  };
+};
+
+const fetchRace = async (raceId: string | number): Promise<IRaceViewItemModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/races/${raceId}`);
+  return new RaceViewItemModel({ ...result.data.data.attributes, id: result.data.data.id });
+};
+
+const fetchClasses = async (): Promise<IGenericStrapiMappedData<IClassListItemModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/classes`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IClassListItemModel>) => new ClassListItemModel({ ...item.attributes, id: item.id, tabDescription: (item.attributes as any).alignment })),
+  };
+};
+
+const fetchClass = async (raceId: string | number): Promise<IClassViewModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/classes/${raceId}`);
+  return new ClassViewModel({ ...result.data.data.attributes, id: result.data.data.id });
 };
 
 export interface ICMSClient {
@@ -164,6 +212,12 @@ export interface ICMSClient {
   fetchSkills: typeof fetchSkills;
   fetchRules: typeof fetchRules;
   fetchRuleItem: typeof fetchRuleItem;
+  fetchLanguages: typeof fetchLanguages;
+  fetchFeatures: typeof fetchFeatures;
+  fetchRaces: typeof fetchRaces;
+  fetchRace: typeof fetchRace;
+  fetchClass: typeof fetchClass;
+  fetchClasses: typeof fetchClasses;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -176,7 +230,9 @@ export type ICMSClientDictionariesFetchType =
   | typeof fetchWeaponProperties
   | typeof fetchAbilityScores
   | typeof fetchSkills
-  | typeof fetchProficiency;
+  | typeof fetchProficiency
+  | typeof fetchFeatures
+  | typeof fetchLanguages;
 
 export {
   fetchSpells,
@@ -195,4 +251,10 @@ export {
   fetchSkills,
   fetchRules,
   fetchRuleItem,
+  fetchLanguages,
+  fetchFeatures,
+  fetchRaces,
+  fetchRace,
+  fetchClasses,
+  fetchClass,
 };

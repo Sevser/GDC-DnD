@@ -41,6 +41,22 @@ const routes = [
     ],
   },
   {
+    path: '/races',
+    name: 'RaceList',
+    components: {
+      default: () => import('@/pages/RaceList.vue'),
+    },
+    children: [
+      {
+        path: ':id',
+        name: 'RaceView',
+        components: {
+          listContentView: () => import('@/pages/RaceView.vue'),
+        },
+      },
+    ],
+  },
+  {
     path: '/dictionaries',
     name: 'DictionaryList',
     component: () => import('@/pages/DictionaryList.vue'),
@@ -81,6 +97,22 @@ const routes = [
         name: 'SpellView',
         components: {
           listContentView: () => import('@/pages/SpellView.vue'),
+        },
+      },
+    ],
+  },
+  {
+    path: '/classes',
+    name: 'ClassList',
+    components: {
+      default: () => import('@/pages/ClassList.vue'),
+    },
+    children: [
+      {
+        path: ':id',
+        name: 'ClassView',
+        components: {
+          listContentView: () => import('@/pages/ClassView.vue'),
         },
       },
     ],

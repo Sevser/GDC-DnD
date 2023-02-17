@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -32,17 +32,6 @@
         }
       },
       "type": "richtext"
-    },
-    "class": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "component": "enums.class",
-      "required": true
     },
     "ability": {
       "type": "relation",

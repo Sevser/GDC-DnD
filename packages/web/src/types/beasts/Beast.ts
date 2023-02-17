@@ -3,7 +3,7 @@ import { ArmorClass, IArmorClass } from '../ArmorClass/ArmorClass';
 import { BaseCharacteristics, IBaseCharacteristics } from '../BaseCharacteristics/BaseCharacteristics';
 import { DamageTypeModel, IDamageTypeModel } from '../DamageType/DamageType';
 import { ISenses, Senses } from '../Senses/senses';
-import { ISpeed, Speed } from '../speed/Speed';
+import { ISpeedModel, SpeedModel } from '../speed/Speed';
 import { BeastChallengeRating } from './BeastChallengeRating';
 import { BeastSizeModel, IBeastSizeModel } from './BeastSize';
 import { BeastType } from './BeastType';
@@ -15,7 +15,7 @@ export interface IBeastModel {
   hit_points_roll: string;
   Size: IBeastSizeModel;
   base_characteristic: IBaseCharacteristics;
-  speed: ISpeed;
+  speed: ISpeedModel;
   name: string;
   xp: number;
   type: BeastType;
@@ -41,7 +41,7 @@ export class BeastModel implements IBeastModel {
   hit_points_roll: string;
   Size: IBeastSizeModel;
   base_characteristic: BaseCharacteristics;
-  speed: ISpeed;
+  speed: ISpeedModel;
   name: string;
   xp: number;
   type: BeastType;
@@ -69,7 +69,7 @@ export class BeastModel implements IBeastModel {
     this.Size = prop.Size;
     this.base_characteristic = new BaseCharacteristics(prop.base_characteristic);
     this.senses = new Senses(prop.senses);
-    this.speed = new Speed(prop.speed);
+    this.speed = new SpeedModel(prop.speed);
     this.name = prop.name;
     this.xp = prop.xp;
     this.type = prop.type;
@@ -93,7 +93,7 @@ export class BeastModel implements IBeastModel {
       Size: BeastSizeModel.getEmpty(),
       base_characteristic: BaseCharacteristics.getEmpty(),
       senses: Senses.getEmpty(),
-      speed: Speed.getEmpty(),
+      speed: SpeedModel.getEmpty(),
       name: '',
       xp: NaN,
       type: 'aberration',

@@ -16,6 +16,17 @@ const createAbilityScore = require("./abilityScores");
 const createSkills = require("./skills");
 const createRuleSection = require("./ruleSection");
 const createRules = require("./rules");
+const createRaces = require("./races");
+const createTraits = require("./traits");
+const createLanguage = require("./language");
+const createSubraces = require("./subrace");
+const createEquipmentCategories = require("./equipmentCategories");
+const createEquipment = require("./equipment");
+const createMagicItems = require("./magicItems");
+const createClasses = require("./classes");
+const createSubclass = require("./subclass");
+const createFeatures = require("./features");
+const createLevels = require("./levels");
 
 async function importSeedData() {
   await setPublicPermissions({
@@ -34,25 +45,66 @@ async function importSeedData() {
     "ability-score": ["find", "findOne"],
     "rule-section": ["find", "findOne"],
     skill: ["find", "findOne"],
-    rules: ["find", "findOne"],
+    rule: ["find", "findOne"],
+    race: ["find", "findOne"],
+    subrace: ["find", "findOne"],
+    trait: ["find", "findOne"],
+    language: ["find", "findOne"],
+    "magic-item": ["find", "findOne"],
+    "equipment-category": ["find", "findOne"],
+    equipment: ["find", "findOne"],
+    class: ["find", "findOne"],
+    subclass: ["find", "findOne"],
+    feature: ["find", "findOne"],
+    level: ["find", "findOne"],
   });
 
   // Create all entries
   await createExperience(experience);
   await createArchetypes(archetypes);
+  const abilityScores = await createAbilityScore();
+  const proficiencies = await createProficiencies();
+  const languages = await createLanguage();
+  const races = await createRaces({ abilityScores, proficiencies, languages });
+  const traits = await createTraits({ races, proficiencies });
   await createBeast();
-  await createDamageTypes();
+  await createSubraces({ races, abilityScores, traits, proficiencies });
+  const eqCategories = await createEquipmentCategories();
+  const damageTypes = await createDamageTypes();
   await createConditions();
   await createDictionaries();
   await createAlignments();
   await createMagicSchool();
-  await createWeaponProperty();
-  await createProficiencies();
-  const abilityScores = await createAbilityScore();
+  const weaponProperties = await createWeaponProperty();
   await createSkills({ abilityScores });
-  const createdSpells = await createSpells({ abilityScores });
   const ruleSections = await createRuleSection();
   await createRules(ruleSections);
+  const equipment = await createEquipment({
+    eqCategories,
+    weaponProperties,
+    damageTypes,
+  });
+  await createMagicItems({
+    eqCategories,
+  });
+  const classes = await createClasses({
+    proficiencies,
+    equipment,
+    abilityScores,
+  });
+  const createdSpells = await createSpells({ abilityScores, classes });
+  const subclasses = await createSubclass({
+    classes,
+  });
+  const features = await createFeatures({
+    classes,
+    subclasses,
+  });
+  await createLevels({
+    classes,
+    subclasses,
+    features,
+  });
 }
 
 module.exports = importSeedData;

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "magic_items",
+  "info": {
+    "singularName": "magic-item",
+    "pluralName": "magic-items",
+    "displayName": "Magic Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "equipmentCategory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::equipment-category.equipment-category"
+    },
+    "rarity": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "boolean"
+    },
+    "variants": {
+      "displayName": "Magic Item Variant",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.magic-item-variant"
+    }
+  }
+}

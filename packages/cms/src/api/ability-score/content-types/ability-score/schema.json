@@ -34,6 +34,12 @@
       "relation": "oneToMany",
       "target": "api::spell-save-difficulty-class.spell-save-difficulty-class",
       "mappedBy": "abilityScore"
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::class.class",
+      "inversedBy": "savingThrows"
     }
   }
 }

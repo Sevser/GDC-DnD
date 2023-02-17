@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_characteristics_magic_item_variants",
+  "info": {
+    "displayName": "Magic Item Variant"
+  },
+  "options": {},
+  "attributes": {
+    "magicItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::magic-item.magic-item"
+    }
+  }
+}

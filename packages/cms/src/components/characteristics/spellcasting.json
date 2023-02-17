@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_characteristics_spellcastings",
+  "info": {
+    "displayName": "Spellcasting"
+  },
+  "options": {},
+  "attributes": {
+    "cantripsKnown": {
+      "type": "integer"
+    },
+    "spellsKnown": {
+      "type": "integer"
+    },
+    "spellSlotsLevel1": {
+      "type": "integer"
+    },
+    "spellSlotsLevel2": {
+      "type": "integer"
+    },
+    "spellSlotsLevel3": {
+      "type": "integer"
+    },
+    "spellSlotsLevel4": {
+      "type": "integer"
+    },
+    "spellSlotsLevel5": {
+      "type": "integer"
+    },
+    "spellSlotsLevel6": {
+      "type": "integer"
+    },
+    "spellSlotsLevel7": {
+      "type": "integer"
+    },
+    "spellSlotsLevel8": {
+      "type": "integer"
+    },
+    "spellSlotsLevel9": {
+      "type": "integer"
+    }
+  }
+}

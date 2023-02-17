@@ -1,0 +1,125 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipments",
+  "info": {
+    "singularName": "equipment",
+    "pluralName": "equipments",
+    "displayName": "Equipment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "categoryRange": {
+      "type": "string"
+    },
+    "weaponCategory": {
+      "type": "string"
+    },
+    "weaponRange": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "float"
+    },
+    "equipmentCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::equipment-category.equipment-category",
+      "inversedBy": "equipment"
+    },
+    "weaponProperties": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::weapon-property.weapon-property",
+      "inversedBy": "equipment"
+    },
+    "gearCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::equipment-category.equipment-category",
+      "inversedBy": "equipment"
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "cost": {
+      "displayName": "cost",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.cost"
+    },
+    "damage": {
+      "displayName": "damage",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.damage"
+    },
+    "range": {
+      "displayName": "range",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.range"
+    },
+    "throwRange": {
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.range"
+    },
+    "twoHandedDamage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.damage"
+    },
+    "special": {
+      "type": "richtext"
+    },
+    "armorCategory": {
+      "type": "string"
+    },
+    "armorClassEquipment": {
+      "displayName": "Armor Class Equipment",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.armor-class-equipment"
+    },
+    "strMinimum": {
+      "type": "integer"
+    },
+    "stealthDisadvantage": {
+      "type": "boolean"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "contents": {
+      "displayName": "Content Item Quantity",
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.content-item-quantity"
+    },
+    "toolCategory": {
+      "type": "string"
+    },
+    "vehicleCategory": {
+      "type": "string"
+    },
+    "speed": {
+      "displayName": "Speed Equipment",
+      "type": "component",
+      "repeatable": false,
+      "component": "characteristics.speed-equipment"
+    },
+    "capacity": {
+      "type": "string"
+    }
+  }
+}
