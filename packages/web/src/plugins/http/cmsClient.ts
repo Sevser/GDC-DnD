@@ -187,7 +187,7 @@ const fetchClasses = async (): Promise<IGenericStrapiMappedData<IClassListItemMo
   const result = await baseClient.get(`${cmsUrl}/api/classes`);
   return {
     meta: result.data.meta,
-    data: result.data.data.map((item: IGenericStrapiData<IClassListItemModel>) => new ClassListItemModel({ ...item.attributes, id: item.id, tabDescription: (item.attributes as any).alignment })),
+    data: result.data.data.map((item: IGenericStrapiData<IClassListItemModel>) => new ClassListItemModel({ ...item.attributes, id: item.id })),
   };
 };
 
