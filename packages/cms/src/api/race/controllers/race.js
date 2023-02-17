@@ -60,7 +60,6 @@ module.exports = createCoreController("api::race.race", ({ strapi }) => ({
             populate: "*",
           },
           abilityBonuses: {
-            id: true,
             bonus: true,
             populate: {
               abilityScore: true,

@@ -52,6 +52,11 @@ export default defineComponent({
         text: 'RaceList',
         navigation: 'RaceList',
       },
+      {
+        icon: 'mdi-human',
+        text: 'ClassList',
+        navigation: 'ClassList',
+      },
     ],
     model: 1,
   }),

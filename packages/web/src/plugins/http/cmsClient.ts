@@ -2,6 +2,8 @@ import { AbilityScoreModel, IAbilityScore } from '@/types/AbilityScore/AbilitySc
 import { AlignmentModel, IAlignment } from '@/types/Alignment/Alignment';
 import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
+import { ClassListItemModel, IClassListItemModel } from '@/types/Class/ClassListItemModel';
+import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
 import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageType/DamageTypeEntity';
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
@@ -181,6 +183,19 @@ const fetchRace = async (raceId: string | number): Promise<IRaceViewItemModel> =
   return new RaceViewItemModel({ ...result.data.data.attributes, id: result.data.data.id });
 };
 
+const fetchClasses = async (): Promise<IGenericStrapiMappedData<IClassListItemModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/classes`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<IClassListItemModel>) => new ClassListItemModel({ ...item.attributes, id: item.id, tabDescription: (item.attributes as any).alignment })),
+  };
+};
+
+const fetchClass = async (raceId: string | number): Promise<IClassViewModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/classes/${raceId}`);
+  return new ClassViewModel({ ...result.data.data.attributes, id: result.data.data.id });
+};
+
 export interface ICMSClient {
   login: typeof login;
   fetchSpells: typeof fetchSpells;
@@ -201,6 +216,8 @@ export interface ICMSClient {
   fetchFeatures: typeof fetchFeatures;
   fetchRaces: typeof fetchRaces;
   fetchRace: typeof fetchRace;
+  fetchClass: typeof fetchClass;
+  fetchClasses: typeof fetchClasses;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -238,4 +255,6 @@ export {
   fetchFeatures,
   fetchRaces,
   fetchRace,
+  fetchClasses,
+  fetchClass,
 };

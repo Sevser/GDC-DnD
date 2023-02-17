@@ -102,6 +102,22 @@ const routes = [
     ],
   },
   {
+    path: '/classes',
+    name: 'ClassList',
+    components: {
+      default: () => import('@/pages/ClassList.vue'),
+    },
+    children: [
+      {
+        path: ':id',
+        name: 'ClassView',
+        components: {
+          listContentView: () => import('@/pages/ClassView.vue'),
+        },
+      },
+    ],
+  },
+  {
     path: '/*',
     redirect: { name: 'home' },
   },

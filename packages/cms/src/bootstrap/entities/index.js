@@ -45,7 +45,7 @@ async function importSeedData() {
     "ability-score": ["find", "findOne"],
     "rule-section": ["find", "findOne"],
     skill: ["find", "findOne"],
-    rules: ["find", "findOne"],
+    rule: ["find", "findOne"],
     race: ["find", "findOne"],
     subrace: ["find", "findOne"],
     trait: ["find", "findOne"],
