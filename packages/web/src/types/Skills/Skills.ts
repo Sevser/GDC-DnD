@@ -1,4 +1,6 @@
+import SkillDictionaryViewListItem from '@/components/dictionaries/SkillDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
+import { VueElement } from 'vue';
 import { AbilityScoreModel, IAbilityScore } from '../AbilityScore/AbilityScore';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
@@ -20,16 +22,17 @@ export class SkillModel implements ISkill, ICanBeDictionary {
     this.index = prop.index;
     this.desc = prop.desc;
     this.name = prop.name;
-    if (prop.ability instanceof AbilityScoreModel) {
-      this.ability = prop.ability;
-    } else {
-      this.ability = new AbilityScoreModel({
+    this.ability = new AbilityScoreModel(
+      Object.assign({}, AbilityScoreModel.getEmpty(), {
         ...prop.ability,
-        skills: [this],
-      });
-    }
+      })
+    );
     this[DictionaryTypePropName] = 'skills';
   }
+  getDictionaryView() {
+    return SkillDictionaryViewListItem as any as VueElement;
+  }
+  [DictionaryTypePropName]: string;
   static getEmpty() {
     return new SkillModel({
       index: '',

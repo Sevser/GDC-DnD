@@ -1,4 +1,6 @@
+import DefaultDictionaryViewListItem from '@/components/dictionaries/DefaultDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
+import { VueElement } from 'vue';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 
@@ -22,6 +24,10 @@ export class AlignmentModel implements IAlignment, ICanBeDictionary {
     this.desc = prop.desc;
     this[DictionaryTypePropName] = 'alignments';
   }
+  getDictionaryView() {
+    return DefaultDictionaryViewListItem as any as VueElement;
+  }
+  [DictionaryTypePropName]: string;
   [DictionaryTypePropName]: string;
   getCmsProvider() {
     return cmsClient.fetchAlignments;

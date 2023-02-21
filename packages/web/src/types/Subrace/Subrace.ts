@@ -29,12 +29,7 @@ export class SubraceModel implements ISubraceModel {
     this.desc = prop.desc;
     this.name = prop.name;
     this.race = prop.race;
-    this.abilityBonuses = prop.abilityBonuses.map((ability) => {
-      if (ability instanceof AbilityBonusModel) {
-        return ability;
-      }
-      return new AbilityBonusModel(ability);
-    });
+    this.abilityBonuses = prop.abilityBonuses.map((ability) => new AbilityBonusModel(Object.assign({}, AbilityBonusModel.getEmpty(), ability)));
     this.startProficiencies = prop.startProficiencies.map((prof) => new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), prof)));
     this.racialTraits = prop.racialTraits.map((trait) => new TraitModel(Object.assign({}, TraitModel.getEmpty(), trait)));
   }

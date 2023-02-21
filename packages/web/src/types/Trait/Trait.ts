@@ -19,12 +19,7 @@ export class TraitModel implements ITraitModel {
     this.index = prop.index;
     this.name = prop.name;
     this.desc = prop.desc;
-    this.proficiencies = prop.proficiencies.map((p) => {
-      if (p instanceof ProficiencyModel) {
-        return p;
-      }
-      return new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), p));
-    });
+    this.proficiencies = prop.proficiencies.map((p) => new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), p)));
   }
   static getEmpty() {
     return new TraitModel({

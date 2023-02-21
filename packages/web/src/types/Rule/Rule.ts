@@ -38,12 +38,7 @@ export class RuleViewItemModel implements IRuleListItem, IRuleViewItem {
     this.id = prop.id;
     this.index = prop.index;
     this.name = prop.name;
-    this.ruleSections = prop.ruleSections.map((rule) => {
-      if (rule instanceof RuleSectionModel) {
-        return rule;
-      }
-      return new RuleSectionModel(rule);
-    });
+    this.ruleSections = prop.ruleSections.map((rule) => new RuleSectionModel(Object.assign({}, RuleSectionModel.getEmpty(), rule)));
   }
   static getEmpty() {
     return new RuleViewItemModel({

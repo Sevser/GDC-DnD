@@ -1,4 +1,6 @@
+import ProficiencyDictionaryViewListItem from '@/components/dictionaries/ProficiencyDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
+import { VueElement } from 'vue';
 import { ChacacterClassModel, ICharacterClass } from '../CharacterClass';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
@@ -27,6 +29,9 @@ export class ProficiencyModel implements IProficiency, ICanBeDictionary {
     this.type = prop.type;
     this.classes = prop.classes.map((cl) => new ChacacterClassModel(cl));
     this.races = prop.races.map((rc) => new RaceModel(rc));
+  }
+  getDictionaryView() {
+    return ProficiencyDictionaryViewListItem as any as VueElement;
   }
   getCmsProvider() {
     return cmsClient.fetchProficiency;

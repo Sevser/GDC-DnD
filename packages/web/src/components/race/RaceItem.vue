@@ -9,7 +9,7 @@
           <div class="d-flex w-100 mb-1 flex-wrap">
             <v-btn color="success" class="mr-2 mb-2" v-for="ability in race.abilityBonuses" :key="ability.id" size="small"> {{ ability.abilityScore.name }} +{{ ability.bonus }} </v-btn>
           </div>
-          <div class="">
+          <div class="content">
             {{ race.tabDescription }}
           </div>
         </div>
@@ -33,5 +33,14 @@ export default defineComponent({
 <style>
 .race-item .v-responsive__content {
   height: 100%;
+}
+
+.race-item .content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 </style>

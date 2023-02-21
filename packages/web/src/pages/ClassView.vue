@@ -45,6 +45,7 @@ export default defineComponent({
   methods: {
     fetchData() {
       this.$store.dispatch('classes/fetchClass', this.$route.params.id);
+      this.$store.dispatch('classes/fetchClassLevels', this.$route.params.id);
     },
   },
   computed: {

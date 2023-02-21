@@ -22,18 +22,8 @@ export class ClassViewModel implements IClassViewModel {
     this.index = prop.index;
     this.name = prop.name;
     this.hitDie = prop.hitDie;
-    this.proficiencies = prop.proficiencies.map((p) => {
-      if (p instanceof ProficiencyModel) {
-        return p;
-      }
-      return new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), p));
-    });
-    this.savingThrows = prop.savingThrows.map((p) => {
-      if (p instanceof AbilityScoreModel) {
-        return p;
-      }
-      return new AbilityScoreModel(Object.assign({}, AbilityScoreModel.getEmpty(), p));
-    });
+    this.proficiencies = prop.proficiencies.map((p) => new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), p)));
+    this.savingThrows = prop.savingThrows.map((st) => new AbilityScoreModel(Object.assign({}, AbilityScoreModel.getEmpty(), st)));
   }
   static getEmpty() {
     return new ClassViewModel({

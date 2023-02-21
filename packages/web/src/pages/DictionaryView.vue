@@ -1,22 +1,13 @@
-<template>
-  <default-layout>
-    <div class="pl-2 pr-2" style="height: 100%">
-      <div v-if="pending" class="d-flex justify-center align-center" style="height: 100%">
-        <v-progress-circular indeterminate :size="60" />
-      </div>
-      <template v-else> <DictionaryViewListItem v-for="item in items" :key="item.name" :dictionary-list-item="item" /> </template>
-    </div>
-  </default-layout>
-</template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, h } from 'vue';
 import DefaultLayout from '@/layout/default/DefaultLayout.vue';
-import DictionaryViewListItem from '@/components/dictionaries/DictionaryViewListItem.vue';
+import { VProgressCircular } from 'vuetify/components';
+import { ICanBeDictionary } from '@/types/Dictionaries/CanBeDictionary';
 
 export default defineComponent({
   components: {
     DefaultLayout,
-    DictionaryViewListItem,
+    VProgressCircular,
   },
   created() {
     this.$watch(
@@ -39,6 +30,48 @@ export default defineComponent({
   },
   beforeUnmount() {
     this.$store.commit('dictionary/updateCurrentDicrionary');
+  },
+  render() {
+    return h(DefaultLayout, {}, [
+      h(
+        'div',
+        {
+          class: {
+            'pl-2': true,
+            'pr-2': true,
+          },
+          style: {
+            height: '100%',
+          },
+        },
+        this.pending
+          ? h(
+              'div',
+              {
+                class: {
+                  'd-flex': true,
+                  'justify-center': true,
+                  'align-center': true,
+                },
+                style: {
+                  height: '100%',
+                },
+              },
+              [
+                h(VProgressCircular, {
+                  indeterminate: true,
+                  size: 60,
+                }),
+              ]
+            )
+          : this.items &&
+              this.items.map((item: ICanBeDictionary) =>
+                h(item.getDictionaryView(), {
+                  item,
+                })
+              )
+      ),
+    ]);
   },
 });
 </script>

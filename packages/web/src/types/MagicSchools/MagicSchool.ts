@@ -1,4 +1,6 @@
+import DefaultDictionaryViewListItem from '@/components/dictionaries/DefaultDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
+import { VueElement } from 'vue';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 
@@ -19,6 +21,10 @@ export class MagicSchoolModel implements IMagicSchool, ICanBeDictionary {
     this.name = prop.name;
     this.desc = prop.desc;
   }
+  getDictionaryView() {
+    return DefaultDictionaryViewListItem as any as VueElement;
+  }
+  [DictionaryTypePropName]: string;
   getCmsProvider() {
     return cmsClient.fetchMagicSchools;
   }

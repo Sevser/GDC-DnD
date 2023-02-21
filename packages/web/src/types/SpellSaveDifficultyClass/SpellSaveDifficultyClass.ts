@@ -16,16 +16,8 @@ export class SpellSaveDifficultyClassModel implements ISpellSaveDifficultyClass 
   constructor(prop: ISpellSaveDifficultyClass) {
     this.dcSuccess = prop.dcSuccess;
     this.desc = prop.desc;
-    if (prop.abilityScore instanceof AbilityScoreModel && prop.abilityScore !== undefined) {
-      this.abilityScore = prop.abilityScore;
-    } else if (prop.abilityScore) {
-      this.abilityScore = new AbilityScoreModel(prop.abilityScore);
-    }
-    if (prop.spell instanceof AbilityScoreModel && prop.spell !== undefined) {
-      this.spell = prop.spell;
-    } else if (prop.spell) {
-      this.spell = new Spell(prop.spell);
-    }
+    this.abilityScore = new AbilityScoreModel(Object.assign({}, AbilityScoreModel.getEmpty(), prop.abilityScore));
+    this.spell = new Spell(Object.assign({}, Spell.getEmpty(), prop.spell));
   }
   static getEmpty() {
     return new SpellSaveDifficultyClassModel({
