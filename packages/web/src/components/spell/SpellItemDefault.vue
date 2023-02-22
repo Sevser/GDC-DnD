@@ -47,10 +47,10 @@ export default defineComponent({
   },
   computed: {
     schoolOfMagic() {
-      return this.spell?.SchoolOfMagic?.SchoolOfMagic || '';
+      return '';
     },
     classes() {
-      return this.spell?.class?.map((item: ICharacterClass) => item.class).join(', ') || '';
+      return this.spell.classes.map((item: ICharacterClass) => item.name).join(', ') || '';
     },
     lines() {
       return this.collapsed ? undefined : 'two';

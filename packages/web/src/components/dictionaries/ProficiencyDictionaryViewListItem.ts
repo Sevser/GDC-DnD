@@ -1,7 +1,7 @@
 import { defineComponent, h } from 'vue';
 import type { PropType } from 'vue';
 import { ProficiencyModel } from '@/types/Proficiency/Proficiency';
-import { ICharacterClass } from '@/types/CharacterClass.ts';
+import { ICharacterClass } from '@/types/CharacterClass';
 import { VCard } from 'vuetify/components';
 import { RouterLink } from 'vue-router';
 

@@ -2,13 +2,13 @@ import { cmsClient } from '@/plugins/http';
 import { IGenericQueryParams } from '@/types/GenericStrapiData';
 import { IPagination, Pagination } from '@/types/Pagination';
 import { Sorting } from '@/types/Sorting';
-import { ISpellFilters, Spell, SpellFilters } from '@/types/Spell/Spell';
+import { ISpellFilters, ShortSpellModel, Spell, SpellFilters } from '@/types/Spell/Spell';
 import { ActionContext } from 'vuex';
 import { State } from '..';
 
 export interface SpellState {
   spellListPending: boolean;
-  spellList: Spell[];
+  spellList: ShortSpellModel[];
   pagination: Partial<IPagination>;
   sort: {
     current?: Sorting;
@@ -96,7 +96,7 @@ const spells = {
     updateSpellPending(state: SpellState, payload = false) {
       state.spellPending = payload;
     },
-    updateSpellList(state: SpellState, payload: Spell[]) {
+    updateSpellList(state: SpellState, payload: ShortSpellModel[]) {
       state.spellList = payload;
     },
     updateSpell(state: SpellState, payload = undefined) {

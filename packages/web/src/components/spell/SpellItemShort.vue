@@ -34,7 +34,7 @@ export default defineComponent({
   },
   computed: {
     schoolOfMagic() {
-      return this.spell?.SchoolOfMagic?.SchoolOfMagic || '';
+      return '';
     },
     classes() {
       return this.spell.classes.map((cl) => cl.name).join(', ');

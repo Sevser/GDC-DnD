@@ -62,7 +62,7 @@ const dictionary = {
     updateCurrentDicrionary(state: IDictionaryState, payload = undefined) {
       state.currentDictionary = payload;
     },
-    updateDictionaryContent(state: IDictionaryState, payload: dictionaryContentType = undefined) {
+    updateDictionaryContent(state: IDictionaryState, payload = undefined) {
       state.dictionaryContent = payload;
     },
     updateDictionaryContentPending(state: IDictionaryState, payload = false) {
