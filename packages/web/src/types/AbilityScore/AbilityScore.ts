@@ -1,3 +1,4 @@
+import AbilityScoreDictionaryViewListItem from '@/components/dictionaries/AbilityScoreDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
@@ -23,21 +24,20 @@ export class AbilityScoreModel implements IAbilityScore, ICanBeDictionary {
     this.name = prop.name;
     this.fullName = prop.fullName;
     this.desc = prop.desc;
-    if (prop.skills && prop.skills.length && prop.skills[0] instanceof SkillModel) {
-      this.skills = prop.skills;
-    } else if (prop.skills) {
-      this.skills = prop.skills.map(
-        (sk) =>
-          new SkillModel({
-            ...sk,
-            ability: this,
+    this.skills = prop.skills.map(
+      (skill) =>
+        new SkillModel(
+          Object.assign({}, SkillModel.getEmpty(), {
+            ...skill,
           })
-      );
-    } else {
-      this.skills = new Array<ISkill>();
-    }
+        )
+    );
     this[DictionaryTypePropName] = 'ability-score';
   }
+  getDictionaryView() {
+    return AbilityScoreDictionaryViewListItem;
+  }
+  [DictionaryTypePropName]: string;
   static getEmpty() {
     return new AbilityScoreModel({
       index: '',

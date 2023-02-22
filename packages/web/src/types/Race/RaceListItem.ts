@@ -34,12 +34,7 @@ export class RaceListItemModel implements IRaceListItemModel {
     this.name = prop.name;
     this.tabDescription = prop.tabDescription;
     this.id = prop.id;
-    this.abilityBonuses = prop.abilityBonuses.map((ab) => {
-      if (ab instanceof AbilityBonusModel) {
-        return ab;
-      }
-      return new AbilityBonusModel(ab);
-    });
+    this.abilityBonuses = prop.abilityBonuses.map((ab) => new AbilityBonusModel(Object.assign({}, AbilityBonusModel.getEmpty(), ab)));
   }
   static getEmpty() {
     return new RaceListItemModel({

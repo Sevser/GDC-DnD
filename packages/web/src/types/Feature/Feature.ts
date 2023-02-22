@@ -1,3 +1,4 @@
+import DefaultDictionaryViewListItem from '@/components/dictionaries/DefaultDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
@@ -34,6 +35,9 @@ export class FeatureItemModel implements IFeatureItem, ICanBeDictionary {
     this.subclass = prop.subclass;
     this.class = prop.class;
     this[DictionaryTypePropName] = 'feature';
+  }
+  getDictionaryView() {
+    return DefaultDictionaryViewListItem;
   }
   static getEmpty() {
     return new FeatureItemModel({

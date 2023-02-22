@@ -1,20 +1,24 @@
 export type ChacacterClass = 'Bard' | 'Barbarian' | 'Fighter' | 'Wizard' | 'Druid' | 'Cleric' | 'Warlock' | 'Monk' | 'Paladin' | 'Rogue' | 'Ranger' | 'Sorcerer' | 'None';
 
 export interface ICharacterClass {
-  class: ChacacterClass;
+  name: ChacacterClass;
+  index: string;
   id: number;
 }
 
 export class ChacacterClassModel implements ICharacterClass {
-  class: ChacacterClass;
+  index: string;
+  name: ChacacterClass;
   id: number;
   constructor(prop: ICharacterClass) {
-    this.class = prop.class;
+    this.name = prop.name;
+    this.index = prop.index;
     this.id = prop.id;
   }
   static getEmpty() {
     return new ChacacterClassModel({
-      class: 'None',
+      name: 'None',
+      index: '',
       id: NaN,
     });
   }

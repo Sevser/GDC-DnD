@@ -1,3 +1,4 @@
+import DefaultDictionaryViewListItem from '@/components/dictionaries/DefaultDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
@@ -25,6 +26,9 @@ export class LanguageListItemModel implements ILanguageListItemModel, ICanBeDict
     this.type = prop.type;
     this.id = prop.id;
     this[DictionaryTypePropName] = 'language';
+  }
+  getDictionaryView() {
+    return DefaultDictionaryViewListItem;
   }
   getCmsProvider() {
     return cmsClient.fetchLanguages;

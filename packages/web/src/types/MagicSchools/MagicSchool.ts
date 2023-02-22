@@ -1,3 +1,4 @@
+import DefaultDictionaryViewListItem from '@/components/dictionaries/DefaultDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
@@ -19,6 +20,10 @@ export class MagicSchoolModel implements IMagicSchool, ICanBeDictionary {
     this.name = prop.name;
     this.desc = prop.desc;
   }
+  getDictionaryView() {
+    return DefaultDictionaryViewListItem;
+  }
+  [DictionaryTypePropName]: string;
   getCmsProvider() {
     return cmsClient.fetchMagicSchools;
   }

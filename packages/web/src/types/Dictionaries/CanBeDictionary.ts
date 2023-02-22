@@ -1,4 +1,5 @@
 import { ICMSClientDictionariesFetchType } from '@/plugins/http/cmsClient';
+import { Component } from 'vue';
 import { AbilityScoreModel } from '../AbilityScore/AbilityScore';
 import { AlignmentModel } from '../Alignment/Alignment';
 import { ConditionModel } from '../Condition/Condition';
@@ -9,6 +10,7 @@ import { LanguageListItemModel } from '../Language/Language';
 import { MagicSchoolModel } from '../MagicSchools/MagicSchool';
 import { ProficiencyModel } from '../Proficiency/Proficiency';
 import { SkillModel } from '../Skills/Skills';
+import { TraitDictionaryItem } from '../Trait/TraitDictionaryItem';
 import { WeaponPropertyModel } from '../WeaponProperty/WeaponProperty';
 
 export interface ICanBeDictionary {
@@ -17,6 +19,7 @@ export interface ICanBeDictionary {
   name: string;
   desc?: string;
   getCmsProvider: () => ICMSClientDictionariesFetchType;
+  getDictionaryView: () => Component;
 }
 
 export interface ICanBeDictionaryProvider {
@@ -34,6 +37,7 @@ export type AllowedDictionaryClasses =
   | AbilityScoreModel
   | SkillModel
   | FeatureItemModel
+  | TraitDictionaryItem
   | LanguageListItemModel;
 
 export class CanBeDictionaryProvider implements ICanBeDictionaryProvider {
@@ -50,6 +54,7 @@ export class CanBeDictionaryProvider implements ICanBeDictionaryProvider {
       SkillModel.getEmpty(),
       LanguageListItemModel.getEmpty(),
       FeatureItemModel.getEmpty(),
+      TraitDictionaryItem.getEmpty(),
     ];
   }
   getCmsProviderByType(type: string) {

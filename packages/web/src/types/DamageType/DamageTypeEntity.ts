@@ -1,3 +1,4 @@
+import DefaultDictionaryViewListItem from '@/components/dictionaries/DefaultDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
@@ -21,6 +22,10 @@ export class DamageTypeEntityModel implements IDamageTypeEntityModel, ICanBeDict
     this.index = prop.index;
     this[DictionaryTypePropName] = 'damage-type-entitys';
   }
+  getDictionaryView() {
+    return DefaultDictionaryViewListItem;
+  }
+  [DictionaryTypePropName]: string;
   static getEmpty() {
     return new DamageTypeEntityModel({
       desc: '',

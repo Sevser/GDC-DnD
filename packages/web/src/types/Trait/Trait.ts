@@ -1,11 +1,11 @@
-import { IProficiency, ProficiencyModel } from '../Proficiency/Proficiency';
+import { IProficiencyModel, ProficiencyModel } from '../Proficiency/Proficiency';
 
 export interface ITraitModel {
   id: number;
   index: string;
   name: string;
   desc: string;
-  proficiencies: IProficiency[];
+  proficiencies: IProficiencyModel[];
 }
 
 export class TraitModel implements ITraitModel {
@@ -13,18 +13,13 @@ export class TraitModel implements ITraitModel {
   index: string;
   name: string;
   desc: string;
-  proficiencies: IProficiency[];
+  proficiencies: IProficiencyModel[];
   constructor(prop: ITraitModel) {
     this.id = prop.id;
     this.index = prop.index;
     this.name = prop.name;
     this.desc = prop.desc;
-    this.proficiencies = prop.proficiencies.map((p) => {
-      if (p instanceof ProficiencyModel) {
-        return p;
-      }
-      return new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), p));
-    });
+    this.proficiencies = prop.proficiencies.map((p) => new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), p)));
   }
   static getEmpty() {
     return new TraitModel({

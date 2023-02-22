@@ -93,7 +93,7 @@ export default defineComponent({
       return this.spell?.source?.source || '';
     },
     classes() {
-      return this.spell?.class?.map((item: ICharacterClass) => item.class).join(', ');
+      return this.spell?.class?.map((item: ICharacterClass) => item.name).join(', ');
     },
     components() {
       return this.spell.SpellComponent?.map((component: ISpellComponent) => component.SpellComponent).join(', ');

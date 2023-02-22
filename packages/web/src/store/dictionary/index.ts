@@ -1,16 +1,14 @@
 import { cmsClient } from '@/plugins/http';
-import { AllowedDictionaryClasses, CanBeDictionaryProvider } from '@/types/Dictionaries/CanBeDictionary';
+import { CanBeDictionaryProvider, ICanBeDictionary } from '@/types/Dictionaries/CanBeDictionary';
 import { IDictionary } from '@/types/Dictionaries/Dictionary';
 import { ActionContext } from 'vuex';
 import { State } from '..';
-
-type dictionaryContentType = undefined | AllowedDictionaryClasses[];
 
 export interface IDictionaryState {
   dictionariesList: IDictionary[];
   dictionariesListPending: boolean;
   currentDictionary?: IDictionary;
-  dictionaryContent: dictionaryContentType;
+  dictionaryContent?: ICanBeDictionary[];
   dictionaryContentPending: boolean;
 }
 
@@ -64,7 +62,7 @@ const dictionary = {
     updateCurrentDicrionary(state: IDictionaryState, payload = undefined) {
       state.currentDictionary = payload;
     },
-    updateDictionaryContent(state: IDictionaryState, payload: dictionaryContentType = undefined) {
+    updateDictionaryContent(state: IDictionaryState, payload = undefined) {
       state.dictionaryContent = payload;
     },
     updateDictionaryContentPending(state: IDictionaryState, payload = false) {

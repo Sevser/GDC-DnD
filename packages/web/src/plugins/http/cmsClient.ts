@@ -1,5 +1,6 @@
 import { AbilityScoreModel, IAbilityScore } from '@/types/AbilityScore/AbilityScore';
 import { AlignmentModel, IAlignment } from '@/types/Alignment/Alignment';
+import { ArmorModel, IArmorModel } from '@/types/Armor/Armor';
 import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
 import { ClassListItemModel, IClassListItemModel } from '@/types/Class/ClassListItemModel';
@@ -10,13 +11,16 @@ import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
 import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
 import { ILanguageListItemModel, LanguageListItemModel } from '@/types/Language/Language';
+import { ILevelModel, LevelModel } from '@/types/Level/Level';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
-import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
+import { IProficiencyModel, ProficiencyModel } from '@/types/Proficiency/Proficiency';
 import { IRaceListItemModel, RaceListItemModel } from '@/types/Race/RaceListItem';
 import { IRaceViewItemModel, RaceViewItemModel } from '@/types/Race/RaceViewItem';
 import { IRuleListItem, IRuleViewItem, RuleListItem, RuleViewItemModel } from '@/types/Rule/Rule';
 import { ISkill, SkillModel } from '@/types/Skills/Skills';
-import { Spell } from '@/types/Spell/Spell';
+import { Spell, IShortSpell, ShortSpellModel } from '@/types/Spell/Spell';
+import { ISubclassModel, SubclassModel } from '@/types/Subclass/Subclass';
+import { ITraitDictionaryItem, TraitDictionaryItem } from '@/types/Trait/TraitDictionaryItem';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
 import baseClient from './baseClient';
 
@@ -33,14 +37,19 @@ const login = async (params: IAuthParams): Promise<boolean> => {
   }
 };
 
-const fetchSpells = async (params: IGenericQueryParams<Spell>): Promise<IGenericStrapiMappedData<Spell>> => {
+const fetchSpells = async (params: IGenericQueryParams<IShortSpell>): Promise<IGenericStrapiMappedData<IShortSpell>> => {
   const result = await baseClient.get(`${cmsUrl}/api/spells`, {
     params,
   });
   return {
     meta: result.data.meta,
-    data: result.data.data.map((item: IGenericStrapiData<Spell>) => new Spell({ ...item.attributes, id: item.id })),
+    data: result.data.data.map((item: IGenericStrapiData<IShortSpell>) => new ShortSpellModel({ ...item.attributes, id: item.id })),
   };
+};
+
+const fetchArmor = async (): Promise<IGenericStrapiMappedData<IShortSpell>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/equipments/armor`);
+  return result.data.map((item: IArmorModel) => new ArmorModel(item));
 };
 
 const fetchSpell = async (spellId: string | number): Promise<Spell> => {
@@ -114,11 +123,11 @@ const fetchWeaponProperties = async (): Promise<IGenericStrapiMappedData<IWeapon
   };
 };
 
-const fetchProficiency = async (): Promise<IGenericStrapiMappedData<IProficiency>> => {
+const fetchProficiency = async (): Promise<IGenericStrapiMappedData<IProficiencyModel>> => {
   const result = await baseClient.get(`${cmsUrl}/api/proficiencies`);
   return {
     meta: result.data.meta,
-    data: result.data.data.map((item: IGenericStrapiData<IProficiency>) => new ProficiencyModel({ ...item.attributes })),
+    data: result.data.data.map((item: IGenericStrapiData<IProficiencyModel>) => new ProficiencyModel({ ...item.attributes })),
   };
 };
 
@@ -162,6 +171,14 @@ const fetchFeatures = async (): Promise<IGenericStrapiMappedData<IFeatureItem>> 
   };
 };
 
+const fetchTraits = async (): Promise<IGenericStrapiMappedData<ITraitDictionaryItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/traits`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<ITraitDictionaryItem>) => new TraitDictionaryItem({ ...item.attributes, id: item.id })),
+  };
+};
+
 const fetchRuleItem = async (ruleId: number | string): Promise<IRuleViewItem & IRuleListItem> => {
   const result = await baseClient.get(`${cmsUrl}/api/rules/${ruleId}`);
   return new RuleViewItemModel({
@@ -188,6 +205,42 @@ const fetchClasses = async (): Promise<IGenericStrapiMappedData<IClassListItemMo
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IClassListItemModel>) => new ClassListItemModel({ ...item.attributes, id: item.id })),
+  };
+};
+
+const fetchLevels = async (classId: number): Promise<IGenericStrapiMappedData<ILevelModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/levels`, {
+    params: {
+      filters: {
+        class: {
+          id: {
+            $eq: classId,
+          },
+        },
+      },
+    },
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<ILevelModel>) => new LevelModel({ ...item.attributes, id: item.id })),
+  };
+};
+
+const fetchArchetypes = async (classId: number): Promise<IGenericStrapiMappedData<ISubclassModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/subclasses`, {
+    params: {
+      filters: {
+        class: {
+          id: {
+            $eq: classId,
+          },
+        },
+      },
+    },
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<ISubclassModel>) => new SubclassModel({ ...item.attributes, id: item.id })),
   };
 };
 
@@ -218,6 +271,9 @@ export interface ICMSClient {
   fetchRace: typeof fetchRace;
   fetchClass: typeof fetchClass;
   fetchClasses: typeof fetchClasses;
+  fetchTraits: typeof fetchTraits;
+  fetchArchetypes: typeof fetchArchetypes;
+  fetchArmor: typeof fetchArmor;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -232,6 +288,7 @@ export type ICMSClientDictionariesFetchType =
   | typeof fetchSkills
   | typeof fetchProficiency
   | typeof fetchFeatures
+  | typeof fetchTraits
   | typeof fetchLanguages;
 
 export {
@@ -257,4 +314,8 @@ export {
   fetchRace,
   fetchClasses,
   fetchClass,
+  fetchTraits,
+  fetchLevels,
+  fetchArchetypes,
+  fetchArmor,
 };

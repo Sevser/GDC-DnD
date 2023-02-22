@@ -1,13 +1,15 @@
 import { IAbilityScore, AbilityScoreModel } from '../AbilityScore/AbilityScore';
-import { IProficiency, ProficiencyModel } from '../Proficiency/Proficiency';
+import { IProficiencyModel, ProficiencyModel } from '../Proficiency/Proficiency';
+import { IProficiencyChoiseModel, ProficiencyChoiseModel } from '../Proficiency/ProficiencyChoise';
 
 export interface IClassViewModel {
   id: number;
   index: string;
   name: string;
   hitDie: number;
-  proficiencies: IProficiency[];
+  proficiencies: IProficiencyModel[];
   savingThrows: IAbilityScore[];
+  proficiencyChoices: IProficiencyChoiseModel[];
 }
 
 export class ClassViewModel implements IClassViewModel {
@@ -15,25 +17,17 @@ export class ClassViewModel implements IClassViewModel {
   index: string;
   name: string;
   hitDie: number;
-  proficiencies: IProficiency[];
+  proficiencies: IProficiencyModel[];
   savingThrows: IAbilityScore[];
+  proficiencyChoices: IProficiencyChoiseModel[];
   constructor(prop: IClassViewModel) {
     this.id = prop.id;
     this.index = prop.index;
     this.name = prop.name;
     this.hitDie = prop.hitDie;
-    this.proficiencies = prop.proficiencies.map((p) => {
-      if (p instanceof ProficiencyModel) {
-        return p;
-      }
-      return new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), p));
-    });
-    this.savingThrows = prop.savingThrows.map((p) => {
-      if (p instanceof AbilityScoreModel) {
-        return p;
-      }
-      return new AbilityScoreModel(Object.assign({}, AbilityScoreModel.getEmpty(), p));
-    });
+    this.proficiencies = prop.proficiencies.map((p) => new ProficiencyModel(Object.assign({}, ProficiencyModel.getEmpty(), p)));
+    this.proficiencyChoices = prop.proficiencyChoices.map((p) => new ProficiencyChoiseModel(Object.assign({}, ProficiencyChoiseModel.getEmpty(), p)));
+    this.savingThrows = prop.savingThrows.map((st) => new AbilityScoreModel(Object.assign({}, AbilityScoreModel.getEmpty(), st)));
   }
   static getEmpty() {
     return new ClassViewModel({
@@ -41,8 +35,9 @@ export class ClassViewModel implements IClassViewModel {
       index: '',
       name: '',
       hitDie: NaN,
-      proficiencies: new Array<IProficiency>(),
+      proficiencies: new Array<IProficiencyModel>(),
       savingThrows: new Array<IAbilityScore>(),
+      proficiencyChoices: new Array<IProficiencyChoiseModel>(),
     });
   }
 }

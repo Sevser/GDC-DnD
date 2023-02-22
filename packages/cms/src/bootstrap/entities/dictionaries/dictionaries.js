@@ -49,6 +49,11 @@ const dictionaries = [
     subtitle: "Features",
     collectionName: "feature",
   },
+  {
+    title: "Traits",
+    subtitle: "Traits",
+    collectionName: "trait",
+  },
 ];
 
 module.exports = dictionaries;
