@@ -16,8 +16,12 @@
         <v-window-item value="one">
           <ClassBaseInfo :class-model="classModel" />
         </v-window-item>
-        <v-window-item value="two"> Two </v-window-item>
+        <v-window-item value="two">
+          <Subclasses :class-model="classModel" />
+        </v-window-item>
         <v-window-item value="three"> Three </v-window-item>
+        <v-window-item value="four"> four </v-window-item>
+        <v-window-item value="five"> five </v-window-item>
       </v-window>
     </v-card-text>
   </v-card>
@@ -25,11 +29,13 @@
 <script lang="ts">
 import { ClassViewModel } from '@/types/Class/ClassViewModel';
 import ClassBaseInfo from '@/components/class/ClassBaseInfo.vue';
+import Subclasses from '@/components/class/SubClasses.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   components: {
     ClassBaseInfo,
+    Subclasses,
   },
   watch: {
     '$route.params': {

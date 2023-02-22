@@ -18,6 +18,7 @@ import { IRaceViewItemModel, RaceViewItemModel } from '@/types/Race/RaceViewItem
 import { IRuleListItem, IRuleViewItem, RuleListItem, RuleViewItemModel } from '@/types/Rule/Rule';
 import { ISkill, SkillModel } from '@/types/Skills/Skills';
 import { Spell } from '@/types/Spell/Spell';
+import { ISubclassModel, SubclassModel } from '@/types/Subclass/Subclass';
 import { ITraitDictionaryItem, TraitDictionaryItem } from '@/types/Trait/TraitDictionaryItem';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
 import baseClient from './baseClient';
@@ -219,6 +220,24 @@ const fetchLevels = async (classId: number): Promise<IGenericStrapiMappedData<IL
   };
 };
 
+const fetchArchetypes = async (classId: number): Promise<IGenericStrapiMappedData<ISubclassModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/subclasses`, {
+    params: {
+      filters: {
+        class: {
+          id: {
+            $eq: classId,
+          },
+        },
+      },
+    },
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IGenericStrapiData<ISubclassModel>) => new SubclassModel({ ...item.attributes, id: item.id })),
+  };
+};
+
 const fetchClass = async (raceId: string | number): Promise<IClassViewModel> => {
   const result = await baseClient.get(`${cmsUrl}/api/classes/${raceId}`);
   return new ClassViewModel({ ...result.data.data.attributes, id: result.data.data.id });
@@ -247,6 +266,7 @@ export interface ICMSClient {
   fetchClass: typeof fetchClass;
   fetchClasses: typeof fetchClasses;
   fetchTraits: typeof fetchTraits;
+  fetchArchetypes: typeof fetchArchetypes;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -289,4 +309,5 @@ export {
   fetchClass,
   fetchTraits,
   fetchLevels,
+  fetchArchetypes,
 };

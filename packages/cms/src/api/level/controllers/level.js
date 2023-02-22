@@ -10,7 +10,7 @@ module.exports = createCoreController("api::level.level", ({ strapi }) => ({
   async find(ctx) {
     if (!ctx.query.filters.class) {
       return {
-        error: "you must specify class",
+        error: "You must specify class",
       };
     }
     const data = await strapi.entityService.findMany("api::level.level", {

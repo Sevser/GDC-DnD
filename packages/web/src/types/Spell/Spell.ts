@@ -90,7 +90,34 @@ export interface IShortSpell {
   SpellComponent: ISpellComponent[];
   Concentration: boolean;
   class: ICharacterClass[];
-  ActionType: true;
+  ActionType: any;
+  id: number;
+}
+
+export class ShortSpellModel implements IShortSpell {
+  title: string;
+  SpellComponent: ISpellComponent[];
+  Concentration: boolean;
+  class: ICharacterClass[];
+  ActionType: any;
+  id: number;
+  constructor(prop: IShortSpell) {
+    this.title = prop.title;
+    this.Concentration = prop.Concentration;
+    this.id = prop.id;
+    this.class = prop.class.map((p) => new ChacacterClassModel(Object.assign({}, ChacacterClassModel.getEmpty(), p)));
+    this.SpellComponent = prop.SpellComponent.map((p) => new SpellComponentModel(Object.assign({}, SpellComponentModel.getEmpty(), p)));
+  }
+  static getEmpty() {
+    return new ShortSpellModel({
+      title: '',
+      SpellComponent: new Array<ISpellComponent>(),
+      Concentration: false,
+      class: new Array<ICharacterClass>(),
+      ActionType: {},
+      id: NaN,
+    });
+  }
 }
 
 export interface ISpellFilters extends IFilter {
