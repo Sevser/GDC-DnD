@@ -17,7 +17,7 @@
   </v-card>
 </template>
 <script lang="ts">
-import { Spell } from '@/types/Spell/Spell';
+import { ShortSpellModel, Spell } from '@/types/Spell/Spell';
 import { ICharacterClass } from '@/types/CharacterClass';
 import { defineComponent } from 'vue';
 import SpellShortInfo from './SpellShortInfo.vue';
@@ -25,7 +25,7 @@ import SpellShortInfo from './SpellShortInfo.vue';
 export default defineComponent({
   props: {
     spell: {
-      type: Spell,
+      type: ShortSpellModel,
       required: true,
     },
   },
@@ -37,7 +37,7 @@ export default defineComponent({
       return this.spell?.SchoolOfMagic?.SchoolOfMagic || '';
     },
     classes() {
-      return this.spell?.class?.map((item: ICharacterClass) => item.class).join(', ') || '';
+      return this.spell.classes.map((cl) => cl.name).join(', ');
     },
   },
 });

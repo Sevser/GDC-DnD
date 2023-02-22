@@ -20,7 +20,9 @@
           <Subclasses :class-model="classModel" />
         </v-window-item>
         <v-window-item value="three"> Three </v-window-item>
-        <v-window-item value="four"> four </v-window-item>
+        <v-window-item value="four">
+          <ClassSpellList :class-model="classModel" />
+        </v-window-item>
         <v-window-item value="five"> five </v-window-item>
       </v-window>
     </v-card-text>
@@ -30,12 +32,14 @@
 import { ClassViewModel } from '@/types/Class/ClassViewModel';
 import ClassBaseInfo from '@/components/class/ClassBaseInfo.vue';
 import Subclasses from '@/components/class/SubClasses.vue';
+import ClassSpellList from '@/components/class/ClassSpellList.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   components: {
     ClassBaseInfo,
     Subclasses,
+    ClassSpellList,
   },
   watch: {
     '$route.params': {

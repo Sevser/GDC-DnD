@@ -82,8 +82,14 @@ module.exports = createCoreController("api::spell.spell", ({ strapi }) => ({
         title: true,
         SpellComponent: true,
         Concentration: true,
-        class: true,
         ActionType: true,
+        classes: {
+          populate: {
+            index: true,
+            id: true,
+            name: true,
+          },
+        },
       },
     };
 
@@ -98,7 +104,10 @@ module.exports = createCoreController("api::spell.spell", ({ strapi }) => ({
           title: item.attributes.title,
           SpellComponent: item.attributes.SpellComponent,
           Concentration: item.attributes.Concentration,
-          class: item.attributes.class,
+          classes: item.attributes.classes.data.map((cl) => ({
+            ...cl.attributes,
+            id: cl.id,
+          })),
           ActionType: item.attributes.ActionType,
           Level: item.attributes.Level,
         },

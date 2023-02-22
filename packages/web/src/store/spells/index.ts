@@ -62,12 +62,14 @@ const spells = {
 
       try {
         const result = await cmsClient.fetchSpells(params);
+        console.log(result);
         context.commit('updateSpellList', result.data);
         context.commit('updatePagination', result.meta.pagination);
         context.commit('updateAvailableSorting', result.meta.allowedFieldSort);
         // Todo: add toast to handle error;
         // eslint-disable-next-line
-      } catch {
+      } catch (e) {
+        console.log(e);
       } finally {
         context.commit('updateSpellListPending', false);
       }

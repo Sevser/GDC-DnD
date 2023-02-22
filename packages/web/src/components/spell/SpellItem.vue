@@ -3,7 +3,7 @@
   <SpellItemDefault :spell="spell" v-else />
 </template>
 <script lang="ts">
-import { Spell } from '@/types/Spell/Spell';
+import { ShortSpellModel } from '@/types/Spell/Spell';
 import SpellItemShort from './SpellItemShort.vue';
 import SpellItemDefault from './SpellItemDefault.vue';
 import { defineComponent } from 'vue';
@@ -11,7 +11,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   props: {
     spell: {
-      type: Spell,
+      type: ShortSpellModel,
       required: true,
     },
     short: {

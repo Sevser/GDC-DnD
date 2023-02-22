@@ -89,7 +89,8 @@ export interface IShortSpell {
   title: string;
   SpellComponent: ISpellComponent[];
   Concentration: boolean;
-  class: ICharacterClass[];
+  classes: ICharacterClass[];
+  Level: number;
   ActionType: any;
   id: number;
 }
@@ -98,14 +99,16 @@ export class ShortSpellModel implements IShortSpell {
   title: string;
   SpellComponent: ISpellComponent[];
   Concentration: boolean;
-  class: ICharacterClass[];
+  classes: ICharacterClass[];
+  Level: number;
   ActionType: any;
   id: number;
   constructor(prop: IShortSpell) {
     this.title = prop.title;
     this.Concentration = prop.Concentration;
     this.id = prop.id;
-    this.class = prop.class.map((p) => new ChacacterClassModel(Object.assign({}, ChacacterClassModel.getEmpty(), p)));
+    this.Level = prop.Level;
+    this.classes = prop.classes.map((p) => new ChacacterClassModel(Object.assign({}, ChacacterClassModel.getEmpty(), p)));
     this.SpellComponent = prop.SpellComponent.map((p) => new SpellComponentModel(Object.assign({}, SpellComponentModel.getEmpty(), p)));
   }
   static getEmpty() {
@@ -113,9 +116,10 @@ export class ShortSpellModel implements IShortSpell {
       title: '',
       SpellComponent: new Array<ISpellComponent>(),
       Concentration: false,
-      class: new Array<ICharacterClass>(),
+      classes: new Array<ICharacterClass>(),
       ActionType: {},
       id: NaN,
+      Level: NaN,
     });
   }
 }
@@ -157,8 +161,8 @@ export class SpellFilters implements ISpellFilters {
       };
     }
     if (this.class) {
-      filters.class = {
-        class: {
+      filters.classes = {
+        index: {
           $in: this.class,
         },
       };

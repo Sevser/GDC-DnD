@@ -10,7 +10,7 @@
   </div>
 </template>
 <script lang="ts">
-import { Spell } from '@/types/Spell/Spell';
+import { ShortSpellModel } from '@/types/Spell/Spell';
 import { ISpellComponent } from '@/types/SpellComponent';
 import { defineComponent } from 'vue';
 
@@ -18,9 +18,9 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   props: {
     spell: {
-      type: Spell,
+      type: ShortSpellModel,
       required: true,
-      default: () => Spell.getEmpty(),
+      default: () => ShortSpellModel.getEmpty(),
     },
   },
   data: () => ({

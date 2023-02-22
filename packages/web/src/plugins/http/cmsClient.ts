@@ -17,7 +17,7 @@ import { IRaceListItemModel, RaceListItemModel } from '@/types/Race/RaceListItem
 import { IRaceViewItemModel, RaceViewItemModel } from '@/types/Race/RaceViewItem';
 import { IRuleListItem, IRuleViewItem, RuleListItem, RuleViewItemModel } from '@/types/Rule/Rule';
 import { ISkill, SkillModel } from '@/types/Skills/Skills';
-import { Spell } from '@/types/Spell/Spell';
+import { Spell, IShortSpell, ShortSpellModel } from '@/types/Spell/Spell';
 import { ISubclassModel, SubclassModel } from '@/types/Subclass/Subclass';
 import { ITraitDictionaryItem, TraitDictionaryItem } from '@/types/Trait/TraitDictionaryItem';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
@@ -36,13 +36,13 @@ const login = async (params: IAuthParams): Promise<boolean> => {
   }
 };
 
-const fetchSpells = async (params: IGenericQueryParams<Spell>): Promise<IGenericStrapiMappedData<Spell>> => {
+const fetchSpells = async (params: IGenericQueryParams<IShortSpell>): Promise<IGenericStrapiMappedData<IShortSpell>> => {
   const result = await baseClient.get(`${cmsUrl}/api/spells`, {
     params,
   });
   return {
     meta: result.data.meta,
-    data: result.data.data.map((item: IGenericStrapiData<Spell>) => new Spell({ ...item.attributes, id: item.id })),
+    data: result.data.data.map((item: IGenericStrapiData<IShortSpell>) => new ShortSpellModel({ ...item.attributes, id: item.id })),
   };
 };
 

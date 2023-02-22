@@ -21,7 +21,7 @@
   </v-card>
 </template>
 <script lang="ts">
-import { Spell } from '@/types/Spell/Spell';
+import { ShortSpellModel } from '@/types/Spell/Spell';
 import { ICharacterClass } from '@/types/CharacterClass';
 import { defineComponent } from 'vue';
 import SpellShortInfo from './SpellShortInfo.vue';
@@ -29,7 +29,7 @@ import SpellShortInfo from './SpellShortInfo.vue';
 export default defineComponent({
   props: {
     spell: {
-      type: Spell,
+      type: ShortSpellModel,
       required: true,
     },
   },
