@@ -7,7 +7,10 @@ import { RouterLink } from 'vue-router';
 export default defineComponent({
   name: 'AbilityScoreDictionaryViewListItem',
   props: {
-    item: Object as PropType<AbilityScoreModel>,
+    item: {
+      type: Object as PropType<AbilityScoreModel>,
+      default: () => AbilityScoreModel.getEmpty(),
+    },
   },
   computed: {
     title() {

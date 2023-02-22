@@ -1,16 +1,15 @@
 import TraitDictionaryViewListItem from '@/components/dictionaries/TraitDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
-import { VueElement } from 'vue';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
-import { IProficiency, ProficiencyModel } from '../Proficiency/Proficiency';
+import { IProficiencyModel, ProficiencyModel } from '../Proficiency/Proficiency';
 
 export interface ITraitDictionaryItem {
   id: number;
   index: string;
   name: string;
   desc: string;
-  proficiencies: IProficiency[];
+  proficiencies: IProficiencyModel[];
 }
 
 export class TraitDictionaryItem implements ITraitDictionaryItem, ICanBeDictionary {
@@ -18,7 +17,7 @@ export class TraitDictionaryItem implements ITraitDictionaryItem, ICanBeDictiona
   index: string;
   name: string;
   desc: string;
-  proficiencies: IProficiency[];
+  proficiencies: IProficiencyModel[];
   [DictionaryTypePropName]: string;
   constructor(prop: ITraitDictionaryItem) {
     this.id = prop.id;
@@ -29,7 +28,7 @@ export class TraitDictionaryItem implements ITraitDictionaryItem, ICanBeDictiona
     this[DictionaryTypePropName] = 'trait';
   }
   getDictionaryView() {
-    return TraitDictionaryViewListItem as any as VueElement;
+    return TraitDictionaryViewListItem;
   }
   [DictionaryTypePropName]: string;
   getCmsProvider() {

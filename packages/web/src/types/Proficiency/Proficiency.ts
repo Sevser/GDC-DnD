@@ -1,12 +1,11 @@
 import ProficiencyDictionaryViewListItem from '@/components/dictionaries/ProficiencyDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
-import { VueElement } from 'vue';
 import { ChacacterClassModel, ICharacterClass } from '../CharacterClass';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 import { IRace, RaceModel } from '../Race/RaceListItem';
 
-export interface IProficiency {
+export interface IProficiencyModel {
   index: string;
   name: string;
   type: string;
@@ -14,7 +13,7 @@ export interface IProficiency {
   races: IRace[];
 }
 
-export class ProficiencyModel implements IProficiency, ICanBeDictionary {
+export class ProficiencyModel implements IProficiencyModel, ICanBeDictionary {
   index: string;
   name: string;
   type: string;
@@ -22,7 +21,7 @@ export class ProficiencyModel implements IProficiency, ICanBeDictionary {
   races: IRace[];
   [DictionaryTypePropName]: string;
   desc?: string | undefined;
-  constructor(prop: IProficiency) {
+  constructor(prop: IProficiencyModel) {
     this[DictionaryTypePropName] = 'proficiencies';
     this.index = prop.index;
     this.name = prop.name;
@@ -31,7 +30,7 @@ export class ProficiencyModel implements IProficiency, ICanBeDictionary {
     this.races = prop.races.map((rc) => new RaceModel(rc));
   }
   getDictionaryView() {
-    return ProficiencyDictionaryViewListItem as any as VueElement;
+    return ProficiencyDictionaryViewListItem;
   }
   getCmsProvider() {
     return cmsClient.fetchProficiency;

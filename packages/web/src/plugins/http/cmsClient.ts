@@ -12,13 +12,12 @@ import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMap
 import { ILanguageListItemModel, LanguageListItemModel } from '@/types/Language/Language';
 import { ILevelModel, LevelModel } from '@/types/Level/Level';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
-import { IProficiency, ProficiencyModel } from '@/types/Proficiency/Proficiency';
+import { IProficiencyModel, ProficiencyModel } from '@/types/Proficiency/Proficiency';
 import { IRaceListItemModel, RaceListItemModel } from '@/types/Race/RaceListItem';
 import { IRaceViewItemModel, RaceViewItemModel } from '@/types/Race/RaceViewItem';
 import { IRuleListItem, IRuleViewItem, RuleListItem, RuleViewItemModel } from '@/types/Rule/Rule';
 import { ISkill, SkillModel } from '@/types/Skills/Skills';
 import { Spell } from '@/types/Spell/Spell';
-import { ITraitModel, TraitModel } from '@/types/Trait/Trait';
 import { ITraitDictionaryItem, TraitDictionaryItem } from '@/types/Trait/TraitDictionaryItem';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
 import baseClient from './baseClient';
@@ -117,11 +116,11 @@ const fetchWeaponProperties = async (): Promise<IGenericStrapiMappedData<IWeapon
   };
 };
 
-const fetchProficiency = async (): Promise<IGenericStrapiMappedData<IProficiency>> => {
+const fetchProficiency = async (): Promise<IGenericStrapiMappedData<IProficiencyModel>> => {
   const result = await baseClient.get(`${cmsUrl}/api/proficiencies`);
   return {
     meta: result.data.meta,
-    data: result.data.data.map((item: IGenericStrapiData<IProficiency>) => new ProficiencyModel({ ...item.attributes })),
+    data: result.data.data.map((item: IGenericStrapiData<IProficiencyModel>) => new ProficiencyModel({ ...item.attributes })),
   };
 };
 
@@ -203,10 +202,14 @@ const fetchClasses = async (): Promise<IGenericStrapiMappedData<IClassListItemMo
 };
 
 const fetchLevels = async (classId: number): Promise<IGenericStrapiMappedData<ILevelModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/classes`, {
+  const result = await baseClient.get(`${cmsUrl}/api/levels`, {
     params: {
-      class: {
-        $eq: classId,
+      filters: {
+        class: {
+          id: {
+            $eq: classId,
+          },
+        },
       },
     },
   });

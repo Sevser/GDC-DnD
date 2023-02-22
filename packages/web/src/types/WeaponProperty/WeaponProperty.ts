@@ -1,6 +1,5 @@
 import DefaultDictionaryViewListItem from '@/components/dictionaries/DefaultDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
-import { VueElement } from 'vue';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 
@@ -24,7 +23,7 @@ export class WeaponPropertyModel implements IWeaponProperty, ICanBeDictionary {
     this[DictionaryTypePropName] = 'weapon-properties';
   }
   getDictionaryView() {
-    return DefaultDictionaryViewListItem as any as VueElement;
+    return DefaultDictionaryViewListItem;
   }
   static getEmpty() {
     return new WeaponPropertyModel({

@@ -1,11 +1,11 @@
-import { IProficiency, ProficiencyModel } from '../Proficiency/Proficiency';
+import { IProficiencyModel, ProficiencyModel } from '../Proficiency/Proficiency';
 
 export interface ITraitModel {
   id: number;
   index: string;
   name: string;
   desc: string;
-  proficiencies: IProficiency[];
+  proficiencies: IProficiencyModel[];
 }
 
 export class TraitModel implements ITraitModel {
@@ -13,7 +13,7 @@ export class TraitModel implements ITraitModel {
   index: string;
   name: string;
   desc: string;
-  proficiencies: IProficiency[];
+  proficiencies: IProficiencyModel[];
   constructor(prop: ITraitModel) {
     this.id = prop.id;
     this.index = prop.index;

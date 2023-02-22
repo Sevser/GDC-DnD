@@ -3,21 +3,27 @@ import type { PropType } from 'vue';
 import { AllowedDictionaryClasses } from '@/types/Dictionaries/CanBeDictionary';
 import { VCard } from 'vuetify/components';
 
-export default defineComponent({
+const DefaultDictionaryViewListItem = defineComponent({
   name: 'DefaultDictionaryViewListItem',
   components: {
     VCard,
   },
   props: {
-    item: Object as PropType<AllowedDictionaryClasses>,
+    item: {
+      type: Object as PropType<AllowedDictionaryClasses>,
+      default: () => ({}),
+    },
   },
   render() {
     return h(VCard, {
-      title: this.item?.name,
-      text: this.item?.desc,
+      id: this.item.index,
+      title: this.item.name,
+      text: this.item.desc,
       class: {
         'mb-4': true,
       },
     });
   },
 });
+
+export default DefaultDictionaryViewListItem;

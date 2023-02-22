@@ -27,8 +27,8 @@ export default defineComponent({
             VMain,
             {
               scrollable: true,
-              class: {
-                'w-50': true,
+              style: {
+                width: '300px',
               },
             },
             {
@@ -39,10 +39,8 @@ export default defineComponent({
             VMain,
             {
               scrollable: true,
-              class: {
-                'w-50': true,
-              },
               style: {
+                width: 'calc(100vw - 300px)',
                 left: 'unset',
                 right: '0',
               },

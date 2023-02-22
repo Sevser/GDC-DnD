@@ -1,6 +1,5 @@
 import DefaultDictionaryViewListItem from '@/components/dictionaries/DefaultDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
-import { VueElement } from 'vue';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 
@@ -29,7 +28,7 @@ export class LanguageListItemModel implements ILanguageListItemModel, ICanBeDict
     this[DictionaryTypePropName] = 'language';
   }
   getDictionaryView() {
-    return DefaultDictionaryViewListItem as any as VueElement;
+    return DefaultDictionaryViewListItem;
   }
   getCmsProvider() {
     return cmsClient.fetchLanguages;

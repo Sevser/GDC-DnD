@@ -8,13 +8,13 @@ const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::level.level", ({ strapi }) => ({
   async find(ctx) {
-    if (!ctx.filters.class) {
+    if (!ctx.query.filters.class) {
       return {
         error: "you must specify class",
       };
     }
     const data = await strapi.entityService.findMany("api::level.level", {
-      filters: ctx.filters,
+      filters: ctx.query.filters,
       populate: {
         id: true,
         index: true,

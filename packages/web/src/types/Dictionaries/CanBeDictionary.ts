@@ -1,5 +1,5 @@
 import { ICMSClientDictionariesFetchType } from '@/plugins/http/cmsClient';
-import { VueElement } from 'vue';
+import { Component } from 'vue';
 import { AbilityScoreModel } from '../AbilityScore/AbilityScore';
 import { AlignmentModel } from '../Alignment/Alignment';
 import { ConditionModel } from '../Condition/Condition';
@@ -19,7 +19,7 @@ export interface ICanBeDictionary {
   name: string;
   desc?: string;
   getCmsProvider: () => ICMSClientDictionariesFetchType;
-  getDictionaryView: () => VueElement;
+  getDictionaryView: () => Component;
 }
 
 export interface ICanBeDictionaryProvider {

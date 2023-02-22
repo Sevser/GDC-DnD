@@ -1,6 +1,5 @@
 import SkillDictionaryViewListItem from '@/components/dictionaries/SkillDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
-import { VueElement } from 'vue';
 import { AbilityScoreModel, IAbilityScore } from '../AbilityScore/AbilityScore';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
@@ -30,7 +29,7 @@ export class SkillModel implements ISkill, ICanBeDictionary {
     this[DictionaryTypePropName] = 'skills';
   }
   getDictionaryView() {
-    return SkillDictionaryViewListItem as any as VueElement;
+    return SkillDictionaryViewListItem;
   }
   [DictionaryTypePropName]: string;
   static getEmpty() {

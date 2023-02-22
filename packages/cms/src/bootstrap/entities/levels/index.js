@@ -4,7 +4,7 @@ const levels = require("5e-database/src/5e-SRD-Levels.json");
 const transformItem = (level, props) => {
   return {
     index: level.index,
-    name: level.name,
+    name: level.index.split("-")[0],
     level: level.level,
     class:
       level.class &&
@@ -14,7 +14,7 @@ const transformItem = (level, props) => {
       level.subclass &&
       level.subclass.index &&
       props.subclasses.find((cl) => cl.index === level.subclass.index),
-    profBonus: level.profBonus,
+    profBonus: level.prof_bonus,
     features: level.features.map((f) =>
       props.features.find((ft) => ft.index === f.index)
     ),

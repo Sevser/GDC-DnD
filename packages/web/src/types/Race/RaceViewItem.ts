@@ -1,7 +1,7 @@
 import { AbilityBonusModel, IAbilityBonus } from '../AbilityBonus/AbilityBonus';
 import { BeastSizeModel, IBeastSizeModel } from '../beasts/BeastSize';
 import { ILanguageListItemModel, LanguageListItemModel } from '../Language/Language';
-import { IProficiency, ProficiencyModel } from '../Proficiency/Proficiency';
+import { IProficiencyModel, ProficiencyModel } from '../Proficiency/Proficiency';
 import { ISpeedModel, SpeedModel } from '../speed/Speed';
 import { ISubraceModel, SubraceModel } from '../Subrace/Subrace';
 import { ITraitModel, TraitModel } from '../Trait/Trait';
@@ -16,7 +16,7 @@ export interface IRaceViewItemModel {
   sizeDescription: string;
   speed: ISpeedModel;
   abilityBonuses: IAbilityBonus[];
-  startProficiencies: IProficiency[];
+  startProficiencies: IProficiencyModel[];
   languages: ILanguageListItemModel[];
   traits: ITraitModel[];
   subraces: ISubraceModel[];
@@ -32,7 +32,7 @@ export class RaceViewItemModel implements IRaceViewItemModel {
   sizeDescription: string;
   speed: ISpeedModel;
   abilityBonuses: IAbilityBonus[];
-  startProficiencies: IProficiency[];
+  startProficiencies: IProficiencyModel[];
   languages: ILanguageListItemModel[];
   traits: ITraitModel[];
   subraces: ISubraceModel[];
@@ -70,7 +70,7 @@ export class RaceViewItemModel implements IRaceViewItemModel {
       sizeDescription: '',
       speed: SpeedModel.getEmpty(),
       abilityBonuses: new Array<IAbilityBonus>(),
-      startProficiencies: new Array<IProficiency>(),
+      startProficiencies: new Array<IProficiencyModel>(),
       languages: new Array<ILanguageListItemModel>(),
       traits: new Array<ITraitModel>(),
       subraces: new Array<ISubraceModel>(),

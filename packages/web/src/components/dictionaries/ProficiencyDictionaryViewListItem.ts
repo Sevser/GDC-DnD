@@ -8,7 +8,10 @@ import { RouterLink } from 'vue-router';
 export default defineComponent({
   name: 'ProficiencyDictionaryViewListItem',
   props: {
-    item: Object as PropType<ProficiencyModel>,
+    item: {
+      type: Object as PropType<ProficiencyModel>,
+      default: () => ProficiencyModel.getEmpty(),
+    },
   },
   computed: {
     title() {

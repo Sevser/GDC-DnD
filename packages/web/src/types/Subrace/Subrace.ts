@@ -1,5 +1,5 @@
 import { AbilityBonusModel, IAbilityBonus } from '../AbilityBonus/AbilityBonus';
-import { IProficiency, ProficiencyModel } from '../Proficiency/Proficiency';
+import { IProficiencyModel, ProficiencyModel } from '../Proficiency/Proficiency';
 import { IRaceViewItemModel, RaceViewItemModel } from '../Race/RaceViewItem';
 import { ITraitModel, TraitModel } from '../Trait/Trait';
 
@@ -10,7 +10,7 @@ export interface ISubraceModel {
   name: string;
   race: IRaceViewItemModel;
   abilityBonuses: IAbilityBonus[];
-  startProficiencies: IProficiency[];
+  startProficiencies: IProficiencyModel[];
   racialTraits: ITraitModel[];
 }
 
@@ -21,7 +21,7 @@ export class SubraceModel implements ISubraceModel {
   name: string;
   race: IRaceViewItemModel;
   abilityBonuses: IAbilityBonus[];
-  startProficiencies: IProficiency[];
+  startProficiencies: IProficiencyModel[];
   racialTraits: ITraitModel[];
   constructor(prop: ISubraceModel) {
     this.id = prop.id;
@@ -42,7 +42,7 @@ export class SubraceModel implements ISubraceModel {
       name: '',
       race: RaceViewItemModel.getEmpty(),
       abilityBonuses: new Array<IAbilityBonus>(),
-      startProficiencies: new Array<IProficiency>(),
+      startProficiencies: new Array<IProficiencyModel>(),
       racialTraits: new Array<ITraitModel>(),
     });
   }

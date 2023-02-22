@@ -1,6 +1,5 @@
 import AbilityScoreDictionaryViewListItem from '@/components/dictionaries/AbilityScoreDictionaryViewListItem';
 import { cmsClient } from '@/plugins/http';
-import { VueElement } from 'vue';
 import { DictionaryTypePropName } from '../constants';
 import { ICanBeDictionary } from '../Dictionaries/CanBeDictionary';
 import { ISkill, SkillModel } from '../Skills/Skills';
@@ -36,7 +35,7 @@ export class AbilityScoreModel implements IAbilityScore, ICanBeDictionary {
     this[DictionaryTypePropName] = 'ability-score';
   }
   getDictionaryView() {
-    return AbilityScoreDictionaryViewListItem as any as VueElement;
+    return AbilityScoreDictionaryViewListItem;
   }
   [DictionaryTypePropName]: string;
   static getEmpty() {

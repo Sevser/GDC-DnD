@@ -7,7 +7,10 @@ import { SkillModel } from '@/types/Skills/Skills';
 export default defineComponent({
   name: 'SkillDictionaryViewListItem',
   props: {
-    item: Object as PropType<SkillModel>,
+    item: {
+      type: Object as PropType<SkillModel>,
+      default: () => SkillModel.getEmpty(),
+    },
   },
   computed: {
     title() {
