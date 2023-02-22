@@ -57,6 +57,11 @@ export default defineComponent({
         text: 'ClassList',
         navigation: 'ClassList',
       },
+      {
+        icon: 'mdi-shield',
+        text: 'ArmorList',
+        navigation: 'ArmorList',
+      },
     ],
     model: 1,
   }),

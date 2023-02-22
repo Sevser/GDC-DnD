@@ -1,5 +1,6 @@
 import { AbilityScoreModel, IAbilityScore } from '@/types/AbilityScore/AbilityScore';
 import { AlignmentModel, IAlignment } from '@/types/Alignment/Alignment';
+import { ArmorModel, IArmorModel } from '@/types/Armor/Armor';
 import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
 import { ClassListItemModel, IClassListItemModel } from '@/types/Class/ClassListItemModel';
@@ -44,6 +45,11 @@ const fetchSpells = async (params: IGenericQueryParams<IShortSpell>): Promise<IG
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IShortSpell>) => new ShortSpellModel({ ...item.attributes, id: item.id })),
   };
+};
+
+const fetchArmor = async (): Promise<IGenericStrapiMappedData<IShortSpell>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/equipments/armor`);
+  return result.data.map((item: IArmorModel) => new ArmorModel(item));
 };
 
 const fetchSpell = async (spellId: string | number): Promise<Spell> => {
@@ -267,6 +273,7 @@ export interface ICMSClient {
   fetchClasses: typeof fetchClasses;
   fetchTraits: typeof fetchTraits;
   fetchArchetypes: typeof fetchArchetypes;
+  fetchArmor: typeof fetchArmor;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -310,4 +317,5 @@ export {
   fetchTraits,
   fetchLevels,
   fetchArchetypes,
+  fetchArmor,
 };

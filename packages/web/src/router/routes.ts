@@ -41,6 +41,22 @@ const routes = [
     ],
   },
   {
+    path: '/armor',
+    name: 'ArmorList',
+    components: {
+      default: () => import('@/pages/ArmorList.vue'),
+    },
+    children: [
+      {
+        path: ':id',
+        name: 'ArmorView',
+        components: {
+          listContentView: () => import('@/pages/ArmorView.vue'),
+        },
+      },
+    ],
+  },
+  {
     path: '/races',
     name: 'RaceList',
     components: {

@@ -62,7 +62,6 @@ const spells = {
 
       try {
         const result = await cmsClient.fetchSpells(params);
-        console.log(result);
         context.commit('updateSpellList', result.data);
         context.commit('updatePagination', result.meta.pagination);
         context.commit('updateAvailableSorting', result.meta.allowedFieldSort);
