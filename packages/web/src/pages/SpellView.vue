@@ -11,7 +11,12 @@
     <template #subtitle>
       <div class="d-flex flex-column">
         <div>{{ source }}</div>
-        <div class="d-flex"><b>Класс:</b>{{ classes }}</div>
+        <div class="d-flex">
+          <b>Класс:</b>
+          <RouterLink v-for="classModel in classes" class="mr-1" :key="classModel.index" :to="{ name: 'ClassView', params: { id: classModel.id } }">
+            {{ classModel.name }}
+          </RouterLink>
+        </div>
       </div>
     </template>
     <template #text>
@@ -57,10 +62,10 @@
   </v-card>
 </template>
 <script lang="ts">
-import { ICharacterClass } from '@/types/CharacterClass';
-import { ISpell, Spell } from '@/types/Spell/Spell';
+import { Spell } from '@/types/Spell/Spell';
 import { ISpellComponent } from '@/types/SpellComponent';
 import { defineComponent } from 'vue';
+import { RouterLink } from 'vue-router';
 
 export default defineComponent({
   watch: {
@@ -93,7 +98,7 @@ export default defineComponent({
       return this.spell?.source?.source || '';
     },
     classes() {
-      return this.spell?.class?.map((item: ICharacterClass) => item.name).join(', ');
+      return this.spell.classes;
     },
     components() {
       return this.spell.SpellComponent?.map((component: ISpellComponent) => component.SpellComponent).join(', ');
@@ -135,6 +140,7 @@ export default defineComponent({
       return this.spell.damageType.DamageType;
     },
   },
+  components: { RouterLink },
 });
 </script>
 <style scoped>

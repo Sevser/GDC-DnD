@@ -1,6 +1,6 @@
 <template>
   <div v-if="$vuetify.display.xs" class="pl-3 pt-3 pb-3">
-    <v-btn :to="{ name: 'SpellList' }"> Назад </v-btn>
+    <v-btn :to="{ name: 'BestiaryList' }"> Назад </v-btn>
   </div>
   <v-card :class="{ 'h-100': !$vuetify.display.xs, 'h-calc': $vuetify.display.xs, 'overflow-y-auto': true }">
     <template #title>

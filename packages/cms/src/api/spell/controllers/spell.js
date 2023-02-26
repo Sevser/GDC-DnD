@@ -72,6 +72,11 @@ module.exports = createCoreController("api::spell.spell", ({ strapi }) => ({
     } else {
       data.attributes.spellSaveDifficultyClass = null;
     }
+    data.attributes.classes = data.attributes.classes.data.map((c) => ({
+      id: c.id,
+      ...c.attributes,
+    }));
+    data.attributes.archetypes = data.attributes.archetypes.data;
     return { data, meta };
   },
   async find(ctx) {

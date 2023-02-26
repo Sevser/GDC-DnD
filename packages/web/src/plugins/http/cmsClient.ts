@@ -21,6 +21,7 @@ import { ISkill, SkillModel } from '@/types/Skills/Skills';
 import { Spell, IShortSpell, ShortSpellModel } from '@/types/Spell/Spell';
 import { ISubclassModel, SubclassModel } from '@/types/Subclass/Subclass';
 import { ITraitDictionaryItem, TraitDictionaryItem } from '@/types/Trait/TraitDictionaryItem';
+import { IWeaponModel, WeaponModel } from '@/types/Weapon/Weapon';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
 import baseClient from './baseClient';
 
@@ -47,9 +48,14 @@ const fetchSpells = async (params: IGenericQueryParams<IShortSpell>): Promise<IG
   };
 };
 
-const fetchArmor = async (): Promise<IGenericStrapiMappedData<IShortSpell>> => {
+const fetchArmor = async (): Promise<IGenericStrapiMappedData<IArmorModel>> => {
   const result = await baseClient.get(`${cmsUrl}/api/equipments/armor`);
   return result.data.map((item: IArmorModel) => new ArmorModel(item));
+};
+
+const fetchWeapon = async (): Promise<IGenericStrapiMappedData<IWeaponModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/equipments/weapons`);
+  return result.data.map((item: IWeaponModel) => new WeaponModel(item));
 };
 
 const fetchSpell = async (spellId: string | number): Promise<Spell> => {
@@ -274,6 +280,7 @@ export interface ICMSClient {
   fetchTraits: typeof fetchTraits;
   fetchArchetypes: typeof fetchArchetypes;
   fetchArmor: typeof fetchArmor;
+  fetchWeapon: typeof fetchWeapon;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -318,4 +325,5 @@ export {
   fetchLevels,
   fetchArchetypes,
   fetchArmor,
+  fetchWeapon,
 };

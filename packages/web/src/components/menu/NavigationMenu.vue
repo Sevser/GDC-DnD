@@ -62,6 +62,11 @@ export default defineComponent({
         text: 'ArmorList',
         navigation: 'ArmorList',
       },
+      {
+        icon: 'mdi-swords-cross',
+        text: 'WeaponList',
+        navigation: 'WeaponList',
+      },
     ],
     model: 1,
   }),
