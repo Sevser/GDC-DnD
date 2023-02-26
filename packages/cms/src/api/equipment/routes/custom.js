@@ -8,5 +8,13 @@ module.exports = {
         auth: false,
       },
     },
+    {
+      method: "GET",
+      path: "/equipments/weapons",
+      handler: "equipment.findWeapon",
+      config: {
+        auth: false,
+      },
+    },
   ],
 };

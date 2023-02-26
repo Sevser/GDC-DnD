@@ -57,6 +57,22 @@ const routes = [
     ],
   },
   {
+    path: '/weapon',
+    name: 'WeaponList',
+    components: {
+      default: () => import('@/pages/WeaponList.vue'),
+    },
+    children: [
+      {
+        path: ':id',
+        name: 'WeaponView',
+        components: {
+          listContentView: () => import('@/pages/WeaponView.vue'),
+        },
+      },
+    ],
+  },
+  {
     path: '/races',
     name: 'RaceList',
     components: {

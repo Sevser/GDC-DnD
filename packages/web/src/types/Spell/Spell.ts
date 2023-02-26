@@ -1,5 +1,6 @@
 import { ActionType } from '../Action';
 import { ChacacterClass, ChacacterClassModel, ICharacterClass } from '../CharacterClass';
+import { ClassListItemModel, IClassListItemModel } from '../Class/ClassListItemModel';
 import { DamageType, DamageTypeModel, IDamageTypeModel } from '../DamageType/DamageType';
 import { Distance, IDistance } from '../Distance';
 import { IFilter } from '../Filters';
@@ -18,7 +19,7 @@ export interface ISpell {
   activeTime: string;
   id: number;
   SchoolOfMagic: ISchoolOfMagic;
-  class: ICharacterClass[];
+  classes: IClassListItemModel[];
   SpellComponent: ISpellComponent[];
   source: ISource;
   spellComponentDescription: string;
@@ -37,7 +38,7 @@ export class Spell implements ISpell {
     this.actionTypeDescription = prop.actionTypeDescription;
     this.activeTime = prop.activeTime;
     this.id = prop.id;
-    this.class = prop.class;
+    this.classes = prop.classes.map((p) => new ClassListItemModel(Object.assign({}, ClassListItemModel.getEmpty(), p)));
     this.SpellComponent = prop.SpellComponent ? prop.SpellComponent.map((sc) => new SpellComponentModel(sc)) : new Array<SpellComponentModel>();
     this.spellComponentDescription = prop.spellComponentDescription;
     this.source = prop.source;
@@ -52,7 +53,7 @@ export class Spell implements ISpell {
     return new Spell({
       source: Source.getEmpty(),
       SpellComponent: new Array<SpellComponentModel>(),
-      class: new Array<ChacacterClassModel>(),
+      classes: new Array<IClassListItemModel>(),
       SchoolOfMagic: SchoolOfMagicModel.getEmpty(),
       id: NaN,
       title: '',
@@ -70,7 +71,7 @@ export class Spell implements ISpell {
   }
   source: ISource;
   SpellComponent: ISpellComponent[];
-  class: ICharacterClass[];
+  classes: IClassListItemModel[];
   SchoolOfMagic: ISchoolOfMagic;
   id: number;
   title: string;

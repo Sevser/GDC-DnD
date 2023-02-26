@@ -31,5 +31,30 @@ module.exports = createCoreController(
       );
       return armor;
     },
+    async findWeapon() {
+      const armor = await strapi.entityService.findMany(
+        "api::equipment.equipment",
+        {
+          filters: {
+            equipmentCategory: {
+              index: {
+                $in: [
+                  "weapon",
+                  "simple-weapons",
+                  "martial-weapons",
+                  "melee-weapons",
+                  "ranged-weapons",
+                  "simple-melee-weapons",
+                  "martial-melee-weapons",
+                  "martial-ranged-weapons",
+                ],
+              },
+            },
+          },
+          populate: "*",
+        }
+      );
+      return armor;
+    },
   })
 );
