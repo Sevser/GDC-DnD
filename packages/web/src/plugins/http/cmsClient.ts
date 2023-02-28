@@ -8,7 +8,8 @@ import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
 import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageType/DamageTypeEntity';
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
-import { EquipmentListModel, IEquipmentListModel } from '@/types/Equipment/Equipment';
+import { EquipmentListItemModel, IEquipmentListItemModel } from '@/types/Equipment/EquipmentListItemModel';
+import EquipmentModel, { IEquipmentModel } from '@/types/Equipment/EquipmentModel';
 import { IMagicItemListItem, IMagicItemModel, MagicItemListItem, MagicItemModel } from '@/types/Equipment/MagicItem';
 import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
@@ -60,14 +61,19 @@ const fetchWeapon = async (): Promise<IGenericStrapiMappedData<IWeaponModel>> =>
   return result.data.map((item: IWeaponModel) => new WeaponModel(item));
 };
 
-const fetchEquipment = async (params: IGenericQueryParams<IEquipmentListModel>): Promise<IGenericStrapiMappedData<IEquipmentListModel>> => {
+const fetchEquipment = async (params: IGenericQueryParams<IEquipmentListItemModel>): Promise<IGenericStrapiMappedData<IEquipmentListItemModel>> => {
   const result = await baseClient.get(`${cmsUrl}/api/equipments`, {
     params,
   });
   return {
     meta: result.data.meta,
-    data: result.data.data.map((item: IEquipmentListModel) => new EquipmentListModel(item)),
+    data: result.data.data.map((item: IEquipmentListItemModel) => new EquipmentListItemModel(item)),
   };
+};
+
+const fetchEquipmentItem = async (equipmentId: string | number): Promise<IEquipmentModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/equipments/${equipmentId}`);
+  return new EquipmentModel(result.data);
 };
 
 const fetchMagicItems = async (params: IGenericQueryParams<IMagicItemListItem>): Promise<IGenericStrapiMappedData<IMagicItemListItem>> => {
@@ -311,6 +317,7 @@ export interface ICMSClient {
   fetchEquipment: typeof fetchEquipment;
   fetchMagicItems: typeof fetchMagicItems;
   fetchMagicItem: typeof fetchMagicItem;
+  fetchEquipmentItem: typeof fetchEquipmentItem;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -359,4 +366,5 @@ export {
   fetchEquipment,
   fetchMagicItems,
   fetchMagicItem,
+  fetchEquipmentItem,
 };

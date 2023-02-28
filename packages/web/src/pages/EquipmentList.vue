@@ -24,7 +24,7 @@ import InfiniteLoading from 'v3-infinite-loading';
 import 'v3-infinite-loading/lib/style.css';
 import EquipmentListItem from '@/components/equipment/EquipmentListItem.vue';
 import { Pagination } from '@/types/Pagination';
-import { IEquipmentListModel } from '@/types/Equipment/Equipment';
+import { IEquipmentListItemModel } from '@/types/Equipment/EquipmentListItemModel';
 
 export default defineComponent({
   components: {
@@ -61,11 +61,11 @@ export default defineComponent({
     },
   },
   methods: {
-    handleClick(armor: IEquipmentListModel) {
+    handleClick(equipment: IEquipmentListItemModel) {
       this.$router.push({
-        name: 'ArmorView',
+        name: 'EquipmentView',
         params: {
-          id: armor.id,
+          id: equipment.id,
         },
       });
     },

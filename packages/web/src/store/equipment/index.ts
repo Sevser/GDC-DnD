@@ -1,6 +1,8 @@
 import { cmsClient } from '@/plugins/http';
+import { fetchEquipment } from '@/plugins/http/cmsClient';
 import { ArmorModel, IArmorModel } from '@/types/Armor/Armor';
-import { EquipmentListModel, IEquipmentListModel } from '@/types/Equipment/Equipment';
+import { EquipmentListItemModel, IEquipmentListItemModel } from '@/types/Equipment/EquipmentListItemModel';
+import EquipmentModel, { IEquipmentModel } from '@/types/Equipment/EquipmentModel';
 import { IMagicItemListItem, IMagicItemModel, MagicItemListItem, MagicItemModel } from '@/types/Equipment/MagicItem';
 import { IGenericQueryParams } from '@/types/GenericStrapiData';
 import { IPagination, Pagination } from '@/types/Pagination';
@@ -10,8 +12,10 @@ import { State } from '..';
 
 export interface IEquipmentState {
   equipmentListPending: boolean;
-  equipmentList: IEquipmentListModel[];
+  equipmentList: IEquipmentListItemModel[];
   pagination: Partial<IPagination>;
+  equipment: IEquipmentModel;
+  equipmentPending: boolean;
   magicItemsListPending: boolean;
   magicItemsList: IMagicItemListItem[];
   magicItemsListPagination: Partial<IPagination>;
@@ -29,7 +33,9 @@ const equipment = {
   namespaced: true,
   state: (): IEquipmentState => ({
     equipmentListPending: false,
-    equipmentList: new Array<IEquipmentListModel>(),
+    equipmentList: new Array<IEquipmentListItemModel>(),
+    equipment: EquipmentModel.getEmpty(),
+    equipmentPending: false,
     pagination: Pagination.default(),
     magicItemsListPending: false,
     magicItemsList: new Array<IMagicItemListItem>(),
@@ -74,9 +80,9 @@ const equipment = {
         context.commit('updateWeaponListPending', false);
       }
     },
-    async fetchEquipmentList(context: ActionContext<IEquipmentState, State>, params: IGenericQueryParams<EquipmentListModel>) {
+    async fetchEquipmentList(context: ActionContext<IEquipmentState, State>, params: IGenericQueryParams<EquipmentListItemModel>) {
       context.commit('updateEquipmentListPending', true);
-      context.commit('updateEquipmentList', new Array<IEquipmentListModel>());
+      context.commit('updateEquipmentList', new Array<IEquipmentListItemModel>());
       try {
         const result = await cmsClient.fetchEquipment(params);
         context.commit('updateEquipmentList', result.data);
@@ -89,7 +95,7 @@ const equipment = {
         context.commit('updateEquipmentListPending', false);
       }
     },
-    async fetchMoreEquipmentList(context: ActionContext<IEquipmentState, State>, params: IGenericQueryParams<EquipmentListModel>) {
+    async fetchMoreEquipmentList(context: ActionContext<IEquipmentState, State>, params: IGenericQueryParams<EquipmentListItemModel>) {
       context.commit('updateEquipmentListPending', true);
       try {
         const calcParams = Object.assign({}, params);
@@ -146,6 +152,20 @@ const equipment = {
         context.commit('updateMagicItemPending', false);
       }
     },
+    async fetchEquipment(context: ActionContext<IEquipmentState, State>, equipmentItem: number | string) {
+      context.commit('updateEquipmentPending', true);
+      context.commit('updateEquipment');
+      try {
+        const magicItem = await cmsClient.fetchEquipmentItem(equipmentItem);
+        context.commit('updateEquipment', magicItem);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch (e) {
+        console.log(e);
+      } finally {
+        context.commit('updateEquipmentPending', false);
+      }
+    },
   },
   mutations: {
     updateArmorListPending(state: IEquipmentState, payload = false) {
@@ -169,7 +189,7 @@ const equipment = {
     updateEquipmentListPending(state: IEquipmentState, payload = false) {
       state.equipmentListPending = payload;
     },
-    updateEquipmentList(state: IEquipmentState, payload: IEquipmentListModel[]) {
+    updateEquipmentList(state: IEquipmentState, payload: IEquipmentListItemModel[]) {
       state.equipmentList = payload;
     },
     updateEquipmentPagination(state: IEquipmentState, payload: IPagination) {
@@ -189,6 +209,12 @@ const equipment = {
     },
     updateMagicItemPending(state: IEquipmentState, payload = false) {
       state.magicItemPending = payload;
+    },
+    updateEquipment(state: IEquipmentState, payload: IEquipmentModel = EquipmentModel.getEmpty()) {
+      state.equipment = payload;
+    },
+    updateEquipmentPending(state: IEquipmentState, payload = false) {
+      state.equipmentPending = payload;
     },
   },
 };

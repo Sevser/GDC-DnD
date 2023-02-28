@@ -78,6 +78,15 @@ const routes = [
     components: {
       default: () => import('@/pages/EquipmentList.vue'),
     },
+    children: [
+      {
+        path: ':id',
+        name: 'EquipmentView',
+        components: {
+          listContentView: () => import('@/pages/EquipmentView.vue'),
+        },
+      },
+    ],
   },
   {
     path: '/magic-items',

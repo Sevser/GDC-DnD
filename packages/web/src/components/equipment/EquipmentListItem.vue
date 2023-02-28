@@ -10,14 +10,14 @@
   </v-card>
 </template>
 <script lang="ts">
-import { EquipmentListModel } from '@/types/Equipment/Equipment';
+import { EquipmentListItemModel } from '@/types/Equipment/EquipmentListItemModel';
 import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
   props: {
     equipment: {
-      type: Object as PropType<EquipmentListModel>,
-      default: () => EquipmentListModel.getEmpty(),
+      type: Object as PropType<EquipmentListItemModel>,
+      default: () => EquipmentListItemModel.getEmpty(),
     },
   },
 });

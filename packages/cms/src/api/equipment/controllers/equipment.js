@@ -6,6 +6,13 @@
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
+const mapRelations = (relation) => {
+  return {
+    id: relation.id,
+    ...relation.attributes,
+  };
+};
+
 module.exports = createCoreController(
   "api::equipment.equipment",
   ({ strapi }) => ({
@@ -20,6 +27,27 @@ module.exports = createCoreController(
           },
         },
       };
+      ctx.query.filters = {
+        equipmentCategory: {
+          index: {
+            $notIn: [
+              "armor",
+              "light-armor",
+              "medium-armor",
+              "heavy-armor",
+              "shields",
+              "weapon",
+              "simple-weapons",
+              "martial-weapons",
+              "melee-weapons",
+              "ranged-weapons",
+              "simple-melee-weapons",
+              "martial-melee-weapons",
+              "martial-ranged-weapons",
+            ],
+          },
+        },
+      };
       ctx.query.fields = ["index", "id", "name"];
       const { data, meta } = await super.find(ctx);
       return {
@@ -27,13 +55,23 @@ module.exports = createCoreController(
           ...eq.attributes,
           id: eq.id,
           equipmentCategory: eq.attributes.equipmentCategory
-            ? {
-                id: eq.attributes.equipmentCategory.data.id,
-                ...eq.attributes.equipmentCategory.data.attributes,
-              }
+            ? mapRelations(eq.attributes.equipmentCategory.data)
             : null,
         })),
         meta,
+      };
+    },
+    async findOne(ctx) {
+      ctx.query = {
+        ...ctx.query,
+        populate: "*",
+      };
+      const { data } = await super.findOne(ctx);
+      return {
+        ...mapRelations(data),
+        equipmentCategory:
+          data.equipmentCategory && mapRelations(data.equipmentCategory.data),
+        gearCategory: data.gearCategory && mapRelations(data.gearCategory.data),
       };
     },
     async findArmor() {
