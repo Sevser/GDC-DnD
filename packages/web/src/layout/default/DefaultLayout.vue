@@ -87,7 +87,10 @@ export default {
           app: true,
         },
         {
-          default: () => h(NavigationMenu),
+          default: () =>
+            h(NavigationMenu, {
+              onNavigationClicked: () => (this.drawer = false),
+            }),
         }
       ),
       h(

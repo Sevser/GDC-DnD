@@ -8,6 +8,8 @@ import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
 import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageType/DamageTypeEntity';
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
+import { EquipmentListModel, IEquipmentListModel } from '@/types/Equipment/Equipment';
+import { IMagicItemListItem, MagicItemListItem } from '@/types/Equipment/MagicItem';
 import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
 import { ILanguageListItemModel, LanguageListItemModel } from '@/types/Language/Language';
@@ -56,6 +58,26 @@ const fetchArmor = async (): Promise<IGenericStrapiMappedData<IArmorModel>> => {
 const fetchWeapon = async (): Promise<IGenericStrapiMappedData<IWeaponModel>> => {
   const result = await baseClient.get(`${cmsUrl}/api/equipments/weapons`);
   return result.data.map((item: IWeaponModel) => new WeaponModel(item));
+};
+
+const fetchEquipment = async (params: IGenericQueryParams<IEquipmentListModel>): Promise<IGenericStrapiMappedData<IEquipmentListModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/equipments`, {
+    params,
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IEquipmentListModel) => new EquipmentListModel(item)),
+  };
+};
+
+const fetchMagicItems = async (params: IGenericQueryParams<IMagicItemListItem>): Promise<IGenericStrapiMappedData<IMagicItemListItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/magic-items`, {
+    params,
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IMagicItemListItem) => new MagicItemListItem(item)),
+  };
 };
 
 const fetchSpell = async (spellId: string | number): Promise<Spell> => {
@@ -281,6 +303,8 @@ export interface ICMSClient {
   fetchArchetypes: typeof fetchArchetypes;
   fetchArmor: typeof fetchArmor;
   fetchWeapon: typeof fetchWeapon;
+  fetchEquipment: typeof fetchEquipment;
+  fetchMagicItems: typeof fetchMagicItems;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -326,4 +350,6 @@ export {
   fetchArchetypes,
   fetchArmor,
   fetchWeapon,
+  fetchEquipment,
+  fetchMagicItems,
 };

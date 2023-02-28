@@ -1,12 +1,10 @@
 <template>
   <v-list density="compact">
     <v-list-subheader>Menu</v-list-subheader>
-
-    <v-list-item v-for="(item, i) in items" :key="i" :value="item" active-color="primary" :to="{ name: item.navigation }" :active="item.navigation === activeRoute">
+    <v-list-item v-for="(item, i) in items" :key="i" :value="item" active-color="primary" :to="{ name: item.navigation }" @click="$emit('NavigationClicked')" :active="item.navigation === activeRoute">
       <template #prepend>
         <v-icon :icon="item.icon"></v-icon>
       </template>
-
       <v-list-item-title>{{ item.text }}</v-list-item-title>
     </v-list-item>
   </v-list>
@@ -28,44 +26,54 @@ export default defineComponent({
         navigation: 'Home',
       },
       {
-        icon: 'mdi-star',
+        icon: 'mdi-auto-fix',
         text: 'Spells',
         navigation: 'SpellList',
       },
       {
-        icon: 'mdi-alien',
+        icon: 'mdi-dog-side',
         text: 'Bestiary',
         navigation: 'BestiaryList',
       },
       {
         icon: 'mdi-book',
-        text: 'DictionaryList',
+        text: 'Dictionaries',
         navigation: 'DictionaryList',
       },
       {
-        icon: 'mdi-book',
-        text: 'RulesList',
+        icon: 'mdi-book-education',
+        text: 'Rules',
         navigation: 'RulesList',
       },
       {
-        icon: 'mdi-human',
-        text: 'RaceList',
+        icon: 'mdi-human-queue',
+        text: 'Races',
         navigation: 'RaceList',
       },
       {
         icon: 'mdi-human',
-        text: 'ClassList',
+        text: 'Classes',
         navigation: 'ClassList',
       },
       {
         icon: 'mdi-shield',
-        text: 'ArmorList',
+        text: 'Armor',
         navigation: 'ArmorList',
       },
       {
-        icon: 'mdi-swords-cross',
-        text: 'WeaponList',
+        icon: 'mdi-sword',
+        text: 'Weapon',
         navigation: 'WeaponList',
+      },
+      {
+        icon: 'mdi-bag-personal-outline',
+        text: 'Equipment',
+        navigation: 'EquipmentList',
+      },
+      {
+        icon: 'mdi-bag-personal-outline',
+        text: 'Magic Items',
+        navigation: 'MagicItemList',
       },
     ],
     model: 1,

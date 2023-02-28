@@ -45,9 +45,12 @@ export default defineComponent({
     '$route.params': {
       immediate: true,
       deep: true,
-      handler() {
+      handler(newVal, oldVal) {
         if (this.$router.currentRoute !== undefined && this.$router.currentRoute.value.name === 'ClassView') {
           this.fetchData();
+        }
+        if (newVal && oldVal && newVal.id !== oldVal.id) {
+          this.tab = 'one';
         }
       },
     },

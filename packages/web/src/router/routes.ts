@@ -73,6 +73,20 @@ const routes = [
     ],
   },
   {
+    path: '/equipment',
+    name: 'EquipmentList',
+    components: {
+      default: () => import('@/pages/EquipmentList.vue'),
+    },
+  },
+  {
+    path: '/magic-items',
+    name: 'MagicItemList',
+    components: {
+      default: () => import('@/pages/MagicItemList.vue'),
+    },
+  },
+  {
     path: '/races',
     name: 'RaceList',
     components: {
