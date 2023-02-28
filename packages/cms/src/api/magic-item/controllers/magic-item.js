@@ -37,5 +37,65 @@ module.exports = createCoreController(
         meta,
       };
     },
+    async findOne(ctx) {
+      ctx.query = {
+        ...ctx.query,
+        populate: {
+          index: true,
+          name: true,
+          rarity: true,
+          desc: true,
+          variants: {
+            populate: {
+              magicItems: {
+                populate: {
+                  index: true,
+                  name: true,
+                  rarity: true,
+                  equipmentCategory: {
+                    populate: {
+                      index: true,
+                      name: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+          equipmentCategory: {
+            populate: {
+              index: true,
+              name: true,
+            },
+          },
+        },
+      };
+      const { data } = await super.findOne(ctx);
+      return {
+        ...data.attributes,
+        id: data.id,
+        equipmentCategory: data.attributes.equipmentCategory
+          ? {
+              id: data.attributes.equipmentCategory.data.id,
+              ...data.attributes.equipmentCategory.data.attributes,
+            }
+          : null,
+        variants:
+          (data.attributes.variants &&
+            data.attributes.variants.magicItems &&
+            data.attributes.variants.magicItems.data &&
+            data.attributes.variants.magicItems.data.map((mi) => ({
+              id: mi.id,
+              ...mi.attributes,
+              equipmentCategory: mi.attributes.equipmentCategory
+                ? {
+                    id: mi.attributes.equipmentCategory.data.id,
+                    ...mi.attributes.equipmentCategory.data.attributes,
+                  }
+                : null,
+            }))) ||
+          [],
+      };
+    },
   })
 );

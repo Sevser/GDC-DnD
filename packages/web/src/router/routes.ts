@@ -85,6 +85,15 @@ const routes = [
     components: {
       default: () => import('@/pages/MagicItemList.vue'),
     },
+    children: [
+      {
+        path: ':id',
+        name: 'MagicItemView',
+        components: {
+          listContentView: () => import('@/pages/MagicItemView.vue'),
+        },
+      },
+    ],
   },
   {
     path: '/races',

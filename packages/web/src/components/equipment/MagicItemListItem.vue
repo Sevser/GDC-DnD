@@ -5,6 +5,9 @@
         <div class="text-subtitle-1">
           {{ magicItem.equipmentCategory.name }}
         </div>
+        <div class="text-subtitle-1">
+          {{ magicItem.rarity }}
+        </div>
       </div>
     </template>
   </v-card>

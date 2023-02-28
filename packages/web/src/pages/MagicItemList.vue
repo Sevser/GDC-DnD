@@ -63,7 +63,7 @@ export default defineComponent({
   methods: {
     handleClick(armor: IMagicItemListItem) {
       this.$router.push({
-        name: 'ArmorView',
+        name: 'MagicItemView',
         params: {
           id: armor.id,
         },

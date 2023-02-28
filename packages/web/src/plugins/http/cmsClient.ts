@@ -9,7 +9,7 @@ import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
 import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageType/DamageTypeEntity';
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
 import { EquipmentListModel, IEquipmentListModel } from '@/types/Equipment/Equipment';
-import { IMagicItemListItem, MagicItemListItem } from '@/types/Equipment/MagicItem';
+import { IMagicItemListItem, IMagicItemModel, MagicItemListItem, MagicItemModel } from '@/types/Equipment/MagicItem';
 import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
 import { ILanguageListItemModel, LanguageListItemModel } from '@/types/Language/Language';
@@ -83,6 +83,11 @@ const fetchMagicItems = async (params: IGenericQueryParams<IMagicItemListItem>):
 const fetchSpell = async (spellId: string | number): Promise<Spell> => {
   const result = await baseClient.get(`${cmsUrl}/api/spells/${spellId}`);
   return new Spell({ ...result.data.data.attributes, id: result.data.data.id });
+};
+
+const fetchMagicItem = async (magicItemId: string | number): Promise<IMagicItemModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/magic-items/${magicItemId}`);
+  return new MagicItemModel(result.data);
 };
 
 const fetchBestiary = async (params: IGenericQueryParams<IBeastListItem>): Promise<IGenericStrapiMappedData<IBeastListItem>> => {
@@ -305,6 +310,7 @@ export interface ICMSClient {
   fetchWeapon: typeof fetchWeapon;
   fetchEquipment: typeof fetchEquipment;
   fetchMagicItems: typeof fetchMagicItems;
+  fetchMagicItem: typeof fetchMagicItem;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -352,4 +358,5 @@ export {
   fetchWeapon,
   fetchEquipment,
   fetchMagicItems,
+  fetchMagicItem,
 };

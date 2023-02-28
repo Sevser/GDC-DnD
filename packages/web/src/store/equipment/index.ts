@@ -1,7 +1,7 @@
 import { cmsClient } from '@/plugins/http';
 import { ArmorModel, IArmorModel } from '@/types/Armor/Armor';
 import { EquipmentListModel, IEquipmentListModel } from '@/types/Equipment/Equipment';
-import { IMagicItemListItem, MagicItemListItem } from '@/types/Equipment/MagicItem';
+import { IMagicItemListItem, IMagicItemModel, MagicItemListItem, MagicItemModel } from '@/types/Equipment/MagicItem';
 import { IGenericQueryParams } from '@/types/GenericStrapiData';
 import { IPagination, Pagination } from '@/types/Pagination';
 import { IWeaponModel, WeaponModel } from '@/types/Weapon/Weapon';
@@ -15,6 +15,8 @@ export interface IEquipmentState {
   magicItemsListPending: boolean;
   magicItemsList: IMagicItemListItem[];
   magicItemsListPagination: Partial<IPagination>;
+  magicItem: IMagicItemModel;
+  magicItemPending: boolean;
   armorListPending: boolean;
   armorList: IArmorModel[];
   armor: IArmorModel;
@@ -32,6 +34,8 @@ const equipment = {
     magicItemsListPending: false,
     magicItemsList: new Array<IMagicItemListItem>(),
     magicItemsListPagination: Pagination.default(),
+    magicItem: MagicItemModel.getEmpty(),
+    magicItemPending: false,
     armorListPending: false,
     armorList: new Array<IArmorModel>(),
     armor: ArmorModel.getEmpty(),
@@ -128,6 +132,20 @@ const equipment = {
         context.commit('updateMagicItemListPending', false);
       }
     },
+    async fetchMagicItem(context: ActionContext<IEquipmentState, State>, magicItemId: number | string) {
+      context.commit('updateMagicItemPending', true);
+      context.commit('updateMagicItem');
+      try {
+        const magicItem = await cmsClient.fetchMagicItem(magicItemId);
+        context.commit('updateMagicItem', magicItem);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch (e) {
+        console.log(e);
+      } finally {
+        context.commit('updateMagicItemPending', false);
+      }
+    },
   },
   mutations: {
     updateArmorListPending(state: IEquipmentState, payload = false) {
@@ -144,6 +162,9 @@ const equipment = {
     },
     updateWeaponList(state: IEquipmentState, payload: IWeaponModel[]) {
       state.weaponList = payload;
+    },
+    updateWeapon(state: IEquipmentState, payload: IWeaponModel = WeaponModel.getEmpty()) {
+      state.weapon = payload;
     },
     updateEquipmentListPending(state: IEquipmentState, payload = false) {
       state.equipmentListPending = payload;
@@ -163,8 +184,11 @@ const equipment = {
     updateMagicItemPagination(state: IEquipmentState, payload: IPagination) {
       state.magicItemsListPagination = new Pagination(payload);
     },
-    updateWeapon(state: IEquipmentState, payload: IWeaponModel = WeaponModel.getEmpty()) {
-      state.weapon = payload;
+    updateMagicItem(state: IEquipmentState, payload: IMagicItemModel = MagicItemModel.getEmpty()) {
+      state.magicItem = payload;
+    },
+    updateMagicItemPending(state: IEquipmentState, payload = false) {
+      state.magicItemPending = payload;
     },
   },
 };
