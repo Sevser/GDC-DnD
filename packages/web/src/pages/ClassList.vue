@@ -20,7 +20,6 @@
 import { defineComponent } from 'vue';
 import 'v3-infinite-loading/lib/style.css';
 import ListPreviewLayout from '../layout/ListPreviewLayout/ListPreviewLayout.vue';
-import { IRaceListItemModel } from '@/types/Race/RaceListItem';
 import ClassListItem from '@/components/class/ClassListItem.vue';
 import { IClassListItemModel } from '@/types/Class/ClassListItemModel';
 

@@ -32,21 +32,18 @@ export default defineComponent({
     SpellItem,
     InfiniteLoading,
   },
-  created() {
-    const unwatch = this.$watch(
-      () => this.$route.params,
-      () => {
+  watch: {
+    classModel: {
+      immediate: true,
+      deep: true,
+      handler() {
         const filters = new SpellFilters({ class: this.classModel.index as ChacacterClass });
-        this.$store.commit('spells/setCurrentFilters', filters);
-        this.$nextTick(() => {
-          this.$store.dispatch('spells/fetchSpellList', {
-            pagination: (this.$store.state.spells.pagination as Pagination).currentPage,
-          });
-          unwatch();
+        this.$store.dispatch('spells/fetchSpellList', {
+          pagination: (this.$store.state.spells.pagination as Pagination).currentPage,
+          filters,
         });
       },
-      { immediate: true }
-    );
+    },
   },
   computed: {
     spells() {

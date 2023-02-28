@@ -100,7 +100,6 @@ export default {
     if (this.$vuetify.display.xs && this.mobileAdditionalMenu[0] && this.currentRouteHasAdditionalMenu) {
       childrenForAppBar.extension = () => h(this.mobileAdditionalMenu[1] as VueElement);
     }
-
     return [
       h(
         VNavigationDrawer,
@@ -110,7 +109,10 @@ export default {
           app: true,
         },
         {
-          default: () => h(NavigationMenu),
+          default: () =>
+            h(NavigationMenu, {
+              onNavigationClicked: () => (this.drawer = false),
+            }),
         }
       ),
       h(

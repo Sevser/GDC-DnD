@@ -8,6 +8,9 @@ import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
 import { DamageTypeEntityModel, IDamageTypeEntityModel } from '@/types/DamageType/DamageTypeEntity';
 import { DictionaryModel, IDictionary } from '@/types/Dictionaries/Dictionary';
+import { EquipmentListItemModel, IEquipmentListItemModel } from '@/types/Equipment/EquipmentListItemModel';
+import EquipmentModel, { IEquipmentModel } from '@/types/Equipment/EquipmentModel';
+import { IMagicItemListItem, IMagicItemModel, MagicItemListItem, MagicItemModel } from '@/types/Equipment/MagicItem';
 import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
 import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
 import { ILanguageListItemModel, LanguageListItemModel } from '@/types/Language/Language';
@@ -58,9 +61,39 @@ const fetchWeapon = async (): Promise<IGenericStrapiMappedData<IWeaponModel>> =>
   return result.data.map((item: IWeaponModel) => new WeaponModel(item));
 };
 
+const fetchEquipment = async (params: IGenericQueryParams<IEquipmentListItemModel>): Promise<IGenericStrapiMappedData<IEquipmentListItemModel>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/equipments`, {
+    params,
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IEquipmentListItemModel) => new EquipmentListItemModel(item)),
+  };
+};
+
+const fetchEquipmentItem = async (equipmentId: string | number): Promise<IEquipmentModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/equipments/${equipmentId}`);
+  return new EquipmentModel(result.data);
+};
+
+const fetchMagicItems = async (params: IGenericQueryParams<IMagicItemListItem>): Promise<IGenericStrapiMappedData<IMagicItemListItem>> => {
+  const result = await baseClient.get(`${cmsUrl}/api/magic-items`, {
+    params,
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: IMagicItemListItem) => new MagicItemListItem(item)),
+  };
+};
+
 const fetchSpell = async (spellId: string | number): Promise<Spell> => {
   const result = await baseClient.get(`${cmsUrl}/api/spells/${spellId}`);
   return new Spell({ ...result.data.data.attributes, id: result.data.data.id });
+};
+
+const fetchMagicItem = async (magicItemId: string | number): Promise<IMagicItemModel> => {
+  const result = await baseClient.get(`${cmsUrl}/api/magic-items/${magicItemId}`);
+  return new MagicItemModel(result.data);
 };
 
 const fetchBestiary = async (params: IGenericQueryParams<IBeastListItem>): Promise<IGenericStrapiMappedData<IBeastListItem>> => {
@@ -281,6 +314,10 @@ export interface ICMSClient {
   fetchArchetypes: typeof fetchArchetypes;
   fetchArmor: typeof fetchArmor;
   fetchWeapon: typeof fetchWeapon;
+  fetchEquipment: typeof fetchEquipment;
+  fetchMagicItems: typeof fetchMagicItems;
+  fetchMagicItem: typeof fetchMagicItem;
+  fetchEquipmentItem: typeof fetchEquipmentItem;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -326,4 +363,8 @@ export {
   fetchArchetypes,
   fetchArmor,
   fetchWeapon,
+  fetchEquipment,
+  fetchMagicItems,
+  fetchMagicItem,
+  fetchEquipmentItem,
 };

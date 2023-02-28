@@ -73,6 +73,38 @@ const routes = [
     ],
   },
   {
+    path: '/equipment',
+    name: 'EquipmentList',
+    components: {
+      default: () => import('@/pages/EquipmentList.vue'),
+    },
+    children: [
+      {
+        path: ':id',
+        name: 'EquipmentView',
+        components: {
+          listContentView: () => import('@/pages/EquipmentView.vue'),
+        },
+      },
+    ],
+  },
+  {
+    path: '/magic-items',
+    name: 'MagicItemList',
+    components: {
+      default: () => import('@/pages/MagicItemList.vue'),
+    },
+    children: [
+      {
+        path: ':id',
+        name: 'MagicItemView',
+        components: {
+          listContentView: () => import('@/pages/MagicItemView.vue'),
+        },
+      },
+    ],
+  },
+  {
     path: '/races',
     name: 'RaceList',
     components: {

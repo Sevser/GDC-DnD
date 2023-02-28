@@ -58,6 +58,7 @@ const spells = {
         params.filters = new SpellFilters(context.state.filters).forParams;
       } else {
         context.commit('setCurrentFilters', params.filters);
+        params.filters = new SpellFilters(params.filters).forParams;
       }
 
       try {
