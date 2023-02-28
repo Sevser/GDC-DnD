@@ -56,50 +56,58 @@
             </div>
           </template>
         </v-expansion-panel>
-        <div class="text-h6 text-left w-100 mt-5 mb-5">Traits</div>
-        <v-expansion-panel v-for="trait in race.traits" :key="trait.id" :title="trait.name">
-          <template #text>
-            <div class="pl-2 pr-2 pt-2 pb-2">
-              {{ trait.desc }}
-              <div class="d-flex">
-                <v-chip v-for="prof in trait.proficiencies" :key="prof.name" class="mr-2">
-                  {{ prof.name }}
-                </v-chip>
+        <template v-if="race.traits && race.traits.length">
+          <div class="text-h6 text-left w-100 mt-5 mb-5">Traits</div>
+          <v-expansion-panel v-for="trait in race.traits" :key="trait.id" :title="trait.name">
+            <template #text>
+              <div class="pl-2 pr-2 pt-2 pb-2">
+                {{ trait.desc }}
+                <div class="d-flex">
+                  <v-chip v-for="prof in trait.proficiencies" :key="prof.name" class="mr-2">
+                    {{ prof.name }}
+                  </v-chip>
+                </div>
               </div>
-            </div>
-          </template>
-        </v-expansion-panel>
-        <div class="text-h6 text-left w-100 mt-5 mb-5">Subraces</div>
-        <v-expansion-panel v-for="subrace in race.subraces" :key="subrace.id" :title="subrace.name">
-          <template #text>
-            <div class="pl-2 pr-2 pt-2 pb-2">
-              {{ subrace.desc }}
-              <div class="d-flex">
-                <v-expansion-panels multiple>
-                  <div class="text-h6 text-left w-100 mt-5 mb-5">Racial Traits</div>
-                  <v-expansion-panel v-for="trait in subrace.racialTraits" :key="trait.name" :title="trait.name">
-                    <template #text>
-                      <div class="pl-2 pr-2 pt-2 pb-2">
-                        {{ trait.desc }}
-                        <div class="d-flex">
-                          <v-chip v-for="prof in trait.proficiencies" :key="prof.name" class="mr-2">
-                            {{ prof.name }}
-                          </v-chip>
-                        </div>
+            </template>
+          </v-expansion-panel>
+        </template>
+        <template v-if="race.subraces && race.subraces.length">
+          <div class="text-h6 text-left w-100 mt-5 mb-5">Subraces</div>
+          <v-expansion-panel v-for="subrace in race.subraces" :key="subrace.id" :title="subrace.name">
+            <template #text>
+              <div class="pl-2 pr-2 pt-2 pb-2">
+                {{ subrace.desc }}
+                <div class="d-flex">
+                  <v-expansion-panels multiple>
+                    <template v-if="subrace.racialTraits && subrace.racialTraits.length">
+                      <div class="text-h6 text-left w-100 mt-5 mb-5">Racial Traits</div>
+                      <v-expansion-panel v-for="trait in subrace.racialTraits" :key="trait.name" :title="trait.name">
+                        <template #text>
+                          <div class="pl-2 pr-2 pt-2 pb-2">
+                            {{ trait.desc }}
+                            <div class="d-flex">
+                              <v-chip v-for="prof in trait.proficiencies" :key="prof.name" class="mr-2">
+                                {{ prof.name }}
+                              </v-chip>
+                            </div>
+                          </div>
+                        </template>
+                      </v-expansion-panel>
+                    </template>
+                    <template v-if="subrace.startProficiencies && subrace.startProficiencies.length">
+                      <div class="text-h6 text-left w-100 mt-5 mb-5">Start Proficiencies</div>
+                      <div class="d-flex flex-wrap">
+                        <v-chip v-for="prof in subrace.startProficiencies" :key="prof.name" class="mr-2 mb-1">
+                          {{ prof.name }}
+                        </v-chip>
                       </div>
                     </template>
-                  </v-expansion-panel>
-                  <div class="text-h6 text-left w-100 mt-5 mb-5">Start Proficiencies</div>
-                  <div class="d-flex flex-wrap">
-                    <v-chip v-for="prof in subrace.startProficiencies" :key="prof.name" class="mr-2 mb-1">
-                      {{ prof.name }}
-                    </v-chip>
-                  </div>
-                </v-expansion-panels>
+                  </v-expansion-panels>
+                </div>
               </div>
-            </div>
-          </template>
-        </v-expansion-panel>
+            </template>
+          </v-expansion-panel>
+        </template>
       </v-expansion-panels>
     </div>
   </v-card>
