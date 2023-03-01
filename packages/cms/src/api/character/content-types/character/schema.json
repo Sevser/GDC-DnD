@@ -69,18 +69,6 @@
       "repeatable": false,
       "component": "enums.visibility-type"
     },
-    "abilities": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::ability.ability",
-      "inversedBy": "characters"
-    },
-    "archetype": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::archetype.archetype",
-      "inversedBy": "characters"
-    },
     "HealthStatus": {
       "type": "component",
       "repeatable": false,

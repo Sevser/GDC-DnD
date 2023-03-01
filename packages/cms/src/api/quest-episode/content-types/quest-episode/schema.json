@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quest_episodes",
+  "info": {
+    "singularName": "quest-episode",
+    "pluralName": "quest-episodes",
+    "displayName": "Quest Episode",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "spells": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::spell.spell"
+    },
+    "beasts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::beast.beast"
+    },
+    "quest": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quest.quest",
+      "inversedBy": "questEpisodes"
+    },
+    "equipment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipment.equipment"
+    },
+    "magicItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::magic-item.magic-item"
+    },
+    "questEvents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quest-event.quest-event",
+      "mappedBy": "questEpisode"
+    },
+    "reward": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quest.reward"
+    }
+  }
+}

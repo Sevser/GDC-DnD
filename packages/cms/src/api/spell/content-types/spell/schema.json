@@ -54,24 +54,6 @@
       "repeatable": false,
       "component": "enums.school-of-magic"
     },
-    "archetypes": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::archetype.archetype",
-      "mappedBy": "spells"
-    },
-    "cast_times": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::cast-time.cast-time",
-      "inversedBy": "spells"
-    },
-    "attacks": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::attack.attack",
-      "inversedBy": "spells"
-    },
     "ActionType": {
       "type": "component",
       "repeatable": false,
@@ -88,12 +70,6 @@
       "relation": "manyToMany",
       "target": "api::character.character",
       "inversedBy": "spells"
-    },
-    "distance": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::distance.distance",
-      "inversedBy": "spell"
     },
     "damageType": {
       "type": "component",

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quest_lores",
+  "info": {
+    "singularName": "quest-lore",
+    "pluralName": "quest-lores",
+    "displayName": "Quest Lore",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "richtext"
+    },
+    "overview": {
+      "type": "richtext"
+    },
+    "questLoreItems": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quest-lore-item.quest-lore-item",
+      "inversedBy": "questLores"
+    }
+  }
+}

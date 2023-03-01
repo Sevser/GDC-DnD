@@ -1,6 +1,5 @@
-const { experience, archetypes } = require("../data/data");
+const { experience } = require("../data/data");
 const setPublicPermissions = require("../common/setPublicPermissions");
-const createArchetypes = require("./archetypes");
 const createDistances = require("./distances");
 const createExperience = require("./experience");
 const createSpells = require("./spells");
@@ -32,7 +31,6 @@ async function importSeedData() {
   await setPublicPermissions({
     spell: ["find", "findOne"],
     beast: ["find", "findOne"],
-    archetype: ["find", "findOne"],
     "base-characteristic": ["find", "findOne"],
     condition: ["find", "findOne"],
     "damage-type-entity": ["find", "findOne"],
@@ -61,7 +59,6 @@ async function importSeedData() {
 
   // Create all entries
   await createExperience(experience);
-  await createArchetypes(archetypes);
   const abilityScores = await createAbilityScore();
   const proficiencies = await createProficiencies();
   const languages = await createLanguage();

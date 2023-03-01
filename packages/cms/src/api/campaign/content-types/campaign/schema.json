@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaigns",
+  "info": {
+    "singularName": "campaign",
+    "pluralName": "campaigns",
+    "displayName": "Campaign"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "index": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "quests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quest.quest",
+      "mappedBy": "campaign"
+    },
+    "DM": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "myCampaigns"
+    },
+    "players": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "campaigns"
+    }
+  }
+}

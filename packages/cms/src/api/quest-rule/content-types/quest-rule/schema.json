@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quest_rules",
+  "info": {
+    "singularName": "quest-rule",
+    "pluralName": "quest-rules",
+    "displayName": "Quest Rule"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "quest": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quest.quest",
+      "inversedBy": "questRules"
+    }
+  }
+}
