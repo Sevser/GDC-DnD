@@ -9,11 +9,23 @@
         <v-container fluid>
           <v-row dense>
             <v-col v-for="quest in questList" :key="quest.name" :cols="cols">
-              <QuestListItem :quest="quest" />
+              <QuestListItem :quest="quest" @openModal="openModal" />
+            </v-col>
+            <v-col :cols="cols">
+              <CreateQuest />
             </v-col>
           </v-row>
         </v-container>
       </template>
+      <v-dialog v-model="dialog">
+        <v-card>
+          <v-card-title>{{ currentQuest.name }} </v-card-title>
+          <v-card-text>{{ currentQuest.desc }} </v-card-text>
+          <v-card-actions>
+            <v-btn color="primary" block @click="dialog = false">Close Description</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </div>
   </list-preview-layout>
 </template>
@@ -21,15 +33,21 @@
 import { defineComponent } from 'vue';
 import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
 import QuestListItem from '@/components/campaign/QuestListItem.vue';
+import CreateQuest from '@/components/campaign/CreateQuest.vue';
 import HasNoQuests from '@/components/campaign/HasNoQuests.vue';
+import { QuestListItemModel } from '@/types/Campaign/Quest';
 
 export default defineComponent({
   components: {
     ListPreviewLayout,
     QuestListItem,
     HasNoQuests,
+    CreateQuest,
   },
-  data: () => ({}),
+  data: () => ({
+    dialog: false,
+    currentQuest: QuestListItemModel.getEmpty(),
+  }),
   created() {
     const unwatch = this.$watch(
       () => this.$route.params,
@@ -60,6 +78,13 @@ export default defineComponent({
       return this.$store.state.campaign.questList;
     },
   },
-  methods: {},
+  methods: {
+    openModal(quest: QuestListItemModel) {
+      if (quest) {
+        this.dialog = true;
+        this.currentQuest = quest;
+      }
+    },
+  },
 });
 </script>

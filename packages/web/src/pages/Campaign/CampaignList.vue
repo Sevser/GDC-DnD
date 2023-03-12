@@ -9,27 +9,45 @@
         <v-container fluid>
           <v-row dense>
             <v-col v-for="campaign in campaignList" :key="campaign.name" :cols="cols">
-              <CampaignListItem :campaign="campaign" />
+              <CampaignListItem :campaign="campaign" @click.prevent="() => handleClick(campaign)" @openModal="openModal" />
+            </v-col>
+            <v-col :cols="cols">
+              <CreateCampaign />
             </v-col>
           </v-row>
         </v-container>
       </template>
+      <v-dialog v-model="dialog">
+        <v-card>
+          <v-card-title>{{ currentCampaign.name }} </v-card-title>
+          <v-card-text>{{ currentCampaign.desc }} </v-card-text>
+          <v-card-actions>
+            <v-btn color="primary" block @click="dialog = false">Close Description</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </div>
   </list-preview-layout>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
 import CampaignListItem from '@/components/campaign/CampaignListItem.vue';
 import HasNoCampaigns from '@/components/campaign/HasNoCampaigns.vue';
+import CreateCampaign from '@/components/campaign/CreateCampaign.vue';
+import { CampaignListItemModel } from '@/types/Campaign/Campaign';
 
 export default defineComponent({
   components: {
     ListPreviewLayout,
     CampaignListItem,
     HasNoCampaigns,
+    CreateCampaign,
   },
-  data: () => ({}),
+  data: () => ({
+    dialog: false,
+    currentCampaign: CampaignListItemModel.getEmpty(),
+  }),
   created() {
     const unwatch = this.$watch(
       () => this.$route.params,
@@ -60,6 +78,21 @@ export default defineComponent({
       return this.$store.state.campaign.campaignList;
     },
   },
-  methods: {},
+  methods: {
+    openModal(campaign: CampaignListItemModel) {
+      if (campaign) {
+        this.dialog = true;
+        this.currentCampaign = campaign;
+      }
+    },
+    handleClick(campaign: CampaignListItemModel) {
+      this.$router.push({
+        name: 'CampaignView',
+        params: {
+          id: campaign.id,
+        },
+      });
+    },
+  },
 });
 </script>

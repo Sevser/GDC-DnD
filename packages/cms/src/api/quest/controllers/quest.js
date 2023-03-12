@@ -16,7 +16,10 @@ module.exports = createCoreController("api::quest.quest", ({ strapi }) => ({
     };
     const { data, meta } = await super.find(ctx);
     return {
-      data: data,
+      data: data.map((eq) => ({
+        ...eq.attributes,
+        id: eq.id,
+      })),
       meta,
     };
   },
