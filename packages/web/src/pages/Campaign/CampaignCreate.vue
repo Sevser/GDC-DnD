@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import DefaultLayout from '@/layout/default/DefaultLayout.vue';
-import { CampaignListItemModel } from '@/types/Campaign/Campaign.ts';
+import { CampaignListItemModel } from '@/types/Campaign/Campaign';
 import Markdown from 'vue3-markdown-it';
 
 export default defineComponent({
@@ -29,10 +29,10 @@ export default defineComponent({
   data: () => ({
     campaign: CampaignListItemModel.getEmpty(),
     rules: {
-      name: [(v) => !!v || 'Field cannot be empty', (v) => v.length > 4 || 'Field must contain more than 4 symbols'],
-      index: [(v) => !!v || 'Field cannot be empty', (v) => v.length > 4 || 'Field must contain more than 4 symbols'],
-      desc: [(v) => !!v || 'Field cannot be empty', (v) => v.length > 4 || 'Field must contain more than 4 symbols'],
-      tabDesc: [(v) => !!v || 'Field cannot be empty', (v) => v.length > 4 || 'Field must contain more than 4 symbols'],
+      name: [(v: string) => !!v || 'Field cannot be empty', (v: string) => v.length > 4 || 'Field must contain more than 4 symbols'],
+      index: [(v: string) => !!v || 'Field cannot be empty', (v: string) => v.length > 4 || 'Field must contain more than 4 symbols'],
+      desc: [(v: string) => !!v || 'Field cannot be empty', (v: string) => v.length > 4 || 'Field must contain more than 4 symbols'],
+      tabDesc: [(v: string) => !!v || 'Field cannot be empty', (v: string) => v.length > 4 || 'Field must contain more than 4 symbols'],
     },
   }),
   methods: {
@@ -44,7 +44,7 @@ export default defineComponent({
       }
     },
     async validate() {
-      const { valid } = await this.$refs.form.validate();
+      const { valid } = await (this.$refs.form as { validate: () => { valid: boolean } }).validate();
       return valid;
     },
   },
