@@ -11,7 +11,7 @@
             <v-col v-for="quest in questList" :key="quest.name" :cols="cols">
               <QuestListItem :quest="quest" @openModal="openModal" />
             </v-col>
-            <v-col :cols="cols">
+            <v-col :cols="cols" v-if="$store.state.campaign.canEditCampaign">
               <CreateQuest />
             </v-col>
           </v-row>
@@ -20,7 +20,7 @@
       <v-dialog v-model="dialog">
         <v-card>
           <v-card-title>{{ currentQuest.name }} </v-card-title>
-          <v-card-text>{{ currentQuest.desc }} </v-card-text>
+          <v-card-text> <Markdown :source="currentQuest.desc" /> </v-card-text>
           <v-card-actions>
             <v-btn color="primary" block @click="dialog = false">Close Description</v-btn>
           </v-card-actions>
@@ -31,6 +31,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Markdown from 'vue3-markdown-it';
 import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
 import QuestListItem from '@/components/campaign/QuestListItem.vue';
 import CreateQuest from '@/components/campaign/CreateQuest.vue';
@@ -42,6 +43,7 @@ export default defineComponent({
     ListPreviewLayout,
     QuestListItem,
     HasNoQuests,
+    Markdown,
     CreateQuest,
   },
   data: () => ({

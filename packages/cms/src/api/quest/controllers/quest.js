@@ -15,12 +15,23 @@ module.exports = createCoreController("api::quest.quest", ({ strapi }) => ({
       tabDesc: true,
     };
     const { data, meta } = await super.find(ctx);
+    const campaign = await strapi.entityService.findOne(
+      "api::campaign.campaign",
+      ctx.query.filters.campaign.id.$eq,
+      {
+        populate: "*",
+      }
+    );
+    const { auth } = ctx.state;
     return {
       data: data.map((eq) => ({
         ...eq.attributes,
         id: eq.id,
       })),
-      meta,
+      meta: {
+        ...meta,
+        canEdit: campaign.DM.id === auth.credentials.id,
+      },
     };
   },
   async create(ctx) {

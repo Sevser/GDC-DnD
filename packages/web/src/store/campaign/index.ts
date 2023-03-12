@@ -10,6 +10,8 @@ export interface CampaignState {
   createCampaignPending: boolean;
   questList: QuestListItem[];
   questListPending: boolean;
+  canEditCampaign: boolean;
+  canEditQuest: boolean;
 }
 
 const campaign = {
@@ -20,6 +22,8 @@ const campaign = {
     createCampaignPending: false,
     questList: new Array<QuestListItem>(),
     questListPending: false,
+    canEditCampaign: false,
+    canEditQuest: false,
   }),
   actions: {
     async createCampaign(context: ActionContext<CampaignState, State>, campaign: CampaignListItem) {
@@ -49,10 +53,12 @@ const campaign = {
     },
     async fetchQuestList(context: ActionContext<CampaignState, State>, campaignId: number) {
       context.commit('updateQuestListPending', true);
+      context.commit('updateQuestListCanEdit', false);
       context.commit('updateQuestList', new Array<CampaignListItem>());
       try {
         const result = await cmsClient.fetchQuests(campaignId);
         context.commit('updateQuestList', result.data);
+        context.commit('updateQuestListCanEdit', result.meta.canEdit);
         // Todo: add toast to handle error;
         // eslint-disable-next-line
       } catch {
@@ -85,6 +91,9 @@ const campaign = {
     },
     updateQuestListPending(state: CampaignState, payload = false) {
       state.questListPending = payload;
+    },
+    updateQuestListCanEdit(state: CampaignState, payload = false) {
+      state.canEditCampaign = payload;
     },
     updateQuestList(state: CampaignState, payload = new Array<QuestListItem>()) {
       state.questList = payload;

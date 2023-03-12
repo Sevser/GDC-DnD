@@ -10,6 +10,7 @@ export interface IGenericStrapiData<Type> {
 export interface IMeta {
   pagination: IPagination;
   allowedFieldSort: string[];
+  canEdit?: boolean;
 }
 
 export interface IGenericStrapiMappedData<Type> {

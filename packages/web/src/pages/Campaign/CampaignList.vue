@@ -20,7 +20,7 @@
       <v-dialog v-model="dialog">
         <v-card>
           <v-card-title>{{ currentCampaign.name }} </v-card-title>
-          <v-card-text>{{ currentCampaign.desc }} </v-card-text>
+          <v-card-text> <Markdown :source="currentCampaign.desc" /> </v-card-text>
           <v-card-actions>
             <v-btn color="primary" block @click="dialog = false">Close Description</v-btn>
           </v-card-actions>
@@ -36,6 +36,7 @@ import CampaignListItem from '@/components/campaign/CampaignListItem.vue';
 import HasNoCampaigns from '@/components/campaign/HasNoCampaigns.vue';
 import CreateCampaign from '@/components/campaign/CreateCampaign.vue';
 import { CampaignListItemModel } from '@/types/Campaign/Campaign';
+import Markdown from 'vue3-markdown-it';
 
 export default defineComponent({
   components: {
@@ -43,6 +44,7 @@ export default defineComponent({
     CampaignListItem,
     HasNoCampaigns,
     CreateCampaign,
+    Markdown,
   },
   data: () => ({
     dialog: false,
