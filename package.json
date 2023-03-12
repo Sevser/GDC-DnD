@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev:cms": "cd ./packages/cms && yarn dev",
+    "dev:cms-clear": "cd ./packages/cms && yarn clear && yarn dev",
     "dev:web": "cd ./packages/web && yarn dev"
   }
 }

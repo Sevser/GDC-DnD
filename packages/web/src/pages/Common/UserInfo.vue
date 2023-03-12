@@ -17,7 +17,6 @@ export default defineComponent({
   },
   computed: {
     userName() {
-      console.log(this.$authManager.user.username);
       return this.$authManager.authState.isAuth && this.$authManager.user.username;
     },
     email() {
@@ -27,6 +26,9 @@ export default defineComponent({
   methods: {
     logoff() {
       this.$authManager.logoff();
+      this.$router.push({
+        name: 'Home',
+      });
     },
   },
 });

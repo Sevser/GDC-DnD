@@ -30,6 +30,7 @@ export interface IAuthParams {
 
 export interface LoginStrapiResponse {
   jwt: string;
+  refreshToken: string;
   user: StrapiUser;
 }
 

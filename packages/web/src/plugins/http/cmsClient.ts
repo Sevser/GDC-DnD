@@ -38,7 +38,11 @@ const login = async (params: IAuthParams): Promise<LoginStrapiResponse> => {
 };
 
 const refreshToken = async (params: RefreshTokenStrapiParams): Promise<LoginStrapiResponse> => {
-  const { data } = await httpClient.post(`${cmsUrl}/api/auth/local`, params);
+  const options = {
+    'Access-Control-Allow-Credentials': true,
+    withCredentials: true,
+  };
+  const { data } = await httpClient.post(`${cmsUrl}/api/token/refresh`, params, options);
   return data;
 };
 

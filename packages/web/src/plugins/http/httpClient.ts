@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { cmsClient } from '.';
-import auth, { authManager } from '../auth';
+import { authManager } from '../auth';
+
+const cmsUrl = import.meta.env.VITE_APP_CMS_HOST;
+const isRefresh = (config: any) => `${cmsUrl}/api/token/refresh` === config.url;
 
 // Todo: client with auth with strapi.
 const httpClient = axios.create();
@@ -27,10 +30,10 @@ httpClient.interceptors.response.use(
     return response;
   },
   async function (error) {
-    if (error.response.code === 401) {
-      console.log(401);
+    if (error.response.status === 401 && !isRefresh(error.config)) {
+      console.log(401, error);
       const data = await cmsClient.refreshToken({
-        refreshToken: authManager.token,
+        refreshToken: authManager.refreshToken,
       });
       console.log(data);
     }

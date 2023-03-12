@@ -1,10 +1,9 @@
-async function setPublicPermissions(newPermissions) {
-  // Find the ID of the public role
-  const publicRole = await strapi
+async function setAuthPermissions(newPermissions) {
+  const authRole = await strapi
     .query("plugin::users-permissions.role")
     .findOne({
       where: {
-        type: "public",
+        type: "authenticated",
       },
     });
 
@@ -16,7 +15,7 @@ async function setPublicPermissions(newPermissions) {
       return strapi.query("plugin::users-permissions.permission").create({
         data: {
           action: `api::${controller}.${controller}.${action}`,
-          role: publicRole.id,
+          role: authRole.id,
         },
       });
     });
@@ -25,4 +24,4 @@ async function setPublicPermissions(newPermissions) {
   await Promise.all(allPermissionsToCreate);
 }
 
-module.exports = setPublicPermissions;
+module.exports = setAuthPermissions;

@@ -100,18 +100,13 @@ module.exports = (plugin) => {
       if (!validPassword) {
         throw new ValidationError("Invalid identifier or password");
       } else {
-        ctx.cookies.set("refreshToken", issueRefreshToken({ id: user.id }), {
-          httpOnly: true,
-          secure: false,
-          signed: true,
-          overwrite: true,
-        });
         ctx.send({
           status: "Authenticated",
           jwt: issueJWT(
             { id: user.id },
             { expiresIn: process.env.JWT_SECRET_EXPIRES }
           ),
+          refreshToken: issueRefreshToken({ id: user.id }),
           user: await sanitizeUser(user, ctx),
         });
       }
@@ -134,6 +129,7 @@ module.exports = (plugin) => {
 
       return ctx.send({
         jwt: getService("jwt").issue({ id: user.id }),
+        refreshToken: issueRefreshToken({ id: user.id }),
         user: await sanitizeUser(user, ctx),
       });
     }

@@ -49,6 +49,7 @@ export default defineComponent({
           password: this.password,
         });
         this.$authManager.token = data.jwt;
+        this.$authManager.refreshToken = data.refreshToken;
         this.$authManager.user = data.user;
         this.showDialog = false;
       } catch (e) {
