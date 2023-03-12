@@ -41,6 +41,18 @@ export default defineComponent({
     );
   },
   computed: {
+    cols() {
+      if (this.$vuetify.display.xs) {
+        return 12;
+      }
+      if (this.$vuetify.display.sm || this.$vuetify.display.md) {
+        return 6;
+      }
+      if (this.$vuetify.display.xl || this.$vuetify.display.xxl) {
+        return 3;
+      }
+      return 4;
+    },
     pending() {
       return this.$store.state.campaign.campaignListPending && this.campaignList.length === 0;
     },

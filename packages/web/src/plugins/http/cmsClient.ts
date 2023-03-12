@@ -248,11 +248,18 @@ const fetchClasses = async (): Promise<IGenericStrapiMappedData<IClassListItemMo
 };
 
 const fetchCampaigns = async (): Promise<IGenericStrapiMappedData<CampaignListItem>> => {
-  const result = await httpClient.get(`${cmsUrl}/api/campaigns`);
+  const result = await httpClient.get(`${cmsUrl}/api/campaigns?populate[0]=DM`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: CampaignListItem) => new CampaignListItemModel(item)),
   };
+};
+
+const createCampaign = async (campaign: CampaignListItem): Promise<unknown> => {
+  const result = await httpClient.post(`${cmsUrl}/api/campaigns`, {
+    data: campaign,
+  });
+  return result.data;
 };
 
 const fetchLevels = async (classId: number): Promise<IGenericStrapiMappedData<ILevelModel>> => {
@@ -328,6 +335,7 @@ export interface ICMSClient {
   fetchEquipmentItem: typeof fetchEquipmentItem;
   refreshToken: typeof refreshToken;
   fetchCampaigns: typeof fetchCampaigns;
+  createCampaign: typeof createCampaign;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -379,4 +387,5 @@ export {
   fetchEquipmentItem,
   refreshToken,
   fetchCampaigns,
+  createCampaign,
 };

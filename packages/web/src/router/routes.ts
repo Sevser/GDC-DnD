@@ -132,14 +132,14 @@ const routes = [
     path: '/races',
     name: 'RaceList',
     components: {
-      default: () => import('@/pages/Races/RaceList.vue'),
+      default: () => import('@/pages/Race/RaceList.vue'),
     },
     children: [
       {
         path: ':id',
         name: 'RaceView',
         components: {
-          listContentView: () => import('@/pages/Races/RaceView.vue'),
+          listContentView: () => import('@/pages/Race/RaceView.vue'),
         },
       },
     ],
@@ -147,22 +147,22 @@ const routes = [
   {
     path: '/dictionaries',
     name: 'DictionaryList',
-    component: () => import('@/pages/Dictionaries/DictionaryList.vue'),
+    component: () => import('@/pages/Dictionary/DictionaryList.vue'),
   },
   {
     path: '/dictionaries/:id',
     name: 'DictionaryView',
-    component: () => import('@/pages/Dictionaries/DictionaryView.vue'),
+    component: () => import('@/pages/Dictionary/DictionaryView.vue'),
   },
   {
     path: '/rules',
     name: 'RulesList',
-    component: () => import('@/pages/Rules/RulesList.vue'),
+    component: () => import('@/pages/Rule/RulesList.vue'),
   },
   {
     path: '/rules/:id',
     name: 'RulesView',
-    component: () => import('@/pages/Rules/RulesView.vue'),
+    component: () => import('@/pages/Rule/RulesView.vue'),
   },
   {
     path: '/events',
@@ -176,7 +176,7 @@ const routes = [
     path: '/spells',
     name: 'SpellList',
     components: {
-      default: () => import('@/pages/Spells/SpellList.vue'),
+      default: () => import('@/pages/Spell/SpellList.vue'),
       mobileAdditionalMenu: () => import('@/components/spell/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
     },
     children: [
@@ -184,7 +184,7 @@ const routes = [
         path: ':id',
         name: 'SpellView',
         components: {
-          listContentView: () => import('@/pages/Spells/SpellView.vue'),
+          listContentView: () => import('@/pages/Spell/SpellView.vue'),
         },
       },
     ],
@@ -193,14 +193,14 @@ const routes = [
     path: '/classes',
     name: 'ClassList',
     components: {
-      default: () => import('@/pages/Classes/ClassList.vue'),
+      default: () => import('@/pages/Class/ClassList.vue'),
     },
     children: [
       {
         path: ':id',
         name: 'ClassView',
         components: {
-          listContentView: () => import('@/pages/Classes/ClassView.vue'),
+          listContentView: () => import('@/pages/Class/ClassView.vue'),
         },
       },
     ],
