@@ -56,6 +56,7 @@ async function importSeedData() {
     feature: ["find", "findOne"],
     level: ["find", "findOne"],
     campaign: ["find", "findOne"],
+    quests: ["find", "findOne"],
   });
 
   // Create all entries

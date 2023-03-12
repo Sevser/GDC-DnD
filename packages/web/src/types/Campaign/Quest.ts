@@ -1,4 +1,4 @@
-export interface CampaignListItem {
+export interface QuestListItem {
   index: string;
   name: string;
   desc: string;
@@ -6,13 +6,13 @@ export interface CampaignListItem {
   tabDesc: string;
 }
 
-export class CampaignListItemModel implements CampaignListItem {
+export class QuestListItemModel implements QuestListItem {
   index: string;
   name: string;
   desc: string;
   tabDesc: string;
   id: number;
-  constructor(prop: CampaignListItem) {
+  constructor(prop: QuestListItem) {
     this.id = prop.id;
     this.index = prop.index;
     this.desc = prop.desc;
@@ -20,7 +20,7 @@ export class CampaignListItemModel implements CampaignListItem {
     this.name = prop.name;
   }
   static getEmpty() {
-    return new CampaignListItemModel({
+    return new QuestListItemModel({
       id: NaN,
       name: '',
       desc: '',

@@ -1,5 +1,6 @@
 import { cmsClient } from '@/plugins/http';
 import { CampaignListItem } from '@/types/Campaign/Campaign';
+import { QuestListItem, QuestListItemModel } from '@/types/Campaign/Quest';
 import { ActionContext } from 'vuex';
 import { State } from '..';
 
@@ -7,6 +8,8 @@ export interface CampaignState {
   campaignList: CampaignListItem[];
   campaignListPending: boolean;
   createCampaignPending: boolean;
+  questList: QuestListItem[];
+  questListPending: boolean;
 }
 
 const campaign = {
@@ -15,13 +18,15 @@ const campaign = {
     campaignList: new Array<CampaignListItem>(),
     campaignListPending: false,
     createCampaignPending: false,
+    questList: new Array<QuestListItem>(),
+    questListPending: false,
   }),
   actions: {
     async createCampaign(context: ActionContext<CampaignState, State>, campaign: CampaignListItem) {
       context.commit('updateCampaignListPending', true);
       try {
         const result = await cmsClient.createCampaign(campaign);
-        console.log(result);
+        return result;
         // Todo: add toast to handle error;
         // eslint-disable-next-line
       } catch {
@@ -42,16 +47,47 @@ const campaign = {
         context.commit('updateCampaignListPending', false);
       }
     },
+    async fetchQuestList(context: ActionContext<CampaignState, State>, campaignId: number) {
+      context.commit('updateQuestListPending', true);
+      context.commit('updateQuestList', new Array<CampaignListItem>());
+      try {
+        const result = await cmsClient.fetchQuests(campaignId);
+        context.commit('updateQuestList', result.data);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch {
+      } finally {
+        context.commit('updateQuestListPending', false);
+      }
+    },
+    async createQuest(context: ActionContext<CampaignState, State>, { quest, campaignId }: { quest: QuestListItemModel; campaignId: number }) {
+      context.commit('updateCampaignListPending', true);
+      try {
+        const result = await cmsClient.createQuest(quest, campaignId);
+        console.log(result);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch {
+      } finally {
+        context.commit('updateCampaignListPending', false);
+      }
+    },
   },
   mutations: {
-    updateCampaignListPending(state: CampaignState, payload = false) {
-      state.campaignListPending = payload;
-    },
     updateCreateCampaignPending(state: CampaignState, payload = false) {
       state.createCampaignPending = payload;
     },
+    updateCampaignListPending(state: CampaignState, payload = false) {
+      state.campaignListPending = payload;
+    },
     updateCampaignList(state: CampaignState, payload = new Array<CampaignListItem>()) {
       state.campaignList = payload;
+    },
+    updateQuestListPending(state: CampaignState, payload = false) {
+      state.questListPending = payload;
+    },
+    updateQuestList(state: CampaignState, payload = new Array<QuestListItem>()) {
+      state.questList = payload;
     },
   },
 };

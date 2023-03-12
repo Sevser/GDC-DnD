@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::ability-score.ability-score",
-      "inversedBy": "skills"
+      "mappedBy": "skills"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ability-score",
     "pluralName": "ability-scores",
-    "displayName": "Ability Score"
+    "displayName": "Ability Score",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false

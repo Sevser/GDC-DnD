@@ -14,8 +14,8 @@ module.exports = createCoreController(
         index: true,
         name: true,
         desc: true,
+        tabDesc: true,
       };
-      ctx.query.fields = ["index", "id", "name", "desc"];
       const { data, meta } = await super.find(ctx);
       return {
         data: data.map((eq) => ({

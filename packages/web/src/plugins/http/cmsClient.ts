@@ -4,6 +4,7 @@ import { ArmorModel, IArmorModel } from '@/types/Armor/Armor';
 import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
 import { CampaignListItem, CampaignListItemModel } from '@/types/Campaign/Campaign';
+import { QuestListItem, QuestListItemModel } from '@/types/Campaign/Quest';
 import { ClassListItemModel, IClassListItemModel } from '@/types/Class/ClassListItemModel';
 import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
@@ -248,7 +249,7 @@ const fetchClasses = async (): Promise<IGenericStrapiMappedData<IClassListItemMo
 };
 
 const fetchCampaigns = async (): Promise<IGenericStrapiMappedData<CampaignListItem>> => {
-  const result = await httpClient.get(`${cmsUrl}/api/campaigns?populate[0]=DM`);
+  const result = await httpClient.get(`${cmsUrl}/api/campaigns`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: CampaignListItem) => new CampaignListItemModel(item)),
@@ -258,6 +259,34 @@ const fetchCampaigns = async (): Promise<IGenericStrapiMappedData<CampaignListIt
 const createCampaign = async (campaign: CampaignListItem): Promise<unknown> => {
   const result = await httpClient.post(`${cmsUrl}/api/campaigns`, {
     data: campaign,
+  });
+  return result.data;
+};
+
+const fetchQuests = async (campaignId: number): Promise<IGenericStrapiMappedData<QuestListItem>> => {
+  const result = await httpClient.get(`${cmsUrl}/api/quests`, {
+    params: {
+      filters: {
+        campaign: {
+          id: {
+            $eq: campaignId,
+          },
+        },
+      },
+    },
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: QuestListItem) => new QuestListItemModel(item)),
+  };
+};
+
+const createQuest = async (quest: QuestListItem, campaignId: number): Promise<unknown> => {
+  const result = await httpClient.post(`${cmsUrl}/api/quests`, {
+    data: {
+      quest,
+      campaignId,
+    },
   });
   return result.data;
 };
@@ -336,6 +365,8 @@ export interface ICMSClient {
   refreshToken: typeof refreshToken;
   fetchCampaigns: typeof fetchCampaigns;
   createCampaign: typeof createCampaign;
+  fetchQuests: typeof fetchQuests;
+  createQuest: typeof createQuest;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -388,4 +419,6 @@ export {
   refreshToken,
   fetchCampaigns,
   createCampaign,
+  fetchQuests,
+  createQuest,
 };

@@ -81,6 +81,20 @@ const routes = [
     },
   },
   {
+    path: '/campaign/:id',
+    name: 'CampaignView',
+    components: {
+      default: () => import('@/pages/Campaign/QuestList.vue'),
+    },
+  },
+  {
+    path: '/campaign/:id/quests/create',
+    name: 'CreateQuest',
+    components: {
+      default: () => import('@/pages/Campaign/QuestCreate.vue'),
+    },
+  },
+  {
     path: '/weapon',
     name: 'WeaponList',
     components: {
