@@ -7,8 +7,8 @@
       <template v-else>
         <v-container fluid>
           <v-row dense>
-            <v-col v-for="race in races" :key="race.name" :cols="cols">
-              <race-item :race="race" @click="handleClick(race)" />
+            <v-col v-for="classModel in classes" :key="classModel.name" :cols="cols">
+              <ClassListItem :class-model="classModel" @click="handleClick(classModel)" />
             </v-col>
           </v-row>
         </v-container>
@@ -19,21 +19,21 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import 'v3-infinite-loading/lib/style.css';
-import ListPreviewLayout from '../layout/ListPreviewLayout/ListPreviewLayout.vue';
-import { IRaceListItemModel } from '@/types/Race/RaceListItem';
-import RaceItem from '@/components/race/RaceItem.vue';
+import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
+import ClassListItem from '@/components/class/ClassListItem.vue';
+import { IClassListItemModel } from '@/types/Class/ClassListItemModel';
 
 export default defineComponent({
   components: {
     ListPreviewLayout,
-    RaceItem,
+    ClassListItem,
   },
   data: () => ({}),
   created() {
     const unwatch = this.$watch(
       () => this.$route.params,
       () => {
-        this.$store.dispatch('race/fetchRaceList');
+        this.$store.dispatch('classes/fetchClassList');
         this.$nextTick(() => unwatch());
       },
       { immediate: true }
@@ -59,19 +59,19 @@ export default defineComponent({
       return 4;
     },
     openedItem() {
-      return this.$router.currentRoute.value.name === 'RaceView';
+      return this.$router.currentRoute.value.name === 'ClassView';
     },
     pending() {
-      return this.$store.state.race.raceList && this.races.length === 0;
+      return this.$store.state.classes.classListPending && this.classes.length === 0;
     },
-    races() {
-      return this.$store.state.race.raceList;
+    classes() {
+      return this.$store.state.classes.classList;
     },
   },
   methods: {
-    handleClick(beast: IRaceListItemModel) {
+    handleClick(beast: IClassListItemModel) {
       this.$router.push({
-        name: 'RaceView',
+        name: 'ClassView',
         params: {
           id: beast.id,
         },

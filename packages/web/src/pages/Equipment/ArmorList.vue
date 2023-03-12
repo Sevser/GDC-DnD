@@ -12,7 +12,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ListPreviewLayout from '../layout/ListPreviewLayout/ListPreviewLayout.vue';
+import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
 import { IArmorModel } from '@/types/Armor/Armor';
 import ArmorListItem from '@/components/equipment/ArmorListItem.vue';
 

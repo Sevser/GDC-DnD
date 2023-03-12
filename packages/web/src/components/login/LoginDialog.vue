@@ -1,5 +1,5 @@
 <template>
-  <v-icon icon="mdi-login mr-4" @click="openDialog" />
+  <v-icon :icon="icon" class="mr-4" @click="openDialog" />
   <v-dialog v-model="showDialog" transition="dialog-top-transition">
     <template #default>
       <v-card>
@@ -9,8 +9,8 @@
           <v-text-field type="password" v-model="password" label="Password" name="password"></v-text-field>
         </v-card-text>
         <v-card-actions class="justify-end">
-          <v-btn variant="text" @click="showDialog = false">Close</v-btn>
-          <v-btn variant="text" @click="login">Login</v-btn>
+          <v-btn variant="text" :loading="loading" @click="showDialog = false">Close</v-btn>
+          <v-btn variant="text" :loading="loading" @click="login">Login</v-btn>
         </v-card-actions>
       </v-card>
     </template>
@@ -24,16 +24,38 @@ export default defineComponent({
     showDialog: false,
     email: '',
     password: '',
+    loading: false,
   }),
+  computed: {
+    icon() {
+      return this.$authManager.authState.isAuth ? 'mdi-account-circle' : 'mdi-login';
+    },
+  },
   methods: {
     openDialog() {
-      this.showDialog = true;
+      if (this.$authManager.authState.isAuth) {
+        this.$router.push({
+          name: 'User',
+        });
+      } else {
+        this.showDialog = true;
+      }
     },
-    login() {
-      this.$cmsClient.login({
-        identifier: this.email,
-        password: this.password,
-      });
+    async login() {
+      this.loading = true;
+      try {
+        const data = await this.$cmsClient.login({
+          identifier: this.email,
+          password: this.password,
+        });
+        this.$authManager.token = data.jwt;
+        this.$authManager.user = data.user;
+        this.showDialog = false;
+      } catch (e) {
+        console.error(e);
+      } finally {
+        this.loading = false;
+      }
     },
   },
 });

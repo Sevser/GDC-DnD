@@ -75,6 +75,11 @@ export default defineComponent({
         text: 'Magic Items',
         navigation: 'MagicItemList',
       },
+      {
+        icon: 'mdi-compass-rose',
+        text: 'Campaigns',
+        navigation: 'CampaignList',
+      },
     ],
     model: 1,
   }),

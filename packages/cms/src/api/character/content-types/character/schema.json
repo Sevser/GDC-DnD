@@ -52,12 +52,6 @@
       "target": "api::experience.experience",
       "inversedBy": "characters"
     },
-    "CopperCoins": {
-      "type": "integer",
-      "min": 0,
-      "default": 0,
-      "required": true
-    },
     "spells": {
       "type": "relation",
       "relation": "manyToMany",

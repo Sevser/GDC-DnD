@@ -55,6 +55,7 @@ async function importSeedData() {
     subclass: ["find", "findOne"],
     feature: ["find", "findOne"],
     level: ["find", "findOne"],
+    campaign: ["find", "findOne"],
   });
 
   // Create all entries

@@ -1,3 +1,4 @@
+import { StrapiUser } from '@/plugins/auth';
 import { IFilter } from './Filters';
 import { IPagination } from './Pagination';
 
@@ -25,4 +26,13 @@ export interface IGenericQueryParams<Type> {
 export interface IAuthParams {
   identifier: string;
   password: string;
+}
+
+export interface LoginStrapiResponse {
+  jwt: string;
+  user: StrapiUser;
+}
+
+export interface RefreshTokenStrapiParams {
+  refreshToken: string;
 }

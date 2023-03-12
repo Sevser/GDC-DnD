@@ -7,6 +7,7 @@ import rules, { IRuleState } from './rules';
 import race, { IRaceState } from './races';
 import classes, { IClassState } from './class';
 import equipment, { IEquipmentState } from './equipment';
+import campaign, { CampaignState } from './campaign';
 
 const store = createStore({
   strict: process.env.NODE_ENV !== 'production',
@@ -17,6 +18,7 @@ const store = createStore({
     rules,
     race,
     classes,
+    campaign,
     equipment,
   },
 });
@@ -29,6 +31,7 @@ export interface State {
   race: IRaceState;
   classes: IClassState;
   equipment: IEquipmentState;
+  campaign: CampaignState;
 }
 
 const key: InjectionKey<Store<State>> = Symbol();

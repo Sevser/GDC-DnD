@@ -5,7 +5,7 @@
         <v-progress-circular indeterminate :size="60" />
       </div>
       <template v-else>
-        <MagicItemListItem v-for="mi in magicItems" :key="mi.index" :magic-item="mi" @click="handleClick(mi)" />
+        <EquipmentListItem v-for="eq in equipment" :key="eq.index" :equipment="eq" @click="handleClick(eq)" />
       </template>
       <div class="d-flex justify-center align-center" style="height: 20px" v-if="showLoader">
         <InfiniteLoading @infinite="loadNextPage" />
@@ -19,25 +19,25 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ListPreviewLayout from '../layout/ListPreviewLayout/ListPreviewLayout.vue';
+import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
 import InfiniteLoading from 'v3-infinite-loading';
 import 'v3-infinite-loading/lib/style.css';
-import MagicItemListItem from '@/components/equipment/MagicItemListItem.vue';
+import EquipmentListItem from '@/components/equipment/EquipmentListItem.vue';
 import { Pagination } from '@/types/Pagination';
-import { IMagicItemListItem } from '@/types/Equipment/MagicItem';
+import { IEquipmentListItemModel } from '@/types/Equipment/EquipmentListItemModel';
 
 export default defineComponent({
   components: {
     ListPreviewLayout,
     InfiniteLoading,
-    MagicItemListItem,
+    EquipmentListItem,
   },
   data: () => ({}),
   created() {
     const unwatch = this.$watch(
       () => this.$route.params,
       () => {
-        this.$store.dispatch('equipment/fetchMagicItemList');
+        this.$store.dispatch('equipment/fetchEquipmentList');
         this.$nextTick(() => unwatch());
       },
       { immediate: true }
@@ -49,23 +49,23 @@ export default defineComponent({
     },
     showLoader() {
       if (this.$store.state.spells.pagination.total) {
-        return this.magicItems.length > 0 && this.$store.state.spells.pagination.total > this.magicItems.length;
+        return this.equipment.length > 0 && this.$store.state.spells.pagination.total > this.equipment.length;
       }
-      return this.magicItems.length > 0;
+      return this.equipment.length > 0;
     },
     pending() {
-      return this.$store.state.equipment.magicItemsListPending && this.magicItems.length === 0;
+      return this.$store.state.equipment.equipmentListPending && this.equipment.length === 0;
     },
-    magicItems() {
-      return this.$store.state.equipment.magicItemsList;
+    equipment() {
+      return this.$store.state.equipment.equipmentList;
     },
   },
   methods: {
-    handleClick(armor: IMagicItemListItem) {
+    handleClick(equipment: IEquipmentListItemModel) {
       this.$router.push({
-        name: 'MagicItemView',
+        name: 'EquipmentView',
         params: {
-          id: armor.id,
+          id: equipment.id,
         },
       });
     },
@@ -74,9 +74,9 @@ export default defineComponent({
       this.$store.dispatch('equipment/fetchSpellList', {});
     },
     loadNextPage() {
-      if ((this.$store.state.equipment.magicItemsListPagination as Pagination).hasNextPage && !this.pending) {
-        this.$store.dispatch('equipment/fetchMoreMagicItemList', {
-          pagination: (this.$store.state.equipment.magicItemsListPagination as Pagination).nextPage,
+      if ((this.$store.state.equipment.pagination as Pagination).hasNextPage && !this.pending) {
+        this.$store.dispatch('equipment/fetchMoreEquipmentList', {
+          pagination: (this.$store.state.equipment.pagination as Pagination).nextPage,
         });
       }
     },

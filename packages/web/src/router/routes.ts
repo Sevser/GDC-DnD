@@ -2,7 +2,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/pages/HomePage.vue'),
+    component: () => import('@/pages/Common/HomePage.vue'),
     meta: {
       title: 'Домашняя страница',
     },
@@ -24,10 +24,20 @@ const routes = [
     name: 'Organisaion',
   },
   {
+    path: '/User',
+    name: 'User',
+    components: {
+      default: () => import('@/pages/Common/UserInfo.vue'),
+    },
+    meta: {
+      authRequired: true,
+    },
+  },
+  {
     path: '/bestiary',
     name: 'BestiaryList',
     components: {
-      default: () => import('@/pages/BestiaryList.vue'),
+      default: () => import('@/pages/Bestiary/BestiaryList.vue'),
       mobileAdditionalMenu: () => import('@/components/bestiary/MobileAdditionalMenu/BeastMobileAdditionalMenu.vue'),
     },
     children: [
@@ -35,7 +45,7 @@ const routes = [
         path: ':id',
         name: 'BestiaryView',
         components: {
-          listContentView: () => import('@/pages/BestiaryView.vue'),
+          listContentView: () => import('@/pages/Bestiary/BestiaryView.vue'),
         },
       },
     ],
@@ -44,30 +54,44 @@ const routes = [
     path: '/armor',
     name: 'ArmorList',
     components: {
-      default: () => import('@/pages/ArmorList.vue'),
+      default: () => import('@/pages/Equipment/ArmorList.vue'),
     },
     children: [
       {
         path: ':id',
         name: 'ArmorView',
         components: {
-          listContentView: () => import('@/pages/ArmorView.vue'),
+          listContentView: () => import('@/pages/Equipment/ArmorView.vue'),
         },
       },
     ],
   },
   {
+    path: '/campaign',
+    name: 'CampaignList',
+    components: {
+      default: () => import('@/pages/Campaign/CampaignList.vue'),
+    },
+  },
+  {
+    path: '/campaign/create',
+    name: 'CampaignCreate',
+    components: {
+      default: () => import('@/pages/Campaign/CampaignCreate.vue'),
+    },
+  },
+  {
     path: '/weapon',
     name: 'WeaponList',
     components: {
-      default: () => import('@/pages/WeaponList.vue'),
+      default: () => import('@/pages/Equipment/WeaponList.vue'),
     },
     children: [
       {
         path: ':id',
         name: 'WeaponView',
         components: {
-          listContentView: () => import('@/pages/WeaponView.vue'),
+          listContentView: () => import('@/pages/Equipment/WeaponView.vue'),
         },
       },
     ],
@@ -76,14 +100,14 @@ const routes = [
     path: '/equipment',
     name: 'EquipmentList',
     components: {
-      default: () => import('@/pages/EquipmentList.vue'),
+      default: () => import('@/pages/Equipment/EquipmentList.vue'),
     },
     children: [
       {
         path: ':id',
         name: 'EquipmentView',
         components: {
-          listContentView: () => import('@/pages/EquipmentView.vue'),
+          listContentView: () => import('@/pages/Equipment/EquipmentView.vue'),
         },
       },
     ],
@@ -92,14 +116,14 @@ const routes = [
     path: '/magic-items',
     name: 'MagicItemList',
     components: {
-      default: () => import('@/pages/MagicItemList.vue'),
+      default: () => import('@/pages/Equipment/MagicItemList.vue'),
     },
     children: [
       {
         path: ':id',
         name: 'MagicItemView',
         components: {
-          listContentView: () => import('@/pages/MagicItemView.vue'),
+          listContentView: () => import('@/pages/Equipment/MagicItemView.vue'),
         },
       },
     ],
@@ -108,14 +132,14 @@ const routes = [
     path: '/races',
     name: 'RaceList',
     components: {
-      default: () => import('@/pages/RaceList.vue'),
+      default: () => import('@/pages/Races/RaceList.vue'),
     },
     children: [
       {
         path: ':id',
         name: 'RaceView',
         components: {
-          listContentView: () => import('@/pages/RaceView.vue'),
+          listContentView: () => import('@/pages/Races/RaceView.vue'),
         },
       },
     ],
@@ -123,22 +147,22 @@ const routes = [
   {
     path: '/dictionaries',
     name: 'DictionaryList',
-    component: () => import('@/pages/DictionaryList.vue'),
+    component: () => import('@/pages/Dictionaries/DictionaryList.vue'),
   },
   {
     path: '/dictionaries/:id',
     name: 'DictionaryView',
-    component: () => import('@/pages/DictionaryView.vue'),
+    component: () => import('@/pages/Dictionaries/DictionaryView.vue'),
   },
   {
     path: '/rules',
     name: 'RulesList',
-    component: () => import('@/pages/RulesList.vue'),
+    component: () => import('@/pages/Rules/RulesList.vue'),
   },
   {
     path: '/rules/:id',
     name: 'RulesView',
-    component: () => import('@/pages/RulesView.vue'),
+    component: () => import('@/pages/Rules/RulesView.vue'),
   },
   {
     path: '/events',
@@ -152,7 +176,7 @@ const routes = [
     path: '/spells',
     name: 'SpellList',
     components: {
-      default: () => import('@/pages/SpellList.vue'),
+      default: () => import('@/pages/Spells/SpellList.vue'),
       mobileAdditionalMenu: () => import('@/components/spell/MobileAdditionalMenu/SpellMobileAdditionalMenu.vue'),
     },
     children: [
@@ -160,7 +184,7 @@ const routes = [
         path: ':id',
         name: 'SpellView',
         components: {
-          listContentView: () => import('@/pages/SpellView.vue'),
+          listContentView: () => import('@/pages/Spells/SpellView.vue'),
         },
       },
     ],
@@ -169,14 +193,14 @@ const routes = [
     path: '/classes',
     name: 'ClassList',
     components: {
-      default: () => import('@/pages/ClassList.vue'),
+      default: () => import('@/pages/Classes/ClassList.vue'),
     },
     children: [
       {
         path: ':id',
         name: 'ClassView',
         components: {
-          listContentView: () => import('@/pages/ClassView.vue'),
+          listContentView: () => import('@/pages/Classes/ClassView.vue'),
         },
       },
     ],

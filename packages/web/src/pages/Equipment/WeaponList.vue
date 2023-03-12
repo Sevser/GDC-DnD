@@ -12,7 +12,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ListPreviewLayout from '../layout/ListPreviewLayout/ListPreviewLayout.vue';
+import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
 import WeaponListItem from '@/components/equipment/WeaponListItem.vue';
 import { IWeaponModel } from '@/types/Weapon/Weapon';
 

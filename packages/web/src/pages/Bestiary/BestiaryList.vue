@@ -21,7 +21,7 @@
 import { defineComponent } from 'vue';
 import InfiniteLoading from 'v3-infinite-loading';
 import 'v3-infinite-loading/lib/style.css';
-import ListPreviewLayout from '../layout/ListPreviewLayout/ListPreviewLayout.vue';
+import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
 import { Pagination } from '@/types/Pagination';
 import BeastItem from '@/components/bestiary/BeastItem.vue';
 import { IBeastListItem } from '@/types/beasts/BeastListItem';
