@@ -1,6 +1,5 @@
-const { experience, archetypes } = require("../data/data");
+const { experience } = require("../data/data");
 const setPublicPermissions = require("../common/setPublicPermissions");
-const createArchetypes = require("./archetypes");
 const createDistances = require("./distances");
 const createExperience = require("./experience");
 const createSpells = require("./spells");
@@ -27,12 +26,13 @@ const createClasses = require("./classes");
 const createSubclass = require("./subclass");
 const createFeatures = require("./features");
 const createLevels = require("./levels");
+const setAuthPermissions = require("../common/setAuthPermissions");
+const createUsers = require("./users");
 
 async function importSeedData() {
   await setPublicPermissions({
     spell: ["find", "findOne"],
     beast: ["find", "findOne"],
-    archetype: ["find", "findOne"],
     "base-characteristic": ["find", "findOne"],
     condition: ["find", "findOne"],
     "damage-type-entity": ["find", "findOne"],
@@ -58,10 +58,39 @@ async function importSeedData() {
     feature: ["find", "findOne"],
     level: ["find", "findOne"],
   });
+  await setAuthPermissions({
+    spell: ["find", "findOne"],
+    beast: ["find", "findOne"],
+    "base-characteristic": ["find", "findOne"],
+    condition: ["find", "findOne"],
+    "damage-type-entity": ["find", "findOne"],
+    dictionary: ["find", "findOne"],
+    experience: ["find", "findOne"],
+    alignment: ["find", "findOne"],
+    "magic-school": ["find", "findOne"],
+    "weapon-property": ["find", "findOne"],
+    proficiency: ["find", "findOne"],
+    "ability-score": ["find", "findOne"],
+    "rule-section": ["find", "findOne"],
+    skill: ["find", "findOne"],
+    rule: ["find", "findOne"],
+    race: ["find", "findOne"],
+    subrace: ["find", "findOne"],
+    trait: ["find", "findOne"],
+    language: ["find", "findOne"],
+    "magic-item": ["find", "findOne"],
+    "equipment-category": ["find", "findOne"],
+    equipment: ["find", "findOne"],
+    class: ["find", "findOne"],
+    subclass: ["find", "findOne"],
+    feature: ["find", "findOne"],
+    level: ["find", "findOne"],
+    campaign: ["find", "findOne", "create"],
+    quest: ["find", "findOne", "create"],
+  });
 
   // Create all entries
   await createExperience(experience);
-  await createArchetypes(archetypes);
   const abilityScores = await createAbilityScore();
   const proficiencies = await createProficiencies();
   const languages = await createLanguage();
@@ -105,6 +134,7 @@ async function importSeedData() {
     subclasses,
     features,
   });
+  await createUsers();
 }
 
 module.exports = importSeedData;

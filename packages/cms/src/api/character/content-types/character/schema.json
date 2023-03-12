@@ -52,12 +52,6 @@
       "target": "api::experience.experience",
       "inversedBy": "characters"
     },
-    "CopperCoins": {
-      "type": "integer",
-      "min": 0,
-      "default": 0,
-      "required": true
-    },
     "spells": {
       "type": "relation",
       "relation": "manyToMany",
@@ -68,18 +62,6 @@
       "type": "component",
       "repeatable": false,
       "component": "enums.visibility-type"
-    },
-    "abilities": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::ability.ability",
-      "inversedBy": "characters"
-    },
-    "archetype": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::archetype.archetype",
-      "inversedBy": "characters"
     },
     "HealthStatus": {
       "type": "component",

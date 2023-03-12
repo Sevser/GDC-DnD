@@ -36,7 +36,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::ability-score.ability-score",
-      "inversedBy": "classes"
+      "mappedBy": "classes"
     },
     "startingEquipment": {
       "type": "component",

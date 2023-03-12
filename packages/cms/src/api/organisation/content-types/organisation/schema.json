@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organisations",
+  "info": {
+    "singularName": "organisation",
+    "pluralName": "organisations",
+    "displayName": "Organisation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "index": {
+      "type": "string"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::location.location",
+      "inversedBy": "organisations"
+    },
+    "beasts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::beast.beast"
+    },
+    "equipment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipment.equipment"
+    },
+    "magicItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::magic-item.magic-item"
+    },
+    "spells": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::spell.spell"
+    },
+    "quests": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quest.quest",
+      "inversedBy": "organisations"
+    },
+    "organisationLoreItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::organisation-lore-item.organisation-lore-item",
+      "mappedBy": "organisation"
+    }
+  }
+}

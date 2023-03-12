@@ -1,3 +1,4 @@
+import { StrapiUser } from '@/plugins/auth';
 import { IFilter } from './Filters';
 import { IPagination } from './Pagination';
 
@@ -9,6 +10,7 @@ export interface IGenericStrapiData<Type> {
 export interface IMeta {
   pagination: IPagination;
   allowedFieldSort: string[];
+  canEdit?: boolean;
 }
 
 export interface IGenericStrapiMappedData<Type> {
@@ -25,4 +27,14 @@ export interface IGenericQueryParams<Type> {
 export interface IAuthParams {
   identifier: string;
   password: string;
+}
+
+export interface LoginStrapiResponse {
+  jwt: string;
+  refreshToken: string;
+  user: StrapiUser;
+}
+
+export interface RefreshTokenStrapiParams {
+  refreshToken: string;
 }

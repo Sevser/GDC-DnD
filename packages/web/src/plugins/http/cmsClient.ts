@@ -3,6 +3,8 @@ import { AlignmentModel, IAlignment } from '@/types/Alignment/Alignment';
 import { ArmorModel, IArmorModel } from '@/types/Armor/Armor';
 import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
+import { CampaignListItem, CampaignListItemModel } from '@/types/Campaign/Campaign';
+import { QuestListItem, QuestListItemModel } from '@/types/Campaign/Quest';
 import { ClassListItemModel, IClassListItemModel } from '@/types/Class/ClassListItemModel';
 import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
@@ -12,7 +14,7 @@ import { EquipmentListItemModel, IEquipmentListItemModel } from '@/types/Equipme
 import EquipmentModel, { IEquipmentModel } from '@/types/Equipment/EquipmentModel';
 import { IMagicItemListItem, IMagicItemModel, MagicItemListItem, MagicItemModel } from '@/types/Equipment/MagicItem';
 import { FeatureItemModel, IFeatureItem } from '@/types/Feature/Feature';
-import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData } from '@/types/GenericStrapiData';
+import { IAuthParams, IGenericQueryParams, IGenericStrapiData, IGenericStrapiMappedData, LoginStrapiResponse, RefreshTokenStrapiParams } from '@/types/GenericStrapiData';
 import { ILanguageListItemModel, LanguageListItemModel } from '@/types/Language/Language';
 import { ILevelModel, LevelModel } from '@/types/Level/Level';
 import { IMagicSchool, MagicSchoolModel } from '@/types/MagicSchools/MagicSchool';
@@ -26,23 +28,26 @@ import { ISubclassModel, SubclassModel } from '@/types/Subclass/Subclass';
 import { ITraitDictionaryItem, TraitDictionaryItem } from '@/types/Trait/TraitDictionaryItem';
 import { IWeaponModel, WeaponModel } from '@/types/Weapon/Weapon';
 import { IWeaponProperty, WeaponPropertyModel } from '@/types/WeaponProperty/WeaponProperty';
-import baseClient from './baseClient';
+import httpClient from './httpClient';
 
 const cmsUrl = import.meta.env.VITE_APP_CMS_HOST;
 
-const login = async (params: IAuthParams): Promise<boolean> => {
-  try {
-    const result = await baseClient.post(`${cmsUrl}/api/auth/local`, params);
-    baseClient.defaults.headers.Authorization = `Bearer ${result.data.jwt}`;
-    return true;
-  } catch (e) {
-    console.error(e);
-    return false;
-  }
+const login = async (params: IAuthParams): Promise<LoginStrapiResponse> => {
+  const { data } = await httpClient.post(`${cmsUrl}/api/auth/local`, params);
+  return data;
+};
+
+const refreshToken = async (params: RefreshTokenStrapiParams): Promise<LoginStrapiResponse> => {
+  const options = {
+    'Access-Control-Allow-Credentials': true,
+    withCredentials: true,
+  };
+  const { data } = await httpClient.post(`${cmsUrl}/api/token/refresh`, params, options);
+  return data;
 };
 
 const fetchSpells = async (params: IGenericQueryParams<IShortSpell>): Promise<IGenericStrapiMappedData<IShortSpell>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/spells`, {
+  const result = await httpClient.get(`${cmsUrl}/api/spells`, {
     params,
   });
   return {
@@ -52,17 +57,17 @@ const fetchSpells = async (params: IGenericQueryParams<IShortSpell>): Promise<IG
 };
 
 const fetchArmor = async (): Promise<IGenericStrapiMappedData<IArmorModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/equipments/armor`);
+  const result = await httpClient.get(`${cmsUrl}/api/equipments/armor`);
   return result.data.map((item: IArmorModel) => new ArmorModel(item));
 };
 
 const fetchWeapon = async (): Promise<IGenericStrapiMappedData<IWeaponModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/equipments/weapons`);
+  const result = await httpClient.get(`${cmsUrl}/api/equipments/weapons`);
   return result.data.map((item: IWeaponModel) => new WeaponModel(item));
 };
 
 const fetchEquipment = async (params: IGenericQueryParams<IEquipmentListItemModel>): Promise<IGenericStrapiMappedData<IEquipmentListItemModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/equipments`, {
+  const result = await httpClient.get(`${cmsUrl}/api/equipments`, {
     params,
   });
   return {
@@ -72,12 +77,12 @@ const fetchEquipment = async (params: IGenericQueryParams<IEquipmentListItemMode
 };
 
 const fetchEquipmentItem = async (equipmentId: string | number): Promise<IEquipmentModel> => {
-  const result = await baseClient.get(`${cmsUrl}/api/equipments/${equipmentId}`);
+  const result = await httpClient.get(`${cmsUrl}/api/equipments/${equipmentId}`);
   return new EquipmentModel(result.data);
 };
 
 const fetchMagicItems = async (params: IGenericQueryParams<IMagicItemListItem>): Promise<IGenericStrapiMappedData<IMagicItemListItem>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/magic-items`, {
+  const result = await httpClient.get(`${cmsUrl}/api/magic-items`, {
     params,
   });
   return {
@@ -87,17 +92,17 @@ const fetchMagicItems = async (params: IGenericQueryParams<IMagicItemListItem>):
 };
 
 const fetchSpell = async (spellId: string | number): Promise<Spell> => {
-  const result = await baseClient.get(`${cmsUrl}/api/spells/${spellId}`);
+  const result = await httpClient.get(`${cmsUrl}/api/spells/${spellId}`);
   return new Spell({ ...result.data.data.attributes, id: result.data.data.id });
 };
 
 const fetchMagicItem = async (magicItemId: string | number): Promise<IMagicItemModel> => {
-  const result = await baseClient.get(`${cmsUrl}/api/magic-items/${magicItemId}`);
+  const result = await httpClient.get(`${cmsUrl}/api/magic-items/${magicItemId}`);
   return new MagicItemModel(result.data);
 };
 
 const fetchBestiary = async (params: IGenericQueryParams<IBeastListItem>): Promise<IGenericStrapiMappedData<IBeastListItem>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/beasts`, {
+  const result = await httpClient.get(`${cmsUrl}/api/beasts`, {
     params,
   });
   return {
@@ -107,7 +112,7 @@ const fetchBestiary = async (params: IGenericQueryParams<IBeastListItem>): Promi
 };
 
 const fetchBeast = async (beastId: string | number): Promise<IBeastModel> => {
-  const result = await baseClient.get(`${cmsUrl}/api/beasts/${beastId}`);
+  const result = await httpClient.get(`${cmsUrl}/api/beasts/${beastId}`);
   return new BeastModel({
     id: result.data.data.id,
     ...result.data.data.attributes,
@@ -115,7 +120,7 @@ const fetchBeast = async (beastId: string | number): Promise<IBeastModel> => {
 };
 
 const fetchDictionaries = async (): Promise<IGenericStrapiMappedData<IDictionary>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/dictionaries`);
+  const result = await httpClient.get(`${cmsUrl}/api/dictionaries`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IDictionary>) => new DictionaryModel({ ...item.attributes, id: item.id })),
@@ -123,7 +128,7 @@ const fetchDictionaries = async (): Promise<IGenericStrapiMappedData<IDictionary
 };
 
 const fetchDamageTypeEntity = async (): Promise<IGenericStrapiMappedData<IDamageTypeEntityModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/damage-type-entitys`);
+  const result = await httpClient.get(`${cmsUrl}/api/damage-type-entitys`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IDamageTypeEntityModel>) => new DamageTypeEntityModel({ ...item.attributes })),
@@ -131,7 +136,7 @@ const fetchDamageTypeEntity = async (): Promise<IGenericStrapiMappedData<IDamage
 };
 
 const fetchConditions = async (): Promise<IGenericStrapiMappedData<IConditionModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/conditions`);
+  const result = await httpClient.get(`${cmsUrl}/api/conditions`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IConditionModel>) => new ConditionModel({ ...item.attributes })),
@@ -139,7 +144,7 @@ const fetchConditions = async (): Promise<IGenericStrapiMappedData<IConditionMod
 };
 
 const fetchAlignments = async (): Promise<IGenericStrapiMappedData<IAlignment>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/alignments`);
+  const result = await httpClient.get(`${cmsUrl}/api/alignments`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IAlignment>) => new AlignmentModel({ ...item.attributes })),
@@ -147,7 +152,7 @@ const fetchAlignments = async (): Promise<IGenericStrapiMappedData<IAlignment>> 
 };
 
 const fetchMagicSchools = async (): Promise<IGenericStrapiMappedData<IMagicSchool>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/magic-schools`);
+  const result = await httpClient.get(`${cmsUrl}/api/magic-schools`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IMagicSchool>) => new MagicSchoolModel({ ...item.attributes })),
@@ -155,7 +160,7 @@ const fetchMagicSchools = async (): Promise<IGenericStrapiMappedData<IMagicSchoo
 };
 
 const fetchWeaponProperties = async (): Promise<IGenericStrapiMappedData<IWeaponProperty>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/weapon-properties`);
+  const result = await httpClient.get(`${cmsUrl}/api/weapon-properties`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IWeaponProperty>) => new WeaponPropertyModel({ ...item.attributes })),
@@ -163,7 +168,7 @@ const fetchWeaponProperties = async (): Promise<IGenericStrapiMappedData<IWeapon
 };
 
 const fetchProficiency = async (): Promise<IGenericStrapiMappedData<IProficiencyModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/proficiencies`);
+  const result = await httpClient.get(`${cmsUrl}/api/proficiencies`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IProficiencyModel>) => new ProficiencyModel({ ...item.attributes })),
@@ -171,7 +176,7 @@ const fetchProficiency = async (): Promise<IGenericStrapiMappedData<IProficiency
 };
 
 const fetchAbilityScores = async (): Promise<IGenericStrapiMappedData<IAbilityScore>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/ability-scores`);
+  const result = await httpClient.get(`${cmsUrl}/api/ability-scores`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IAbilityScore>) => new AbilityScoreModel({ ...item.attributes })),
@@ -179,7 +184,7 @@ const fetchAbilityScores = async (): Promise<IGenericStrapiMappedData<IAbilitySc
 };
 
 const fetchSkills = async (): Promise<IGenericStrapiMappedData<ISkill>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/skills`);
+  const result = await httpClient.get(`${cmsUrl}/api/skills`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<ISkill>) => new SkillModel({ ...item.attributes })),
@@ -187,7 +192,7 @@ const fetchSkills = async (): Promise<IGenericStrapiMappedData<ISkill>> => {
 };
 
 const fetchRules = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/rules`);
+  const result = await httpClient.get(`${cmsUrl}/api/rules`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IRuleListItem>) => new RuleListItem({ ...item.attributes, id: item.id })),
@@ -195,7 +200,7 @@ const fetchRules = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> =>
 };
 
 const fetchLanguages = async (): Promise<IGenericStrapiMappedData<ILanguageListItemModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/languages`);
+  const result = await httpClient.get(`${cmsUrl}/api/languages`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<ILanguageListItemModel>) => new LanguageListItemModel({ ...item.attributes, id: item.id })),
@@ -203,7 +208,7 @@ const fetchLanguages = async (): Promise<IGenericStrapiMappedData<ILanguageListI
 };
 
 const fetchFeatures = async (): Promise<IGenericStrapiMappedData<IFeatureItem>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/features`);
+  const result = await httpClient.get(`${cmsUrl}/api/features`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IFeatureItem>) => new FeatureItemModel({ ...item.attributes, id: item.id })),
@@ -211,7 +216,7 @@ const fetchFeatures = async (): Promise<IGenericStrapiMappedData<IFeatureItem>> 
 };
 
 const fetchTraits = async (): Promise<IGenericStrapiMappedData<ITraitDictionaryItem>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/traits`);
+  const result = await httpClient.get(`${cmsUrl}/api/traits`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<ITraitDictionaryItem>) => new TraitDictionaryItem({ ...item.attributes, id: item.id })),
@@ -219,7 +224,7 @@ const fetchTraits = async (): Promise<IGenericStrapiMappedData<ITraitDictionaryI
 };
 
 const fetchRuleItem = async (ruleId: number | string): Promise<IRuleViewItem & IRuleListItem> => {
-  const result = await baseClient.get(`${cmsUrl}/api/rules/${ruleId}`);
+  const result = await httpClient.get(`${cmsUrl}/api/rules/${ruleId}`);
   return new RuleViewItemModel({
     id: result.data.data.id,
     ...result.data.data.attributes,
@@ -227,7 +232,7 @@ const fetchRuleItem = async (ruleId: number | string): Promise<IRuleViewItem & I
 };
 
 const fetchRaces = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/races`);
+  const result = await httpClient.get(`${cmsUrl}/api/races`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IRaceListItemModel>) => new RaceListItemModel({ ...item.attributes, id: item.id, tabDescription: (item.attributes as any).alignment })),
@@ -235,20 +240,63 @@ const fetchRaces = async (): Promise<IGenericStrapiMappedData<IRuleListItem>> =>
 };
 
 const fetchRace = async (raceId: string | number): Promise<IRaceViewItemModel> => {
-  const result = await baseClient.get(`${cmsUrl}/api/races/${raceId}`);
+  const result = await httpClient.get(`${cmsUrl}/api/races/${raceId}`);
   return new RaceViewItemModel({ ...result.data.data.attributes, id: result.data.data.id });
 };
 
 const fetchClasses = async (): Promise<IGenericStrapiMappedData<IClassListItemModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/classes`);
+  const result = await httpClient.get(`${cmsUrl}/api/classes`);
   return {
     meta: result.data.meta,
     data: result.data.data.map((item: IGenericStrapiData<IClassListItemModel>) => new ClassListItemModel({ ...item.attributes, id: item.id })),
   };
 };
 
+const fetchCampaigns = async (): Promise<IGenericStrapiMappedData<CampaignListItem>> => {
+  const result = await httpClient.get(`${cmsUrl}/api/campaigns`);
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: CampaignListItem) => new CampaignListItemModel(item)),
+  };
+};
+
+const createCampaign = async (campaign: CampaignListItem): Promise<unknown> => {
+  const result = await httpClient.post(`${cmsUrl}/api/campaigns`, {
+    data: campaign,
+  });
+  return result.data;
+};
+
+const fetchQuests = async (campaignId: number): Promise<IGenericStrapiMappedData<QuestListItem>> => {
+  const result = await httpClient.get(`${cmsUrl}/api/quests`, {
+    params: {
+      filters: {
+        campaign: {
+          id: {
+            $eq: campaignId,
+          },
+        },
+      },
+    },
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: QuestListItem) => new QuestListItemModel(item)),
+  };
+};
+
+const createQuest = async (quest: QuestListItem, campaignId: number): Promise<unknown> => {
+  const result = await httpClient.post(`${cmsUrl}/api/quests`, {
+    data: {
+      quest,
+      campaignId,
+    },
+  });
+  return result.data;
+};
+
 const fetchLevels = async (classId: number): Promise<IGenericStrapiMappedData<ILevelModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/levels`, {
+  const result = await httpClient.get(`${cmsUrl}/api/levels`, {
     params: {
       filters: {
         class: {
@@ -266,7 +314,7 @@ const fetchLevels = async (classId: number): Promise<IGenericStrapiMappedData<IL
 };
 
 const fetchArchetypes = async (classId: number): Promise<IGenericStrapiMappedData<ISubclassModel>> => {
-  const result = await baseClient.get(`${cmsUrl}/api/subclasses`, {
+  const result = await httpClient.get(`${cmsUrl}/api/subclasses`, {
     params: {
       filters: {
         class: {
@@ -284,7 +332,7 @@ const fetchArchetypes = async (classId: number): Promise<IGenericStrapiMappedDat
 };
 
 const fetchClass = async (raceId: string | number): Promise<IClassViewModel> => {
-  const result = await baseClient.get(`${cmsUrl}/api/classes/${raceId}`);
+  const result = await httpClient.get(`${cmsUrl}/api/classes/${raceId}`);
   return new ClassViewModel({ ...result.data.data.attributes, id: result.data.data.id });
 };
 
@@ -318,6 +366,11 @@ export interface ICMSClient {
   fetchMagicItems: typeof fetchMagicItems;
   fetchMagicItem: typeof fetchMagicItem;
   fetchEquipmentItem: typeof fetchEquipmentItem;
+  refreshToken: typeof refreshToken;
+  fetchCampaigns: typeof fetchCampaigns;
+  createCampaign: typeof createCampaign;
+  fetchQuests: typeof fetchQuests;
+  createQuest: typeof createQuest;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -367,4 +420,9 @@ export {
   fetchMagicItems,
   fetchMagicItem,
   fetchEquipmentItem,
+  refreshToken,
+  fetchCampaigns,
+  createCampaign,
+  fetchQuests,
+  createQuest,
 };

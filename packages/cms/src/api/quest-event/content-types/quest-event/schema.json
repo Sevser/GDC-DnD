@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quest_events",
+  "info": {
+    "singularName": "quest-event",
+    "pluralName": "quest-events",
+    "displayName": "Quest Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "beasts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::beast.beast"
+    },
+    "equipment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipment.equipment"
+    },
+    "magicItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::magic-item.magic-item"
+    },
+    "spells": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::spell.spell"
+    },
+    "questEventItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quest-event-item.quest-event-item",
+      "mappedBy": "questEvent"
+    },
+    "next": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quest-event.quest-event",
+      "inversedBy": "prev"
+    },
+    "prev": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quest-event.quest-event",
+      "inversedBy": "next"
+    },
+    "questEpisode": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quest-episode.quest-episode",
+      "inversedBy": "questEvents"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::location.location",
+      "inversedBy": "questEvents"
+    }
+  }
+}

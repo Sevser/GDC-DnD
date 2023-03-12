@@ -1,12 +1,12 @@
 import { App } from 'vue';
-import baseClient from './baseClient';
+import httpClient from './httpClient';
 import * as cmsClient from './cmsClient';
 
 const axiosClient = {
   install: (app: App<any>) => {
-    app.config.globalProperties.$client = baseClient;
+    app.config.globalProperties.$client = httpClient;
     app.config.globalProperties.$cmsClient = cmsClient;
   },
 };
 
-export { baseClient as client, axiosClient, cmsClient };
+export { httpClient as client, axiosClient, cmsClient };

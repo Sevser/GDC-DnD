@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_quest_rewards",
+  "info": {
+    "displayName": "reward"
+  },
+  "options": {},
+  "attributes": {
+    "equipment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipment.equipment"
+    },
+    "magicItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::magic-item.magic-item"
+    },
+    "experience": {
+      "type": "integer"
+    },
+    "money": {
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristics.cost"
+    }
+  }
+}
