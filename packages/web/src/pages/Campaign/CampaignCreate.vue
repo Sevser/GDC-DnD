@@ -1,5 +1,5 @@
 <template>
-  <DefaultLayout>
+  <DefaultLayout title="Campaign create">
     <v-form class="d-flex flex-column mx-4 mt-4" ref="form">
       <v-text-field label="Name" :rules="rules.name" v-model="campaign.name" required />
       <v-text-field label="Index" :rules="rules.index" v-model="campaign.index" required />

@@ -82,17 +82,103 @@ const routes = [
   },
   {
     path: '/campaign/:id',
-    name: 'CampaignView',
+    name: 'QuestList',
     components: {
-      default: () => import('@/pages/Campaign/QuestList.vue'),
+      default: () => import('@/pages/Quest/QuestList.vue'),
     },
   },
   {
     path: '/campaign/:id/quests/create',
     name: 'CreateQuest',
     components: {
-      default: () => import('@/pages/Campaign/QuestCreate.vue'),
+      default: () => import('@/pages/Quest/QuestCreate.vue'),
     },
+  },
+  {
+    path: '/campaign/:id/quests/:questId',
+    name: 'QuestEpisodeList',
+    components: {
+      default: () => import('@/pages/Quest/QuestEpisodeList.vue'),
+    },
+  },
+  {
+    path: '/campaign/:id/quests/:questId/create',
+    name: 'QuestEpisodeCreate',
+    components: {
+      default: () => import('@/pages/Quest/QuestEpisodeCreate.vue'),
+    },
+  },
+  {
+    path: '/campaign/:id/quests/:questId/:episodeId',
+    name: 'QuestView',
+    components: {
+      default: () => import('@/pages/Quest/QuestEpisodeView.vue'),
+    },
+    meta: {
+      tabs: true,
+    },
+    children: [
+      {
+        path: 'generalInfo',
+        name: 'ViewQuestGeneralInfo',
+        components: {
+          tabContent: () => import('@/components/quest/QuestGeneralInfo.vue'),
+        },
+        meta: {
+          tabName: 'General info',
+        },
+      },
+      {
+        path: 'npc',
+        name: 'ViewQuestNPCs',
+        components: {
+          tabContent: () => import('@/components/quest/QuestGeneralInfo.vue'),
+        },
+        meta: {
+          tabName: 'NPC',
+        },
+      },
+      {
+        path: 'mobs',
+        name: 'ViewQuestMobs',
+        components: {
+          tabContent: () => import('@/components/quest/QuestGeneralInfo.vue'),
+        },
+        meta: {
+          tabName: "Mob's",
+        },
+      },
+      {
+        path: 'spells',
+        name: 'ViewQuestSpells',
+        components: {
+          tabContent: () => import('@/components/quest/QuestGeneralInfo.vue'),
+        },
+        meta: {
+          tabName: 'Spell',
+        },
+      },
+      {
+        path: 'organisations',
+        name: 'ViewQuestOrganisations',
+        components: {
+          tabContent: () => import('@/components/quest/QuestGeneralInfo.vue'),
+        },
+        meta: {
+          tabName: 'Organisations',
+        },
+      },
+      {
+        path: 'locations',
+        name: 'ViewQuestLocations',
+        components: {
+          tabContent: () => import('@/components/quest/QuestGeneralInfo.vue'),
+        },
+        meta: {
+          tabName: 'Locations',
+        },
+      },
+    ],
   },
   {
     path: '/weapon',
