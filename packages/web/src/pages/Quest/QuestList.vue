@@ -83,7 +83,7 @@ export default defineComponent({
   methods: {
     openQuest(quest: QuestListItemModel) {
       this.$router.push({
-        name: 'QuestView',
+        name: 'QuestEpisodeList',
         params: {
           id: this.$route.params.id,
           questId: quest.id,

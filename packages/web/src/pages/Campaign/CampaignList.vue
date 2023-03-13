@@ -89,7 +89,7 @@ export default defineComponent({
     },
     handleClick(campaign: CampaignListItemModel) {
       this.$router.push({
-        name: 'CampaignView',
+        name: 'QuestList',
         params: {
           id: campaign.id,
         },

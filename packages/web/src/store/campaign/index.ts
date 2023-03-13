@@ -1,6 +1,7 @@
 import { cmsClient } from '@/plugins/http';
 import { CampaignListItem } from '@/types/Campaign/Campaign';
 import { QuestListItem, QuestListItemModel } from '@/types/Campaign/Quest';
+import { QuestEpisodeListItem } from '@/types/Campaign/QuestEpisode';
 import { ActionContext } from 'vuex';
 import { State } from '..';
 
@@ -12,8 +13,9 @@ export interface CampaignState {
   questListPending: boolean;
   canEditCampaign: boolean;
   canEditQuest: boolean;
-  episodeList: unknown[];
+  episodeList: QuestEpisodeListItem[];
   episodeListPending: boolean;
+  createQuestEpisodePending: boolean;
 }
 
 const campaign = {
@@ -28,6 +30,7 @@ const campaign = {
     canEditQuest: false,
     episodeList: [],
     episodeListPending: false,
+    createQuestEpisodePending: false,
   }),
   actions: {
     async createCampaign(context: ActionContext<CampaignState, State>, campaign: CampaignListItem) {
@@ -53,6 +56,31 @@ const campaign = {
       } catch {
       } finally {
         context.commit('updateCampaignListPending', false);
+      }
+    },
+    async fetchQuestEpisodesList(context: ActionContext<CampaignState, State>, questId: number) {
+      context.commit('updateEpisodeListPending', true);
+      context.commit('updateEpisodeList', new Array<CampaignListItem>());
+      try {
+        const result = await cmsClient.fetchQuestEpisodes(questId);
+        context.commit('updateEpisodeList', result.data);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch {
+      } finally {
+        context.commit('updateEpisodeListPending', false);
+      }
+    },
+    async createQuestEpisode(context: ActionContext<CampaignState, State>, { questEpisode, questId }: { questEpisode: QuestEpisodeListItem; questId: number }) {
+      context.commit('updateCreateQuestEpisodePending', true);
+      try {
+        const result = await cmsClient.createQuestEpisode(questEpisode, questId);
+        console.log(result);
+        // Todo: add toast to handle error;
+        // eslint-disable-next-line
+      } catch {
+      } finally {
+        context.commit('updateCreateQuestEpisodePending', false);
       }
     },
     async fetchQuestList(context: ActionContext<CampaignState, State>, campaignId: number) {
@@ -87,6 +115,9 @@ const campaign = {
     updateCreateCampaignPending(state: CampaignState, payload = false) {
       state.createCampaignPending = payload;
     },
+    updateCreateQuestEpisodePending(state: CampaignState, payload = false) {
+      state.createQuestEpisodePending = payload;
+    },
     updateCampaignListPending(state: CampaignState, payload = false) {
       state.campaignListPending = payload;
     },
@@ -101,6 +132,12 @@ const campaign = {
     },
     updateQuestList(state: CampaignState, payload = new Array<QuestListItem>()) {
       state.questList = payload;
+    },
+    updateEpisodeListPending(state: CampaignState, payload = false) {
+      state.episodeListPending = payload;
+    },
+    updateEpisodeList(state: CampaignState, payload = new Array<QuestEpisodeListItem>()) {
+      state.episodeList = payload;
     },
   },
 };

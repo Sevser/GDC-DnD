@@ -5,6 +5,7 @@ import { BeastModel, IBeastModel } from '@/types/beasts/Beast';
 import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
 import { CampaignListItem, CampaignListItemModel } from '@/types/Campaign/Campaign';
 import { QuestListItem, QuestListItemModel } from '@/types/Campaign/Quest';
+import { QuestEpisodeListItem } from '@/types/Campaign/QuestEpisode';
 import { ClassListItemModel, IClassListItemModel } from '@/types/Class/ClassListItemModel';
 import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
@@ -285,6 +286,34 @@ const fetchQuests = async (campaignId: number): Promise<IGenericStrapiMappedData
   };
 };
 
+const fetchQuestEpisodes = async (questId: number): Promise<IGenericStrapiMappedData<QuestEpisodeListItem>> => {
+  const result = await httpClient.get(`${cmsUrl}/api/quest-episodes`, {
+    params: {
+      filters: {
+        quest: {
+          id: {
+            $eq: questId,
+          },
+        },
+      },
+    },
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: QuestEpisodeListItem) => new QuestEpisodeListItem(item)),
+  };
+};
+
+const createQuestEpisode = async (questEpisode: QuestEpisodeListItem, questId: number): Promise<unknown> => {
+  const result = await httpClient.post(`${cmsUrl}/api/quest-episodes`, {
+    data: {
+      questEpisode,
+      questId,
+    },
+  });
+  return result.data;
+};
+
 const createQuest = async (quest: QuestListItem, campaignId: number): Promise<unknown> => {
   const result = await httpClient.post(`${cmsUrl}/api/quests`, {
     data: {
@@ -371,6 +400,8 @@ export interface ICMSClient {
   createCampaign: typeof createCampaign;
   fetchQuests: typeof fetchQuests;
   createQuest: typeof createQuest;
+  fetchQuestEpisodes: typeof fetchQuestEpisodes;
+  createQuestEpisode: typeof createQuestEpisode;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -425,4 +456,6 @@ export {
   createCampaign,
   fetchQuests,
   createQuest,
+  fetchQuestEpisodes,
+  createQuestEpisode,
 };

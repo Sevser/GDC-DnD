@@ -82,7 +82,7 @@ const routes = [
   },
   {
     path: '/campaign/:id',
-    name: 'CampaignView',
+    name: 'QuestList',
     components: {
       default: () => import('@/pages/Quest/QuestList.vue'),
     },
@@ -96,9 +96,23 @@ const routes = [
   },
   {
     path: '/campaign/:id/quests/:questId',
-    name: 'QuestView',
+    name: 'QuestEpisodeList',
     components: {
       default: () => import('@/pages/Quest/QuestEpisodeList.vue'),
+    },
+  },
+  {
+    path: '/campaign/:id/quests/:questId/create',
+    name: 'QuestEpisodeCreate',
+    components: {
+      default: () => import('@/pages/Quest/QuestEpisodeCreate.vue'),
+    },
+  },
+  {
+    path: '/campaign/:id/quests/:questId/:questEpisodeId',
+    name: 'QuestView',
+    components: {
+      default: () => import('@/pages/Quest/QuestEpisodeView.vue'),
     },
     meta: {
       tabs: true,
