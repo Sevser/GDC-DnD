@@ -94,7 +94,7 @@ const campaign = {
         context.commit('updateCreateQuestEpisodePending', false);
       }
     },
-    async createQuestEvent(context: ActionContext<CampaignState, State>, { event, episodeId }: { questEpisode: QuestEventListItem; episodeId: number }) {
+    async createQuestEvent(context: ActionContext<CampaignState, State>, { event, episodeId }: { event: QuestEventListItem; episodeId: number }) {
       context.commit('updateCreateQuestEventPending', true);
       try {
         const result = await cmsClient.createQuestEvent(event, episodeId);
