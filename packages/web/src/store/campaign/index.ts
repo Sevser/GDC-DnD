@@ -12,6 +12,8 @@ export interface CampaignState {
   questListPending: boolean;
   canEditCampaign: boolean;
   canEditQuest: boolean;
+  episodeList: unknown[];
+  episodeListPending: boolean;
 }
 
 const campaign = {
@@ -24,6 +26,8 @@ const campaign = {
     questListPending: false,
     canEditCampaign: false,
     canEditQuest: false,
+    episodeList: [],
+    episodeListPending: false,
   }),
   actions: {
     async createCampaign(context: ActionContext<CampaignState, State>, campaign: CampaignListItem) {

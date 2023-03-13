@@ -28,7 +28,7 @@ export default defineComponent({
             {
               scrollable: true,
               style: {
-                width: '300px',
+                width: '400px',
               },
             },
             {
@@ -40,7 +40,7 @@ export default defineComponent({
             {
               scrollable: true,
               style: {
-                width: 'calc(100vw - 300px)',
+                width: 'calc(100vw - 400px)',
                 left: 'unset',
                 right: '0',
               },

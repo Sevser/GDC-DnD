@@ -25,7 +25,7 @@ class AuthManagerStrapi implements AuthManager {
   authState = reactive({ isAuth: false });
   constructor() {
     const savedUser = window.localStorage.getItem(LOCAL_STORAGE_AUTH_KEY) || '';
-    if (this.checkLocalStorageUser(savedUser)) {
+    if (this.checkLocalStorageUser(savedUser) && savedUser.length) {
       const parsedUser = JSON.parse(savedUser);
       if (parsedUser.jwt && parsedUser.jwt.length && parsedUser.user && parsedUser.user.id && parsedUser.user.username && parsedUser.user.email) {
         this._jwt = parsedUser.jwt;

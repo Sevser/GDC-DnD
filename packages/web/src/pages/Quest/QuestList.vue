@@ -1,5 +1,5 @@
 <template>
-  <list-preview-layout>
+  <list-preview-layout title="Quest list">
     <div class="pl-2 pr-2" style="height: 100%">
       <div v-if="pending" class="d-flex justify-center align-center" style="height: 100%">
         <v-progress-circular indeterminate :size="60" />
@@ -9,7 +9,7 @@
         <v-container fluid>
           <v-row dense>
             <v-col v-for="quest in questList" :key="quest.name" :cols="cols">
-              <QuestListItem :quest="quest" @openModal="openModal" />
+              <QuestListItem :quest="quest" @openModal="openModal" @click="() => openQuest(quest)" />
             </v-col>
             <v-col :cols="cols" v-if="$store.state.campaign.canEditCampaign">
               <CreateQuest />
@@ -33,9 +33,9 @@
 import { defineComponent } from 'vue';
 import Markdown from 'vue3-markdown-it';
 import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
-import QuestListItem from '@/components/campaign/QuestListItem.vue';
-import CreateQuest from '@/components/campaign/CreateQuest.vue';
-import HasNoQuests from '@/components/campaign/HasNoQuests.vue';
+import QuestListItem from '@/components/quest/QuestListItem.vue';
+import CreateQuest from '@/components/quest/CreateQuest.vue';
+import HasNoQuests from '@/components/quest/HasNoQuests.vue';
 import { QuestListItemModel } from '@/types/Campaign/Quest';
 
 export default defineComponent({
@@ -81,6 +81,15 @@ export default defineComponent({
     },
   },
   methods: {
+    openQuest(quest: QuestListItemModel) {
+      this.$router.push({
+        name: 'QuestView',
+        params: {
+          id: this.$route.params.id,
+          questId: quest.id,
+        },
+      });
+    },
     openModal(quest: QuestListItemModel) {
       if (quest) {
         this.dialog = true;
