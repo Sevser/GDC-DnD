@@ -119,7 +119,7 @@ const routes = [
     },
     children: [
       {
-        path: 'index',
+        path: 'generalInfo',
         name: 'ViewQuestGeneralInfo',
         components: {
           tabContent: () => import('@/components/quest/QuestGeneralInfo.vue'),
