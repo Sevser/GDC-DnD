@@ -109,7 +109,7 @@ const routes = [
     },
   },
   {
-    path: '/campaign/:id/quests/:questId/:questEpisodeId',
+    path: '/campaign/:id/quests/:questId/:episodeId',
     name: 'QuestView',
     components: {
       default: () => import('@/pages/Quest/QuestEpisodeView.vue'),

@@ -9,10 +9,10 @@
         <v-container fluid>
           <v-row dense>
             <v-col v-for="episode in episodeList" :key="episode.name" :cols="cols">
-              <EpisodeListItem :quest="episode" @click="() => openEpisode(episode)" />
+              <EpisodeListItem :episode="episode" @click="() => openEpisode(episode)" />
             </v-col>
-            <v-col :cols="cols" v-if="$store.state.campaign.canEditCampaign">
-              <CreateQuest />
+            <v-col :cols="cols" v-if="$store.state.campaign.canEditEpisode">
+              <CreateEpisode />
             </v-col>
           </v-row>
         </v-container>
@@ -23,9 +23,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ListPreviewLayout from '../../layout/ListPreviewLayout/ListPreviewLayout.vue';
-import EpisodeListItem from '@/components/quest/episodes/EpisodeListItem.vue';
-import CreateQuest from '@/components/quest/CreateQuest.vue';
-import HasNoQuestEpisodes from '@/components/quest/episodes/HasNoQuestEposodes.vue';
+import EpisodeListItem from '@/components/episodes/EpisodeListItem.vue';
+import CreateEpisode from '@/components/episodes/CreateEpisode.vue';
+import HasNoQuestEpisodes from '@/components/episodes/HasNoQuestEposodes.vue';
 import { QuestEpisodeListItem } from '@/types/Campaign/QuestEpisode';
 
 export default defineComponent({
@@ -33,7 +33,7 @@ export default defineComponent({
     ListPreviewLayout,
     EpisodeListItem,
     HasNoQuestEpisodes,
-    CreateQuest,
+    CreateEpisode,
   },
   data: () => ({}),
   created() {
@@ -73,7 +73,7 @@ export default defineComponent({
         params: {
           id: this.$route.params.id,
           questId: this.$route.params.questId,
-          questEpisodeId: episode.id,
+          episodeId: episode.id,
         },
       });
     },

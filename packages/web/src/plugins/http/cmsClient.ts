@@ -6,6 +6,7 @@ import { BeastListItem, IBeastListItem } from '@/types/beasts/BeastListItem';
 import { CampaignListItem, CampaignListItemModel } from '@/types/Campaign/Campaign';
 import { QuestListItem, QuestListItemModel } from '@/types/Campaign/Quest';
 import { QuestEpisodeListItem } from '@/types/Campaign/QuestEpisode';
+import { QuestEventListItem } from '@/types/Campaign/QuestEvent';
 import { ClassListItemModel, IClassListItemModel } from '@/types/Class/ClassListItemModel';
 import { ClassViewModel, IClassViewModel } from '@/types/Class/ClassViewModel';
 import { ConditionModel, IConditionModel } from '@/types/Condition/Condition';
@@ -304,11 +305,39 @@ const fetchQuestEpisodes = async (questId: number): Promise<IGenericStrapiMapped
   };
 };
 
+const fetchQuestEvents = async (episodeId: number): Promise<IGenericStrapiMappedData<QuestEpisodeListItem>> => {
+  const result = await httpClient.get(`${cmsUrl}/api/quest-events`, {
+    params: {
+      filters: {
+        questEpisode: {
+          id: {
+            $eq: episodeId,
+          },
+        },
+      },
+    },
+  });
+  return {
+    meta: result.data.meta,
+    data: result.data.data.map((item: QuestEventListItem) => new QuestEventListItem(item)),
+  };
+};
+
 const createQuestEpisode = async (questEpisode: QuestEpisodeListItem, questId: number): Promise<unknown> => {
   const result = await httpClient.post(`${cmsUrl}/api/quest-episodes`, {
     data: {
       questEpisode,
       questId,
+    },
+  });
+  return result.data;
+};
+
+const createQuestEvent = async (event: QuestEventListItem, episodeId: number): Promise<unknown> => {
+  const result = await httpClient.post(`${cmsUrl}/api/quest-events`, {
+    data: {
+      event,
+      episodeId,
     },
   });
   return result.data;
@@ -402,6 +431,8 @@ export interface ICMSClient {
   createQuest: typeof createQuest;
   fetchQuestEpisodes: typeof fetchQuestEpisodes;
   createQuestEpisode: typeof createQuestEpisode;
+  createQuestEvent: typeof createQuestEvent;
+  fetchQuestEvents: typeof fetchQuestEvents;
 }
 
 export type ICMSClientFetchType = typeof login | typeof fetchSpells | typeof fetchSpell | typeof fetchBeast | typeof fetchDictionaries | typeof fetchDamageTypeEntity | typeof fetchConditions;
@@ -458,4 +489,6 @@ export {
   createQuest,
   fetchQuestEpisodes,
   createQuestEpisode,
+  createQuestEvent,
+  fetchQuestEvents,
 };
