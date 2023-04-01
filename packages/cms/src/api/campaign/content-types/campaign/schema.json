@@ -41,6 +41,18 @@
     },
     "tabDesc": {
       "type": "text"
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "campaign"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location",
+      "mappedBy": "campaign"
     }
   }
 }

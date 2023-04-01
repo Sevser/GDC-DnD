@@ -82,16 +82,56 @@ const routes = [
   },
   {
     path: '/campaign/:id',
-    name: 'QuestList',
-    components: {
-      default: () => import('@/pages/Quest/QuestList.vue'),
+    name: 'CampaignView',
+    component: () => import('@/pages/Campaign/CampaignView.vue'),
+    meta: {
+      tabs: true,
     },
+    children: [
+      {
+        path: 'quests',
+        name: 'CampaignQuestList',
+        components: {
+          tabContent: () => import('@/pages/Quest/QuestList.vue'),
+        },
+        meta: {
+          tabName: 'Quests',
+        },
+      },
+      {
+        path: 'organisations',
+        name: 'CampaignOrganisationList',
+        components: {
+          tabContent: () => import('@/pages/Organisation/OrganisationList.vue'),
+        },
+        meta: {
+          tabName: 'Organisations',
+        },
+      },
+      {
+        path: 'locations',
+        name: 'CampaignLocationList',
+        components: {
+          tabContent: () => import('@/pages/Location/LocationList.vue'),
+        },
+        meta: {
+          tabName: 'Locations',
+        },
+      },
+    ],
   },
   {
     path: '/campaign/:id/quests/create',
     name: 'CreateQuest',
     components: {
       default: () => import('@/pages/Quest/QuestCreate.vue'),
+    },
+  },
+  {
+    path: '/campaign/:id/locations/create',
+    name: 'CreateLocation',
+    components: {
+      default: () => import('@/pages/Location/LocationCreate.vue'),
     },
   },
   {

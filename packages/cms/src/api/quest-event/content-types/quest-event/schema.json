@@ -67,6 +67,12 @@
       "relation": "manyToMany",
       "target": "api::location.location",
       "inversedBy": "questEvents"
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "questEvents"
     }
   }
 }

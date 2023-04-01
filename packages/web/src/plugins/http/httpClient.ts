@@ -36,6 +36,8 @@ httpClient.interceptors.response.use(
         refreshToken: authManager.refreshToken,
       });
       console.log(data);
+    } else if (error.response.status === 401 && isRefresh(error.config)) {
+      authManager.logoff();
     }
     return Promise.reject(error);
   }

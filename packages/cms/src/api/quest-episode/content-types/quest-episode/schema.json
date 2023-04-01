@@ -54,6 +54,18 @@
       "type": "component",
       "repeatable": false,
       "component": "quest.reward"
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "questEpisodes"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::location.location",
+      "mappedBy": "questEpisodes"
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_quest_visibilities",
+  "info": {
+    "displayName": "visibility"
+  },
+  "options": {},
+  "attributes": {
+    "gameMaster": {
+      "type": "boolean"
+    },
+    "player": {
+      "type": "boolean"
+    }
+  }
+}

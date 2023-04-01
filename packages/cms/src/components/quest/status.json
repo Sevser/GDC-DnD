@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_quest_statuses",
+  "info": {
+    "displayName": "status",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "gameMaster": {
+      "type": "string"
+    },
+    "player": {
+      "type": "string"
+    }
+  }
+}

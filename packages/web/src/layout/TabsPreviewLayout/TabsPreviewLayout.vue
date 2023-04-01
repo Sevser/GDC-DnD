@@ -61,7 +61,7 @@ export default {
   }),
   render() {
     const childrenForMain: RawSlots = {
-      default: () => this.$slots.default && this.$slots.default(),
+      default: this.$slots.default ? () => this.$slots.default && this.$slots.default() : undefined,
     };
     if (this.hasListContentView[0]) {
       childrenForMain.tabContent = () => h(this.hasListContentView[1] as VueElement);

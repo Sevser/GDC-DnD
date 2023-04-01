@@ -55,6 +55,46 @@
       "relation": "oneToMany",
       "target": "api::organisation-lore-item.organisation-lore-item",
       "mappedBy": "organisation"
+    },
+    "keyLocation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quest.key-location",
+      "required": true
+    },
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quest.status"
+    },
+    "visibility": {
+      "displayName": "visibility",
+      "type": "component",
+      "repeatable": false,
+      "component": "quest.visibility"
+    },
+    "shortDescription": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organisation-lore-item.organisation-lore-item"
+    },
+    "questEpisodes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quest-episode.quest-episode",
+      "inversedBy": "organisations"
+    },
+    "questEvents": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quest-event.quest-event",
+      "inversedBy": "organisations"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "organisations"
     }
   }
 }

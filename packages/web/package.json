@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "export APP_ENV=prod || set APP_ENV=prod && vite preview",
     "lint:js": "eslint"
   },

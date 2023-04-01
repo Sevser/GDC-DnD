@@ -47,6 +47,12 @@
     },
     "tabDesc": {
       "type": "text"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::location.location",
+      "mappedBy": "quests"
     }
   }
 }

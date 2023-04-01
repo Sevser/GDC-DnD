@@ -18,9 +18,6 @@
     "name": {
       "type": "string"
     },
-    "desc": {
-      "type": "richtext"
-    },
     "equipment": {
       "type": "relation",
       "relation": "oneToMany",
@@ -58,13 +55,49 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::quest-event.quest-event",
-      "inversedBy": "locations"
+      "mappedBy": "locations"
     },
     "organisations": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::organisation.organisation",
       "mappedBy": "locations"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "locations"
+    },
+    "shortDescription": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location-lore-item.location-lore-item"
+    },
+    "visibility": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quest.visibility"
+    },
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quest.status"
+    },
+    "questEpisodes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quest-episode.quest-episode",
+      "inversedBy": "locations"
+    },
+    "quests": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quest.quest",
+      "inversedBy": "locations"
+    },
+    "tabDesc": {
+      "type": "text"
     }
   }
 }

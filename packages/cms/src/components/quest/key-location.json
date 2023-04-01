@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_quest_key_locations",
+  "info": {
+    "displayName": "keyLocation"
+  },
+  "options": {},
+  "attributes": {
+    "hasNoKeyLocation": {
+      "type": "boolean"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "organisation-lore-item",
     "pluralName": "organisation-lore-items",
-    "displayName": "Organisation Lore Item"
+    "displayName": "Organisation Lore Item",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,6 +26,11 @@
       "relation": "manyToOne",
       "target": "api::organisation.organisation",
       "inversedBy": "organisationLoreItems"
+    },
+    "visibility": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quest.visibility"
     }
   }
 }

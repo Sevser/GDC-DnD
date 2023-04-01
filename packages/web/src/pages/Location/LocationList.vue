@@ -11,7 +11,7 @@
             <QuestListItem :quest="quest" @openModal="openModal" @click="() => openQuest(quest)" />
           </v-col>
           <v-col :cols="cols" v-if="$store.state.campaign.canEditCampaign">
-            <CreateQuest />
+            <CreateLocation />
           </v-col>
         </v-row>
       </v-container>
@@ -31,16 +31,16 @@
 import { defineComponent } from 'vue';
 import Markdown from 'vue3-markdown-it';
 import QuestListItem from '@/components/quest/QuestListItem.vue';
-import CreateQuest from '@/components/quest/CreateQuest.vue';
 import HasNoQuests from '@/components/quest/HasNoQuests.vue';
 import { QuestListItemModel } from '@/types/Campaign/Quest';
+import CreateLocation from '@/components/location/CreateLocation.vue';
 
 export default defineComponent({
   components: {
     QuestListItem,
     HasNoQuests,
     Markdown,
-    CreateQuest,
+    CreateLocation,
   },
   data: () => ({
     dialog: false,

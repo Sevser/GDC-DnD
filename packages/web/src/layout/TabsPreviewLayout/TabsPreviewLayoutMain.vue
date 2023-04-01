@@ -63,49 +63,83 @@ export default defineComponent({
           ),
         ];
       } else {
-        return [
-          h(
-            VMain,
-            {
-              scrollable: true,
-              style: {
-                width: '400px',
+        if (this.$slots.default) {
+          return [
+            h(
+              VMain,
+              {
+                scrollable: true,
+                style: {
+                  width: '400px',
+                },
               },
-            },
-            {
-              default: () => this.$slots.default && this.$slots.default(),
-            }
-          ),
-          h(
-            VMain,
-            {
-              scrollable: true,
-              style: {
-                width: 'calc(100vw - 400px)',
-                left: 'unset',
-                right: '0',
+              {
+                default: () => this.$slots.default && this.$slots.default(),
+              }
+            ),
+            h(
+              VMain,
+              {
+                scrollable: true,
+                style: {
+                  width: 'calc(100vw - 400px)',
+                  left: 'unset',
+                  right: '0',
+                },
               },
-            },
-            {
-              default: () => [
-                h(
-                  VTabs,
-                  {
-                    bgColor: 'primary',
-                    centerActive: true,
-                    nextIcon: 'mdi-arrow-right-bold-box-outline',
-                    prevIcon: 'mdi-arrow-left-bold-box-outline',
-                    showArrows: true,
-                  },
-                  {
-                    default: this.getTabs(),
-                  }
-                ),
-                this.$slots.tabContent && this.$slots.tabContent(),
-              ],
-            }
-          ),
-        ];
+              {
+                default: () => [
+                  h(
+                    VTabs,
+                    {
+                      bgColor: 'primary',
+                      centerActive: true,
+                      nextIcon: 'mdi-arrow-right-bold-box-outline',
+                      prevIcon: 'mdi-arrow-left-bold-box-outline',
+                      showArrows: true,
+                    },
+                    {
+                      default: () => this.getTabs(),
+                    }
+                  ),
+                  this.$slots.tabContent && this.$slots.tabContent(),
+                ],
+              }
+            ),
+          ];
+        } else {
+          return [
+            h(
+              VMain,
+              {
+                scrollable: true,
+                style: {
+                  width: '100vw',
+                  left: 'unset',
+                  right: '0',
+                },
+              },
+              {
+                default: () => [
+                  h(
+                    VTabs,
+                    {
+                      bgColor: 'primary',
+                      centerActive: true,
+                      nextIcon: 'mdi-arrow-right-bold-box-outline',
+                      prevIcon: 'mdi-arrow-left-bold-box-outline',
+                      showArrows: true,
+                    },
+                    {
+                      default: () => this.getTabs(),
+                    }
+                  ),
+                  this.$slots.tabContent && this.$slots.tabContent(),
+                ],
+              }
+            ),
+          ];
+        }
       }
     } else {
       return h(
