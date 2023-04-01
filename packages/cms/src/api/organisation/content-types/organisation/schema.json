@@ -95,6 +95,9 @@
       "relation": "manyToOne",
       "target": "api::campaign.campaign",
       "inversedBy": "organisations"
+    },
+    "tabDesc": {
+      "type": "text"
     }
   }
 }

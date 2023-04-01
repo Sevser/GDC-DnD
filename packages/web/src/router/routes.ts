@@ -135,6 +135,13 @@ const routes = [
     },
   },
   {
+    path: '/campaign/:id/organisations/create',
+    name: 'CreateOrganisation',
+    components: {
+      default: () => import('@/pages/Organisation/OrganisationCreate.vue'),
+    },
+  },
+  {
     path: '/campaign/:id/quests/:questId',
     name: 'QuestEpisodeList',
     components: {

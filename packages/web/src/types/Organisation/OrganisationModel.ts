@@ -1,24 +1,24 @@
 import { EquipmentListItemModel } from '../Equipment/EquipmentListItemModel';
 import { Visibility } from '../Visibility/Visibility';
 import { BeastListItem } from '../beasts/BeastListItem';
-import { LocationLoreItem } from './LocationLoreItem';
+import { OrganisationLoreItem } from './OrganisationLoreItem';
 import { MagicItemListItem } from '../Equipment/MagicItem';
 
-export class LocationModel {
+export class OrganisationModel {
   index: string;
   name: string;
   tabDesc: string;
-  shortDescription: LocationLoreItem;
-  locationLoreItems: LocationLoreItem[];
+  shortDescription: OrganisationLoreItem;
+  locationLoreItems: OrganisationLoreItem[];
   visibility: Visibility;
   equipment: EquipmentListItemModel[];
   beasts: BeastListItem[];
   magicItems: MagicItemListItem[];
-  constructor(prop: Partial<LocationModel>) {
+  constructor(prop: Partial<OrganisationModel>) {
     this.index = prop?.index || '';
     this.name = prop?.name || '';
     this.tabDesc = prop?.tabDesc || '';
-    this.shortDescription = new LocationLoreItem(prop?.shortDescription || {});
+    this.shortDescription = new OrganisationLoreItem(prop?.shortDescription || {});
     this.locationLoreItems = prop?.locationLoreItems || [];
     this.visibility = new Visibility(prop?.visibility || {});
     this.equipment = prop?.equipment || [];
@@ -26,11 +26,11 @@ export class LocationModel {
     this.magicItems = prop?.magicItems || [];
   }
   static getEmpty() {
-    return new LocationModel({
+    return new OrganisationModel({
       index: '',
       name: '',
       tabDesc: '',
-      shortDescription: LocationLoreItem.getEmpty(),
+      shortDescription: OrganisationLoreItem.getEmpty(),
       visibility: Visibility.getEmpty(),
     });
   }
